@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy | Evidence Gate</title>
+
+  <meta property="og:title" content="Privacy Policy | Evidence Gate">
+  <meta property="og:description" content="Evidence Gate Privacy Policy / Evidence Gate プライバシーポリシー">
+  <meta property="og:url" content="https://evidence-gate.dev/privacy">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      color: #1e293b;
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #16a34a;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Navigation */
+    .nav {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #e2e8f0;
+      z-index: 100;
+      padding: 0.75rem 0;
+    }
+
+    .nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: #1e293b;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .nav-logo:hover {
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #475569;
+      font-size: 0.9375rem;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: #16a34a;
+      text-decoration: none;
+    }
+
+    /* Legal Content */
+    .legal-header {
+      padding: 3rem 0 2rem;
+      background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 50%, #f0f9ff 100%);
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .legal-header h1 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 0.5rem;
+    }
+
+    .legal-header .legal-meta {
+      color: #64748b;
+      font-size: 0.9375rem;
+    }
+
+    .legal-body {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    .legal-notice {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 0.5rem;
+      padding: 1rem 1.25rem;
+      margin-bottom: 2rem;
+      font-size: 0.875rem;
+      color: #166534;
+    }
+
+    .legal-disclaimer {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-radius: 0.5rem;
+      padding: 1rem 1.25rem;
+      margin-bottom: 2rem;
+      font-size: 0.875rem;
+      color: #92400e;
+    }
+
+    .lang-divider {
+      border: none;
+      border-top: 3px solid #22c55e;
+      margin: 3rem 0;
+    }
+
+    .lang-label {
+      display: inline-block;
+      background: #22c55e;
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.25rem 0.75rem;
+      border-radius: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.5rem;
+    }
+
+    .legal-body h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-top: 2.5rem;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .legal-body h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #1e293b;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .legal-body p {
+      margin-bottom: 1rem;
+      color: #334155;
+      font-size: 0.9375rem;
+      line-height: 1.8;
+    }
+
+    .legal-body ol, .legal-body ul {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+    }
+
+    .legal-body li {
+      margin-bottom: 0.5rem;
+      color: #334155;
+      font-size: 0.9375rem;
+      line-height: 1.7;
+    }
+
+    .legal-body ol > li {
+      padding-left: 0.25rem;
+    }
+
+    .legal-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.5rem;
+      font-size: 0.875rem;
+    }
+
+    .legal-body table th,
+    .legal-body table td {
+      border: 1px solid #e2e8f0;
+      padding: 0.625rem 0.75rem;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .legal-body table th {
+      background: #f8fafc;
+      font-weight: 600;
+      color: #1e293b;
+    }
+
+    .legal-body table td {
+      color: #334155;
+    }
+
+    /* Footer */
+    .footer {
+      background: #0f172a;
+      color: #94a3b8;
+      padding: 3rem 0 2rem;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 2rem;
+      gap: 2rem;
+    }
+
+    .footer-brand p {
+      font-size: 0.875rem;
+      max-width: 320px;
+      line-height: 1.6;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .footer-links a {
+      color: #94a3b8;
+      font-size: 0.875rem;
+    }
+
+    .footer-links a:hover {
+      color: #22c55e;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #1e293b;
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8125rem;
+    }
+
+    .footer-bottom a {
+      color: #94a3b8;
+    }
+
+    .footer-bottom a:hover {
+      color: #22c55e;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .legal-header h1 {
+        font-size: 1.75rem;
+      }
+
+      .legal-body table {
+        font-size: 0.8125rem;
+      }
+
+      .footer-content {
+        flex-direction: column;
+      }
+
+      .footer-links {
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container">
+      <a href="/" class="nav-logo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Evidence Gate
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="https://github.com/evidence-gate">GitHub</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <section class="legal-header">
+    <div class="container">
+      <h1>Privacy Policy / プライバシーポリシー</h1>
+      <p class="legal-meta">Enacted: March 13, 2026 / 制定日: 2026年3月13日</p>
+    </div>
+  </section>
+
+  <!-- Legal Body -->
+  <div class="legal-body">
+
+    <div class="legal-notice">
+      本プライバシーポリシーは日本語を正本とします。英語版は参考訳であり、日本語版と英語版の間に齟齬がある場合は、日本語版が優先します。<br>
+      The Japanese version of this Privacy Policy is the authoritative text. The English version is a reference translation only. In case of any discrepancy, the Japanese version shall prevail.
+    </div>
+
+    <div class="legal-disclaimer">
+      本文書は法的助言を構成するものではありません。具体的な法的判断については、資格を有する専門家にご相談ください。<br>
+      This document does not constitute legal advice. For specific legal determinations, please consult a qualified professional.
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- JAPANESE (AUTHORITATIVE) -->
+    <!-- ============================================================ -->
+    <span class="lang-label">Japanese / 日本語（正本）</span>
+
+    <div lang="ja">
+
+      <h2>第1条（基本方針）</h2>
+      <ol>
+        <li>合同会社AllNew（以下「当社」）は、Evidence Gate（以下「本サービス」）における個人情報の保護を重要な責務と認識し、個人情報の保護に関する法律（以下「個人情報保護法」）その他の関連法令を遵守します。</li>
+        <li>本プライバシーポリシー（以下「本ポリシー」）は、本サービスの利用に関して当社が取得する情報の取り扱いについて定めるものです。</li>
+      </ol>
+
+      <h2>第2条（取得する情報）</h2>
+      <p>当社は、本サービスの提供にあたり、以下の情報を取得します。</p>
+
+      <h3>2.1 利用者が提供する情報</h3>
+      <ul>
+        <li>テナント名</li>
+        <li>メールアドレス</li>
+        <li>GitHubリポジトリ情報（Organization名、リポジトリ名）</li>
+        <li>決済に必要な情報（Stripeを通じて処理。当社はクレジットカード番号等の決済情報を直接保持しません）</li>
+      </ul>
+
+      <h3>2.2 サービス利用に伴い生成される情報</h3>
+      <ul>
+        <li>評価エビデンスデータ（品質ゲートの判定に提出されたデータおよびその評価結果）</li>
+        <li>API利用メトリクス（リクエスト数、評価回数、レート制限情報）</li>
+        <li>APIキーのハッシュ値（SHA-256。平文のAPIキーは保存しません）</li>
+        <li>学習レコード（品質状態の改善に使用される匿名化済みデータ）</li>
+      </ul>
+
+      <h3>2.3 自動的に取得される情報</h3>
+      <ul>
+        <li>APIリクエストに含まれるIPアドレス</li>
+        <li>User-Agentヘッダー情報</li>
+        <li>リクエストのタイムスタンプ</li>
+      </ul>
+      <p>なお、本サービスはAPI基盤のサービスであり、CookieおよびWebトラッキング技術は使用しません。ダッシュボードにおいてもトラッキングCookieは設置しません。</p>
+
+      <h2>第3条（利用目的）</h2>
+      <p>当社は、取得した情報を以下の目的に利用します。</p>
+      <ol>
+        <li>本サービスの提供、運営、維持および改善</li>
+        <li>利用者のアカウント管理および認証</li>
+        <li>プラン管理、課金処理および請求</li>
+        <li>品質ゲートの評価および結果の記録・保管</li>
+        <li>サービスの利用状況の分析および統計データの作成（匿名化処理を施したうえで実施）</li>
+        <li>レート制限およびサービス保護のための不正利用検知</li>
+        <li>利用者への重要な通知（サービス変更、障害情報、セキュリティ通知等）</li>
+        <li>利用者からの問い合わせへの対応</li>
+        <li>法令に基づく対応（監査対応を含む）</li>
+      </ol>
+
+      <h2>第4条（第三者への提供）</h2>
+      <ol>
+        <li>当社は、以下の場合を除き、利用者の個人情報を第三者に提供しません。
+          <ul>
+            <li>利用者の同意がある場合</li>
+            <li>法令に基づく場合</li>
+            <li>人の生命、身体または財産の保護のために必要がある場合であって、本人の同意を得ることが困難であるとき</li>
+            <li>公衆衛生の向上または児童の健全な育成の推進のために特に必要がある場合であって、本人の同意を得ることが困難であるとき</li>
+            <li>国の機関もしくは地方公共団体またはその委託を受けた者が法令の定める事務を遂行することに対して協力する必要がある場合であって、本人の同意を得ることにより当該事務の遂行に支障を及ぼすおそれがあるとき</li>
+          </ul>
+        </li>
+        <li>当社は、本サービスの提供に必要な範囲で、以下の第三者（委託先）にデータ処理を委託することがあります。
+
+          <table>
+            <thead>
+              <tr>
+                <th>委託先</th>
+                <th>利用目的</th>
+                <th>提供されるデータ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Amazon Web Services, Inc.</td>
+                <td>データの保存・処理（DynamoDB, S3等）</td>
+                <td>サービスデータ全般（暗号化して保存）</td>
+              </tr>
+              <tr>
+                <td>Stripe, Inc.</td>
+                <td>決済処理</td>
+                <td>決済関連情報</td>
+              </tr>
+              <tr>
+                <td>Langfuse GmbH（任意）</td>
+                <td>オブザーバビリティ（利用者が有効化した場合のみ）</td>
+                <td>評価トレースデータ</td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <li>当社は、委託先に対し、個人情報の適切な取り扱いを義務付け、監督します。</li>
+      </ol>
+
+      <h2>第5条（国際的なデータ移転）</h2>
+      <ol>
+        <li>本サービスのデータは、原則としてAWSの東京リージョン（ap-northeast-1）に保存されます。</li>
+        <li>ただし、当社の委託先（AWS、Stripe、Langfuse）は米国法人または欧州法人であり、サービスの提供・保守にあたり、日本国外からデータにアクセスする場合があります。</li>
+        <li>国外の第三者へのデータ提供にあたっては、個人情報保護法に基づき、当該国における個人情報保護制度の確認、契約上の安全管理措置の確保、またはその他適切な措置を講じます。</li>
+      </ol>
+
+      <h2>第6条（利用者の権利）</h2>
+      <p>利用者は、個人情報保護法に基づき、当社に対して以下の請求を行うことができます。</p>
+      <ol>
+        <li><strong>開示請求</strong>: 当社が保有する利用者の個人情報の開示を請求すること</li>
+        <li><strong>訂正・追加・削除請求</strong>: 当社が保有する利用者の個人情報の内容が事実と異なる場合、訂正、追加または削除を請求すること</li>
+        <li><strong>利用停止・消去請求</strong>: 当社が利用目的の達成に必要な範囲を超えて個人情報を取り扱っている場合、またはその他法令に基づく事由がある場合、利用停止または消去を請求すること</li>
+        <li><strong>第三者提供の停止請求</strong>: 個人情報保護法に基づき、第三者への提供の停止を請求すること</li>
+      </ol>
+      <p>上記の請求は、第11条に記載する連絡先までお申し出ください。当社は、請求者が本人であることを確認したうえで、法令に定める期間内に対応します。</p>
+
+      <h2>第7条（漏えい等の通知）</h2>
+      <ol>
+        <li>個人情報の漏えい、滅失、毀損その他の個人データの安全の確保に係る事態（以下「漏えい等」）が発生し、またはそのおそれがある場合、当社は速やかに事実関係を調査し、影響を受ける利用者および個人情報保護委員会に対し、個人情報保護法に基づき通知・報告します。</li>
+        <li>当社は、漏えい等の再発防止策を策定し、実施します。</li>
+      </ol>
+
+      <h2>第8条（安全管理措置）</h2>
+      <p>当社は、個人情報の漏えい、滅失、毀損の防止その他の安全管理のために、以下の措置を講じています。</p>
+
+      <h3>8.1 技術的安全管理措置</h3>
+      <ul>
+        <li>保存データの暗号化: AWS KMS（Key Management Service）による暗号化（DynamoDB、S3）</li>
+        <li>通信の暗号化: TLS 1.2以上の使用を強制</li>
+        <li>APIキーの保護: SHA-256によるハッシュ化保存（平文保存なし）</li>
+        <li>アクセス制御: テナント単位の論理的データ分離</li>
+        <li>データ圧縮: S3保存時のgzip圧縮</li>
+      </ul>
+
+      <h3>8.2 組織的安全管理措置</h3>
+      <ul>
+        <li>アクセス権限の最小化原則に基づく権限管理</li>
+        <li>インフラストラクチャのコード管理（AWS CDK）による設定変更の監査可能性の確保</li>
+      </ul>
+
+      <h2>第9条（保存および削除）</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>データの種類</th>
+            <th>保存期間</th>
+            <th>根拠</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>評価エビデンス</td>
+            <td>無期限（監査証跡として保持）</td>
+            <td>品質ゲート監査の継続性のため</td>
+          </tr>
+          <tr>
+            <td>学習レコード</td>
+            <td>90日（TTLにより自動削除）</td>
+            <td>品質改善分析の短期利用のため</td>
+          </tr>
+          <tr>
+            <td>API利用メトリクス</td>
+            <td>課金期間に応じた保持</td>
+            <td>課金・レート制限管理のため</td>
+          </tr>
+          <tr>
+            <td>アカウント情報</td>
+            <td>アカウント存続中＋解約後法令上必要な期間</td>
+            <td>契約履行および法令遵守のため</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>利用者がアカウントを削除した場合、当社は合理的な期間内に利用者のデータを削除します。ただし、監査証跡として必要なエビデンスデータ、および法令に基づき保存が義務付けられるデータはこの限りではありません。</p>
+
+      <h2>第10条（外部送信規律）</h2>
+      <p>本サービスはAPI基盤のサービスであり、利用者の端末に情報を記録させ、または利用者の端末から情報を取得するCookie等の技術は使用しません。したがって、電気通信事業法に基づく外部送信規律（第27条の12）に基づく通知または公表の対象となる外部送信は行いません。</p>
+
+      <h2>第11条（お問い合わせ）</h2>
+      <p>本ポリシーに関するお問い合わせ、および第6条に基づく各種請求は、以下の連絡先までお願いします。</p>
+      <p>
+        <strong>合同会社AllNew</strong><br>
+        〒107-0052 東京都港区赤坂 8-4-14 青山タワープレイス8F<br>
+        お問い合わせ: <a href="https://allnew.work/#contact">https://allnew.work/#contact</a>
+      </p>
+
+      <h2>第12条（ポリシーの変更）</h2>
+      <ol>
+        <li>当社は、法令の改正、事業内容の変更、またはその他の必要に応じて、本ポリシーを変更することがあります。</li>
+        <li>重要な変更を行う場合、当社は変更の効力発生日の30日前までに当社ウェブサイトに掲示し、または利用者に電子メールで通知します。</li>
+        <li>変更後の本ポリシーは、当社ウェブサイトに掲載した時点から効力を生じます。</li>
+      </ol>
+
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- ENGLISH (REFERENCE TRANSLATION) -->
+    <!-- ============================================================ -->
+    <hr class="lang-divider">
+    <span class="lang-label">English (Reference Translation)</span>
+
+    <div lang="en">
+
+      <h2>Article 1 (Basic Policy)</h2>
+      <ol>
+        <li>AllNew LLC ("we", "us", or "the Company") recognizes the protection of personal information in connection with Evidence Gate (the "Service") as an important responsibility, and complies with the Act on the Protection of Personal Information (APPI) and other applicable laws and regulations.</li>
+        <li>This Privacy Policy (the "Policy") sets forth how we handle information collected in connection with the use of the Service.</li>
+      </ol>
+
+      <h2>Article 2 (Information Collected)</h2>
+      <p>We collect the following information in connection with providing the Service.</p>
+
+      <h3>2.1 Information Provided by Users</h3>
+      <ul>
+        <li>Tenant name</li>
+        <li>Email address</li>
+        <li>GitHub repository information (organization name, repository name)</li>
+        <li>Payment-related information (processed through Stripe; we do not directly store credit card numbers or other payment card data)</li>
+      </ul>
+
+      <h3>2.2 Information Generated Through Service Use</h3>
+      <ul>
+        <li>Evaluation evidence data (data submitted for quality gate assessment and resulting evaluation outcomes)</li>
+        <li>API usage metrics (request counts, evaluation counts, rate limit information)</li>
+        <li>API key hashes (SHA-256; plaintext API keys are not stored)</li>
+        <li>Learning records (anonymized data used for quality state improvement)</li>
+      </ul>
+
+      <h3>2.3 Automatically Collected Information</h3>
+      <ul>
+        <li>IP addresses included in API requests</li>
+        <li>User-Agent header information</li>
+        <li>Request timestamps</li>
+      </ul>
+      <p>The Service is an API-based service and does not use cookies or web tracking technologies. The dashboard also does not set tracking cookies.</p>
+
+      <h2>Article 3 (Purposes of Use)</h2>
+      <p>We use collected information for the following purposes:</p>
+      <ol>
+        <li>Provision, operation, maintenance, and improvement of the Service;</li>
+        <li>User account management and authentication;</li>
+        <li>Plan management, billing, and invoicing;</li>
+        <li>Quality gate evaluation and recording/storage of results;</li>
+        <li>Analysis of service usage and creation of statistical data (conducted after anonymization);</li>
+        <li>Fraud detection for rate limiting and service protection;</li>
+        <li>Important notifications to users (service changes, incident reports, security notices, etc.);</li>
+        <li>Responding to user inquiries;</li>
+        <li>Compliance with legal requirements (including audit response).</li>
+      </ol>
+
+      <h2>Article 4 (Disclosure to Third Parties)</h2>
+      <ol>
+        <li>We do not provide users' personal information to third parties except in the following cases:
+          <ul>
+            <li>With the user's consent;</li>
+            <li>As required by law;</li>
+            <li>When necessary for the protection of life, body, or property, and obtaining the individual's consent is difficult;</li>
+            <li>When particularly necessary for improving public health or promoting the sound development of children, and obtaining the individual's consent is difficult;</li>
+            <li>When cooperation with a government agency or local public body performing affairs prescribed by law is needed, and obtaining the individual's consent may impede the performance of such affairs.</li>
+          </ul>
+        </li>
+        <li>We may entrust data processing to the following third parties to the extent necessary for providing the Service:
+
+          <table>
+            <thead>
+              <tr>
+                <th>Service Provider</th>
+                <th>Purpose</th>
+                <th>Data Provided</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Amazon Web Services, Inc.</td>
+                <td>Data storage and processing (DynamoDB, S3, etc.)</td>
+                <td>General service data (stored encrypted)</td>
+              </tr>
+              <tr>
+                <td>Stripe, Inc.</td>
+                <td>Payment processing</td>
+                <td>Payment-related information</td>
+              </tr>
+              <tr>
+                <td>Langfuse GmbH (optional)</td>
+                <td>Observability (only when enabled by user)</td>
+                <td>Evaluation trace data</td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <li>We require our service providers to handle personal information appropriately and supervise them accordingly.</li>
+      </ol>
+
+      <h2>Article 5 (International Data Transfers)</h2>
+      <ol>
+        <li>Service data is stored primarily in the AWS Tokyo region (ap-northeast-1).</li>
+        <li>However, our service providers (AWS, Stripe, Langfuse) are US-based or EU-based entities and may access data from outside Japan in connection with providing or maintaining their services.</li>
+        <li>For provision of data to third parties outside Japan, we take appropriate measures in accordance with the APPI, including confirming the personal information protection systems of the relevant countries, securing contractual safety management measures, or other appropriate safeguards.</li>
+      </ol>
+
+      <h2>Article 6 (User Rights)</h2>
+      <p>Users may make the following requests to us in accordance with the APPI:</p>
+      <ol>
+        <li><strong>Disclosure</strong>: Request disclosure of personal information held by us about the user;</li>
+        <li><strong>Correction, Addition, or Deletion</strong>: Request correction, addition, or deletion if the content of personal information held by us differs from the facts;</li>
+        <li><strong>Suspension of Use or Erasure</strong>: Request suspension of use or erasure if we handle personal information beyond the scope necessary for achieving the purpose of use, or if other grounds exist under the applicable law;</li>
+        <li><strong>Suspension of Third-Party Provision</strong>: Request suspension of provision to third parties in accordance with the APPI.</li>
+      </ol>
+      <p>Please direct the above requests to the contact information in Article 11. We will verify the identity of the requester and respond within the period prescribed by law.</p>
+
+      <h2>Article 7 (Breach Notification)</h2>
+      <ol>
+        <li>In the event of a breach, loss, damage, or other incident affecting the security of personal data (a "Breach"), or where there is a risk thereof, we will promptly investigate the facts and notify affected users and the Personal Information Protection Commission in accordance with the APPI.</li>
+        <li>We will develop and implement measures to prevent recurrence of any Breach.</li>
+      </ol>
+
+      <h2>Article 8 (Security Measures)</h2>
+      <p>We implement the following measures to prevent leakage, loss, or damage of personal information and to ensure its security.</p>
+
+      <h3>8.1 Technical Security Measures</h3>
+      <ul>
+        <li>Data-at-rest encryption: AWS KMS (Key Management Service) encryption for DynamoDB and S3</li>
+        <li>Data-in-transit encryption: TLS 1.2 or higher enforced</li>
+        <li>API key protection: SHA-256 hashing (no plaintext storage)</li>
+        <li>Access control: Logical data isolation at the tenant level</li>
+        <li>Data compression: gzip compression for S3 storage</li>
+      </ul>
+
+      <h3>8.2 Organizational Security Measures</h3>
+      <ul>
+        <li>Access privilege management based on the principle of least privilege</li>
+        <li>Infrastructure as Code (AWS CDK) to ensure auditability of configuration changes</li>
+      </ul>
+
+      <h2>Article 9 (Retention and Deletion)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Data Type</th>
+            <th>Retention Period</th>
+            <th>Rationale</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Evaluation evidence</td>
+            <td>Indefinite (retained as audit trail)</td>
+            <td>Continuity of quality gate auditing</td>
+          </tr>
+          <tr>
+            <td>Learning records</td>
+            <td>90 days (automatically deleted via TTL)</td>
+            <td>Short-term use for quality improvement analysis</td>
+          </tr>
+          <tr>
+            <td>API usage metrics</td>
+            <td>Retained per billing period</td>
+            <td>Billing and rate limit management</td>
+          </tr>
+          <tr>
+            <td>Account information</td>
+            <td>Duration of account + legally required period after deletion</td>
+            <td>Contract fulfillment and legal compliance</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>When a user deletes their account, we will delete the user's data within a reasonable period. However, evidence data necessary for audit trails and data required to be retained by law are excepted.</p>
+
+      <h2>Article 10 (External Transmission Regulation)</h2>
+      <p>The Service is an API-based service and does not use cookies or other technologies that store information on, or retrieve information from, the user's device. Accordingly, no external transmissions subject to notification or publication requirements under Article 27-12 of the Telecommunications Business Act are performed.</p>
+
+      <h2>Article 11 (Contact Information)</h2>
+      <p>For inquiries regarding this Policy and requests under Article 6, please contact us at:</p>
+      <p>
+        <strong>AllNew LLC</strong><br>
+        Aoyama Tower Place 8F, 8-4-14 Akasaka, Minato-ku, Tokyo 107-0052, Japan<br>
+        Contact: <a href="https://allnew.work/#contact">https://allnew.work/#contact</a>
+      </p>
+
+      <h2>Article 12 (Policy Amendments)</h2>
+      <ol>
+        <li>We may amend this Policy in response to changes in laws, changes in our business, or other necessities.</li>
+        <li>For material changes, we will post the amendment on our website or notify users by email at least 30 days before the effective date of the change.</li>
+        <li>The amended Policy shall take effect upon publication on our website.</li>
+      </ol>
+
+    </div>
+
+    <hr class="lang-divider">
+    <p style="text-align: center; color: #64748b; font-size: 0.875rem; margin-top: 2rem;">
+      Enacted: March 13, 2026 / 制定日: 2026年3月13日<br>
+      AllNew LLC / 合同会社AllNew
+    </p>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <p>Powered by GitHub Actions. Evidence Gate helps teams enforce quality standards in every deployment pipeline.</p>
+        </div>
+        <div class="footer-links">
+          <a href="https://github.com/evidence-gate">GitHub</a>
+          <a href="https://github.com/marketplace/actions/evidence-gate">Marketplace</a>
+          <a href="https://docs.evidence-gate.dev">Documentation</a>
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms of Service</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 AllNew LLC. All rights reserved.</span>
+        <span>Built with GitHub Actions</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

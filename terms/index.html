@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Terms of Service | Evidence Gate</title>
+
+  <meta property="og:title" content="Terms of Service | Evidence Gate">
+  <meta property="og:description" content="Evidence Gate Terms of Service / Evidence Gate 利用規約">
+  <meta property="og:url" content="https://evidence-gate.dev/terms">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      color: #1e293b;
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #16a34a;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Navigation */
+    .nav {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #e2e8f0;
+      z-index: 100;
+      padding: 0.75rem 0;
+    }
+
+    .nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: #1e293b;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .nav-logo:hover {
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #475569;
+      font-size: 0.9375rem;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: #16a34a;
+      text-decoration: none;
+    }
+
+    /* Legal Content */
+    .legal-header {
+      padding: 3rem 0 2rem;
+      background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 50%, #f0f9ff 100%);
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .legal-header h1 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 0.5rem;
+    }
+
+    .legal-header .legal-meta {
+      color: #64748b;
+      font-size: 0.9375rem;
+    }
+
+    .legal-body {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    .legal-notice {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 0.5rem;
+      padding: 1rem 1.25rem;
+      margin-bottom: 2rem;
+      font-size: 0.875rem;
+      color: #166534;
+    }
+
+    .legal-disclaimer {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-radius: 0.5rem;
+      padding: 1rem 1.25rem;
+      margin-bottom: 2rem;
+      font-size: 0.875rem;
+      color: #92400e;
+    }
+
+    .lang-divider {
+      border: none;
+      border-top: 3px solid #22c55e;
+      margin: 3rem 0;
+    }
+
+    .lang-label {
+      display: inline-block;
+      background: #22c55e;
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.25rem 0.75rem;
+      border-radius: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.5rem;
+    }
+
+    .legal-body h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-top: 2.5rem;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .legal-body h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #1e293b;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .legal-body p {
+      margin-bottom: 1rem;
+      color: #334155;
+      font-size: 0.9375rem;
+      line-height: 1.8;
+    }
+
+    .legal-body ol, .legal-body ul {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+    }
+
+    .legal-body li {
+      margin-bottom: 0.5rem;
+      color: #334155;
+      font-size: 0.9375rem;
+      line-height: 1.7;
+    }
+
+    .legal-body ol > li {
+      padding-left: 0.25rem;
+    }
+
+    /* Footer */
+    .footer {
+      background: #0f172a;
+      color: #94a3b8;
+      padding: 3rem 0 2rem;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 2rem;
+      gap: 2rem;
+    }
+
+    .footer-brand p {
+      font-size: 0.875rem;
+      max-width: 320px;
+      line-height: 1.6;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .footer-links a {
+      color: #94a3b8;
+      font-size: 0.875rem;
+    }
+
+    .footer-links a:hover {
+      color: #22c55e;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #1e293b;
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8125rem;
+    }
+
+    .footer-bottom a {
+      color: #94a3b8;
+    }
+
+    .footer-bottom a:hover {
+      color: #22c55e;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .legal-header h1 {
+        font-size: 1.75rem;
+      }
+
+      .footer-content {
+        flex-direction: column;
+      }
+
+      .footer-links {
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container">
+      <a href="/" class="nav-logo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Evidence Gate
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/privacy">Privacy Policy</a></li>
+        <li><a href="https://github.com/evidence-gate">GitHub</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <section class="legal-header">
+    <div class="container">
+      <h1>Terms of Service / 利用規約</h1>
+      <p class="legal-meta">Enacted: March 13, 2026 / 制定日: 2026年3月13日</p>
+    </div>
+  </section>
+
+  <!-- Legal Body -->
+  <div class="legal-body">
+
+    <div class="legal-notice">
+      本利用規約は日本語を正本とします。英語版は参考訳であり、日本語版と英語版の間に齟齬がある場合は、日本語版が優先します。<br>
+      The Japanese version of these Terms is the authoritative text. The English version is a reference translation only. In case of any discrepancy, the Japanese version shall prevail.
+    </div>
+
+    <div class="legal-disclaimer">
+      本文書は法的助言を構成するものではありません。具体的な法的判断については、資格を有する専門家にご相談ください。<br>
+      This document does not constitute legal advice. For specific legal determinations, please consult a qualified professional.
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- JAPANESE (AUTHORITATIVE) -->
+    <!-- ============================================================ -->
+    <span class="lang-label">Japanese / 日本語（正本）</span>
+
+    <div lang="ja">
+
+      <h2>第1条（適用および同意）</h2>
+      <ol>
+        <li>本利用規約（以下「本規約」）は、合同会社AllNew（以下「当社」）が提供するEvidence Gate（以下「本サービス」）の利用に関する条件を定めるものです。</li>
+        <li>利用者は、本サービスのアカウント登録、APIキーの取得、またはAPIへのリクエスト送信をもって、本規約に同意したものとみなされます。</li>
+        <li>本規約は、本サービスの利用に関し、当社と利用者との間のすべての関係に適用されます。</li>
+      </ol>
+
+      <h2>第2条（定義）</h2>
+      <p>本規約において、以下の用語は各号に定める意味を有します。</p>
+      <ol>
+        <li><strong>「本サービス」</strong>とは、当社がEvidence Gateの名称で提供するAPI基盤のSaaSサービス（ダッシュボードを含む）をいいます。</li>
+        <li><strong>「利用者」</strong>とは、本規約に同意のうえ本サービスを利用する個人または法人をいいます。</li>
+        <li><strong>「テナント」</strong>とは、本サービスにおける利用者のアカウント単位をいいます。</li>
+        <li><strong>「APIキー」</strong>とは、本サービスへのアクセスを認証するために利用者に発行される識別子をいいます。</li>
+        <li><strong>「エビデンス」</strong>とは、利用者がCI/CDパイプラインにおいて本サービスに提出する品質検証データをいいます。</li>
+        <li><strong>「評価」</strong>とは、本サービスがエビデンスに基づき実行する品質ゲート判定処理をいいます。</li>
+        <li><strong>「プラン」</strong>とは、本サービスの利用条件および機能範囲を定める料金体系をいいます。</li>
+      </ol>
+
+      <h2>第3条（サービスの内容）</h2>
+      <ol>
+        <li>本サービスは、CI/CDパイプラインにおける品質ゲートの評価および管理をAPI経由で提供するものです。</li>
+        <li>本サービスの主な機能には、エビデンスファイルの検証、閾値チェック、品質状態の追跡、およびこれらに関連するダッシュボード機能が含まれます。</li>
+        <li>本サービスの具体的な機能および仕様は、当社が別途定めるドキュメントに記載します。当社は、事前通知のうえ、機能および仕様を変更することがあります。</li>
+      </ol>
+
+      <h2>第4条（アカウント登録およびAPIキー）</h2>
+      <ol>
+        <li>利用者は、当社所定の方法によりアカウント登録を行い、APIキーの発行を受けるものとします。</li>
+        <li>利用者は、登録情報が正確かつ最新であることを保証し、変更がある場合は速やかに更新するものとします。</li>
+        <li>APIキーは、利用者の責任において厳重に管理するものとし、第三者への開示、貸与、譲渡を禁止します。</li>
+        <li>本サービスは、GitHub OIDCトークン、セルフホスト型JWTなど、APIキー以外の認証方式にも対応します。利用者は、自己の認証情報の管理について全責任を負います。</li>
+        <li>APIキーの漏洩または不正利用が判明した場合、利用者は直ちに当社に通知し、当該APIキーを無効化するものとします。当社への通知前に生じた損害について、当社は責任を負いません。</li>
+      </ol>
+
+      <h2>第5条（プランおよび料金）</h2>
+      <ol>
+        <li>本サービスには、機能範囲および利用上限の異なる複数のプランがあります。各プランの詳細は、当社ウェブサイトまたは別途定める料金表に記載します。</li>
+        <li>有料プランの料金の支払いは、当社が指定する決済サービス（Stripe, Inc.が提供する決済サービスを含む）を通じて行うものとします。</li>
+        <li>利用者は、Stripeの利用規約（<a href="https://stripe.com/legal" target="_blank" rel="noopener">https://stripe.com/legal</a>）に別途同意するものとします。</li>
+        <li>当社は、30日前の通知をもってプランの内容または料金を変更できるものとします。変更後も利用を継続した場合、利用者は変更後の条件に同意したものとみなされます。</li>
+        <li>利用者がプラン上限を超過した場合、当社は当該評価リクエストを拒否し、またはプランのアップグレードを求めることがあります。</li>
+      </ol>
+
+      <h2>第6条（禁止事項）</h2>
+      <p>利用者は、本サービスの利用にあたり、以下の行為を行ってはなりません。</p>
+      <ol>
+        <li>法令または公序良俗に違反する行為</li>
+        <li>本サービスのシステムに対する不正アクセス、リバースエンジニアリング、またはこれらを試みる行為</li>
+        <li>レート制限、アクセス制御、またはその他のセキュリティ機能を回避し、または回避を試みる行為</li>
+        <li>APIキーの不正取得、偽造、または他の利用者のAPIキーの使用</li>
+        <li>本サービスの運営を妨害し、または妨害するおそれのある行為</li>
+        <li>本サービスを利用した第三者への嫌がらせ、誹謗中傷、またはその他の権利侵害行為</li>
+        <li>当社の事前の書面による承諾なく、本サービスの全部または一部を再販売し、または再配布する行為</li>
+        <li>評価結果の改ざん、または評価プロセスを不正に操作する行為</li>
+        <li>その他、当社が合理的に不適切と判断する行為</li>
+      </ol>
+
+      <h2>第7条（知的財産権）</h2>
+      <ol>
+        <li>本サービスに関する知的財産権（ソフトウェア、API設計、ドキュメント、商標等を含むがこれに限られない）は、当社または当社にライセンスを許諾している者に帰属します。</li>
+        <li>利用者が本サービスを通じて提出したエビデンスおよびデータに関する権利は、利用者に帰属します。ただし、利用者は、当社が本サービスの提供、維持、改善に必要な範囲でこれらのデータを利用することを許諾します。</li>
+        <li>本規約に基づく本サービスの利用は、利用者に対して本サービスの知的財産権の譲渡またはライセンスを構成するものではありません。</li>
+      </ol>
+
+      <h2>第8条（サービスの可用性）</h2>
+      <ol>
+        <li>当社は、本サービスの安定的な運営に合理的な努力を払いますが、本サービスの中断、遅延、またはエラーがないことを保証するものではありません。</li>
+        <li>当社は、以下の事由により本サービスの全部または一部を停止することがあります。
+          <ul>
+            <li>システムの保守・点検・更新を行う場合</li>
+            <li>天災、停電、通信障害その他の不可抗力が生じた場合</li>
+            <li>当社のインフラストラクチャプロバイダーに起因する障害が生じた場合</li>
+            <li>その他、当社が停止を必要と合理的に判断した場合</li>
+          </ul>
+        </li>
+        <li>当社は、計画停止を行う場合、合理的に実行可能な範囲で事前に通知します。</li>
+        <li>別途SLA（サービスレベル合意）を締結した場合を除き、本サービスの可用性に関する保証はありません。</li>
+      </ol>
+
+      <h2>第9条（データの取り扱い）</h2>
+      <ol>
+        <li>当社による利用者のデータの取得、利用、および管理については、別途定めるプライバシーポリシー（<a href="/privacy">https://evidence-gate.dev/privacy</a>）に従います。</li>
+        <li>利用者は、本サービスの利用にあたり当社に提供するデータについて、適法に取得し、第三者の権利を侵害しないことを保証します。</li>
+      </ol>
+
+      <h2>第10条（責任の制限）</h2>
+      <ol>
+        <li>当社は、本サービスの利用に起因して利用者に生じた損害について、当社に故意または重大な過失がある場合を除き、責任を負いません。</li>
+        <li>当社が責任を負う場合であっても、当社の賠償額は、当該損害が発生した日から遡って12か月間に当該利用者が当社に支払った本サービスの利用料金の総額を上限とします。</li>
+        <li>当社は、以下の事項について一切の保証をせず、これらに起因する損害について責任を負いません。
+          <ul>
+            <li>本サービスの評価結果の正確性、完全性、または特定目的への適合性</li>
+            <li>本サービスの利用がすべての法的要件または業界標準に適合すること</li>
+            <li>本サービスのセキュリティ上の欠陥がないこと</li>
+          </ul>
+        </li>
+        <li>消費者契約法その他の強行法規に基づく利用者の権利は、本条の規定により制限されません。</li>
+      </ol>
+
+      <h2>第11条（補償）</h2>
+      <p>利用者は、本規約への違反、本サービスの不正利用、または第三者の権利侵害に起因して当社に生じた損害（合理的な弁護士費用を含む）を補償するものとします。</p>
+
+      <h2>第12条（契約期間および解約）</h2>
+      <ol>
+        <li>本規約に基づく契約は、利用者がアカウントを登録した時点で成立し、アカウントが削除されるまで有効に存続します。</li>
+        <li>利用者は、当社所定の方法によりいつでもアカウントを削除し、本サービスの利用を終了することができます。</li>
+        <li>当社は、利用者が本規約に違反した場合、または第6条に定める禁止事項を行った場合、事前の通知なくアカウントの停止または削除を行うことができます。</li>
+        <li>契約が終了した場合、当社は利用者のデータをプライバシーポリシーに定める期間保持した後、削除します。ただし、監査証跡として必要なデータはこの限りではありません。</li>
+        <li>本規約の終了後も、第7条（知的財産権）、第10条（責任の制限）、第11条（補償）、第16条（準拠法および管轄裁判所）の規定は引き続き効力を有します。</li>
+      </ol>
+
+      <h2>第13条（規約の変更）</h2>
+      <ol>
+        <li>当社は、以下の場合に、利用者の個別の同意を得ることなく本規約を変更することができます。
+          <ul>
+            <li>変更が利用者の一般の利益に適合する場合</li>
+            <li>変更が契約の目的に反せず、変更の必要性、変更後の内容の相当性その他の変更に係る事情に照らして合理的なものである場合</li>
+          </ul>
+        </li>
+        <li>当社は、本規約の変更を行う場合、変更の効力発生日の30日前までに、変更後の規約の内容および効力発生日を当社ウェブサイトに掲示し、または利用者に電子メールで通知します。</li>
+      </ol>
+
+      <h2>第14条（分離可能性）</h2>
+      <p>本規約のいずれかの条項が無効または執行不能と判断された場合であっても、その他の条項は引き続き有効に存続します。</p>
+
+      <h2>第15条（権利義務の譲渡）</h2>
+      <ol>
+        <li>利用者は、当社の事前の書面による承諾なく、本規約に基づく権利義務の全部または一部を第三者に譲渡し、または担保に供することはできません。</li>
+        <li>当社は、本サービスに関する事業の全部または一部を第三者に譲渡する場合（事業譲渡、合併、会社分割その他の組織再編を含む）、本規約に基づく地位、権利および義務を当該第三者に譲渡できるものとし、利用者はかかる譲渡につきあらかじめ同意します。</li>
+      </ol>
+
+      <h2>第16条（準拠法および管轄裁判所）</h2>
+      <ol>
+        <li>本規約は、日本法に準拠し、日本法に従って解釈されます。</li>
+        <li>本規約に関する一切の紛争については、東京地方裁判所を第一審の専属的合意管轄裁判所とします。</li>
+      </ol>
+
+      <h2>第17条（反社会的勢力の排除）</h2>
+      <ol>
+        <li>利用者は、現在および将来にわたり、自らまたはその役員、実質的に経営を支配する者が、暴力団、暴力団員、暴力団準構成員、暴力団関係企業、総会屋その他の反社会的勢力（以下「反社会的勢力」）に該当しないことを表明し、保証します。</li>
+        <li>利用者が前項に違反した場合、当社は催告なく直ちに本規約に基づく契約を解除できるものとします。</li>
+      </ol>
+
+      <h2>第18条（オープンソースコンポーネント）</h2>
+      <ol>
+        <li>本サービスの一部は、オープンソースソフトウェアを含んでいます。</li>
+        <li>Evidence Gate Action（GitHub Action）は、Apache License 2.0に基づき提供されます。</li>
+        <li>セルフホスト版コンポーネントは、Business Source License 1.1（BSL 1.1）に基づき提供されます。</li>
+        <li>各オープンソースコンポーネントのライセンス条項は、当該コンポーネントのリポジトリに記載されています。本規約と各コンポーネントのライセンス条項との間に矛盾がある場合、当該コンポーネントの利用についてはライセンス条項が優先します。</li>
+      </ol>
+
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- ENGLISH (REFERENCE TRANSLATION) -->
+    <!-- ============================================================ -->
+    <hr class="lang-divider">
+    <span class="lang-label">English (Reference Translation)</span>
+
+    <div lang="en">
+
+      <h2>Article 1 (Applicability and Agreement)</h2>
+      <ol>
+        <li>These Terms of Service (the "Terms") set forth the conditions governing the use of Evidence Gate (the "Service") provided by AllNew LLC ("we", "us", or "the Company").</li>
+        <li>By registering an account, obtaining an API key, or sending a request to the API, the user is deemed to have agreed to these Terms.</li>
+        <li>These Terms apply to all relationships between the Company and the user regarding the use of the Service.</li>
+      </ol>
+
+      <h2>Article 2 (Definitions)</h2>
+      <p>The following terms, as used in these Terms, have the meanings set forth below.</p>
+      <ol>
+        <li><strong>"Service"</strong> means the API-based SaaS service (including the dashboard) provided by the Company under the name Evidence Gate.</li>
+        <li><strong>"User"</strong> means an individual or entity that uses the Service upon agreeing to these Terms.</li>
+        <li><strong>"Tenant"</strong> means the account unit for a user within the Service.</li>
+        <li><strong>"API Key"</strong> means an identifier issued to the user for authenticating access to the Service.</li>
+        <li><strong>"Evidence"</strong> means quality verification data submitted by the user to the Service within a CI/CD pipeline.</li>
+        <li><strong>"Evaluation"</strong> means the quality gate assessment process performed by the Service based on evidence.</li>
+        <li><strong>"Plan"</strong> means the pricing structure that defines the terms of use and scope of features for the Service.</li>
+      </ol>
+
+      <h2>Article 3 (Description of Service)</h2>
+      <ol>
+        <li>The Service provides quality gate evaluation and management for CI/CD pipelines via API.</li>
+        <li>Key features of the Service include evidence file verification, threshold checks, quality state tracking, and related dashboard functionality.</li>
+        <li>Specific features and specifications of the Service are described in documentation separately published by the Company. The Company may modify features and specifications upon prior notice.</li>
+      </ol>
+
+      <h2>Article 4 (Account Registration and API Keys)</h2>
+      <ol>
+        <li>Users shall register an account and obtain an API key through the methods prescribed by the Company.</li>
+        <li>Users warrant that their registration information is accurate and current, and shall promptly update it if any changes occur.</li>
+        <li>API keys shall be managed securely under the user's responsibility. Disclosure, lending, or assignment of API keys to third parties is prohibited.</li>
+        <li>The Service also supports authentication methods other than API keys, such as GitHub OIDC tokens and self-hosted JWTs. Users bear full responsibility for managing their authentication credentials.</li>
+        <li>If leakage or unauthorized use of an API key is discovered, the user shall immediately notify the Company and invalidate the affected API key. The Company shall not be liable for any damages incurred before such notification.</li>
+      </ol>
+
+      <h2>Article 5 (Plans and Billing)</h2>
+      <ol>
+        <li>The Service offers multiple plans with varying feature scopes and usage limits. Details of each plan are set forth on the Company's website or in a separate fee schedule.</li>
+        <li>Payment for paid plans shall be made through the payment services designated by the Company, including payment services provided by Stripe, Inc.</li>
+        <li>Users shall separately agree to the Stripe Terms of Service (<a href="https://stripe.com/legal" target="_blank" rel="noopener">https://stripe.com/legal</a>).</li>
+        <li>The Company may modify plan contents or pricing with 30 days' prior notice. Continued use of the Service after such modification constitutes the user's agreement to the modified terms.</li>
+        <li>If a user exceeds plan limits, the Company may reject the evaluation request or require a plan upgrade.</li>
+      </ol>
+
+      <h2>Article 6 (Prohibited Conduct)</h2>
+      <p>Users shall not engage in any of the following when using the Service:</p>
+      <ol>
+        <li>Acts that violate laws, regulations, or public order and morality;</li>
+        <li>Unauthorized access to, reverse engineering of, or attempts to reverse engineer the Service's systems;</li>
+        <li>Circumventing or attempting to circumvent rate limits, access controls, or other security features;</li>
+        <li>Fraudulent acquisition or forgery of API keys, or use of another user's API key;</li>
+        <li>Acts that interfere with or may interfere with the operation of the Service;</li>
+        <li>Harassment, defamation, or other infringement of third-party rights through the Service;</li>
+        <li>Resale or redistribution of all or part of the Service without the Company's prior written consent;</li>
+        <li>Tampering with evaluation results or fraudulently manipulating the evaluation process;</li>
+        <li>Any other acts the Company reasonably deems inappropriate.</li>
+      </ol>
+
+      <h2>Article 7 (Intellectual Property)</h2>
+      <ol>
+        <li>Intellectual property rights related to the Service (including but not limited to software, API design, documentation, and trademarks) belong to the Company or its licensors.</li>
+        <li>Rights to evidence and data submitted by users through the Service remain with the users. However, users grant the Company a license to use such data to the extent necessary for providing, maintaining, and improving the Service.</li>
+        <li>Use of the Service under these Terms does not constitute an assignment of or license to the intellectual property rights of the Service.</li>
+      </ol>
+
+      <h2>Article 8 (Service Availability)</h2>
+      <ol>
+        <li>The Company shall make reasonable efforts to ensure stable operation of the Service, but does not guarantee that the Service will be uninterrupted, timely, or error-free.</li>
+        <li>The Company may suspend all or part of the Service due to the following:
+          <ul>
+            <li>Maintenance, inspection, or updates to the system;</li>
+            <li>Force majeure events such as natural disasters, power outages, or telecommunications failures;</li>
+            <li>Failures attributable to the Company's infrastructure providers;</li>
+            <li>Other circumstances where the Company reasonably determines suspension is necessary.</li>
+          </ul>
+        </li>
+        <li>The Company shall provide advance notice of planned outages to the extent reasonably practicable.</li>
+        <li>Unless a separate Service Level Agreement (SLA) has been executed, no guarantees are made regarding the availability of the Service.</li>
+      </ol>
+
+      <h2>Article 9 (Data Handling)</h2>
+      <ol>
+        <li>The collection, use, and management of user data by the Company shall be governed by the separately established Privacy Policy (<a href="/privacy">https://evidence-gate.dev/privacy</a>).</li>
+        <li>Users warrant that data provided to the Company in connection with the use of the Service has been lawfully obtained and does not infringe upon any third-party rights.</li>
+      </ol>
+
+      <h2>Article 10 (Limitation of Liability)</h2>
+      <ol>
+        <li>The Company shall not be liable for damages incurred by users arising from the use of the Service, except in cases of willful misconduct or gross negligence on the part of the Company.</li>
+        <li>Even where the Company is liable, the Company's total liability shall be limited to the aggregate amount of fees paid by the user to the Company for the Service during the 12-month period immediately preceding the date on which the damage occurred.</li>
+        <li>The Company makes no warranties whatsoever, and shall not be liable for damages arising from, the following:
+          <ul>
+            <li>The accuracy, completeness, or fitness for a particular purpose of the Service's evaluation results;</li>
+            <li>The Service's compliance with all legal requirements or industry standards;</li>
+            <li>The absence of security vulnerabilities in the Service.</li>
+          </ul>
+        </li>
+        <li>Users' rights under the Consumer Contract Act and other mandatory provisions of law are not limited by this article.</li>
+      </ol>
+
+      <h2>Article 11 (Indemnification)</h2>
+      <p>Users shall indemnify the Company for any damages (including reasonable attorneys' fees) arising from the user's breach of these Terms, misuse of the Service, or infringement of third-party rights.</p>
+
+      <h2>Article 12 (Term and Termination)</h2>
+      <ol>
+        <li>The agreement under these Terms takes effect upon the user's account registration and remains in effect until the account is deleted.</li>
+        <li>Users may delete their account and terminate use of the Service at any time through the methods prescribed by the Company.</li>
+        <li>The Company may suspend or delete an account without prior notice if the user violates these Terms or engages in any of the prohibited acts set forth in Article 6.</li>
+        <li>Upon termination, the Company shall retain user data for the period specified in the Privacy Policy and then delete it; provided, however, that data necessary for audit trail purposes may be retained beyond this period.</li>
+        <li>The provisions of Article 7 (Intellectual Property), Article 10 (Limitation of Liability), Article 11 (Indemnification), and Article 16 (Governing Law and Jurisdiction) shall survive the termination of these Terms.</li>
+      </ol>
+
+      <h2>Article 13 (Amendments)</h2>
+      <ol>
+        <li>The Company may amend these Terms without obtaining individual consent from users in the following cases:
+          <ul>
+            <li>Where the amendment is compatible with the general interests of the users;</li>
+            <li>Where the amendment is not contrary to the purpose of the agreement and is reasonable in light of the necessity of the amendment, the appropriateness of the amended terms, and other circumstances pertaining to the amendment.</li>
+          </ul>
+        </li>
+        <li>When amending these Terms, the Company shall post the amended terms and the effective date on the Company's website, or notify users by email, at least 30 days before the effective date of the amendment.</li>
+      </ol>
+
+      <h2>Article 14 (Severability)</h2>
+      <p>If any provision of these Terms is held to be invalid or unenforceable, the remaining provisions shall continue in full force and effect.</p>
+
+      <h2>Article 15 (Assignment)</h2>
+      <ol>
+        <li>Users may not assign or pledge all or part of their rights or obligations under these Terms to any third party without the prior written consent of the Company.</li>
+        <li>The Company may assign its status, rights, and obligations under these Terms to a third party in connection with the transfer of all or part of the business related to the Service (including business transfer, merger, corporate split, or other reorganization), and users hereby consent in advance to such assignment.</li>
+      </ol>
+
+      <h2>Article 16 (Governing Law and Jurisdiction)</h2>
+      <ol>
+        <li>These Terms shall be governed by and construed in accordance with the laws of Japan.</li>
+        <li>The Tokyo District Court shall have exclusive jurisdiction of first instance over any and all disputes arising in connection with these Terms.</li>
+      </ol>
+
+      <h2>Article 17 (Exclusion of Anti-Social Forces)</h2>
+      <ol>
+        <li>Users represent and warrant that neither they, their officers, nor any person who substantially controls their management currently is, or will in the future become, a member of an organized crime group (boryokudan), an organized crime group member, a quasi-member, an organized crime group-related company, a corporate extortionist (sokaiya), or any other anti-social force.</li>
+        <li>If a user is found to be in breach of the preceding paragraph, the Company may immediately terminate the agreement under these Terms without prior notice.</li>
+      </ol>
+
+      <h2>Article 18 (Open Source Components)</h2>
+      <ol>
+        <li>Parts of the Service incorporate open source software.</li>
+        <li>The Evidence Gate Action (GitHub Action) is provided under the Apache License 2.0.</li>
+        <li>Self-hosted components are provided under the Business Source License 1.1 (BSL 1.1).</li>
+        <li>The license terms for each open source component are set forth in the respective component's repository. In the event of any conflict between these Terms and the license terms of a component, the license terms of that component shall prevail with respect to the use of that component.</li>
+      </ol>
+
+    </div>
+
+    <hr class="lang-divider">
+    <p style="text-align: center; color: #64748b; font-size: 0.875rem; margin-top: 2rem;">
+      Enacted: March 13, 2026 / 制定日: 2026年3月13日<br>
+      AllNew LLC / 合同会社AllNew
+    </p>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <p>Powered by GitHub Actions. Evidence Gate helps teams enforce quality standards in every deployment pipeline.</p>
+        </div>
+        <div class="footer-links">
+          <a href="https://github.com/evidence-gate">GitHub</a>
+          <a href="https://github.com/marketplace/actions/evidence-gate">Marketplace</a>
+          <a href="https://docs.evidence-gate.dev">Documentation</a>
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms of Service</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 AllNew LLC. All rights reserved.</span>
+        <span>Built with GitHub Actions</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
