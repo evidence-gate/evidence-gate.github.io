@@ -296,7 +296,7 @@
   <section class="legal-header">
     <div class="container">
       <h1>Terms of Service / 利用規約</h1>
-      <p class="legal-meta">Enacted: March 13, 2026 / 制定日: 2026年3月13日</p>
+      <p class="legal-meta">Enacted: March 13, 2026 / 制定日: 2026年3月13日<br>Last updated: March 14, 2026 / 最終改定日: 2026年3月14日</p>
     </div>
   </section>
 
@@ -342,7 +342,7 @@
       <h2>第3条（サービスの内容）</h2>
       <ol>
         <li>本サービスは、CI/CDパイプラインにおける品質ゲートの評価および管理をAPI経由で提供するものです。</li>
-        <li>本サービスの主な機能には、エビデンスファイルの検証、閾値チェック、品質状態の追跡、およびこれらに関連するダッシュボード機能が含まれます。</li>
+        <li>本サービスの主な機能には、エビデンスファイルの検証、閾値チェック、品質状態の追跡、Webhook通知・プラグイン連携（EventBridge、Slack等）、セルフホスト型デプロイメント、およびこれらに関連するダッシュボード機能が含まれます。</li>
         <li>本サービスの具体的な機能および仕様は、当社が別途定めるドキュメントに記載します。当社は、事前通知のうえ、機能および仕様を変更することがあります。</li>
       </ol>
 
@@ -351,7 +351,7 @@
         <li>利用者は、当社所定の方法によりアカウント登録を行い、APIキーの発行を受けるものとします。</li>
         <li>利用者は、登録情報が正確かつ最新であることを保証し、変更がある場合は速やかに更新するものとします。</li>
         <li>APIキーは、利用者の責任において厳重に管理するものとし、第三者への開示、貸与、譲渡を禁止します。</li>
-        <li>本サービスは、GitHub OIDCトークン、セルフホスト型JWTなど、APIキー以外の認証方式にも対応します。利用者は、自己の認証情報の管理について全責任を負います。</li>
+        <li>本サービスは、GitHub OIDCトークン、セルフホスト型JWTなど、APIキー以外の認証方式にも対応します。利用者は、自己の認証情報の管理について全責任を負います。これらの認証方式により取得・処理されるデータ（トークンクレーム等）の取り扱いについては、<a href="/privacy">プライバシーポリシー</a>第2条をご参照ください。</li>
         <li>APIキーの漏洩または不正利用が判明した場合、利用者は直ちに当社に通知し、当該APIキーを無効化するものとします。当社への通知前に生じた損害について、当社は責任を負いません。</li>
       </ol>
 
@@ -504,7 +504,7 @@
       <h2>Article 3 (Description of Service)</h2>
       <ol>
         <li>The Service provides quality gate evaluation and management for CI/CD pipelines via API.</li>
-        <li>Key features of the Service include evidence file verification, threshold checks, quality state tracking, and related dashboard functionality.</li>
+        <li>Key features of the Service include evidence file verification, threshold checks, quality state tracking, webhook notifications, plugin integrations (EventBridge, Slack, etc.), self-hosted deployment, and related dashboard functionality.</li>
         <li>Specific features and specifications of the Service are described in documentation separately published by the Company. The Company may modify features and specifications upon prior notice.</li>
       </ol>
 
@@ -513,7 +513,7 @@
         <li>Users shall register an account and obtain an API key through the methods prescribed by the Company.</li>
         <li>Users warrant that their registration information is accurate and current, and shall promptly update it if any changes occur.</li>
         <li>API keys shall be managed securely under the user's responsibility. Disclosure, lending, or assignment of API keys to third parties is prohibited.</li>
-        <li>The Service also supports authentication methods other than API keys, such as GitHub OIDC tokens and self-hosted JWTs. Users bear full responsibility for managing their authentication credentials.</li>
+        <li>The Service also supports authentication methods other than API keys, such as GitHub OIDC tokens and self-hosted JWTs. Users bear full responsibility for managing their authentication credentials. For details on how data obtained through these authentication methods (such as token claims) is handled, please refer to Article 2 of our <a href="/privacy">Privacy Policy</a>.</li>
         <li>If leakage or unauthorized use of an API key is discovered, the user shall immediately notify the Company and invalidate the affected API key. The Company shall not be liable for any damages incurred before such notification.</li>
       </ol>
 
@@ -639,6 +639,7 @@
     <hr class="lang-divider">
     <p style="text-align: center; color: #64748b; font-size: 0.875rem; margin-top: 2rem;">
       Enacted: March 13, 2026 / 制定日: 2026年3月13日<br>
+      Last updated: March 14, 2026 / 最終改定日: 2026年3月14日<br>
       AllNew LLC / 合同会社AllNew
     </p>
 

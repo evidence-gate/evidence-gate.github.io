@@ -325,7 +325,7 @@
   <section class="legal-header">
     <div class="container">
       <h1>Privacy Policy / プライバシーポリシー</h1>
-      <p class="legal-meta">Enacted: March 13, 2026 / 制定日: 2026年3月13日</p>
+      <p class="legal-meta">Enacted: March 13, 2026 / 制定日: 2026年3月13日<br>Last updated: March 14, 2026 / 最終改定日: 2026年3月14日</p>
     </div>
   </section>
 
@@ -372,6 +372,10 @@
         <li>API利用メトリクス（リクエスト数、評価回数、レート制限情報）</li>
         <li>APIキーのハッシュ値（SHA-256。平文のAPIキーは保存しません）</li>
         <li>学習レコード（品質状態の改善に使用される匿名化済みデータ）</li>
+        <li>GitHub OIDC認証トークンから取得される情報（リポジトリ名、サブジェクト識別子、発行者情報）</li>
+        <li>ライセンスJWTに含まれるクレーム情報（テナント識別子、プランティア、発行者、鍵識別子、有効期限）</li>
+        <li>Webhook連携設定データ（配信先URL、名前、トリガー条件、KMS暗号化済みWebhookシークレット、配信ログ（ステータス、HTTPステータスコード、タイムスタンプ））</li>
+        <li>CloudEventsイベントデータ（評価結果の通知に使用されるイベントデータ。評価ID、合否、ステータス、ゲートタイプ、信頼度、課題数、評価日時を含む。エビデンス本文は含みません）</li>
       </ul>
 
       <h3>2.3 自動的に取得される情報</h3>
@@ -420,7 +424,7 @@
             <tbody>
               <tr>
                 <td>Amazon Web Services, Inc.</td>
-                <td>データの保存・処理（DynamoDB, S3等）</td>
+                <td>データの保存・処理・配信（DynamoDB, S3, EventBridge, SQS）</td>
                 <td>サービスデータ全般（暗号化して保存）</td>
               </tr>
               <tr>
@@ -432,6 +436,11 @@
                 <td>Langfuse GmbH（任意）</td>
                 <td>オブザーバビリティ（利用者が有効化した場合のみ）</td>
                 <td>評価トレースデータ</td>
+              </tr>
+              <tr>
+                <td>Slack Technologies, LLC（利用者設定時のみ）</td>
+                <td>通知配信（利用者がWebhook連携先としてSlackを設定した場合のみ）</td>
+                <td>評価結果の要約データ</td>
               </tr>
             </tbody>
           </table>
@@ -478,6 +487,9 @@
         <li>通信の暗号化: TLS 1.2以上の使用を強制</li>
         <li>APIキーの保護: SHA-256によるハッシュ化保存（平文保存なし）</li>
         <li>アクセス制御: テナント単位の論理的データ分離</li>
+        <li>Webhook配信の完全性保護: HMAC-SHA256による配信ペイロード署名（署名用シークレットはKMSで暗号化して保存）</li>
+        <li>SSRF対策: Webhook配信先URLのプライベートIPアドレス・予約済みIPアドレスへの接続を制限</li>
+        <li>ライセンスJWTの署名: KMS非対称署名鍵（RSA_2048、SIGN_VERIFY）によるJWT署名</li>
       </ul>
 
       <h3>8.2 組織的安全管理措置</h3>
@@ -542,9 +554,15 @@
             <td>アカウント存続中＋解約後90日以内に削除</td>
             <td>契約履行および法令遵守のため</td>
           </tr>
+          <tr>
+            <td>コンプライアンスアーカイブ</td>
+            <td>365日（S3ライフサイクルにより自動削除）</td>
+            <td>紛争解決のための匿名化済み課金・利用記録の保全</td>
+          </tr>
         </tbody>
       </table>
-      <p>利用者がアカウントを削除した場合、当社はデータベース上のデータおよびオブジェクトストレージ上のエビデンスファイルを、解約日から90日以内に削除します。TTLにより自動削除されるデータ（評価結果、決済イベント等）は、それぞれの保存期間経過後に自動的に削除されます。法令に基づき保存が義務付けられるデータはこの限りではありません。</p>
+      <p>利用者がアカウントを削除した場合、当社はデータベース上のデータおよびオブジェクトストレージ上のエビデンスファイルを、解約日から90日以内に削除します。TTLにより自動削除されるデータ（評価結果、決済イベント等）は、それぞれの保存期間経過後に自動的に削除されます。法令に基づき保存が義務付けられるデータ、および下記のコンプライアンスアーカイブはこの限りではありません。</p>
+      <p>当社は、紛争解決および法令遵守の目的で、アカウント削除処理に先立ち、以下の情報を匿名化したうえでコンプライアンスアーカイブとして保存します。アーカイブには、ハッシュ化されたテナント識別子（SHA-256の先頭12文字）、ハッシュ化されたStripe顧客識別子、プラン情報、利用記録（期間、評価回数、API呼出数）、および課金イベント（イベント種別、数量、ゲートタイプ）が含まれます。テナント名、メールアドレスその他の直接的な個人識別情報は含まれません。アーカイブは365日後にS3ライフサイクルポリシーにより自動的に削除されます。</p>
 
       <h2>第10条（外部送信規律）</h2>
       <p>本サービスはAPI基盤のサービスであり、利用者の端末に情報を記録させ、または利用者の端末から情報を取得するCookie等の技術は使用しません。したがって、電気通信事業法に基づく外部送信規律（第27条の12）に基づく通知または公表の対象となる外部送信は行いません。</p>
@@ -598,6 +616,10 @@
         <li>API usage metrics (request counts, evaluation counts, rate limit information)</li>
         <li>API key hashes (SHA-256; plaintext API keys are not stored)</li>
         <li>Learning records (anonymized data used for quality state improvement)</li>
+        <li>Information obtained from GitHub OIDC authentication tokens (repository name, subject identifier, issuer information)</li>
+        <li>Claims contained in license JWTs (tenant identifier, plan tier, issuer, key identifier, expiration)</li>
+        <li>Webhook integration configuration data (destination URL, name, trigger conditions, KMS-encrypted webhook secret, delivery logs (status, HTTP status code, timestamps))</li>
+        <li>CloudEvents event data (event data used for evaluation result notifications, including evaluation ID, pass/fail status, gate type, confidence, issue count, and evaluation timestamp; evidence body content is never included)</li>
       </ul>
 
       <h3>2.3 Automatically Collected Information</h3>
@@ -646,7 +668,7 @@
             <tbody>
               <tr>
                 <td>Amazon Web Services, Inc.</td>
-                <td>Data storage and processing (DynamoDB, S3, etc.)</td>
+                <td>Data storage, processing, and delivery (DynamoDB, S3, EventBridge, SQS)</td>
                 <td>General service data (stored encrypted)</td>
               </tr>
               <tr>
@@ -658,6 +680,11 @@
                 <td>Langfuse GmbH (optional)</td>
                 <td>Observability (only when enabled by user)</td>
                 <td>Evaluation trace data</td>
+              </tr>
+              <tr>
+                <td>Slack Technologies, LLC (only when configured by user)</td>
+                <td>Notification delivery (only when user configures Slack as a webhook destination)</td>
+                <td>Evaluation result summary data</td>
               </tr>
             </tbody>
           </table>
@@ -704,6 +731,9 @@
         <li>Data-in-transit encryption: TLS 1.2 or higher enforced</li>
         <li>API key protection: SHA-256 hashing (no plaintext storage)</li>
         <li>Access control: Logical data isolation at the tenant level</li>
+        <li>Webhook delivery integrity protection: HMAC-SHA256 payload signing (signing secrets encrypted via KMS)</li>
+        <li>SSRF protection: Webhook destination URL validation restricting connections to private and reserved IP addresses</li>
+        <li>License JWT signing: KMS asymmetric signing key (RSA_2048, SIGN_VERIFY) for JWT signature generation</li>
       </ul>
 
       <h3>8.2 Organizational Security Measures</h3>
@@ -768,9 +798,15 @@
             <td>Duration of account + deleted within 90 days after termination</td>
             <td>Contract fulfillment and legal compliance</td>
           </tr>
+          <tr>
+            <td>Compliance archive</td>
+            <td>365 days (automatically deleted via S3 lifecycle)</td>
+            <td>Preservation of anonymized billing and usage records for dispute resolution</td>
+          </tr>
         </tbody>
       </table>
-      <p>When a user deletes their account, we will delete database records and evidence files in object storage within 90 days of the termination date. Data subject to automatic TTL-based deletion (evaluation results, payment events, etc.) will be automatically deleted after their respective retention periods. Data required to be retained by law is excepted.</p>
+      <p>When a user deletes their account, we will delete database records and evidence files in object storage within 90 days of the termination date. Data subject to automatic TTL-based deletion (evaluation results, payment events, etc.) will be automatically deleted after their respective retention periods. Data required to be retained by law, as well as the compliance archive described below, is excepted.</p>
+      <p>For the purposes of dispute resolution and legal compliance, we create a compliance archive with anonymized data prior to account deletion processing. The archive includes a hashed tenant identifier (first 12 characters of SHA-256), a hashed Stripe customer identifier, plan information, usage records (period, evaluation count, API call count), and metering events (event type, quantity, gate type). Tenant name, email address, and other directly identifying personal information are not included. The archive is automatically deleted after 365 days via S3 lifecycle policy.</p>
 
       <h2>Article 10 (External Transmission Regulation)</h2>
       <p>The Service is an API-based service and does not use cookies or other technologies that store information on, or retrieve information from, the user's device. Accordingly, no external transmissions subject to notification or publication requirements under Article 27-12 of the Telecommunications Business Act are performed.</p>
@@ -796,6 +832,7 @@
     <hr class="lang-divider">
     <p style="text-align: center; color: #64748b; font-size: 0.875rem; margin-top: 2rem;">
       Enacted: March 13, 2026 / 制定日: 2026年3月13日<br>
+      Last updated: March 14, 2026 / 最終改定日: 2026年3月14日<br>
       AllNew LLC / 合同会社AllNew
     </p>
 
