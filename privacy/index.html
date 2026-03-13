@@ -380,7 +380,7 @@
         <li>User-Agentヘッダー情報</li>
         <li>リクエストのタイムスタンプ</li>
       </ul>
-      <p>なお、本サービスはAPI基盤のサービスであり、CookieおよびWebトラッキング技術は使用しません。ダッシュボードにおいてもトラッキングCookieは設置しません。</p>
+      <p>なお、本サービスはAPI基盤のサービスであり、CookieおよびWebトラッキング技術は使用しません。ダッシュボードにおいてもトラッキングCookieは設置しません。ただし、ダッシュボードでは利用者の利便性のため、利用者が入力したAPI接続情報をブラウザのLocalStorageに保存します。この情報は利用者のブラウザ内にのみ存在し、当社のサーバーには送信されません。</p>
 
       <h2>第3条（利用目的）</h2>
       <p>当社は、取得した情報を以下の目的に利用します。</p>
@@ -443,7 +443,13 @@
       <ol>
         <li>本サービスのデータは、原則としてAWSの東京リージョン（ap-northeast-1）に保存されます。</li>
         <li>ただし、当社の委託先（AWS、Stripe、Langfuse）は米国法人または欧州法人であり、サービスの提供・保守にあたり、日本国外からデータにアクセスする場合があります。</li>
-        <li>国外の第三者へのデータ提供にあたっては、個人情報保護法に基づき、当該国における個人情報保護制度の確認、契約上の安全管理措置の確保、またはその他適切な措置を講じます。</li>
+        <li>国外の第三者へのデータ提供にあたっては、個人情報保護法第28条に基づき、以下の措置を講じています。
+          <ul>
+            <li><strong>Amazon Web Services, Inc.（米国）</strong>: 個人情報保護法施行規則第16条に基づく基準適合体制の確認（契約上の安全管理措置の確保を含む）</li>
+            <li><strong>Stripe, Inc.（米国）</strong>: 同上（Stripeのデータ処理契約による安全管理措置の確保）</li>
+            <li><strong>Langfuse GmbH（ドイツ）</strong>: EU域内の個人情報保護制度がGDPRに基づくことの確認（利用者が有効化した場合のみ）</li>
+          </ul>
+        </li>
       </ol>
 
       <h2>第6条（利用者の権利）</h2>
@@ -454,11 +460,12 @@
         <li><strong>利用停止・消去請求</strong>: 当社が利用目的の達成に必要な範囲を超えて個人情報を取り扱っている場合、またはその他法令に基づく事由がある場合、利用停止または消去を請求すること</li>
         <li><strong>第三者提供の停止請求</strong>: 個人情報保護法に基づき、第三者への提供の停止を請求すること</li>
       </ol>
-      <p>上記の請求は、第11条に記載する連絡先までお申し出ください。当社は、請求者が本人であることを確認したうえで、法令に定める期間内に対応します。</p>
+      <p>上記の請求は、第11条に記載する連絡先までお申し出ください。当社は、請求者が本人であることを確認したうえで、法令に定める期間内に対応します。開示請求の手数料は無料です。</p>
 
       <h2>第7条（漏えい等の通知）</h2>
       <ol>
         <li>個人情報の漏えい、滅失、毀損その他の個人データの安全の確保に係る事態（以下「漏えい等」）が発生し、またはそのおそれがある場合、当社は速やかに事実関係を調査し、影響を受ける利用者および個人情報保護委員会に対し、個人情報保護法に基づき通知・報告します。</li>
+        <li>前項の報告は、事態を知った日から3日から5日以内に速報を行い、30日以内（不正の目的によるおそれがある場合は60日以内）に確報を行います。</li>
         <li>当社は、漏えい等の再発防止策を策定し、実施します。</li>
       </ol>
 
@@ -471,13 +478,18 @@
         <li>通信の暗号化: TLS 1.2以上の使用を強制</li>
         <li>APIキーの保護: SHA-256によるハッシュ化保存（平文保存なし）</li>
         <li>アクセス制御: テナント単位の論理的データ分離</li>
-        <li>データ圧縮: S3保存時のgzip圧縮</li>
       </ul>
 
       <h3>8.2 組織的安全管理措置</h3>
       <ul>
         <li>アクセス権限の最小化原則に基づく権限管理</li>
         <li>インフラストラクチャのコード管理（AWS CDK）による設定変更の監査可能性の確保</li>
+      </ul>
+
+      <h3>8.3 人的安全管理措置</h3>
+      <ul>
+        <li>個人情報を取り扱う従業者に対する教育および監督</li>
+        <li>秘密保持に関する事項を就業規則等に規定</li>
       </ul>
 
       <h2>第9条（保存および削除）</h2>
@@ -491,36 +503,57 @@
         </thead>
         <tbody>
           <tr>
-            <td>評価エビデンス</td>
-            <td>無期限（監査証跡として保持）</td>
+            <td>評価結果</td>
+            <td>90日（TTLにより自動削除）</td>
+            <td>品質ゲート判定結果の短期参照のため</td>
+          </tr>
+          <tr>
+            <td>エビデンスファイル（S3）</td>
+            <td>テナント存続中＋解約後90日以内に削除</td>
             <td>品質ゲート監査の継続性のため</td>
           </tr>
           <tr>
-            <td>学習レコード</td>
-            <td>90日（TTLにより自動削除）</td>
-            <td>品質改善分析の短期利用のため</td>
+            <td>改善記録</td>
+            <td>テナント存続中（解約後90日以内に削除）</td>
+            <td>品質改善ナレッジの蓄積のため</td>
           </tr>
           <tr>
             <td>API利用メトリクス</td>
-            <td>課金期間に応じた保持</td>
+            <td>400日（TTLにより自動削除）</td>
             <td>課金・レート制限管理のため</td>
           </tr>
           <tr>
+            <td>品質スナップショット</td>
+            <td>365日（TTLにより自動削除）</td>
+            <td>品質トレンド分析のため</td>
+          </tr>
+          <tr>
+            <td>決済イベント</td>
+            <td>30日（TTLにより自動削除）</td>
+            <td>決済処理の冪等性保証のため</td>
+          </tr>
+          <tr>
+            <td>Webhook配信ログ</td>
+            <td>30日（TTLにより自動削除）</td>
+            <td>配信状態の確認のため</td>
+          </tr>
+          <tr>
             <td>アカウント情報</td>
-            <td>アカウント存続中＋解約後法令上必要な期間</td>
+            <td>アカウント存続中＋解約後90日以内に削除</td>
             <td>契約履行および法令遵守のため</td>
           </tr>
         </tbody>
       </table>
-      <p>利用者がアカウントを削除した場合、当社は合理的な期間内に利用者のデータを削除します。ただし、監査証跡として必要なエビデンスデータ、および法令に基づき保存が義務付けられるデータはこの限りではありません。</p>
+      <p>利用者がアカウントを削除した場合、当社はデータベース上のデータおよびオブジェクトストレージ上のエビデンスファイルを、解約日から90日以内に削除します。TTLにより自動削除されるデータ（評価結果、決済イベント等）は、それぞれの保存期間経過後に自動的に削除されます。法令に基づき保存が義務付けられるデータはこの限りではありません。</p>
 
       <h2>第10条（外部送信規律）</h2>
       <p>本サービスはAPI基盤のサービスであり、利用者の端末に情報を記録させ、または利用者の端末から情報を取得するCookie等の技術は使用しません。したがって、電気通信事業法に基づく外部送信規律（第27条の12）に基づく通知または公表の対象となる外部送信は行いません。</p>
 
-      <h2>第11条（お問い合わせ）</h2>
-      <p>本ポリシーに関するお問い合わせ、および第6条に基づく各種請求は、以下の連絡先までお願いします。</p>
+      <h2>第11条（お問い合わせおよび苦情の申出先）</h2>
+      <p>本ポリシーに関するお問い合わせ、第6条に基づく各種請求、および個人情報の取り扱いに関する苦情は、以下の連絡先までお願いします。</p>
       <p>
         <strong>合同会社AllNew</strong><br>
+        個人情報取扱責任者: 代表社員<br>
         〒107-0052 東京都港区赤坂 8-4-14 青山タワープレイス8F<br>
         お問い合わせ: <a href="https://allnew.work/#contact">https://allnew.work/#contact</a>
       </p>
@@ -573,7 +606,7 @@
         <li>User-Agent header information</li>
         <li>Request timestamps</li>
       </ul>
-      <p>The Service is an API-based service and does not use cookies or web tracking technologies. The dashboard also does not set tracking cookies.</p>
+      <p>The Service is an API-based service and does not use cookies or web tracking technologies. The dashboard also does not set tracking cookies. However, for user convenience, the dashboard stores API connection information entered by the user in the browser's LocalStorage. This information exists only within the user's browser and is not transmitted to our servers.</p>
 
       <h2>Article 3 (Purposes of Use)</h2>
       <p>We use collected information for the following purposes:</p>
@@ -636,7 +669,13 @@
       <ol>
         <li>Service data is stored primarily in the AWS Tokyo region (ap-northeast-1).</li>
         <li>However, our service providers (AWS, Stripe, Langfuse) are US-based or EU-based entities and may access data from outside Japan in connection with providing or maintaining their services.</li>
-        <li>For provision of data to third parties outside Japan, we take appropriate measures in accordance with the APPI, including confirming the personal information protection systems of the relevant countries, securing contractual safety management measures, or other appropriate safeguards.</li>
+        <li>For provision of data to third parties outside Japan, we take the following measures in accordance with Article 28 of the APPI:
+          <ul>
+            <li><strong>Amazon Web Services, Inc. (United States)</strong>: Confirmation of standards-compliant systems pursuant to Article 16 of the APPI Enforcement Rules (including contractual safety management measures)</li>
+            <li><strong>Stripe, Inc. (United States)</strong>: Same as above (contractual safety management measures under Stripe's data processing agreement)</li>
+            <li><strong>Langfuse GmbH (Germany)</strong>: Confirmation that the EU personal information protection system is based on the GDPR (only when enabled by user)</li>
+          </ul>
+        </li>
       </ol>
 
       <h2>Article 6 (User Rights)</h2>
@@ -647,11 +686,12 @@
         <li><strong>Suspension of Use or Erasure</strong>: Request suspension of use or erasure if we handle personal information beyond the scope necessary for achieving the purpose of use, or if other grounds exist under the applicable law;</li>
         <li><strong>Suspension of Third-Party Provision</strong>: Request suspension of provision to third parties in accordance with the APPI.</li>
       </ol>
-      <p>Please direct the above requests to the contact information in Article 11. We will verify the identity of the requester and respond within the period prescribed by law.</p>
+      <p>Please direct the above requests to the contact information in Article 11. We will verify the identity of the requester and respond within the period prescribed by law. There is no fee for disclosure requests.</p>
 
       <h2>Article 7 (Breach Notification)</h2>
       <ol>
         <li>In the event of a breach, loss, damage, or other incident affecting the security of personal data (a "Breach"), or where there is a risk thereof, we will promptly investigate the facts and notify affected users and the Personal Information Protection Commission in accordance with the APPI.</li>
+        <li>Preliminary reports shall be made within 3 to 5 days of becoming aware of the incident, and a full report shall be submitted within 30 days (or 60 days where the incident involves a risk of unauthorized purpose).</li>
         <li>We will develop and implement measures to prevent recurrence of any Breach.</li>
       </ol>
 
@@ -664,13 +704,18 @@
         <li>Data-in-transit encryption: TLS 1.2 or higher enforced</li>
         <li>API key protection: SHA-256 hashing (no plaintext storage)</li>
         <li>Access control: Logical data isolation at the tenant level</li>
-        <li>Data compression: gzip compression for S3 storage</li>
       </ul>
 
       <h3>8.2 Organizational Security Measures</h3>
       <ul>
         <li>Access privilege management based on the principle of least privilege</li>
         <li>Infrastructure as Code (AWS CDK) to ensure auditability of configuration changes</li>
+      </ul>
+
+      <h3>8.3 Human Security Measures</h3>
+      <ul>
+        <li>Education and supervision of employees who handle personal information</li>
+        <li>Confidentiality provisions established in employment regulations</li>
       </ul>
 
       <h2>Article 9 (Retention and Deletion)</h2>
@@ -684,36 +729,57 @@
         </thead>
         <tbody>
           <tr>
-            <td>Evaluation evidence</td>
-            <td>Indefinite (retained as audit trail)</td>
+            <td>Evaluation results</td>
+            <td>90 days (automatically deleted via TTL)</td>
+            <td>Short-term reference for quality gate assessment outcomes</td>
+          </tr>
+          <tr>
+            <td>Evidence files (S3)</td>
+            <td>Duration of tenant + deleted within 90 days after termination</td>
             <td>Continuity of quality gate auditing</td>
           </tr>
           <tr>
-            <td>Learning records</td>
-            <td>90 days (automatically deleted via TTL)</td>
-            <td>Short-term use for quality improvement analysis</td>
+            <td>Improvement records</td>
+            <td>Duration of tenant (deleted within 90 days after termination)</td>
+            <td>Accumulation of quality improvement knowledge</td>
           </tr>
           <tr>
             <td>API usage metrics</td>
-            <td>Retained per billing period</td>
+            <td>400 days (automatically deleted via TTL)</td>
             <td>Billing and rate limit management</td>
           </tr>
           <tr>
+            <td>Quality snapshots</td>
+            <td>365 days (automatically deleted via TTL)</td>
+            <td>Quality trend analysis</td>
+          </tr>
+          <tr>
+            <td>Payment events</td>
+            <td>30 days (automatically deleted via TTL)</td>
+            <td>Idempotency of payment processing</td>
+          </tr>
+          <tr>
+            <td>Webhook delivery logs</td>
+            <td>30 days (automatically deleted via TTL)</td>
+            <td>Delivery status verification</td>
+          </tr>
+          <tr>
             <td>Account information</td>
-            <td>Duration of account + legally required period after deletion</td>
+            <td>Duration of account + deleted within 90 days after termination</td>
             <td>Contract fulfillment and legal compliance</td>
           </tr>
         </tbody>
       </table>
-      <p>When a user deletes their account, we will delete the user's data within a reasonable period. However, evidence data necessary for audit trails and data required to be retained by law are excepted.</p>
+      <p>When a user deletes their account, we will delete database records and evidence files in object storage within 90 days of the termination date. Data subject to automatic TTL-based deletion (evaluation results, payment events, etc.) will be automatically deleted after their respective retention periods. Data required to be retained by law is excepted.</p>
 
       <h2>Article 10 (External Transmission Regulation)</h2>
       <p>The Service is an API-based service and does not use cookies or other technologies that store information on, or retrieve information from, the user's device. Accordingly, no external transmissions subject to notification or publication requirements under Article 27-12 of the Telecommunications Business Act are performed.</p>
 
-      <h2>Article 11 (Contact Information)</h2>
-      <p>For inquiries regarding this Policy and requests under Article 6, please contact us at:</p>
+      <h2>Article 11 (Contact Information and Complaints)</h2>
+      <p>For inquiries regarding this Policy, requests under Article 6, and complaints regarding the handling of personal information, please contact us at:</p>
       <p>
         <strong>AllNew LLC</strong><br>
+        Personal Information Officer: Representative Member<br>
         Aoyama Tower Place 8F, 8-4-14 Akasaka, Minato-ku, Tokyo 107-0052, Japan<br>
         Contact: <a href="https://allnew.work/#contact">https://allnew.work/#contact</a>
       </p>
