@@ -2,4 +2,4 @@
 
 Landing page for [Evidence Gate](https://github.com/marketplace/actions/evidence-gate).
 
-Hosted at: https://evidence-gate.com
+Hosted at: https://evidence-gate.dev
