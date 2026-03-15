@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://evidence-gate.dev/sitemap.xml
