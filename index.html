@@ -611,7 +611,8 @@
 <pre><span class="code-comment"># Add quality gates in 3 lines</span>
 <span class="code-key">- uses:</span> <span class="code-string">evidence-gate/evidence-gate-action@v1</span>
   <span class="code-key">with:</span>
-    <span class="code-key">gate_type:</span> <span class="code-string">"file_check"</span>
+    <span class="code-key">gate_type:</span> <span class="code-string">"test_coverage"</span>
+    <span class="code-key">phase_id:</span> <span class="code-string">"testing"</span>
     <span class="code-key">evidence_files:</span> <span class="code-string">"coverage.json"</span></pre>
       </div>
     </div>
@@ -697,13 +698,13 @@
           <div class="pricing-price">$0 <span>/month</span></div>
           <p class="pricing-desc">Everything you need to enforce basic quality gates in your CI/CD pipeline.</p>
           <ul class="pricing-features">
-            <li>File existence checks</li>
-            <li>JSON validation</li>
-            <li>Schema structure validation</li>
-            <li>Numeric threshold checks</li>
+            <li>100 evaluations/month</li>
+            <li>1,000 API calls/month</li>
+            <li>All 25 gate types</li>
+            <li>Wave evaluation</li>
+            <li>SARIF output</li>
+            <li>GitHub Check Runs</li>
             <li>SHA-256 integrity hashing</li>
-            <li>GITHUB_STEP_SUMMARY output</li>
-            <li>Workflow annotations</li>
           </ul>
           <a href="https://github.com/marketplace/actions/evidence-gate" class="btn btn-outline-green">Get Started Free</a>
         </div>
@@ -715,13 +716,13 @@
           <div class="pricing-price">Contact <span>for pricing</span></div>
           <p class="pricing-desc">Advanced gates, quality tracking, and remediation for growing teams.</p>
           <ul class="pricing-features">
+            <li>5,000 evaluations/month</li>
+            <li>50,000 API calls/month</li>
             <li>Everything in Free, plus:</li>
             <li>Blind Gate evaluation</li>
             <li>Quality State tracking</li>
             <li>Remediation workflows</li>
-            <li>Composite gates</li>
-            <li>Wave evaluation</li>
-            <li>Langfuse trace URLs</li>
+            <li>Evidence chain verification (L4)</li>
             <li>Priority support</li>
           </ul>
           <a href="https://evidence-gate.dev/pricing" class="btn btn-primary">Start Pro Trial</a>
@@ -733,11 +734,12 @@
           <div class="pricing-price">Contact us</div>
           <p class="pricing-desc">Self-hosted deployment with dedicated support for your organization.</p>
           <ul class="pricing-features">
+            <li>Unlimited evaluations</li>
+            <li>Unlimited API calls</li>
             <li>Everything in Pro, plus:</li>
             <li>Self-hosted deployment</li>
             <li>Custom API base URL</li>
             <li>Dedicated support</li>
-            <li>SSO / SAML (roadmap)</li>
             <li>Custom SLA available</li>
           </ul>
           <a href="mailto:support@allnew.co.jp" class="btn btn-secondary">Contact Sales</a>
@@ -769,11 +771,15 @@
           </h3>
           <p>Add the Evidence Gate step to your GitHub Actions workflow file:</p>
           <div class="code-block">
-<pre><span class="code-key">name:</span> <span class="code-string">CI</span>
-<span class="code-key">on:</span> <span class="code-string">[push, pull_request]</span>
+<pre><span class="code-key">name:</span> <span class="code-string">Quality Gate</span>
+<span class="code-key">on:</span> <span class="code-string">[pull_request]</span>
+
+<span class="code-key">permissions:</span>
+  <span class="code-key">contents:</span> <span class="code-string">read</span>
+  <span class="code-key">checks:</span> <span class="code-string">write</span>
 
 <span class="code-key">jobs:</span>
-  <span class="code-key">quality-gate:</span>
+  <span class="code-key">evaluate:</span>
     <span class="code-key">runs-on:</span> <span class="code-string">ubuntu-latest</span>
     <span class="code-key">steps:</span>
       <span class="code-key">- uses:</span> <span class="code-string">actions/checkout@v4</span>
@@ -783,7 +789,8 @@
       <span class="code-key">- name:</span> <span class="code-string">Evidence Gate</span>
         <span class="code-key">uses:</span> <span class="code-string">evidence-gate/evidence-gate-action@v1</span>
         <span class="code-key">with:</span>
-          <span class="code-key">gate_type:</span> <span class="code-string">"file_check"</span>
+          <span class="code-key">gate_type:</span> <span class="code-string">"test_coverage"</span>
+          <span class="code-key">phase_id:</span> <span class="code-string">"testing"</span>
           <span class="code-key">evidence_files:</span> <span class="code-string">"coverage.json"</span></pre>
           </div>
         </div>
