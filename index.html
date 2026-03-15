@@ -341,90 +341,59 @@
     /* ============================================
        Pricing Section
        ============================================ */
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      align-items: start;
+    /* Pricing Table */
+    .pricing-table-wrapper {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
     }
 
-    .pricing-card {
-      border: 1px solid #e2e8f0;
-      border-radius: 0.75rem;
-      padding: 2rem;
-      background: #ffffff;
-      position: relative;
+    .pricing-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9375rem;
     }
 
-    .pricing-card--featured {
-      border: 2px solid #22c55e;
-      box-shadow: 0 8px 24px rgba(34, 197, 94, 0.15);
-    }
-
-    .pricing-badge {
-      position: absolute;
-      top: -0.75rem;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #22c55e;
-      color: #ffffff;
-      font-size: 0.75rem;
-      font-weight: 700;
-      padding: 0.25rem 0.75rem;
-      border-radius: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .pricing-card h3 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin-bottom: 0.25rem;
-    }
-
-    .pricing-price {
-      font-size: 2rem;
-      font-weight: 800;
-      margin-bottom: 0.25rem;
-    }
-
-    .pricing-price span {
-      font-size: 0.875rem;
-      font-weight: 400;
-      color: #94a3b8;
-    }
-
-    .pricing-desc {
-      color: #64748b;
-      font-size: 0.875rem;
-      margin-bottom: 1.5rem;
-      padding-bottom: 1.5rem;
+    .pricing-table th,
+    .pricing-table td {
+      padding: 0.75rem 1rem;
+      text-align: center;
       border-bottom: 1px solid #e2e8f0;
     }
 
-    .pricing-features {
-      list-style: none;
-      margin-bottom: 2rem;
+    .pricing-table th {
+      font-weight: 700;
+      background: #f8fafc;
+      position: sticky;
+      top: 0;
     }
 
-    .pricing-features li {
-      padding: 0.375rem 0;
-      font-size: 0.9375rem;
-      color: #334155;
-      display: flex;
-      align-items: flex-start;
-      gap: 0.5rem;
+    .pricing-table th:first-child,
+    .pricing-table td:first-child {
+      text-align: left;
+      font-weight: 500;
     }
 
-    .pricing-features li::before {
-      content: "\2713";
+    .pricing-table th.featured {
+      background: #f0fdf4;
+      color: #16a34a;
+    }
+
+    .pricing-table td.featured {
+      background: #f0fdf4;
+    }
+
+    .pricing-table .check {
       color: #22c55e;
       font-weight: 700;
-      flex-shrink: 0;
     }
 
-    .pricing-card .btn {
-      width: 100%;
+    .pricing-table .dash {
+      color: #cbd5e1;
+    }
+
+    .pricing-table .cta-row td {
+      padding: 1.5rem 1rem;
+      border-bottom: none;
     }
 
     /* ============================================
@@ -547,11 +516,13 @@
         grid-template-columns: 1fr;
       }
 
-      .pricing-grid {
-        grid-template-columns: 1fr;
-        max-width: 420px;
-        margin-left: auto;
-        margin-right: auto;
+      .pricing-table {
+        font-size: 0.8125rem;
+      }
+
+      .pricing-table th,
+      .pricing-table td {
+        padding: 0.5rem 0.5rem;
       }
 
       .nav-links {
@@ -586,10 +557,6 @@
       .hero-code {
         max-width: 600px;
         margin: 0 auto;
-      }
-
-      .pricing-grid {
-        grid-template-columns: 1fr 1fr 1fr;
       }
     }
   </style>
@@ -714,61 +681,135 @@
     <div class="container">
       <h2 class="section-title">Simple, Transparent Pricing</h2>
       <p class="section-subtitle">Start free, upgrade when your team needs advanced features</p>
-      <div class="pricing-grid">
-
-        <!-- Free Tier -->
-        <div class="pricing-card">
-          <h3>Free</h3>
-          <div class="pricing-price">$0 <span>/month</span></div>
-          <p class="pricing-desc">Everything you need to enforce basic quality gates in your CI/CD pipeline.</p>
-          <ul class="pricing-features">
-            <li>100 evaluations/month</li>
-            <li>1,000 API calls/month</li>
-            <li>All 25 gate types</li>
-            <li>Wave evaluation</li>
-            <li>SARIF output</li>
-            <li>GitHub Check Runs</li>
-            <li>SHA-256 integrity hashing</li>
-          </ul>
-          <a href="https://github.com/marketplace/actions/evidence-gate-action" class="btn btn-outline-green">Get Started Free</a>
-        </div>
-
-        <!-- Pro Tier -->
-        <div class="pricing-card pricing-card--featured">
-          <span class="pricing-badge">Recommended</span>
-          <h3>Pro</h3>
-          <div class="pricing-price">Contact <span>for pricing</span></div>
-          <p class="pricing-desc">Advanced gates, quality tracking, and remediation for growing teams.</p>
-          <ul class="pricing-features">
-            <li>5,000 evaluations/month</li>
-            <li>50,000 API calls/month</li>
-            <li>Everything in Free, plus:</li>
-            <li>Blind Gate evaluation</li>
-            <li>Quality State tracking</li>
-            <li>Remediation workflows</li>
-            <li>Evidence chain verification (L4)</li>
-            <li>Priority support</li>
-          </ul>
-          <a href="#pricing" class="btn btn-primary">Start Pro Trial</a>
-        </div>
-
-        <!-- Enterprise Tier -->
-        <div class="pricing-card">
-          <h3>Enterprise</h3>
-          <div class="pricing-price">Contact us</div>
-          <p class="pricing-desc">Self-hosted deployment with dedicated support for your organization.</p>
-          <ul class="pricing-features">
-            <li>Unlimited evaluations</li>
-            <li>Unlimited API calls</li>
-            <li>Everything in Pro, plus:</li>
-            <li>Self-hosted deployment</li>
-            <li>Custom API base URL</li>
-            <li>Dedicated support</li>
-            <li>Custom SLA available</li>
-          </ul>
-          <a href="mailto:support@allnew.co.jp" class="btn btn-secondary">Contact Sales</a>
-        </div>
-
+      <div class="pricing-table-wrapper">
+        <table class="pricing-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Free ($0/mo)</th>
+              <th class="featured">Pro (Contact)</th>
+              <th>Enterprise (Contact us)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Evaluations/month</td>
+              <td>100</td>
+              <td class="featured">5,000</td>
+              <td>Unlimited</td>
+            </tr>
+            <tr>
+              <td>API calls/month</td>
+              <td>1,000</td>
+              <td class="featured">50,000</td>
+              <td>Unlimited</td>
+            </tr>
+            <tr>
+              <td>All 25 gate types</td>
+              <td class="check">&#10003;</td>
+              <td class="featured check">&#10003;</td>
+              <td class="check">&#10003;</td>
+            </tr>
+            <tr>
+              <td>SARIF output</td>
+              <td class="check">&#10003;</td>
+              <td class="featured check">&#10003;</td>
+              <td class="check">&#10003;</td>
+            </tr>
+            <tr>
+              <td>GitHub Check Runs</td>
+              <td class="check">&#10003;</td>
+              <td class="featured check">&#10003;</td>
+              <td class="check">&#10003;</td>
+            </tr>
+            <tr>
+              <td>SHA-256 integrity hashing</td>
+              <td class="check">&#10003;</td>
+              <td class="featured check">&#10003;</td>
+              <td class="check">&#10003;</td>
+            </tr>
+            <tr>
+              <td>Fail-closed error handling</td>
+              <td class="check">&#10003;</td>
+              <td class="featured check">&#10003;</td>
+              <td class="check">&#10003;</td>
+            </tr>
+            <tr>
+              <td>Observe mode</td>
+              <td class="check">&#10003;</td>
+              <td class="featured check">&#10003;</td>
+              <td class="check">&#10003;</td>
+            </tr>
+            <tr>
+              <td>Gate presets</td>
+              <td class="check">&#10003;</td>
+              <td class="featured check">&#10003;</td>
+              <td class="check">&#10003;</td>
+            </tr>
+            <tr>
+              <td>Sticky PR comments</td>
+              <td class="check">&#10003;</td>
+              <td class="featured check">&#10003;</td>
+              <td class="check">&#10003;</td>
+            </tr>
+            <tr>
+              <td>Blind Gate evaluation</td>
+              <td class="dash">&mdash;</td>
+              <td class="featured check">&#10003;</td>
+              <td class="check">&#10003;</td>
+            </tr>
+            <tr>
+              <td>Evidence chain verification (L4)</td>
+              <td class="dash">&mdash;</td>
+              <td class="featured check">&#10003;</td>
+              <td class="check">&#10003;</td>
+            </tr>
+            <tr>
+              <td>Quality State tracking</td>
+              <td class="dash">&mdash;</td>
+              <td class="featured check">&#10003;</td>
+              <td class="check">&#10003;</td>
+            </tr>
+            <tr>
+              <td>Remediation workflows</td>
+              <td class="dash">&mdash;</td>
+              <td class="featured check">&#10003;</td>
+              <td class="check">&#10003;</td>
+            </tr>
+            <tr>
+              <td>Missing evidence + suggested actions</td>
+              <td class="dash">&mdash;</td>
+              <td class="featured check">&#10003;</td>
+              <td class="check">&#10003;</td>
+            </tr>
+            <tr>
+              <td>Self-hosted deployment</td>
+              <td class="dash">&mdash;</td>
+              <td class="featured dash">&mdash;</td>
+              <td class="check">&#10003;</td>
+            </tr>
+            <tr>
+              <td>Custom API base URL</td>
+              <td class="dash">&mdash;</td>
+              <td class="featured dash">&mdash;</td>
+              <td class="check">&#10003;</td>
+            </tr>
+            <tr>
+              <td>Dedicated support</td>
+              <td class="dash">&mdash;</td>
+              <td class="featured dash">&mdash;</td>
+              <td class="check">&#10003;</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr class="cta-row">
+              <td></td>
+              <td><a href="https://github.com/marketplace/actions/evidence-gate-action" class="btn btn-outline-green">Get Started Free</a></td>
+              <td class="featured"><a href="#pricing" class="btn btn-primary">Start Pro Trial</a></td>
+              <td><a href="mailto:support@allnew.co.jp" class="btn btn-secondary">Contact Sales</a></td>
+            </tr>
+          </tfoot>
+        </table>
       </div>
     </div>
   </section>
