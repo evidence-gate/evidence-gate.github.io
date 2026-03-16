@@ -7,15 +7,15 @@
 
   <!-- OGP Meta Tags -->
   <meta property="og:title" content="Evidence Gate — Quality Gates for CI/CD Pipelines">
-  <meta property="og:description" content="Fail-closed quality gates for GitHub Actions. 25 gate types covering test coverage, security, architecture, and compliance. Blind Gates prevent gaming. Free for open-source.">
+  <meta property="og:description" content="Fail-closed quality gates for GitHub Actions. 27 gate types covering test coverage, security, architecture, and compliance. Blind Gates prevent gaming. Free for open-source.">
   <meta property="og:url" content="https://evidence-gate.dev">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Evidence Gate — Quality Gates for CI/CD Pipelines">
-  <meta name="twitter:description" content="Fail-closed quality gates for GitHub Actions. 25 gate types covering test coverage, security, architecture, and compliance. Blind Gates prevent gaming. Free for open-source.">
+  <meta name="twitter:description" content="Fail-closed quality gates for GitHub Actions. 27 gate types covering test coverage, security, architecture, and compliance. Blind Gates prevent gaming. Free for open-source.">
 
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Fail-closed quality gates for GitHub Actions. 25 gate types covering test coverage, security, architecture, and compliance. Blind Gates prevent gaming. Free for open-source.">
+  <meta name="description" content="Fail-closed quality gates for GitHub Actions. 27 gate types covering test coverage, security, architecture, and compliance. Blind Gates prevent gaming. Free for open-source.">
   <link rel="canonical" href="https://evidence-gate.dev/">
 
   <!-- Structured Data -->
@@ -616,7 +616,7 @@
   <section class="hero">
     <div class="container">
       <div class="hero-content">
-        <p style="font-size: 0.875rem; font-weight: 600; color: #22c55e; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">GitHub Actions &middot; 25 Gate Types &middot; Fail-Closed by Default</p>
+        <p style="font-size: 0.875rem; font-weight: 600; color: #22c55e; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">GitHub Actions &middot; 27 Gate Types &middot; Fail-Closed by Default</p>
         <h1>Quality Gates That <span>Can't Be Cheated</span></h1>
         <p>CI quality checks are easily gamed &mdash; developers delete tests to hit coverage thresholds. Evidence Gate enforces fail-closed gates with tamper-proof evidence chains. Blind Gates hide the exact threshold so gaming is structurally impossible.</p>
         <div class="hero-buttons">
@@ -837,7 +837,7 @@
               <td>Unlimited</td>
             </tr>
             <tr>
-              <td>All 25 gate types</td>
+              <td>All 27 gate types</td>
               <td class="check">&#10003;</td>
               <td class="featured check">&#10003;</td>
               <td class="check">&#10003;</td>
@@ -867,7 +867,37 @@
               <td class="check">&#10003;</td>
             </tr>
             <tr>
-              <td>Observe mode</td>
+              <td>Three enforcement modes (warn / observe / enforce)</td>
+              <td class="check">&#10003;</td>
+              <td class="featured check">&#10003;</td>
+              <td class="check">&#10003;</td>
+            </tr>
+            <tr>
+              <td>Config file (.evidencegate.yml) &mdash; zero required inputs</td>
+              <td class="check">&#10003;</td>
+              <td class="featured check">&#10003;</td>
+              <td class="check">&#10003;</td>
+            </tr>
+            <tr>
+              <td>SBOM gate (CycloneDX/SPDX structural validation)</td>
+              <td class="check">&#10003;</td>
+              <td class="featured check">&#10003;</td>
+              <td class="check">&#10003;</td>
+            </tr>
+            <tr>
+              <td>Provenance gate (SLSA build attestation)</td>
+              <td class="check">&#10003;</td>
+              <td class="featured check">&#10003;</td>
+              <td class="check">&#10003;</td>
+            </tr>
+            <tr>
+              <td>Signal-sorted Job Summary (Critical &gt; Warning &gt; Info)</td>
+              <td class="check">&#10003;</td>
+              <td class="featured check">&#10003;</td>
+              <td class="check">&#10003;</td>
+            </tr>
+            <tr>
+              <td>AI agent repair contract (retry_prompt output)</td>
               <td class="check">&#10003;</td>
               <td class="featured check">&#10003;</td>
               <td class="check">&#10003;</td>
@@ -986,6 +1016,7 @@
       <span class="code-key">- name:</span> <span class="code-string">Evidence Gate</span>
         <span class="code-key">uses:</span> <span class="code-string">evidence-gate/evidence-gate-action@v1</span>
         <span class="code-key">with:</span>
+          <span class="code-comment"># Or use .evidencegate.yml config file for zero required inputs</span>
           <span class="code-key">gate_type:</span> <span class="code-string">"test_coverage"</span>
           <span class="code-key">phase_id:</span> <span class="code-string">"testing"</span>
           <span class="code-key">evidence_files:</span> <span class="code-string">"coverage.json"</span></pre>
