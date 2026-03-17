@@ -1594,7 +1594,7 @@
           <div class="eco-layer-content">
             <div>
               <h4>evidence-gate-action <span class="eco-badge eco-badge-green">GitHub Actions</span></h4>
-              <p>Build-time quality gates &mdash; validates blueprints, policies, SBOM, and provenance before deploy</p>
+              <p>Build-time quality gates &mdash; validates NemoClaw blueprint.yaml configs, sandbox policies, SBOM, and provenance before merge</p>
             </div>
           </div>
         </div>
@@ -1603,8 +1603,8 @@
           <span class="eco-layer-label">Infra Layer</span>
           <div class="eco-layer-content">
             <div>
-              <h4>nemoclaw-governance <span class="eco-badge eco-badge-blue">Python CLI &amp; Library</span></h4>
-              <p>Validates NVIDIA NemoClaw blueprint.yaml and OpenShell sandbox policies before deployment</p>
+              <h4>nemoclaw-governance <span class="eco-badge eco-badge-blue">Python CLI + Library</span></h4>
+              <p>Validates NemoClaw Plugin+Blueprint configurations &mdash; checks blueprint.yaml schema, sandbox policy constraints, and inference profile settings against operator rules</p>
             </div>
           </div>
         </div>
@@ -1614,7 +1614,7 @@
           <div class="eco-layer-content">
             <div>
               <h4>agentgov <span class="eco-badge eco-badge-purple">Proxy + SDK</span></h4>
-              <p>Runtime cost controls, budget enforcement, and network governance for AI agent operations</p>
+              <p>Runtime budget enforcement for AI agent inference &mdash; hold/settle billing, per-request cost caps, streaming token controls, and operator-controlled network approval</p>
             </div>
           </div>
         </div>
@@ -1625,24 +1625,24 @@
         <div class="eco-tool-card">
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
           <h4>evidence-gate-action</h4>
-          <p>29 gate types including NemoClaw blueprint and policy validation. Fail-closed, tamper-proof CI gates.</p>
+          <p>29 gate types including NemoClaw blueprint and policy validation. Fail-closed CI gates with SARIF output and AI agent repair contracts.</p>
           <a href="https://github.com/evidence-gate/evidence-gate-action" class="eco-tool-link">View on GitHub &rarr;</a>
         </div>
         <div class="eco-tool-card">
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
           <h4>nemoclaw-governance</h4>
-          <p>CLI and Python library for NVIDIA NemoClaw configuration validation. <code>pip install nemoclaw-governance</code></p>
+          <p>Validates Plugin+Blueprint configurations for NVIDIA OpenShell sandboxes. Checks blueprint.yaml, policy.yaml, and inference profiles. <code>pip install nemoclaw-governance</code></p>
           <a href="https://github.com/evidence-gate/nemoclaw-governance" class="eco-tool-link">View on GitHub &rarr;</a>
         </div>
         <div class="eco-tool-card">
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
           <h4>agentgov</h4>
-          <p>Cost-aware governance proxy for AI agents. Budget enforcement, hold/settle billing, streaming controls.</p>
+          <p>Runtime governance proxy for NemoClaw sandboxes. Budget enforcement with hold/settle billing, 3 inference profile support (NVIDIA Cloud, Local NIM, Local vLLM), and operator-controlled network approval.</p>
           <a href="https://github.com/evidence-gate/agentgov" class="eco-tool-link">View on GitHub &rarr;</a>
         </div>
       </div>
 
-      <p style="text-align: center; margin-top: 2rem; color: #64748b; font-size: 0.9375rem;"><strong>Why three layers?</strong> NemoClaw provides sandbox isolation but has zero cost controls. agentgov adds runtime budget enforcement. Evidence Gate validates everything at CI time &mdash; before code reaches production.</p>
+      <p style="text-align: center; margin-top: 2rem; color: #64748b; font-size: 0.9375rem;"><strong>Why three layers?</strong> NemoClaw provides sandbox isolation with Landlock+seccomp+netns but has no cost controls. agentgov adds runtime budget enforcement and inference routing governance. Evidence Gate validates all configurations at CI time &mdash; before blueprints reach production sandboxes.</p>
     </div>
   </section>
 
