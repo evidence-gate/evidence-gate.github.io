@@ -545,6 +545,152 @@
     }
 
     /* ============================================
+       Architecture Subsections (Lifecycle + Routing)
+       ============================================ */
+    .arch-subsection {
+      margin-top: 3rem;
+    }
+
+    .arch-subsection-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .arch-subsection-desc {
+      font-size: 0.9375rem;
+      color: #64748b;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .lifecycle-pipeline {
+      display: flex;
+      flex-direction: row;
+      gap: 0;
+      align-items: stretch;
+      justify-content: center;
+      max-width: 880px;
+      margin: 0 auto;
+      overflow-x: auto;
+    }
+
+    .lifecycle-stage {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 1rem 0.75rem;
+      flex: 1;
+      min-width: 140px;
+      position: relative;
+    }
+
+    .lifecycle-stage-num {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.875rem;
+      color: white;
+      background: #22c55e;
+      margin-bottom: 0.5rem;
+    }
+
+    .lifecycle-stage h4 {
+      font-size: 0.9375rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 0.25rem;
+    }
+
+    .lifecycle-stage p {
+      font-size: 0.8125rem;
+      color: #64748b;
+      line-height: 1.4;
+    }
+
+    .lifecycle-arrow {
+      position: absolute;
+      right: -12px;
+      top: 18px;
+      width: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #cbd5e1;
+      font-size: 1.25rem;
+      z-index: 1;
+    }
+
+    .lifecycle-stage:last-child .lifecycle-arrow {
+      display: none;
+    }
+
+    .routing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    .routing-card {
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      border: 1px solid #e2e8f0;
+      background: white;
+      text-align: center;
+    }
+
+    .routing-card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 0.75rem;
+    }
+
+    .routing-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 0.25rem;
+    }
+
+    .routing-card .routing-model {
+      font-size: 0.8125rem;
+      color: #64748b;
+      font-family: monospace;
+      margin-bottom: 0.5rem;
+    }
+
+    .routing-card p {
+      font-size: 0.875rem;
+      color: #64748b;
+      line-height: 1.5;
+    }
+
+    .routing-card .routing-badge {
+      display: inline-block;
+      padding: 0.125rem 0.5rem;
+      border-radius: 9999px;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      margin-top: 0.75rem;
+    }
+
+    /* ============================================
        Ecosystem Section
        ============================================ */
     .ecosystem-diagram {
@@ -802,6 +948,15 @@
       .arch-legend {
         flex-direction: column;
         align-items: center;
+      }
+
+      .lifecycle-pipeline {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .routing-grid {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -1118,6 +1273,89 @@
         <div class="arch-legend-item"><span class="arch-legend-dot" style="background:#22c55e;"></span> Plugin (TypeScript)</div>
         <div class="arch-legend-item"><span class="arch-legend-dot" style="background:#2563eb;"></span> Blueprint (Python)</div>
         <div class="arch-legend-item"><span class="arch-legend-dot" style="background:#7c3aed;"></span> OpenShell Sandbox</div>
+      </div>
+
+      <!-- Sandbox Lifecycle Subsection -->
+      <div class="arch-subsection">
+        <h3 class="arch-subsection-title">Sandbox Lifecycle</h3>
+        <p class="arch-subsection-desc">Five stages from blueprint resolution to running sandbox &mdash; the Plugin handles stages 1&ndash;2, the Blueprint handles stages 3&ndash;5</p>
+        <div class="lifecycle-pipeline">
+          <div class="lifecycle-stage">
+            <div class="lifecycle-stage-num">1</div>
+            <h4>Resolve</h4>
+            <p>Plugin resolves blueprint version and downloads the versioned Python artifact</p>
+            <span class="lifecycle-arrow">&#8250;</span>
+          </div>
+          <div class="lifecycle-stage">
+            <div class="lifecycle-stage-num">2</div>
+            <h4>Verify</h4>
+            <p>Plugin checks blueprint signature and integrity before execution</p>
+            <span class="lifecycle-arrow">&#8250;</span>
+          </div>
+          <div class="lifecycle-stage">
+            <div class="lifecycle-stage-num" style="background:#2563eb;">3</div>
+            <h4>Plan</h4>
+            <p>Blueprint determines the OpenShell resources needed for the sandbox</p>
+            <span class="lifecycle-arrow">&#8250;</span>
+          </div>
+          <div class="lifecycle-stage">
+            <div class="lifecycle-stage-num" style="background:#2563eb;">4</div>
+            <h4>Apply</h4>
+            <p>Blueprint invokes OpenShell CLI to create and configure sandbox resources</p>
+            <span class="lifecycle-arrow">&#8250;</span>
+          </div>
+          <div class="lifecycle-stage">
+            <div class="lifecycle-stage-num" style="background:#2563eb;">5</div>
+            <h4>Status</h4>
+            <p>Blueprint reports sandbox readiness and connection endpoints</p>
+            <span class="lifecycle-arrow">&#8250;</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Inference Routing Subsection -->
+      <div class="arch-subsection">
+        <h3 class="arch-subsection-title">Inference Routing</h3>
+        <p class="arch-subsection-desc">Three provider profiles switchable at runtime &mdash; no sandbox restart required</p>
+        <div class="routing-grid">
+          <div class="routing-card">
+            <div class="routing-card-icon" style="background:#f0fdf4;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+              </svg>
+            </div>
+            <h4>NVIDIA Cloud</h4>
+            <p class="routing-model">Nemotron 3 Super 120B</p>
+            <p>Production inference via build.nvidia.com. Highest capability for demanding workloads.</p>
+            <span class="routing-badge" style="background:#f0fdf4; color:#16a34a; border:1px solid #bbf7d0;">Production</span>
+          </div>
+          <div class="routing-card">
+            <div class="routing-card-icon" style="background:#eff6ff;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <h4>Local NIM</h4>
+            <p class="routing-model">NIM container on local network</p>
+            <p>On-premises inference for testing and air-gapped environments where cloud access is restricted.</p>
+            <span class="routing-badge" style="background:#eff6ff; color:#2563eb; border:1px solid #bfdbfe;">Testing / Air-gapped</span>
+          </div>
+          <div class="routing-card">
+            <div class="routing-card-icon" style="background:#faf5ff;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </div>
+            <h4>Local vLLM</h4>
+            <p class="routing-model">vLLM server on localhost</p>
+            <p>Offline development with fast iteration cycles. No network dependency required.</p>
+            <span class="routing-badge" style="background:#faf5ff; color:#7c3aed; border:1px solid #ddd6fe;">Offline Dev</span>
+          </div>
+        </div>
+        <p style="text-align: center; margin-top: 2rem; color: #64748b; font-size: 0.875rem;">Providers can be switched at runtime without restarting the sandbox. Configuration is managed through the Blueprint's inference settings.</p>
       </div>
     </div>
   </section>
