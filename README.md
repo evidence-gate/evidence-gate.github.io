@@ -1,5 +1,5 @@
 # evidence-gate.github.io
 
-Landing page for [Evidence Gate](https://github.com/marketplace/actions/evidence-gate).
+Landing page for [Evidence Gate](https://evidence-gate.dev).
 
 Hosted at: https://evidence-gate.dev
