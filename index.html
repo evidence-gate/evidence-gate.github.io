@@ -1110,6 +1110,7 @@
         <li><a href="#ecosystem">Ecosystem</a></li>
         <li><a href="#pricing">Pricing</a></li>
         <li><a href="#quick-start">Quick Start</a></li>
+        <li><a href="#nemoclaw-quick-start">NemoClaw Quick Start</a></li>
         <li><a href="https://github.com/marketplace/actions/evidence-gate-action" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Get Started Free</a></li>
         <li class="lang-switch"><a href="/" class="lang-active">EN</a> / <a href="/ja/">JA</a></li>
       </ul>
@@ -1875,6 +1876,67 @@
           <p>Evidence Gate writes a detailed summary to <code>GITHUB_STEP_SUMMARY</code>, visible directly in your pull request's workflow run. Gate pass/fail results, evidence hashes, and threshold evaluations appear automatically &mdash; no configuration needed.</p>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- NemoClaw Integration Quick Start Section -->
+  <section id="nemoclaw-quick-start" class="section">
+    <div class="container">
+      <h2 class="section-title">NemoClaw Integration Quick Start</h2>
+      <p class="section-subtitle">Validate NemoClaw configs, enforce runtime budgets, and gate everything in CI &mdash; one workflow</p>
+      <div class="quickstart-steps">
+        <div class="qs-step">
+          <div class="code-block">
+<pre><span class="code-key">name:</span> <span class="code-string">NemoClaw Governance</span>
+<span class="code-key">on:</span> <span class="code-string">[pull_request]</span>
+
+<span class="code-key">permissions:</span>
+  <span class="code-key">contents:</span> <span class="code-string">read</span>
+  <span class="code-key">checks:</span> <span class="code-string">write</span>
+
+<span class="code-key">jobs:</span>
+  <span class="code-key">validate-blueprint:</span>
+    <span class="code-key">runs-on:</span> <span class="code-string">ubuntu-latest</span>
+    <span class="code-key">steps:</span>
+      <span class="code-key">- uses:</span> <span class="code-string">actions/checkout@v4</span>
+
+      <span class="code-comment"># Validate NemoClaw blueprint.yaml</span>
+      <span class="code-key">- name:</span> <span class="code-string">Blueprint Gate</span>
+        <span class="code-key">uses:</span> <span class="code-string">evidence-gate/evidence-gate-action@v1</span>
+        <span class="code-key">with:</span>
+          <span class="code-key">gate_type:</span> <span class="code-string">"nemoclaw_blueprint"</span>
+          <span class="code-key">evidence_files:</span> <span class="code-string">"blueprint.yaml"</span>
+
+  <span class="code-key">validate-policy:</span>
+    <span class="code-key">runs-on:</span> <span class="code-string">ubuntu-latest</span>
+    <span class="code-key">steps:</span>
+      <span class="code-key">- uses:</span> <span class="code-string">actions/checkout@v4</span>
+
+      <span class="code-comment"># Validate sandbox policy constraints</span>
+      <span class="code-key">- name:</span> <span class="code-string">Policy Gate</span>
+        <span class="code-key">uses:</span> <span class="code-string">evidence-gate/evidence-gate-action@v1</span>
+        <span class="code-key">with:</span>
+          <span class="code-key">gate_type:</span> <span class="code-string">"nemoclaw_policy"</span>
+          <span class="code-key">evidence_files:</span> <span class="code-string">"policy.yaml"</span>
+
+  <span class="code-key">enforce-budget:</span>
+    <span class="code-key">runs-on:</span> <span class="code-string">ubuntu-latest</span>
+    <span class="code-key">steps:</span>
+      <span class="code-key">- uses:</span> <span class="code-string">actions/checkout@v4</span>
+
+      <span class="code-comment"># Validate agentgov budget configuration</span>
+      <span class="code-key">- name:</span> <span class="code-string">Budget Gate</span>
+        <span class="code-key">uses:</span> <span class="code-string">evidence-gate/evidence-gate-action@v1</span>
+        <span class="code-key">with:</span>
+          <span class="code-key">gate_type:</span> <span class="code-string">"custom"</span>
+          <span class="code-key">phase_id:</span> <span class="code-string">"budget"</span>
+          <span class="code-key">evidence_files:</span> <span class="code-string">"agentgov.config.json"</span></pre>
+          </div>
+          <p style="color: #64748b; font-size: 0.9375rem; margin-top: 1.25rem; text-align: center;">
+            Three parallel jobs &mdash; blueprint structure, sandbox policy, and runtime budget &mdash; all validated before merge. Each gate is fail-closed: if any config is invalid, the PR is blocked.
+          </p>
+        </div>
       </div>
     </div>
   </section>
