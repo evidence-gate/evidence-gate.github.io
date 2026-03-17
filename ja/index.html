@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Evidence Gate — AIが不正できない品質ゲート</title>
+  <title>Evidence Gate — AIが閾値を読めない品質ゲート</title>
 
   <!-- OGP Meta Tags -->
-  <meta property="og:title" content="Evidence Gate — AIが不正できない品質ゲート">
+  <meta property="og:title" content="Evidence Gate — AIが閾値を読めない品質ゲート">
   <meta property="og:description" content="AI駆動CI/CD向けフェイルクローズド品質ゲート。Blind GatesでAIエージェントから判定基準を隠し、構造的に不正を防止。32種のゲートタイプ、NemoClawサンドボックス統合対応。オープンソースは無料。">
   <meta property="og:url" content="https://evidence-gate.dev/ja/">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Evidence Gate — AIが不正できない品質ゲート">
+  <meta name="twitter:title" content="Evidence Gate — AIが閾値を読めない品質ゲート">
   <meta name="twitter:description" content="AI駆動CI/CD向けフェイルクローズド品質ゲート。Blind GatesでAIエージェントから判定基準を隠し、構造的に不正を防止。32種のゲートタイプ、NemoClawサンドボックス統合対応。オープンソースは無料。">
 
   <!-- SEO Meta Tags -->
@@ -545,265 +545,6 @@
     }
 
     /* ============================================
-       Architecture Subsections (Lifecycle + Routing)
-       ============================================ */
-    .arch-subsection {
-      margin-top: 3rem;
-    }
-
-    .arch-subsection-title {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: #1e293b;
-      margin-bottom: 0.5rem;
-      text-align: center;
-    }
-
-    .arch-subsection-desc {
-      font-size: 0.9375rem;
-      color: #64748b;
-      text-align: center;
-      margin-bottom: 1.5rem;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .arch-narrative-bridge {
-      font-size: 1rem;
-      color: #475569;
-      line-height: 1.7;
-      max-width: 760px;
-      margin: 1.25rem auto 2rem;
-      text-align: center;
-    }
-
-    .lifecycle-pipeline {
-      display: flex;
-      flex-direction: row;
-      gap: 0;
-      align-items: stretch;
-      justify-content: center;
-      max-width: 880px;
-      margin: 0 auto;
-      overflow-x: auto;
-    }
-
-    .lifecycle-stage {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 1rem 0.75rem;
-      flex: 1;
-      min-width: 140px;
-      position: relative;
-    }
-
-    .lifecycle-stage-num {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 0.875rem;
-      color: white;
-      background: #22c55e;
-      margin-bottom: 0.5rem;
-    }
-
-    .lifecycle-stage h4 {
-      font-size: 0.9375rem;
-      font-weight: 700;
-      color: #1e293b;
-      margin-bottom: 0.25rem;
-    }
-
-    .lifecycle-stage p {
-      font-size: 0.8125rem;
-      color: #64748b;
-      line-height: 1.4;
-    }
-
-    .lifecycle-arrow {
-      position: absolute;
-      right: -12px;
-      top: 18px;
-      width: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #cbd5e1;
-      font-size: 1.25rem;
-      z-index: 1;
-    }
-
-    .lifecycle-stage:last-child .lifecycle-arrow {
-      display: none;
-    }
-
-    .routing-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      max-width: 880px;
-      margin: 0 auto;
-    }
-
-    .routing-card {
-      padding: 1.5rem;
-      border-radius: 0.75rem;
-      border: 1px solid #e2e8f0;
-      background: white;
-      text-align: center;
-    }
-
-    .routing-card-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 0.75rem;
-    }
-
-    .routing-card h4 {
-      font-size: 1rem;
-      font-weight: 700;
-      color: #1e293b;
-      margin-bottom: 0.25rem;
-    }
-
-    .routing-card .routing-model {
-      font-size: 0.8125rem;
-      color: #64748b;
-      font-family: monospace;
-      margin-bottom: 0.5rem;
-    }
-
-    .routing-card p {
-      font-size: 0.875rem;
-      color: #64748b;
-      line-height: 1.5;
-    }
-
-    .routing-card .routing-badge {
-      display: inline-block;
-      padding: 0.125rem 0.5rem;
-      border-radius: 9999px;
-      font-size: 0.6875rem;
-      font-weight: 600;
-      margin-top: 0.75rem;
-    }
-
-    /* ============================================
-       Security Guarantees Subsection
-       ============================================ */
-    .security-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-      max-width: 880px;
-      margin: 0 auto 2rem;
-    }
-
-    .security-card {
-      padding: 1.25rem 1.5rem;
-      border-radius: 0.75rem;
-      border: 1px solid #e2e8f0;
-      background: white;
-    }
-
-    .security-card-header {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .security-card-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .security-card h4 {
-      font-size: 0.9375rem;
-      font-weight: 700;
-      color: #1e293b;
-    }
-
-    .security-card p {
-      font-size: 0.8125rem;
-      color: #64748b;
-      line-height: 1.5;
-    }
-
-    .security-card code {
-      font-size: 0.75rem;
-      background: #f1f5f9;
-      padding: 0.125rem 0.375rem;
-      border-radius: 0.25rem;
-      color: #334155;
-    }
-
-    .security-constraints {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-      max-width: 880px;
-      margin: 0 auto;
-    }
-
-    .security-constraint-box {
-      padding: 1.25rem 1.5rem;
-      border-radius: 0.75rem;
-      border-left: 3px solid;
-      background: #f8fafc;
-    }
-
-    .security-constraint-box h5 {
-      font-size: 0.875rem;
-      font-weight: 700;
-      color: #1e293b;
-      margin-bottom: 0.5rem;
-    }
-
-    .security-constraint-box p {
-      font-size: 0.8125rem;
-      color: #64748b;
-      line-height: 1.5;
-    }
-
-    .security-constraint-box ul {
-      list-style: none;
-      padding: 0;
-      margin: 0.5rem 0 0;
-    }
-
-    .security-constraint-box li {
-      font-size: 0.8125rem;
-      color: #64748b;
-      padding: 0.25rem 0;
-      padding-left: 1rem;
-      position: relative;
-    }
-
-    .security-constraint-box li::before {
-      content: "\2192";
-      position: absolute;
-      left: 0;
-      color: #94a3b8;
-    }
-
-    /* ============================================
        Ecosystem Section
        ============================================ */
     .ecosystem-diagram {
@@ -1062,23 +803,6 @@
         flex-direction: column;
         align-items: center;
       }
-
-      .lifecycle-pipeline {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-      }
-
-      .routing-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .security-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .security-constraints {
-        grid-template-columns: 1fr;
-      }
     }
 
     @media (min-width: 769px) and (max-width: 1024px) {
@@ -1108,7 +832,7 @@
         <li><a href="#ai-governance">AIガバナンス</a></li>
         <li><a href="#pricing">料金</a></li>
         <li><a href="#quick-start">クイックスタート</a></li>
-        <li><a href="#nemoclaw-integration">NemoClaw統合</a></li>
+        <li><a href="#nemoclaw-integration">NemoClawガバナンス</a></li>
         <li><a href="https://github.com/marketplace/actions/evidence-gate-action" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">無料で始める</a></li>
         <li class="lang-switch"><a href="/">EN</a> / <a href="/ja/" class="lang-active">JA</a></li>
       </ul>
@@ -1120,8 +844,8 @@
     <div class="container">
       <div class="hero-content">
         <p style="font-size: 0.875rem; font-weight: 600; color: #22c55e; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">GitHub Actions &middot; 32種のゲートタイプ &middot; Blind Gates &middot; デフォルトFail-Closed</p>
-        <h1>AIが不正<span>できない</span>品質ゲート</h1>
-        <p>AIエージェントがコード生成だけでなく、テスト作成まで担うようになった今、見えている閾値は「品質基準」ではなく「最適化の目標」になりがちです。Evidence Gateは、Blind Gatesで判定基準をAIから隠したまま評価し、フェイルクローズドですべてのゲートを守ります。SBOM、来歴、テストカバレッジなど32種のゲートタイプに対応。</p>
+        <h1>AIが閾値を<span>読めない</span>品質ゲート</h1>
+        <p>AIコーディングをCI/CDに組み込む開発チーム向けの、フェイルクローズド品質ゲートです。Evidence GateはBlind Gatesで判定基準をAIから隠したまま評価し、テストカバレッジ、SBOM、来歴、NemoClaw設定まで、マージ前に検証します。</p>
         <div class="hero-buttons">
           <a href="https://github.com/marketplace/actions/evidence-gate-action" class="btn btn-primary">無料で始める</a>
           <a href="#quick-start" class="btn btn-secondary">クイックスタートを見る</a>
@@ -1182,7 +906,7 @@
   <section id="blind-gates" class="section">
     <div class="container">
       <h2 class="section-title">Blind Gates</h2>
-      <p class="section-subtitle">なぜ、AIエージェントに判定基準を見せないのか</p>
+      <p class="section-subtitle">判定基準を隠すことで、構造的に不正を防ぐ</p>
       <div class="blind-gate-explainer">
         <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram comparing Traditional Gates with visible thresholds versus Blind Gates with hidden criteria">
           <!-- Left side: Traditional Gate -->
@@ -1282,7 +1006,7 @@
   <section id="ai-governance" class="section section-alt">
     <div class="container">
       <h2 class="section-title">AIガバナンスを前提にした設計</h2>
-      <p class="section-subtitle">Evidence Gateは、透明性、安全性、説明責任といったAIガバナンスの基本原則に沿って設計されています。</p>
+      <p class="section-subtitle">フェイルクローズド、証跡整合性、監査可能性を中心に設計</p>
       <div class="steps-grid">
         <div class="step-card">
           <div class="step-icon">
@@ -1487,7 +1211,7 @@
             <tr class="cta-row">
               <td></td>
               <td><a href="https://github.com/marketplace/actions/evidence-gate-action" class="btn btn-outline-green">無料で始める</a></td>
-              <td class="featured"><a href="#pricing" class="btn btn-primary">Proトライアル開始</a></td>
+              <td class="featured"><a href="mailto:support@allnew.co.jp" class="btn btn-primary">お問い合わせ</a></td>
               <td><a href="mailto:support@allnew.co.jp" class="btn btn-secondary">営業に問い合わせ</a></td>
             </tr>
           </tfoot>
@@ -1559,8 +1283,8 @@
   <section id="nemoclaw-integration" class="section" style="background: linear-gradient(135deg, #f0f9ff 0%, #f0fdf4 100%); padding: 3rem 0;">
     <div class="container" style="text-align: center;">
       <p style="font-size: 0.875rem; font-weight: 600; color: #2563eb; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">NVIDIA NemoClaw + Evidence Gate</p>
-      <h2 class="section-title">NemoClawサンドボックスとの統合</h2>
-      <p style="font-size: 1.125rem; color: #475569; max-width: 700px; margin: 0 auto; line-height: 1.7;">Evidence Gateの品質ゲートは、CIパイプラインだけでなく、NemoClawサンドボックスのブループリント、ポリシー、推論設定まで検証できます。ここからは、NemoClawとの統合について説明します。</p>
+      <h2 class="section-title">NemoClawガバナンス</h2>
+      <p style="font-size: 1.125rem; color: #475569; max-width: 700px; margin: 0 auto; line-height: 1.7;">NemoClawは、NVIDIAが提供するAIエージェント実行用のサンドボックス基盤です。Evidence Gateは、NemoClawのブループリント、ポリシー、推論設定をCI段階で検証し、安全なサンドボックスデプロイを保証します。</p>
     </div>
   </section>
 
@@ -1569,7 +1293,6 @@
     <div class="container">
       <h2 class="section-title">Evidence Gateが守るもの</h2>
       <p class="section-subtitle">CI上のチェックだけでは不十分です。AIエージェントは、実行時にもリスクを持ち込みます。Evidence Gateは、AIエージェントが動作するNemoClawインフラまで含めて検証します。</p>
-      <p class="arch-narrative-bridge">パイプラインを通過した後、AIエージェントはNemoClawサンドボックス上で実行されます。このサンドボックスに設定ミスがあると、隔離が不十分になったり、リソース消費が制御不能になったりするおそれがあります。そのためEvidence Gateは、ブループリント、ポリシー、推論設定をデプロイ前に検証します。</p>
 
       <div class="arch-diagram-container">
         <svg viewBox="0 0 880 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="NemoClaw Plugin+Blueprint architecture diagram showing the Plugin resolving and executing the Blueprint as a subprocess to create OpenShell sandboxes">
@@ -1649,186 +1372,12 @@
         <div class="arch-legend-item"><span class="arch-legend-dot" style="background:#7c3aed;"></span> OpenShell Sandbox</div>
       </div>
 
-      <!-- Sandbox Lifecycle Subsection -->
-      <div class="arch-subsection">
-        <h3 class="arch-subsection-title">サンドボックスライフサイクル</h3>
-        <p class="arch-subsection-desc">ブループリント解決から実行中サンドボックスまでの5段階</p>
-        <div class="lifecycle-pipeline">
-          <div class="lifecycle-stage">
-            <div class="lifecycle-stage-num">1</div>
-            <h4>Resolve</h4>
-            <p>Pluginがブループリントのバージョンを解決し、対象のPythonアーティファクトを取得します。</p>
-            <span class="lifecycle-arrow">&#8250;</span>
-          </div>
-          <div class="lifecycle-stage">
-            <div class="lifecycle-stage-num">2</div>
-            <h4>Verify</h4>
-            <p>Pluginが実行前に、ブループリントの署名と整合性を検証します。</p>
-            <span class="lifecycle-arrow">&#8250;</span>
-          </div>
-          <div class="lifecycle-stage">
-            <div class="lifecycle-stage-num" style="background:#2563eb;">3</div>
-            <h4>Plan</h4>
-            <p>Blueprintが、必要なOpenShellリソースを決定します。</p>
-            <span class="lifecycle-arrow">&#8250;</span>
-          </div>
-          <div class="lifecycle-stage">
-            <div class="lifecycle-stage-num" style="background:#2563eb;">4</div>
-            <h4>Apply</h4>
-            <p>BlueprintがOpenShell CLIを呼び出し、サンドボックスのリソース作成と設定を行います。</p>
-            <span class="lifecycle-arrow">&#8250;</span>
-          </div>
-          <div class="lifecycle-stage">
-            <div class="lifecycle-stage-num" style="background:#2563eb;">5</div>
-            <h4>Status</h4>
-            <p>Blueprintが、サンドボックスの準備状態と接続先エンドポイントを返します。</p>
-            <span class="lifecycle-arrow">&#8250;</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Inference Routing Subsection -->
-      <div class="arch-subsection">
-        <h3 class="arch-subsection-title">推論ルーティング</h3>
-        <p class="arch-subsection-desc">ランタイムで切り替えられる3つのプロバイダープロファイル</p>
-        <div class="routing-grid">
-          <div class="routing-card">
-            <div class="routing-card-icon" style="background:#f0fdf4;">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-              </svg>
-            </div>
-            <h4>NVIDIA Cloud</h4>
-            <p class="routing-model">Nemotron 3 Super 120B</p>
-            <p>本番向けの推論プロファイルです。高負荷ワークロードに対応します。</p>
-            <span class="routing-badge" style="background:#f0fdf4; color:#16a34a; border:1px solid #bbf7d0;">本番</span>
-          </div>
-          <div class="routing-card">
-            <div class="routing-card-icon" style="background:#eff6ff;">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <rect x="2" y="3" width="20" height="14" rx="2"></rect>
-                <line x1="8" y1="21" x2="16" y2="21"></line>
-                <line x1="12" y1="17" x2="12" y2="21"></line>
-              </svg>
-            </div>
-            <h4>Local NIM</h4>
-            <p class="routing-model">NIM container on local network</p>
-            <p>クラウド接続が制限される検証環境やエアギャップ環境向けのオンプレミス構成です。</p>
-            <span class="routing-badge" style="background:#eff6ff; color:#2563eb; border:1px solid #bfdbfe;">テスト / エアギャップ</span>
-          </div>
-          <div class="routing-card">
-            <div class="routing-card-icon" style="background:#faf5ff;">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <polyline points="16 18 22 12 16 6"></polyline>
-                <polyline points="8 6 2 12 8 18"></polyline>
-              </svg>
-            </div>
-            <h4>Local vLLM</h4>
-            <p class="routing-model">vLLM server on localhost</p>
-            <p>ローカル開発向けです。ネットワークに依存せず、高速に試行できます。</p>
-            <span class="routing-badge" style="background:#faf5ff; color:#7c3aed; border:1px solid #ddd6fe;">オフライン開発</span>
-          </div>
-        </div>
-        <p style="text-align: center; margin-top: 2rem; color: #64748b; font-size: 0.875rem;">これらのプロバイダーは、サンドボックスを再起動せずにランタイムで切り替えられます。設定はBlueprintの推論定義で管理します。</p>
-      </div>
-
-      <!-- Security Guarantees Subsection -->
-      <div class="arch-subsection">
-        <h3 class="arch-subsection-title">セキュリティ保証</h3>
-        <p class="arch-subsection-desc">Evidence Gateは、サンドボックスが4つの必須分離レイヤーを満たしているかを検証します。どれか1つでも不備があれば、パイプラインを停止します。</p>
-
-        <div class="security-grid">
-          <!-- Landlock LSM -->
-          <div class="security-card">
-            <div class="security-card-header">
-              <div class="security-card-icon" style="background:#f0fdf4;">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                </svg>
-              </div>
-              <h4>Landlock LSM</h4>
-            </div>
-            <p>カーネルレベルでファイルシステムアクセスを制御します。許可されたパス以外にはアクセスできません。</p>
-          </div>
-
-          <!-- seccomp Filtering -->
-          <div class="security-card">
-            <div class="security-card-header">
-              <div class="security-card-icon" style="background:#eff6ff;">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
-                </svg>
-              </div>
-              <h4>seccomp Filtering</h4>
-            </div>
-            <p>危険なシステムコールを制限し、不要なカーネル操作をブロックします。</p>
-          </div>
-
-          <!-- Network Namespace Isolation -->
-          <div class="security-card">
-            <div class="security-card-header">
-              <div class="security-card-icon" style="background:#faf5ff;">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <circle cx="12" cy="12" r="10"/>
-                  <line x1="2" y1="12" x2="22" y2="12"/>
-                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                </svg>
-              </div>
-              <h4>Network Namespace Isolation</h4>
-            </div>
-            <p>各サンドボックスは独立したネットワーク名前空間で動作し、通信はデフォルト拒否です。許可されたエンドポイントにのみ接続できます。</p>
-          </div>
-
-          <!-- Inference Control -->
-          <div class="security-card">
-            <div class="security-card-header">
-              <div class="security-card-icon" style="background:#f8fafc;">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <rect x="4" y="4" width="16" height="16" rx="2"/>
-                  <rect x="9" y="9" width="6" height="6"/>
-                  <line x1="9" y1="2" x2="9" y2="4"/>
-                  <line x1="15" y1="2" x2="15" y2="4"/>
-                  <line x1="9" y1="20" x2="9" y2="22"/>
-                  <line x1="15" y1="20" x2="15" y2="22"/>
-                  <line x1="20" y1="9" x2="22" y2="9"/>
-                  <line x1="20" y1="15" x2="22" y2="15"/>
-                  <line x1="2" y1="9" x2="4" y2="9"/>
-                  <line x1="2" y1="15" x2="4" y2="15"/>
-                </svg>
-              </div>
-              <h4>Inference Control</h4>
-            </div>
-            <p>LLM推論はOpenShellゲートウェイ経由で行われます。モデルの許可リスト、レート制限、コスト上限を適用できます。</p>
-          </div>
-        </div>
-
-        <div class="security-constraints">
-          <!-- Filesystem Constraints -->
-          <div class="security-constraint-box" style="border-left-color: #22c55e;">
-            <h5>ファイルシステム</h5>
-            <ul>
-              <li><code>/sandbox</code> &mdash; 読み書き可能な作業ディレクトリ</li>
-              <li><code>/tmp</code> &mdash; 一時ファイル用</li>
-              <li>その他すべてのパス &mdash; 読み取り専用、またはアクセス不可</li>
-            </ul>
-          </div>
-
-          <!-- Network Constraints -->
-          <div class="security-constraint-box" style="border-left-color: #7c3aed;">
-            <h5>ネットワーク</h5>
-            <ul>
-              <li>通信はデフォルト拒否</li>
-              <li>許可先は<code>blueprint.yaml</code>に明示</li>
-              <li>未承認リクエストは遮断し、オペレーター確認に回す</li>
-              <li>推論トラフィックはゲートウェイ経由のみ</li>
-            </ul>
-          </div>
-        </div>
-
-        <p style="text-align: center; margin-top: 2rem; color: #64748b; font-size: 0.875rem;">
-          Evidence Gateの<strong>blueprint</strong>ゲートと<strong>policy</strong>ゲートは、これら4つの分離レイヤーが本番投入前に正しく構成されていることを確認します。
-        </p>
-      </div>
+      <p style="text-align: center; margin-top: 2rem; color: #475569; font-size: 1rem; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.7;">
+        NemoClawはPlugin（TypeScript）とBlueprint（Python）の2層構成で、Landlock LSM、seccomp、ネットワーク名前空間、推論制御の4層分離を提供します。Evidence Gateは、これらの設定がデプロイ前に正しく構成されていることを検証します。
+      </p>
+      <p style="text-align: center; margin-top: 1rem;">
+        <a href="https://github.com/evidence-gate/nemoclaw-governance" style="color: #2563eb; font-weight: 600;">アーキテクチャの詳細はGitHubで →</a>
+      </p>
     </div>
   </section>
 
@@ -1845,7 +1394,7 @@
           <div class="eco-layer-content">
             <div>
               <h4>evidence-gate-action <span class="eco-badge eco-badge-green">GitHub Actions</span></h4>
-              <p>GitHub Actions上で動作し、ブループリント、ポリシー、SBOM、来歴をデプロイ前に検証します。</p>
+              <p>ブループリント、ポリシー、SBOM、来歴をマージ前に検証</p>
             </div>
           </div>
         </div>
@@ -1855,7 +1404,7 @@
           <div class="eco-layer-content">
             <div>
               <h4>nemoclaw-governance <span class="eco-badge eco-badge-blue">Python CLI + Library</span></h4>
-              <p>NemoClawの blueprint.yaml とOpenShellサンドボックスポリシーを検証するCLI / Pythonライブラリです。</p>
+              <p>blueprint.yaml とサンドボックスポリシーの構造検証</p>
             </div>
           </div>
         </div>
@@ -1865,7 +1414,7 @@
           <div class="eco-layer-content">
             <div>
               <h4>agentgov <span class="eco-badge eco-badge-purple">Proxy + SDK</span></h4>
-              <p>AIエージェントのコスト管理、予算制御、ネットワーク統制を担います。</p>
+              <p>予算制御、コスト管理、ネットワーク統制</p>
             </div>
           </div>
         </div>
