@@ -1121,9 +1121,9 @@
   <section class="hero">
     <div class="container">
       <div class="hero-content">
-        <p style="font-size: 0.875rem; font-weight: 600; color: #22c55e; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">GitHub Actions &middot; 29 Gate Types &middot; Fail-Closed by Default</p>
-        <h1>Quality Gates That <span>AI Can't Game</span></h1>
-        <p>AI agents now write your code AND your tests &mdash; and they optimize for the metrics they can see. An LLM told to "reach 80% coverage" will generate hollow tests that hit 80.1% while proving nothing. Evidence Gate hides the criteria entirely with Blind Gates, making metric gaming structurally impossible.</p>
+        <p style="font-size: 0.875rem; font-weight: 600; color: #22c55e; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">GitHub Actions &middot; 29 Gate Types &middot; NemoClaw Governance &middot; Fail-Closed</p>
+        <h1>Quality Gates for <span>Full-Stack AI Governance</span></h1>
+        <p>AI agents write your code, your tests, and now operate your infrastructure through NemoClaw sandboxes. Evidence Gate enforces quality at every layer &mdash; Blind Gates that hide CI criteria from gaming, plus blueprint and policy validation that ensures NemoClaw sandboxes deploy with correct isolation, budgets, and inference routing. Full-stack governance, fail-closed by default.</p>
         <div class="hero-buttons">
           <a href="https://github.com/marketplace/actions/evidence-gate-action" class="btn btn-primary">Get Started Free</a>
           <a href="#quick-start" class="btn btn-secondary">View Quick Start</a>
@@ -1136,12 +1136,12 @@
           <span class="hero-code-dot hero-code-dot--green"></span>
           <span class="hero-code-label">.github/workflows/ci.yml</span>
         </div>
-<pre><span class="code-comment"># Add quality gates in 3 lines</span>
+<pre><span class="code-comment"># Validate NemoClaw blueprint before deploy</span>
 <span class="code-key">- uses:</span> <span class="code-string">evidence-gate/evidence-gate-action@v1</span>
   <span class="code-key">with:</span>
-    <span class="code-key">gate_type:</span> <span class="code-string">"test_coverage"</span>
-    <span class="code-key">phase_id:</span> <span class="code-string">"testing"</span>
-    <span class="code-key">evidence_files:</span> <span class="code-string">"coverage.json"</span></pre>
+    <span class="code-key">gate_type:</span> <span class="code-string">"nemoclaw_blueprint"</span>
+    <span class="code-key">phase_id:</span> <span class="code-string">"deploy"</span>
+    <span class="code-key">evidence_files:</span> <span class="code-string">"blueprint.yaml"</span></pre>
       </div>
     </div>
   </section>
