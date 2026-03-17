@@ -569,6 +569,15 @@
       margin-right: auto;
     }
 
+    .arch-narrative-bridge {
+      font-size: 1rem;
+      color: #475569;
+      line-height: 1.7;
+      max-width: 760px;
+      margin: 1.25rem auto 2rem;
+      text-align: center;
+    }
+
     .lifecycle-pipeline {
       display: flex;
       flex-direction: row;
@@ -1194,8 +1203,9 @@
   <!-- NemoClaw Architecture Section -->
   <section id="nemoclaw-architecture" class="section section-alt">
     <div class="container">
-      <h2 class="section-title">NemoClaw Architecture</h2>
-      <p class="section-subtitle">Plugin + Blueprint composition &mdash; minimal CLI extension, independently versioned sandbox orchestration</p>
+      <h2 class="section-title">What Evidence Gate Protects</h2>
+      <p class="section-subtitle">CI gates alone aren&rsquo;t enough &mdash; AI agents also operate at runtime. Evidence Gate validates the NemoClaw infrastructure that runs those agents.</p>
+      <p class="arch-narrative-bridge">When your pipeline clears the Evidence Gate, it deploys <strong>NemoClaw sandboxes</strong> &mdash; isolated environments where AI agents execute. Understanding this runtime layer explains <em>why</em> Evidence Gate validates blueprints, policies, and inference configuration: a misconfigured sandbox can escape isolation or consume unbounded resources. The architecture below shows what Evidence Gate is guarding.</p>
 
       <div class="arch-diagram-container">
         <svg viewBox="0 0 880 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="NemoClaw Plugin+Blueprint architecture diagram showing the Plugin resolving and executing the Blueprint as a subprocess to create OpenShell sandboxes">
