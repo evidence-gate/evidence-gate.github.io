@@ -7,15 +7,15 @@
 
   <!-- OGP Meta Tags -->
   <meta property="og:title" content="Evidence Gate — AIが閾値を読めない品質ゲート">
-  <meta property="og:description" content="AI駆動CI/CD向けフェイルクローズド品質ゲート。Blind GatesでAIエージェントから判定基準を隠し、構造的に不正を防止。32種のゲートタイプ、NemoClawサンドボックス統合対応。オープンソースは無料。">
+  <meta property="og:description" content="AI駆動CI/CD向けフェイルクローズド品質ゲート。Blind GatesでAIエージェントから判定基準を隠したまま評価し、テスト、SBOM、来歴、NemoClaw設定をマージ前に検証。32種のゲートタイプに対応。">
   <meta property="og:url" content="https://evidence-gate.dev/ja/">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Evidence Gate — AIが閾値を読めない品質ゲート">
-  <meta name="twitter:description" content="AI駆動CI/CD向けフェイルクローズド品質ゲート。Blind GatesでAIエージェントから判定基準を隠し、構造的に不正を防止。32種のゲートタイプ、NemoClawサンドボックス統合対応。オープンソースは無料。">
+  <meta name="twitter:description" content="AI駆動CI/CD向けフェイルクローズド品質ゲート。Blind GatesでAIエージェントから判定基準を隠したまま評価し、テスト、SBOM、来歴、NemoClaw設定をマージ前に検証。32種のゲートタイプに対応。">
 
   <!-- SEO Meta Tags -->
-  <meta name="description" content="AI駆動CI/CD向けフェイルクローズド品質ゲート。Blind GatesでAIエージェントから判定基準を隠し、構造的に不正を防止。32種のゲートタイプ、NemoClawサンドボックス統合対応。オープンソースは無料。">
+  <meta name="description" content="AI駆動CI/CD向けフェイルクローズド品質ゲート。Blind GatesでAIエージェントから判定基準を隠したまま評価し、テスト、SBOM、来歴、NemoClaw設定をマージ前に検証。32種のゲートタイプに対応。">
   <link rel="canonical" href="https://evidence-gate.dev/ja/">
   <link rel="alternate" hreflang="en" href="https://evidence-gate.dev/">
   <link rel="alternate" hreflang="ja" href="https://evidence-gate.dev/ja/">
@@ -27,7 +27,7 @@
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "Evidence Gate",
-    "description": "AI駆動CI/CDパイプライン向けフェイルクローズド品質ゲート — Blind Gates、32種のゲートタイプ、NemoClawサンドボックスガバナンス対応",
+    "description": "AI駆動CI/CD向けフェイルクローズド品質ゲート。Blind GatesでAIエージェントから判定基準を隠したまま評価し、テスト、SBOM、来歴、NemoClaw設定をマージ前に検証。32種のゲートタイプに対応。",
     "url": "https://evidence-gate.dev",
     "applicationCategory": "DeveloperApplication",
     "operatingSystem": "GitHub Actions",
@@ -906,22 +906,22 @@
   <section id="blind-gates" class="section">
     <div class="container">
       <h2 class="section-title">Blind Gates</h2>
-      <p class="section-subtitle">判定基準を隠すことで、構造的に不正を防ぐ</p>
+      <p class="section-subtitle">判定基準を隠すことで、閾値への過剰最適化を防ぐ</p>
       <div class="blind-gate-explainer">
         <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram comparing Traditional Gates with visible thresholds versus Blind Gates with hidden criteria">
           <!-- Left side: Traditional Gate -->
-          <text x="150" y="28" font-size="16" font-weight="700" fill="#1e293b" text-anchor="middle">Traditional Gate</text>
+          <text x="150" y="28" font-size="16" font-weight="700" fill="#1e293b" text-anchor="middle">従来のゲート</text>
 
           <!-- Pipeline arrow left -->
           <rect x="20" y="60" width="100" height="40" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
-          <text x="70" y="85" font-size="11" fill="#475569" text-anchor="middle">CI Pipeline</text>
+          <text x="70" y="85" font-size="11" fill="#475569" text-anchor="middle">CIパイプライン</text>
           <line x1="120" y1="80" x2="155" y2="80" stroke="#cbd5e1" stroke-width="2" marker-end="url(#arrowGray)"/>
 
           <!-- Gate with visible threshold -->
           <rect x="155" y="50" width="90" height="60" rx="8" fill="#fef2f2" stroke="#ef4444" stroke-width="2"/>
           <text x="200" y="72" font-size="10" font-weight="600" fill="#ef4444" text-anchor="middle">GATE</text>
-          <text x="200" y="88" font-size="9" fill="#ef4444" text-anchor="middle">80% coverage</text>
-          <text x="200" y="102" font-size="8" fill="#dc2626" text-anchor="middle">(visible)</text>
+          <text x="200" y="88" font-size="9" fill="#ef4444" text-anchor="middle">カバレッジ 80%</text>
+          <text x="200" y="102" font-size="8" fill="#dc2626" text-anchor="middle">（公開）</text>
 
           <!-- Arrow out -->
           <line x1="245" y1="80" x2="275" y2="80" stroke="#cbd5e1" stroke-width="2" marker-end="url(#arrowGray)"/>
@@ -932,15 +932,15 @@
           <circle cx="200" cy="160" r="22" fill="#fef2f2" stroke="#ef4444" stroke-width="1.5"/>
           <ellipse cx="200" cy="160" rx="14" ry="9" fill="none" stroke="#ef4444" stroke-width="1.5"/>
           <circle cx="200" cy="160" r="4" fill="#ef4444"/>
-          <text x="200" y="195" font-size="9" fill="#ef4444" text-anchor="middle" font-weight="600">AI agent reads threshold</text>
+          <text x="200" y="195" font-size="9" fill="#ef4444" text-anchor="middle" font-weight="600">AIが閾値を読み取る</text>
 
           <!-- Dotted line from eye to gate -->
           <line x1="200" y1="138" x2="200" y2="110" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4,3"/>
 
           <!-- Problem label -->
           <rect x="110" y="215" width="180" height="50" rx="8" fill="#fef2f2" stroke="#fecaca" stroke-width="1"/>
-          <text x="200" y="236" font-size="10" fill="#dc2626" text-anchor="middle" font-weight="600">LLM generates hollow tests</text>
-          <text x="200" y="252" font-size="10" fill="#dc2626" text-anchor="middle" font-weight="600">targeting exactly 80.1%</text>
+          <text x="200" y="236" font-size="10" fill="#dc2626" text-anchor="middle" font-weight="600">LLMが空疎なテストを生成</text>
+          <text x="200" y="252" font-size="10" fill="#dc2626" text-anchor="middle" font-weight="600">ちょうど80.1%を狙って</text>
 
           <!-- Center divider -->
           <line x1="300" y1="15" x2="300" y2="285" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="6,4"/>
@@ -952,7 +952,7 @@
 
           <!-- Pipeline arrow right -->
           <rect x="320" y="60" width="100" height="40" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
-          <text x="370" y="85" font-size="11" fill="#475569" text-anchor="middle">CI Pipeline</text>
+          <text x="370" y="85" font-size="11" fill="#475569" text-anchor="middle">CIパイプライン</text>
           <line x1="420" y1="80" x2="455" y2="80" stroke="#cbd5e1" stroke-width="2" marker-end="url(#arrowGray)"/>
 
           <!-- Gate with hidden threshold + lock -->
@@ -975,7 +975,7 @@
           <circle cx="500" cy="160" r="4" fill="#94a3b8"/>
           <!-- Strike-through line -->
           <line x1="483" y1="145" x2="517" y2="175" stroke="#ef4444" stroke-width="2.5"/>
-          <text x="500" y="195" font-size="9" fill="#16a34a" text-anchor="middle" font-weight="600">AI agent cannot see criteria</text>
+          <text x="500" y="195" font-size="9" fill="#16a34a" text-anchor="middle" font-weight="600">AIが基準を読めない</text>
 
           <!-- Dotted line from eye to gate (blocked) -->
           <line x1="500" y1="138" x2="500" y2="116" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="4,3"/>
@@ -983,8 +983,8 @@
 
           <!-- Solution label -->
           <rect x="410" y="215" width="180" height="50" rx="8" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1"/>
-          <text x="500" y="236" font-size="10" fill="#16a34a" text-anchor="middle" font-weight="600">LLM cannot game what</text>
-          <text x="500" y="252" font-size="10" fill="#16a34a" text-anchor="middle" font-weight="600">it cannot see</text>
+          <text x="500" y="236" font-size="10" fill="#16a34a" text-anchor="middle" font-weight="600">見えないものは</text>
+          <text x="500" y="252" font-size="10" fill="#16a34a" text-anchor="middle" font-weight="600">不正できない</text>
 
           <!-- Arrow marker definition -->
           <defs>
@@ -1450,7 +1450,7 @@
   <section id="nemoclaw-quick-start" class="section">
     <div class="container">
       <h2 class="section-title">NemoClaw統合クイックスタート</h2>
-      <p class="section-subtitle">NemoClaw設定の検証、ランタイム予算の強制、すべてをCIでゲート &mdash; 1つのワークフロー</p>
+      <p class="section-subtitle">NemoClaw設定の検証をCIに追加 &mdash; 詳細は<a href="https://github.com/evidence-gate/nemoclaw-governance" style="color: #2563eb;">GitHubドキュメント</a>へ</p>
       <div class="quickstart-steps">
         <div class="qs-step">
           <div class="code-block">
@@ -1500,7 +1500,7 @@
           <span class="code-key">evidence_files:</span> <span class="code-string">"agentgov.config.json"</span></pre>
           </div>
           <p style="color: #64748b; font-size: 0.9375rem; margin-top: 1.25rem; text-align: center;">
-            3つの並列ジョブ &mdash; ブループリント構造、サンドボックスポリシー、ランタイム予算 &mdash; すべてマージ前に検証。各ゲートはフェイルクローズド: いずれかの設定が無効であればPRがブロックされます。
+            ブループリント構造、サンドボックスポリシー、ランタイム予算を並列で検証します。
           </p>
         </div>
       </div>
@@ -1512,7 +1512,7 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-brand">
-          <p>GitHub Actionsで動作。Evidence Gateはすべてのデプロイパイプラインで品質基準を強制します。</p>
+          <p>GitHub Actionsに組み込み、デプロイ前の品質確認を自動化します。</p>
         </div>
         <div class="footer-links">
           <a href="https://github.com/evidence-gate">GitHub</a>
