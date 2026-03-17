@@ -1313,6 +1313,275 @@
     </div>
   </section>
 
+  <!-- NemoClaw Architecture Section -->
+  <section id="nemoclaw-architecture" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Evidence Gateが守るもの</h2>
+      <p class="section-subtitle">CIゲートだけでは不十分 &mdash; AIエージェントはランタイムでも動作します。Evidence GateはAIエージェントを実行するNemoClawインフラを検証します。</p>
+      <p class="arch-narrative-bridge">パイプラインがEvidence Gateを通過すると、<strong>NemoClawサンドボックス</strong> &mdash; AIエージェントが実行される隔離環境 &mdash; にデプロイされます。このランタイム層を理解すれば、Evidence Gateがブループリント、ポリシー、推論設定を検証する<em>理由</em>がわかります。設定ミスのあるサンドボックスは分離を突破したり、リソースを無制限に消費する可能性があります。以下のアーキテクチャ図はEvidence Gateが守る対象を示しています。</p>
+
+      <div class="arch-diagram-container">
+        <svg viewBox="0 0 880 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="NemoClaw Plugin+Blueprint architecture diagram showing the Plugin resolving and executing the Blueprint as a subprocess to create OpenShell sandboxes">
+          <defs>
+            <marker id="arrowArch" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+              <polygon points="0 0, 10 3.5, 0 7" fill="#94a3b8"/>
+            </marker>
+            <marker id="arrowArchGreen" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+              <polygon points="0 0, 10 3.5, 0 7" fill="#22c55e"/>
+            </marker>
+            <marker id="arrowArchBlue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+              <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
+            </marker>
+            <marker id="arrowArchPurple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+              <polygon points="0 0, 10 3.5, 0 7" fill="#7c3aed"/>
+            </marker>
+          </defs>
+
+          <!-- OpenClaw CLI box (leftmost, gray) -->
+          <rect x="20" y="70" width="150" height="140" rx="12" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2"/>
+          <text x="95" y="106" font-size="13" font-weight="700" fill="#475569" text-anchor="middle">OpenClaw CLI</text>
+          <line x1="60" y1="116" x2="130" y2="116" stroke="#e2e8f0" stroke-width="1"/>
+          <text x="95" y="135" font-size="11" fill="#94a3b8" text-anchor="middle">extends CLI</text>
+          <text x="95" y="152" font-size="11" fill="#94a3b8" text-anchor="middle">command</text>
+          <text x="95" y="175" font-size="10" fill="#cbd5e1" text-anchor="middle">nemo run</text>
+
+          <!-- Arrow: OpenClaw CLI -> Plugin -->
+          <line x1="170" y1="140" x2="213" y2="140" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowArch)"/>
+
+          <!-- Plugin box (green) -->
+          <rect x="215" y="50" width="185" height="180" rx="12" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
+          <text x="307" y="84" font-size="13" font-weight="700" fill="#15803d" text-anchor="middle">NemoClaw Plugin</text>
+          <text x="307" y="101" font-size="10" fill="#4ade80" text-anchor="middle">TypeScript package</text>
+          <text x="307" y="112" font-size="10" fill="#4ade80" text-anchor="middle">extending OpenClaw CLI</text>
+          <line x1="240" y1="122" x2="374" y2="122" stroke="#bbf7d0" stroke-width="1"/>
+          <text x="307" y="143" font-size="11" fill="#16a34a" text-anchor="middle" font-weight="600">resolve</text>
+          <text x="307" y="162" font-size="11" fill="#16a34a" text-anchor="middle" font-weight="600">verify</text>
+          <text x="307" y="181" font-size="11" fill="#16a34a" text-anchor="middle" font-weight="600">execute</text>
+          <text x="307" y="217" font-size="9" fill="#86efac" text-anchor="middle">@evidence-gate/nemoclaw</text>
+
+          <!-- Arrow: Plugin -> Blueprint (labeled "subprocess") -->
+          <line x1="400" y1="140" x2="443" y2="140" stroke="#22c55e" stroke-width="2" marker-end="url(#arrowArchGreen)"/>
+          <text x="421" y="131" font-size="9" fill="#22c55e" text-anchor="middle" font-weight="600">subprocess</text>
+
+          <!-- Blueprint box (blue) -->
+          <rect x="445" y="50" width="185" height="180" rx="12" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+          <text x="537" y="84" font-size="13" font-weight="700" fill="#1d4ed8" text-anchor="middle">NemoClaw Blueprint</text>
+          <text x="537" y="101" font-size="10" fill="#60a5fa" text-anchor="middle">Versioned Python artifact</text>
+          <text x="537" y="112" font-size="10" fill="#60a5fa" text-anchor="middle">(blueprint.yaml)</text>
+          <line x1="470" y1="122" x2="604" y2="122" stroke="#bfdbfe" stroke-width="1"/>
+          <text x="537" y="143" font-size="11" fill="#2563eb" text-anchor="middle" font-weight="600">plan sandbox</text>
+          <text x="537" y="162" font-size="11" fill="#2563eb" text-anchor="middle" font-weight="600">apply policy</text>
+          <text x="537" y="181" font-size="11" fill="#2563eb" text-anchor="middle" font-weight="600">configure inference</text>
+          <text x="537" y="217" font-size="9" fill="#93c5fd" text-anchor="middle">nemoclaw-governance validate</text>
+
+          <!-- Arrow: Blueprint -> OpenShell -->
+          <line x1="630" y1="140" x2="673" y2="140" stroke="#2563eb" stroke-width="2" marker-end="url(#arrowArchBlue)"/>
+
+          <!-- OpenShell Sandbox box (purple) -->
+          <rect x="675" y="50" width="185" height="180" rx="12" fill="#faf5ff" stroke="#7c3aed" stroke-width="2"/>
+          <text x="767" y="84" font-size="13" font-weight="700" fill="#6d28d9" text-anchor="middle">OpenShell Sandbox</text>
+          <text x="767" y="101" font-size="10" fill="#c084fc" text-anchor="middle">ghcr.io/nvidia/</text>
+          <text x="767" y="114" font-size="10" fill="#c084fc" text-anchor="middle">openshell-community</text>
+          <line x1="700" y1="124" x2="834" y2="124" stroke="#ddd6fe" stroke-width="1"/>
+          <!-- Container icon -->
+          <rect x="745" y="135" width="44" height="30" rx="4" fill="none" stroke="#a78bfa" stroke-width="1.5"/>
+          <rect x="750" y="130" width="34" height="8" rx="2" fill="none" stroke="#a78bfa" stroke-width="1.5"/>
+          <text x="767" y="155" font-size="9" fill="#7c3aed" text-anchor="middle">container</text>
+          <text x="767" y="195" font-size="11" fill="#7c3aed" text-anchor="middle" font-weight="600">isolated runtime</text>
+          <text x="767" y="212" font-size="9" fill="#c084fc" text-anchor="middle">network + resource policy</text>
+        </svg>
+      </div>
+
+      <div class="arch-legend">
+        <div class="arch-legend-item"><span class="arch-legend-dot" style="background:#22c55e;"></span> Plugin (TypeScript)</div>
+        <div class="arch-legend-item"><span class="arch-legend-dot" style="background:#2563eb;"></span> Blueprint (Python)</div>
+        <div class="arch-legend-item"><span class="arch-legend-dot" style="background:#7c3aed;"></span> OpenShell Sandbox</div>
+      </div>
+
+      <!-- Sandbox Lifecycle Subsection -->
+      <div class="arch-subsection">
+        <h3 class="arch-subsection-title">サンドボックスライフサイクル</h3>
+        <p class="arch-subsection-desc">ブループリント解決から実行中サンドボックスまでの5段階 &mdash; PluginがStage 1&ndash;2を、BlueprintがStage 3&ndash;5を担当</p>
+        <div class="lifecycle-pipeline">
+          <div class="lifecycle-stage">
+            <div class="lifecycle-stage-num">1</div>
+            <h4>Resolve</h4>
+            <p>Pluginがブループリントバージョンを解決し、バージョン管理されたPythonアーティファクトをダウンロード</p>
+            <span class="lifecycle-arrow">&#8250;</span>
+          </div>
+          <div class="lifecycle-stage">
+            <div class="lifecycle-stage-num">2</div>
+            <h4>Verify</h4>
+            <p>Pluginが実行前にブループリントの署名と整合性を検証</p>
+            <span class="lifecycle-arrow">&#8250;</span>
+          </div>
+          <div class="lifecycle-stage">
+            <div class="lifecycle-stage-num" style="background:#2563eb;">3</div>
+            <h4>Plan</h4>
+            <p>Blueprintがサンドボックスに必要なOpenShellリソースを決定</p>
+            <span class="lifecycle-arrow">&#8250;</span>
+          </div>
+          <div class="lifecycle-stage">
+            <div class="lifecycle-stage-num" style="background:#2563eb;">4</div>
+            <h4>Apply</h4>
+            <p>BlueprintがOpenShell CLIを呼び出してサンドボックスリソースを作成・設定</p>
+            <span class="lifecycle-arrow">&#8250;</span>
+          </div>
+          <div class="lifecycle-stage">
+            <div class="lifecycle-stage-num" style="background:#2563eb;">5</div>
+            <h4>Status</h4>
+            <p>Blueprintがサンドボックスの準備状態と接続エンドポイントを報告</p>
+            <span class="lifecycle-arrow">&#8250;</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Inference Routing Subsection -->
+      <div class="arch-subsection">
+        <h3 class="arch-subsection-title">推論ルーティング</h3>
+        <p class="arch-subsection-desc">ランタイムで切替可能な3つのプロバイダープロファイル &mdash; サンドボックスの再起動不要</p>
+        <div class="routing-grid">
+          <div class="routing-card">
+            <div class="routing-card-icon" style="background:#f0fdf4;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+              </svg>
+            </div>
+            <h4>NVIDIA Cloud</h4>
+            <p class="routing-model">Nemotron 3 Super 120B</p>
+            <p>build.nvidia.comを通じた本番推論。高負荷ワークロード向けの最高性能。</p>
+            <span class="routing-badge" style="background:#f0fdf4; color:#16a34a; border:1px solid #bbf7d0;">本番</span>
+          </div>
+          <div class="routing-card">
+            <div class="routing-card-icon" style="background:#eff6ff;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <h4>Local NIM</h4>
+            <p class="routing-model">NIM container on local network</p>
+            <p>クラウドアクセスが制限されたテスト環境やエアギャップ環境向けのオンプレミス推論。</p>
+            <span class="routing-badge" style="background:#eff6ff; color:#2563eb; border:1px solid #bfdbfe;">テスト / エアギャップ</span>
+          </div>
+          <div class="routing-card">
+            <div class="routing-card-icon" style="background:#faf5ff;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </div>
+            <h4>Local vLLM</h4>
+            <p class="routing-model">vLLM server on localhost</p>
+            <p>高速イテレーションサイクルのオフライン開発。ネットワーク依存なし。</p>
+            <span class="routing-badge" style="background:#faf5ff; color:#7c3aed; border:1px solid #ddd6fe;">オフライン開発</span>
+          </div>
+        </div>
+        <p style="text-align: center; margin-top: 2rem; color: #64748b; font-size: 0.875rem;">プロバイダーはサンドボックスを再起動せずにランタイムで切り替え可能です。設定はBlueprintの推論設定で管理されます。</p>
+      </div>
+
+      <!-- Security Guarantees Subsection -->
+      <div class="arch-subsection">
+        <h3 class="arch-subsection-title">セキュリティ保証</h3>
+        <p class="arch-subsection-desc">Evidence Gateは、すべてのサンドボックスが4つの必須分離レイヤーでデプロイされることを検証します &mdash; いずれかのレイヤーの設定ミスがあればパイプラインを停止</p>
+
+        <div class="security-grid">
+          <!-- Landlock LSM -->
+          <div class="security-card">
+            <div class="security-card-header">
+              <div class="security-card-icon" style="background:#f0fdf4;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+              </div>
+              <h4>Landlock LSM</h4>
+            </div>
+            <p>カーネルレベルでファイルシステムアクセスを制限するLinux Security Module。サンドボックスプロセスは許可されたパスセット外にアクセスできません &mdash; エージェントがコード実行の脆弱性を発見しても同様です。Evidence GateはデプロイメントにLandlockルールが正しく設定されていることを検証します。</p>
+          </div>
+
+          <!-- seccomp Filtering -->
+          <div class="security-card">
+            <div class="security-card-header">
+              <div class="security-card-icon" style="background:#eff6ff;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
+                </svg>
+              </div>
+              <h4>seccomp Filtering</h4>
+            </div>
+            <p>サンドボックスプロセスが呼び出せるカーネル操作を制限するシステムコールフィルター。<code>ptrace</code>、<code>mount</code>、<code>reboot</code>などの危険なsyscallをカーネルに到達する前にブロックします。</p>
+          </div>
+
+          <!-- Network Namespace Isolation -->
+          <div class="security-card">
+            <div class="security-card-header">
+              <div class="security-card-icon" style="background:#faf5ff;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"/>
+                  <line x1="2" y1="12" x2="22" y2="12"/>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                </svg>
+              </div>
+              <h4>Network Namespace Isolation</h4>
+            </div>
+            <p>各サンドボックスはdeny-by-defaultのegress policyを持つ独自のネットワーク名前空間で実行されます。ブループリントで明示的に許可されたエンドポイントのみ到達可能です。未承認リクエストはブロックされ、オペレーター承認のためにキューに入ります。</p>
+          </div>
+
+          <!-- Inference Control -->
+          <div class="security-card">
+            <div class="security-card-header">
+              <div class="security-card-icon" style="background:#f8fafc;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="4" y="4" width="16" height="16" rx="2"/>
+                  <rect x="9" y="9" width="6" height="6"/>
+                  <line x1="9" y1="2" x2="9" y2="4"/>
+                  <line x1="15" y1="2" x2="15" y2="4"/>
+                  <line x1="9" y1="20" x2="9" y2="22"/>
+                  <line x1="15" y1="20" x2="15" y2="22"/>
+                  <line x1="20" y1="9" x2="22" y2="9"/>
+                  <line x1="20" y1="15" x2="22" y2="15"/>
+                  <line x1="2" y1="9" x2="4" y2="9"/>
+                  <line x1="2" y1="15" x2="4" y2="15"/>
+                </svg>
+              </div>
+              <h4>Inference Control</h4>
+            </div>
+            <p>LLM推論リクエストはOpenShellゲートウェイを経由します &mdash; エージェントプロセスから直接ではありません。ゲートウェイはモデル許可リスト、レート制限、コスト上限をプロバイダーへの転送前に強制します。</p>
+          </div>
+        </div>
+
+        <div class="security-constraints">
+          <!-- Filesystem Constraints -->
+          <div class="security-constraint-box" style="border-left-color: #22c55e;">
+            <h5>ファイルシステム</h5>
+            <ul>
+              <li><code>/sandbox</code> &mdash; エージェント作業ディレクトリ（読み書き可）</li>
+              <li><code>/tmp</code> &mdash; 一時ファイル（読み書き可）</li>
+              <li>その他すべてのパス &mdash; 読み取り専用またはアクセス不可</li>
+              <li>システムバイナリ、設定、ホストマウントは書き込み不可</li>
+            </ul>
+          </div>
+
+          <!-- Network Constraints -->
+          <div class="security-constraint-box" style="border-left-color: #7c3aed;">
+            <h5>ネットワーク</h5>
+            <ul>
+              <li>Deny-by-default &mdash; 明示的に許可されるまでegressなし</li>
+              <li>承認済みエンドポイントは<code>blueprint.yaml</code>に記載</li>
+              <li>未承認リクエストはブロックされオペレーターレビューのためにキュー</li>
+              <li>推論トラフィックはゲートウェイ経由、エージェントから直接ではない</li>
+            </ul>
+          </div>
+        </div>
+
+        <p style="text-align: center; margin-top: 2rem; color: #64748b; font-size: 0.875rem;">
+          Evidence Gateの<strong>blueprint</strong>ゲートと<strong>policy</strong>ゲートは、すべてのサンドボックスが本番にデプロイされる前に4つの分離レイヤーが正しく設定されていることを検証します。
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- Ecosystem Section -->
   <section id="ecosystem" class="section section-alt">
     <div class="container">
