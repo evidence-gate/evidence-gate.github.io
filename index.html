@@ -7,15 +7,15 @@
 
   <!-- OGP Meta Tags -->
   <meta property="og:title" content="Evidence Gate — Quality Gates for CI/CD Pipelines">
-  <meta property="og:description" content="Fail-closed quality gates for GitHub Actions. 27 gate types covering test coverage, security, architecture, and compliance. Blind Gates prevent gaming. Free for open-source.">
+  <meta property="og:description" content="Fail-closed quality gates for GitHub Actions. 29 gate types covering test coverage, security, architecture, compliance, and NVIDIA NemoClaw agent sandbox validation. Blind Gates prevent gaming. Free for open-source.">
   <meta property="og:url" content="https://evidence-gate.dev">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Evidence Gate — Quality Gates for CI/CD Pipelines">
-  <meta name="twitter:description" content="Fail-closed quality gates for GitHub Actions. 27 gate types covering test coverage, security, architecture, and compliance. Blind Gates prevent gaming. Free for open-source.">
+  <meta name="twitter:description" content="Fail-closed quality gates for GitHub Actions. 29 gate types covering test coverage, security, architecture, compliance, and NVIDIA NemoClaw agent sandbox validation. Blind Gates prevent gaming. Free for open-source.">
 
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Fail-closed quality gates for GitHub Actions. 27 gate types covering test coverage, security, architecture, and compliance. Blind Gates prevent gaming. Free for open-source.">
+  <meta name="description" content="Fail-closed quality gates for GitHub Actions. 29 gate types covering test coverage, security, architecture, compliance, and NVIDIA NemoClaw agent sandbox validation. Blind Gates prevent gaming. Free for open-source.">
   <link rel="canonical" href="https://evidence-gate.dev/">
 
   <!-- Structured Data -->
@@ -470,6 +470,151 @@
     .code-block .code-value { color: #fbbf24; }
 
     /* ============================================
+       Ecosystem Section
+       ============================================ */
+    .ecosystem-diagram {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      max-width: 800px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .eco-layer {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      align-items: center;
+      border: 1px solid #e2e8f0;
+      padding: 1.25rem 1.5rem;
+      background: #ffffff;
+      position: relative;
+    }
+
+    .eco-layer:first-child {
+      border-radius: 0.75rem 0.75rem 0 0;
+    }
+
+    .eco-layer:last-child {
+      border-radius: 0 0 0.75rem 0.75rem;
+    }
+
+    .eco-layer:not(:last-child) {
+      border-bottom: none;
+    }
+
+    .eco-layer-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #64748b;
+    }
+
+    .eco-layer-content {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .eco-layer-content h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin: 0;
+    }
+
+    .eco-layer-content p {
+      font-size: 0.875rem;
+      color: #64748b;
+      margin: 0.25rem 0 0;
+    }
+
+    .eco-layer-content .eco-badge {
+      display: inline-block;
+      padding: 0.125rem 0.5rem;
+      border-radius: 9999px;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .eco-badge-green {
+      background: #f0fdf4;
+      color: #16a34a;
+      border: 1px solid #bbf7d0;
+    }
+
+    .eco-badge-blue {
+      background: #eff6ff;
+      color: #2563eb;
+      border: 1px solid #bfdbfe;
+    }
+
+    .eco-badge-purple {
+      background: #faf5ff;
+      color: #7c3aed;
+      border: 1px solid #ddd6fe;
+    }
+
+    .eco-arrow {
+      text-align: center;
+      padding: 0.25rem 0;
+      color: #cbd5e1;
+      font-size: 0.75rem;
+      border-left: 1px solid #e2e8f0;
+      border-right: 1px solid #e2e8f0;
+      background: #f8fafc;
+    }
+
+    .eco-tools {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .eco-tool-card {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      border-radius: 0.75rem;
+      border: 1px solid #e2e8f0;
+      background: #ffffff;
+      transition: box-shadow 0.2s ease;
+    }
+
+    .eco-tool-card:hover {
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    .eco-tool-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin: 0.75rem 0 0.25rem;
+    }
+
+    .eco-tool-card p {
+      font-size: 0.875rem;
+      color: #64748b;
+      margin-bottom: 0.75rem;
+    }
+
+    .eco-tool-card .eco-tool-link {
+      font-size: 0.8125rem;
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .eco-layer {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+      }
+
+      .eco-tools {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ============================================
        Footer
        ============================================ */
     .footer {
@@ -605,6 +750,7 @@
         <li><a href="#how-it-works">How It Works</a></li>
         <li><a href="#blind-gates">Blind Gates</a></li>
         <li><a href="#ai-governance">AI Governance</a></li>
+        <li><a href="#ecosystem">Ecosystem</a></li>
         <li><a href="#pricing">Pricing</a></li>
         <li><a href="#quick-start">Quick Start</a></li>
         <li><a href="https://github.com/marketplace/actions/evidence-gate-action" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Get Started Free</a></li>
@@ -616,7 +762,7 @@
   <section class="hero">
     <div class="container">
       <div class="hero-content">
-        <p style="font-size: 0.875rem; font-weight: 600; color: #22c55e; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">GitHub Actions &middot; 27 Gate Types &middot; Fail-Closed by Default</p>
+        <p style="font-size: 0.875rem; font-weight: 600; color: #22c55e; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">GitHub Actions &middot; 29 Gate Types &middot; Fail-Closed by Default</p>
         <h1>Quality Gates That <span>Can't Be Cheated</span></h1>
         <p>CI quality checks are easily gamed &mdash; developers delete tests to hit coverage thresholds. Evidence Gate enforces fail-closed gates with tamper-proof evidence chains. Blind Gates hide the exact threshold so gaming is structurally impossible.</p>
         <div class="hero-buttons">
@@ -808,6 +954,71 @@
     </div>
   </section>
 
+  <!-- Ecosystem Section -->
+  <section id="ecosystem" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Agent Governance Ecosystem</h2>
+      <p class="section-subtitle">Three layers of protection &mdash; from CI validation to runtime controls</p>
+
+      <!-- 3-Layer Architecture Diagram -->
+      <div class="ecosystem-diagram">
+        <div class="eco-layer" style="border-left: 3px solid #22c55e;">
+          <span class="eco-layer-label">CI Layer</span>
+          <div class="eco-layer-content">
+            <div>
+              <h4>evidence-gate-action <span class="eco-badge eco-badge-green">GitHub Actions</span></h4>
+              <p>Build-time quality gates &mdash; validates blueprints, policies, SBOM, and provenance before deploy</p>
+            </div>
+          </div>
+        </div>
+        <div class="eco-arrow">&darr;</div>
+        <div class="eco-layer" style="border-left: 3px solid #2563eb;">
+          <span class="eco-layer-label">Infra Layer</span>
+          <div class="eco-layer-content">
+            <div>
+              <h4>nemoclaw-governance <span class="eco-badge eco-badge-blue">Python CLI &amp; Library</span></h4>
+              <p>Validates NVIDIA NemoClaw blueprint.yaml and OpenShell sandbox policies before deployment</p>
+            </div>
+          </div>
+        </div>
+        <div class="eco-arrow">&darr;</div>
+        <div class="eco-layer" style="border-left: 3px solid #7c3aed;">
+          <span class="eco-layer-label">Runtime Layer</span>
+          <div class="eco-layer-content">
+            <div>
+              <h4>agentgov <span class="eco-badge eco-badge-purple">Proxy + SDK</span></h4>
+              <p>Runtime cost controls, budget enforcement, and network governance for AI agent operations</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tool Cards -->
+      <div class="eco-tools">
+        <div class="eco-tool-card">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          <h4>evidence-gate-action</h4>
+          <p>29 gate types including NemoClaw blueprint and policy validation. Fail-closed, tamper-proof CI gates.</p>
+          <a href="https://github.com/evidence-gate/evidence-gate-action" class="eco-tool-link">View on GitHub &rarr;</a>
+        </div>
+        <div class="eco-tool-card">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          <h4>nemoclaw-governance</h4>
+          <p>CLI and Python library for NVIDIA NemoClaw configuration validation. <code>pip install nemoclaw-governance</code></p>
+          <a href="https://github.com/evidence-gate/nemoclaw-governance" class="eco-tool-link">View on GitHub &rarr;</a>
+        </div>
+        <div class="eco-tool-card">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          <h4>agentgov</h4>
+          <p>Cost-aware governance proxy for AI agents. Budget enforcement, hold/settle billing, streaming controls.</p>
+          <a href="https://github.com/evidence-gate/agentgov" class="eco-tool-link">View on GitHub &rarr;</a>
+        </div>
+      </div>
+
+      <p style="text-align: center; margin-top: 2rem; color: #64748b; font-size: 0.9375rem;"><strong>Why three layers?</strong> NemoClaw provides sandbox isolation but has zero cost controls. agentgov adds runtime budget enforcement. Evidence Gate validates everything at CI time &mdash; before code reaches production.</p>
+    </div>
+  </section>
+
   <!-- Pricing Section -->
   <section id="pricing" class="section">
     <div class="container">
@@ -837,7 +1048,7 @@
               <td>Unlimited</td>
             </tr>
             <tr>
-              <td>All 27 gate types</td>
+              <td>All 29 gate types</td>
               <td class="check">&#10003;</td>
               <td class="featured check">&#10003;</td>
               <td class="check">&#10003;</td>
@@ -886,6 +1097,12 @@
             </tr>
             <tr>
               <td>Provenance gate (SLSA build attestation)</td>
+              <td class="check">&#10003;</td>
+              <td class="featured check">&#10003;</td>
+              <td class="check">&#10003;</td>
+            </tr>
+            <tr>
+              <td>NemoClaw gates (blueprint + policy validation)</td>
               <td class="check">&#10003;</td>
               <td class="featured check">&#10003;</td>
               <td class="check">&#10003;</td>
@@ -1046,6 +1263,8 @@
           <a href="https://github.com/evidence-gate">GitHub</a>
           <a href="https://github.com/marketplace/actions/evidence-gate-action">Marketplace</a>
           <a href="https://github.com/evidence-gate/evidence-gate-action#readme">Documentation</a>
+          <a href="https://github.com/evidence-gate/nemoclaw-governance">NemoClaw Governance</a>
+          <a href="https://github.com/evidence-gate/agentgov">agentgov</a>
           <a href="https://evidence-gate.dev/privacy">Privacy Policy</a>
           <a href="https://evidence-gate.dev/terms">Terms of Service</a>
         </div>
