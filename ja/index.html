@@ -1123,7 +1123,7 @@
       <div class="hero-content">
         <p style="font-size: 0.875rem; font-weight: 600; color: #22c55e; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">GitHub Actions &middot; 29種のゲートタイプ &middot; NemoClawガバナンス &middot; デフォルトFail-Closed</p>
         <h1><span>フルスタックAIガバナンス</span>のための品質ゲート</h1>
-        <p>AIエージェントがコード、テスト、そしてNemoClawサンドボックスを通じたインフラ運用までを担う時代。Evidence Gateはあらゆるレイヤーで品質を強制します &mdash; AIによる不正を防ぐBlind Gatesと、NemoClawサンドボックスが正しい分離、予算、推論ルーティングでデプロイされることを保証するブループリント・ポリシー検証。フルスタックガバナンス、デフォルトでフェイルクローズド。</p>
+        <p>AIエージェントがコード生成だけでなく、テスト作成やインフラ運用まで担うようになった今、品質管理はCIだけでは足りません。Evidence Gateは、コード、テスト、サプライチェーン、さらにNemoClawサンドボックスの設定までを対象に、各レイヤーで品質と安全性を検証します。Blind Gatesにより、AIエージェントから判定基準を隠したまま評価できます。さらに、NemoClawサンドボックスのブループリントやポリシーを検証し、分離設定、予算管理、推論ルーティングが正しく構成されていることをデプロイ前に確認します。すべてのゲートはデフォルトでフェイルクローズドです。</p>
         <div class="hero-buttons">
           <a href="https://github.com/marketplace/actions/evidence-gate-action" class="btn btn-primary">無料で始める</a>
           <a href="#quick-start" class="btn btn-secondary">クイックスタートを見る</a>
@@ -1150,7 +1150,7 @@
   <section id="how-it-works" class="section section-alt">
     <div class="container">
       <h2 class="section-title">仕組み</h2>
-      <p class="section-subtitle">3ステップでプルリクエストに品質を強制</p>
+      <p class="section-subtitle">3ステップで、プルリクエストに品質基準を適用</p>
       <div class="steps-grid">
         <div class="step-card">
           <div class="step-number">1</div>
@@ -1158,7 +1158,7 @@
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
           </div>
           <h3>定義</h3>
-          <p>ワークフローYAMLにEvidence Gateを追加します。ゲートタイプ、エビデンスファイル、閾値を指定します。</p>
+          <p>GitHub ActionsのワークフローにEvidence Gateを追加し、ゲートタイプ、対象ファイル、評価条件を指定します。</p>
         </div>
         <div class="step-card">
           <div class="step-number">2</div>
@@ -1166,7 +1166,7 @@
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           </div>
           <h3>評価</h3>
-          <p>ゲートがエビデンスファイルを自動検証します &mdash; ファイルの存在、スキーマ、閾値、整合性をチェックします。</p>
+          <p>Evidence Gateがエビデンスファイルを自動検証します。ファイルの有無、スキーマ適合性、閾値、整合性などを確認します。</p>
         </div>
         <div class="step-card">
           <div class="step-number">3</div>
@@ -1174,7 +1174,7 @@
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
           <h3>強制</h3>
-          <p>フェイルクローズド: 品質違反があるとパイプラインが停止します。結果はPRサマリーとワークフローアノテーションに表示されます。</p>
+          <p>基準を満たさない場合はパイプラインを停止します。結果はPRサマリーやワークフローアノテーションで確認できます。</p>
         </div>
       </div>
     </div>
@@ -1183,8 +1183,8 @@
   <!-- Blind Gate Explainer Section -->
   <section id="blind-gates" class="section">
     <div class="container">
-      <h2 class="section-title">Blind Gates: AIエージェントに判定基準を隠す理由</h2>
-      <p class="section-subtitle">LLMがコードとテストの両方を書く時代 &mdash; 見える閾値は品質基準ではなく、最適化の標的になります</p>
+      <h2 class="section-title">Blind Gates</h2>
+      <p class="section-subtitle">なぜ、AIエージェントに判定基準を見せないのか</p>
       <div class="blind-gate-explainer">
         <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram comparing Traditional Gates with visible thresholds versus Blind Gates with hidden criteria">
           <!-- Left side: Traditional Gate -->
@@ -1272,9 +1272,9 @@
           </defs>
         </svg>
         <div class="blind-gate-text">
-          <p><strong>問題:</strong> 従来のCIゲートは閾値をワークフローYAMLに公開しています。AIコーディングエージェント（Copilot、Cursor、Devinなど）は「CIを通せ」と指示されるとこの閾値を読み取り、80.1%にちょうど到達する空のテストを生成します &mdash; メトリクスを満たしつつ、品質については何も証明しません。</p>
-          <p><strong>解決策:</strong> Blind Gatesは、パイプラインにもリポジトリにもAIエージェントにも公開されない基準でエビデンスを評価します。コードを生成したLLMは、合否の閾値を見ることも、リバースエンジニアリングすることも、最適化の対象にすることもできません。品質は本物でなければなりません。</p>
-          <p><strong>仕組み:</strong> パイプラインがエビデンスファイルを提出します。Evidence Gate APIがチーム設定のプライベート基準で評価します。パイプライン &mdash; そしてそれを操作するAIエージェント &mdash; が受け取るのは合格か不合格のみ。基準そのものは決して公開されません。</p>
+          <p>LLMがコードだけでなくテストまで生成する状況では、見えている閾値は「品質基準」ではなく「最適化の目標」になりがちです。</p>
+          <p><strong>問題:</strong> 従来のCIゲートでは、たとえばテストカバレッジの閾値がワークフローYAMLに書かれています。AIコーディングエージェントはその数値を読み取り、ぎりぎり通過するためだけの空疎なテストを作ることができます。数値は満たしていても、品質を保証しているとは言えません。</p>
+          <p><strong>解決策:</strong> Blind Gatesでは、評価基準をパイプラインやリポジトリ、AIエージェントに公開しません。パイプラインはエビデンスファイルを提出し、Evidence Gate APIがチームごとの非公開基準で評価します。返される結果はPASSかFAILだけです。基準そのものは公開されないため、AIが閾値に合わせて振る舞うことはできません。</p>
         </div>
       </div>
     </div>
@@ -1283,33 +1283,32 @@
   <!-- AI Governance Section -->
   <section id="ai-governance" class="section">
     <div class="container">
-      <h2 class="section-title">AIガバナンスのための設計</h2>
-      <p class="section-subtitle">Evidence Gateの設計は、日本のAI事業者ガイドラインの原則に沿っています</p>
+      <h2 class="section-title">AIガバナンスを前提にした設計</h2>
+      <p class="section-subtitle">Evidence Gateは、透明性、安全性、説明責任といったAIガバナンスの基本原則に沿って設計されています。</p>
       <div class="steps-grid">
         <div class="step-card">
           <div class="step-icon">
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
-          <h3>フェイルクローズド安全性</h3>
-          <p>すべてのゲートはデフォルトでFAILです。明示的に検証されたエビデンスのみがPASSを獲得します。ガイドラインが重視する安全性とリスク防止をサポートします。</p>
+          <h3>フェイルクローズド</h3>
+          <p>すべてのゲートはデフォルトでFAILです。明示的に検証されたエビデンスだけがPASSになります。</p>
         </div>
         <div class="step-card">
           <div class="step-icon">
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
           </div>
           <h3>透明性と信頼レベル</h3>
-          <p>現地現物信頼レベル（L1&ndash;L4）により、エビデンスの信頼性を明確にします。SHA-256エビデンスチェーンにより、すべての判断データの整合性を検証できます。</p>
+          <p>エビデンスの信頼性をL1〜L4のレベルで整理できます。SHA-256によるエビデンスチェーンで、判断に使ったデータの整合性も確認できます。</p>
         </div>
         <div class="step-card">
           <div class="step-icon">
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
           </div>
           <h3>セキュリティと説明責任</h3>
-          <p>AWS KMS暗号化（FIPS 140-2準拠）、HMAC署名カーソル、成熟度レベルベースの品質状態モデルにより、すべてのステップで監査可能なガバナンスを提供します。</p>
+          <p>AWS KMSによる暗号化、HMAC署名カーソル、成熟度ベースの品質状態モデルにより、各ステップを監査可能な形で管理できます。</p>
         </div>
       </div>
-      <p style="text-align: center; margin-top: 2rem; color: #64748b; font-size: 0.875rem;">Evidence Gateは、透明性、安全性、説明責任を含む主要原則に沿った実践をサポートします。<a href="https://www.allnew.work/ai-governance.html">私たちのアプローチについて詳しく &rarr;</a></p>
-      <p style="text-align: center; margin-top: 0.75rem; color: #94a3b8; font-size: 0.8125rem;">本製品はいかなる政府機関の推奨や提携を受けたものではありません。機能説明は情報提供のみを目的としており、コンプライアンス認証を構成するものではありません。</p>
+      <p style="text-align: center; margin-top: 0.75rem; color: #94a3b8; font-size: 0.8125rem;">※本製品は、いかなる政府機関の認証・推奨・提携を示すものではありません。記載内容は情報提供を目的としたものであり、コンプライアンス認証を意味するものではありません。</p>
     </div>
   </section>
 
@@ -1317,8 +1316,8 @@
   <section id="nemoclaw-architecture" class="section section-alt">
     <div class="container">
       <h2 class="section-title">Evidence Gateが守るもの</h2>
-      <p class="section-subtitle">CIゲートだけでは不十分 &mdash; AIエージェントはランタイムでも動作します。Evidence GateはAIエージェントを実行するNemoClawインフラを検証します。</p>
-      <p class="arch-narrative-bridge">パイプラインがEvidence Gateを通過すると、<strong>NemoClawサンドボックス</strong> &mdash; AIエージェントが実行される隔離環境 &mdash; にデプロイされます。このランタイム層を理解すれば、Evidence Gateがブループリント、ポリシー、推論設定を検証する<em>理由</em>がわかります。設定ミスのあるサンドボックスは分離を突破したり、リソースを無制限に消費する可能性があります。以下のアーキテクチャ図はEvidence Gateが守る対象を示しています。</p>
+      <p class="section-subtitle">CI上のチェックだけでは不十分です。AIエージェントは、実行時にもリスクを持ち込みます。Evidence Gateは、AIエージェントが動作するNemoClawインフラまで含めて検証します。</p>
+      <p class="arch-narrative-bridge">パイプラインを通過した後、AIエージェントはNemoClawサンドボックス上で実行されます。このサンドボックスに設定ミスがあると、隔離が不十分になったり、リソース消費が制御不能になったりするおそれがあります。そのためEvidence Gateは、ブループリント、ポリシー、推論設定をデプロイ前に検証します。</p>
 
       <div class="arch-diagram-container">
         <svg viewBox="0 0 880 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="NemoClaw Plugin+Blueprint architecture diagram showing the Plugin resolving and executing the Blueprint as a subprocess to create OpenShell sandboxes">
@@ -1401,36 +1400,36 @@
       <!-- Sandbox Lifecycle Subsection -->
       <div class="arch-subsection">
         <h3 class="arch-subsection-title">サンドボックスライフサイクル</h3>
-        <p class="arch-subsection-desc">ブループリント解決から実行中サンドボックスまでの5段階 &mdash; PluginがStage 1&ndash;2を、BlueprintがStage 3&ndash;5を担当</p>
+        <p class="arch-subsection-desc">ブループリント解決から実行中サンドボックスまでの5段階</p>
         <div class="lifecycle-pipeline">
           <div class="lifecycle-stage">
             <div class="lifecycle-stage-num">1</div>
             <h4>Resolve</h4>
-            <p>Pluginがブループリントバージョンを解決し、バージョン管理されたPythonアーティファクトをダウンロード</p>
+            <p>Pluginがブループリントのバージョンを解決し、対象のPythonアーティファクトを取得します。</p>
             <span class="lifecycle-arrow">&#8250;</span>
           </div>
           <div class="lifecycle-stage">
             <div class="lifecycle-stage-num">2</div>
             <h4>Verify</h4>
-            <p>Pluginが実行前にブループリントの署名と整合性を検証</p>
+            <p>Pluginが実行前に、ブループリントの署名と整合性を検証します。</p>
             <span class="lifecycle-arrow">&#8250;</span>
           </div>
           <div class="lifecycle-stage">
             <div class="lifecycle-stage-num" style="background:#2563eb;">3</div>
             <h4>Plan</h4>
-            <p>Blueprintがサンドボックスに必要なOpenShellリソースを決定</p>
+            <p>Blueprintが、必要なOpenShellリソースを決定します。</p>
             <span class="lifecycle-arrow">&#8250;</span>
           </div>
           <div class="lifecycle-stage">
             <div class="lifecycle-stage-num" style="background:#2563eb;">4</div>
             <h4>Apply</h4>
-            <p>BlueprintがOpenShell CLIを呼び出してサンドボックスリソースを作成・設定</p>
+            <p>BlueprintがOpenShell CLIを呼び出し、サンドボックスのリソース作成と設定を行います。</p>
             <span class="lifecycle-arrow">&#8250;</span>
           </div>
           <div class="lifecycle-stage">
             <div class="lifecycle-stage-num" style="background:#2563eb;">5</div>
             <h4>Status</h4>
-            <p>Blueprintがサンドボックスの準備状態と接続エンドポイントを報告</p>
+            <p>Blueprintが、サンドボックスの準備状態と接続先エンドポイントを返します。</p>
             <span class="lifecycle-arrow">&#8250;</span>
           </div>
         </div>
@@ -1439,7 +1438,7 @@
       <!-- Inference Routing Subsection -->
       <div class="arch-subsection">
         <h3 class="arch-subsection-title">推論ルーティング</h3>
-        <p class="arch-subsection-desc">ランタイムで切替可能な3つのプロバイダープロファイル &mdash; サンドボックスの再起動不要</p>
+        <p class="arch-subsection-desc">ランタイムで切り替えられる3つのプロバイダープロファイル</p>
         <div class="routing-grid">
           <div class="routing-card">
             <div class="routing-card-icon" style="background:#f0fdf4;">
@@ -1449,7 +1448,7 @@
             </div>
             <h4>NVIDIA Cloud</h4>
             <p class="routing-model">Nemotron 3 Super 120B</p>
-            <p>build.nvidia.comを通じた本番推論。高負荷ワークロード向けの最高性能。</p>
+            <p>本番向けの推論プロファイルです。高負荷ワークロードに対応します。</p>
             <span class="routing-badge" style="background:#f0fdf4; color:#16a34a; border:1px solid #bbf7d0;">本番</span>
           </div>
           <div class="routing-card">
@@ -1462,7 +1461,7 @@
             </div>
             <h4>Local NIM</h4>
             <p class="routing-model">NIM container on local network</p>
-            <p>クラウドアクセスが制限されたテスト環境やエアギャップ環境向けのオンプレミス推論。</p>
+            <p>クラウド接続が制限される検証環境やエアギャップ環境向けのオンプレミス構成です。</p>
             <span class="routing-badge" style="background:#eff6ff; color:#2563eb; border:1px solid #bfdbfe;">テスト / エアギャップ</span>
           </div>
           <div class="routing-card">
@@ -1474,17 +1473,17 @@
             </div>
             <h4>Local vLLM</h4>
             <p class="routing-model">vLLM server on localhost</p>
-            <p>高速イテレーションサイクルのオフライン開発。ネットワーク依存なし。</p>
+            <p>ローカル開発向けです。ネットワークに依存せず、高速に試行できます。</p>
             <span class="routing-badge" style="background:#faf5ff; color:#7c3aed; border:1px solid #ddd6fe;">オフライン開発</span>
           </div>
         </div>
-        <p style="text-align: center; margin-top: 2rem; color: #64748b; font-size: 0.875rem;">プロバイダーはサンドボックスを再起動せずにランタイムで切り替え可能です。設定はBlueprintの推論設定で管理されます。</p>
+        <p style="text-align: center; margin-top: 2rem; color: #64748b; font-size: 0.875rem;">これらのプロバイダーは、サンドボックスを再起動せずにランタイムで切り替えられます。設定はBlueprintの推論定義で管理します。</p>
       </div>
 
       <!-- Security Guarantees Subsection -->
       <div class="arch-subsection">
         <h3 class="arch-subsection-title">セキュリティ保証</h3>
-        <p class="arch-subsection-desc">Evidence Gateは、すべてのサンドボックスが4つの必須分離レイヤーでデプロイされることを検証します &mdash; いずれかのレイヤーの設定ミスがあればパイプラインを停止</p>
+        <p class="arch-subsection-desc">Evidence Gateは、サンドボックスが4つの必須分離レイヤーを満たしているかを検証します。どれか1つでも不備があれば、パイプラインを停止します。</p>
 
         <div class="security-grid">
           <!-- Landlock LSM -->
@@ -1497,7 +1496,7 @@
               </div>
               <h4>Landlock LSM</h4>
             </div>
-            <p>カーネルレベルでファイルシステムアクセスを制限するLinux Security Module。サンドボックスプロセスは許可されたパスセット外にアクセスできません &mdash; エージェントがコード実行の脆弱性を発見しても同様です。Evidence GateはデプロイメントにLandlockルールが正しく設定されていることを検証します。</p>
+            <p>カーネルレベルでファイルシステムアクセスを制御します。許可されたパス以外にはアクセスできません。</p>
           </div>
 
           <!-- seccomp Filtering -->
@@ -1510,7 +1509,7 @@
               </div>
               <h4>seccomp Filtering</h4>
             </div>
-            <p>サンドボックスプロセスが呼び出せるカーネル操作を制限するシステムコールフィルター。<code>ptrace</code>、<code>mount</code>、<code>reboot</code>などの危険なsyscallをカーネルに到達する前にブロックします。</p>
+            <p>危険なシステムコールを制限し、不要なカーネル操作をブロックします。</p>
           </div>
 
           <!-- Network Namespace Isolation -->
@@ -1525,7 +1524,7 @@
               </div>
               <h4>Network Namespace Isolation</h4>
             </div>
-            <p>各サンドボックスはdeny-by-defaultのegress policyを持つ独自のネットワーク名前空間で実行されます。ブループリントで明示的に許可されたエンドポイントのみ到達可能です。未承認リクエストはブロックされ、オペレーター承認のためにキューに入ります。</p>
+            <p>各サンドボックスは独立したネットワーク名前空間で動作し、通信はデフォルト拒否です。許可されたエンドポイントにのみ接続できます。</p>
           </div>
 
           <!-- Inference Control -->
@@ -1547,7 +1546,7 @@
               </div>
               <h4>Inference Control</h4>
             </div>
-            <p>LLM推論リクエストはOpenShellゲートウェイを経由します &mdash; エージェントプロセスから直接ではありません。ゲートウェイはモデル許可リスト、レート制限、コスト上限をプロバイダーへの転送前に強制します。</p>
+            <p>LLM推論はOpenShellゲートウェイ経由で行われます。モデルの許可リスト、レート制限、コスト上限を適用できます。</p>
           </div>
         </div>
 
@@ -1556,10 +1555,9 @@
           <div class="security-constraint-box" style="border-left-color: #22c55e;">
             <h5>ファイルシステム</h5>
             <ul>
-              <li><code>/sandbox</code> &mdash; エージェント作業ディレクトリ（読み書き可）</li>
-              <li><code>/tmp</code> &mdash; 一時ファイル（読み書き可）</li>
-              <li>その他すべてのパス &mdash; 読み取り専用またはアクセス不可</li>
-              <li>システムバイナリ、設定、ホストマウントは書き込み不可</li>
+              <li><code>/sandbox</code> &mdash; 読み書き可能な作業ディレクトリ</li>
+              <li><code>/tmp</code> &mdash; 一時ファイル用</li>
+              <li>その他すべてのパス &mdash; 読み取り専用、またはアクセス不可</li>
             </ul>
           </div>
 
@@ -1567,16 +1565,16 @@
           <div class="security-constraint-box" style="border-left-color: #7c3aed;">
             <h5>ネットワーク</h5>
             <ul>
-              <li>Deny-by-default &mdash; 明示的に許可されるまでegressなし</li>
-              <li>承認済みエンドポイントは<code>blueprint.yaml</code>に記載</li>
-              <li>未承認リクエストはブロックされオペレーターレビューのためにキュー</li>
-              <li>推論トラフィックはゲートウェイ経由、エージェントから直接ではない</li>
+              <li>通信はデフォルト拒否</li>
+              <li>許可先は<code>blueprint.yaml</code>に明示</li>
+              <li>未承認リクエストは遮断し、オペレーター確認に回す</li>
+              <li>推論トラフィックはゲートウェイ経由のみ</li>
             </ul>
           </div>
         </div>
 
         <p style="text-align: center; margin-top: 2rem; color: #64748b; font-size: 0.875rem;">
-          Evidence Gateの<strong>blueprint</strong>ゲートと<strong>policy</strong>ゲートは、すべてのサンドボックスが本番にデプロイされる前に4つの分離レイヤーが正しく設定されていることを検証します。
+          Evidence Gateの<strong>blueprint</strong>ゲートと<strong>policy</strong>ゲートは、これら4つの分離レイヤーが本番投入前に正しく構成されていることを確認します。
         </p>
       </div>
     </div>
@@ -1585,8 +1583,8 @@
   <!-- Ecosystem Section -->
   <section id="ecosystem" class="section section-alt">
     <div class="container">
-      <h2 class="section-title">エージェントガバナンスエコシステム</h2>
-      <p class="section-subtitle">CI検証からランタイム制御まで &mdash; 3層の防御</p>
+      <h2 class="section-title">エージェントガバナンスの全体像</h2>
+      <p class="section-subtitle">CIからランタイムまで、3層で守る</p>
 
       <!-- 3-Layer Architecture Diagram -->
       <div class="ecosystem-diagram">
@@ -1595,7 +1593,7 @@
           <div class="eco-layer-content">
             <div>
               <h4>evidence-gate-action <span class="eco-badge eco-badge-green">GitHub Actions</span></h4>
-              <p>ビルド時の品質ゲート &mdash; マージ前にNemoClawのblueprint.yaml設定、サンドボックスポリシー、SBOM、来歴を検証</p>
+              <p>GitHub Actions上で動作し、ブループリント、ポリシー、SBOM、来歴をデプロイ前に検証します。</p>
             </div>
           </div>
         </div>
@@ -1605,7 +1603,7 @@
           <div class="eco-layer-content">
             <div>
               <h4>nemoclaw-governance <span class="eco-badge eco-badge-blue">Python CLI + Library</span></h4>
-              <p>NemoClaw Plugin+Blueprint設定を検証 &mdash; blueprint.yamlスキーマ、サンドボックスポリシー制約、推論プロファイル設定をオペレータールールに対してチェック</p>
+              <p>NemoClawの blueprint.yaml とOpenShellサンドボックスポリシーを検証するCLI / Pythonライブラリです。</p>
             </div>
           </div>
         </div>
@@ -1615,7 +1613,7 @@
           <div class="eco-layer-content">
             <div>
               <h4>agentgov <span class="eco-badge eco-badge-purple">Proxy + SDK</span></h4>
-              <p>NemoClawサンドボックスのランタイム予算強制 &mdash; hold/settle課金、リクエスト単位コスト上限、ストリーミングトークン制御、オペレーター管理ネットワーク承認</p>
+              <p>AIエージェントのコスト管理、予算制御、ネットワーク統制を担います。</p>
             </div>
           </div>
         </div>
@@ -1643,7 +1641,7 @@
         </div>
       </div>
 
-      <p style="text-align: center; margin-top: 2rem; color: #64748b; font-size: 0.9375rem;"><strong>なぜ3層なのか?</strong> NemoClawはLandlock+seccomp+netnsによるサンドボックス分離を提供しますが、コスト制御はありません。agentgovがランタイム予算強制と推論ルーティングガバナンスを追加します。Evidence GateはCI時にすべての設定を検証します &mdash; ブループリントが本番サンドボックスに到達する前に。</p>
+      <p style="text-align: center; margin-top: 2rem; color: #64748b; font-size: 0.9375rem;">NemoClawはサンドボックス分離を提供しますが、コスト制御までは担いません。agentgovがそこを補い、Evidence GateがCI段階で全体を検証します。つまり、本番に届く前に、構成・安全性・運用制御をまとめて確認できます。</p>
     </div>
   </section>
 
@@ -1651,7 +1649,7 @@
   <section id="pricing" class="section">
     <div class="container">
       <h2 class="section-title">シンプルで透明な料金体系</h2>
-      <p class="section-subtitle">無料で始めて、チームの成長に合わせてアップグレード</p>
+      <p class="section-subtitle">無料で始めて、必要に応じて拡張</p>
       <div class="pricing-table-wrapper">
         <table class="pricing-table">
           <thead>
@@ -1836,16 +1834,16 @@
   <!-- Quick Start Section -->
   <section id="quick-start" class="section section-alt">
     <div class="container">
-      <h2 class="section-title">5分で導入完了</h2>
-      <p class="section-subtitle">3つの簡単なステップでGitHub Actionsに品質ゲートを追加</p>
+      <h2 class="section-title">クイックスタート</h2>
+      <p class="section-subtitle">5分で導入</p>
       <div class="quickstart-steps">
 
         <div class="qs-step">
           <h3>
             <span class="step-number">1</span>
-            Marketplaceからインストール
+            Marketplaceから追加
           </h3>
-          <p><a href="https://github.com/marketplace/actions/evidence-gate-action">Evidence Gate Marketplaceページ</a>にアクセスし、「Use latest version」をクリックしてリポジトリにアクションを追加します。</p>
+          <p>GitHub MarketplaceでEvidence Gate Actionをリポジトリに追加します。</p>
         </div>
 
         <div class="qs-step">
@@ -1853,7 +1851,7 @@
             <span class="step-number">2</span>
             ワークフローに追加
           </h3>
-          <p>GitHub ActionsワークフローファイルにEvidence Gateステップを追加します:</p>
+          <p>GitHub ActionsにEvidence Gateステップを設定します。</p>
           <div class="code-block">
 <pre><span class="code-key">name:</span> <span class="code-string">Quality Gate</span>
 <span class="code-key">on:</span> <span class="code-string">[pull_request]</span>
@@ -1885,7 +1883,7 @@
             <span class="step-number">3</span>
             PRで結果を確認
           </h3>
-          <p>Evidence Gateは詳細なサマリーを<code>GITHUB_STEP_SUMMARY</code>に書き込み、プルリクエストのワークフロー実行から直接確認できます。ゲートの合否結果、エビデンスハッシュ、閾値評価が自動的に表示されます &mdash; 設定は不要です。</p>
+          <p>評価結果は<code>GITHUB_STEP_SUMMARY</code>やPR上の実行結果から確認できます。合否、エビデンスハッシュ、評価内容が自動で表示されます。</p>
         </div>
 
       </div>
