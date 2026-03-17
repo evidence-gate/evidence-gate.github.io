@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Evidence Gate — CI/CDパイプラインの品質ゲート</title>
+  <title>Evidence Gate — AIエージェント品質ゲート + NemoClawガバナンス</title>
 
   <!-- OGP Meta Tags -->
-  <meta property="og:title" content="Evidence Gate — CI/CDパイプラインの品質ゲート">
-  <meta property="og:description" content="AI駆動CI/CD向けのフェイルクローズド品質ゲート。AIエージェントがコードとテストを書く時代、見える閾値は不正の対象になります。Blind Gatesで判定基準を隠し、AIによる指標操作を構造的に防止。29種のゲートタイプ。オープンソースは無料。">
+  <meta property="og:title" content="Evidence Gate — AIエージェント品質ゲート + NemoClawガバナンス">
+  <meta property="og:description" content="NemoClawガバナンスを備えたAI駆動CI/CD向けフェイルクローズド品質ゲート。Blind GatesによるAIエージェントからの判定基準隠蔽、NemoClawサンドボックスのブループリントとポリシー検証を含む29種のゲートタイプ。オープンソースは無料。">
   <meta property="og:url" content="https://evidence-gate.dev/ja/">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Evidence Gate — CI/CDパイプラインの品質ゲート">
-  <meta name="twitter:description" content="AI駆動CI/CD向けのフェイルクローズド品質ゲート。AIエージェントがコードとテストを書く時代、見える閾値は不正の対象になります。Blind Gatesで判定基準を隠し、AIによる指標操作を構造的に防止。29種のゲートタイプ。オープンソースは無料。">
+  <meta name="twitter:title" content="Evidence Gate — AIエージェント品質ゲート + NemoClawガバナンス">
+  <meta name="twitter:description" content="NemoClawガバナンスを備えたAI駆動CI/CD向けフェイルクローズド品質ゲート。Blind GatesによるAIエージェントからの判定基準隠蔽、NemoClawサンドボックスのブループリントとポリシー検証を含む29種のゲートタイプ。オープンソースは無料。">
 
   <!-- SEO Meta Tags -->
-  <meta name="description" content="AI駆動CI/CD向けのフェイルクローズド品質ゲート。AIエージェントがコードとテストを書く時代、見える閾値は不正の対象になります。Blind Gatesで判定基準を隠し、AIによる指標操作を構造的に防止。29種のゲートタイプ。オープンソースは無料。">
+  <meta name="description" content="NemoClawガバナンスを備えたAI駆動CI/CD向けフェイルクローズド品質ゲート。Blind GatesによるAIエージェントからの判定基準隠蔽、NemoClawサンドボックスのブループリントとポリシー検証を含む29種のゲートタイプ。オープンソースは無料。">
   <link rel="canonical" href="https://evidence-gate.dev/ja/">
   <link rel="alternate" hreflang="en" href="https://evidence-gate.dev/">
   <link rel="alternate" hreflang="ja" href="https://evidence-gate.dev/ja/">
@@ -27,7 +27,7 @@
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "Evidence Gate",
-    "description": "AI駆動CI/CD向けのフェイルクローズド品質ゲート。Blind GatesでAIエージェントによる指標操作を構造的に防止",
+    "description": "NemoClawサンドボックスガバナンスを備えたCI/CDパイプライン向けフェイルクローズド品質ゲート -- ブループリント検証、ポリシー強制、改ざん防止エビデンスチェーン",
     "url": "https://evidence-gate.dev",
     "applicationCategory": "DeveloperApplication",
     "operatingSystem": "GitHub Actions",
@@ -502,6 +502,308 @@
     }
 
     /* ============================================
+       NemoClaw Architecture Section
+       ============================================ */
+    .arch-section {
+      /* wrapper for the architecture section content area */
+    }
+
+    .arch-diagram-container {
+      max-width: 900px;
+      margin: 0 auto 2rem;
+    }
+
+    .arch-diagram-container svg {
+      width: 100%;
+      height: auto;
+    }
+
+    .arch-legend {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      font-size: 0.8125rem;
+      color: #64748b;
+      text-align: center;
+    }
+
+    .arch-legend-item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.375rem;
+    }
+
+    .arch-legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ============================================
+       Architecture Subsections (Lifecycle + Routing)
+       ============================================ */
+    .arch-subsection {
+      margin-top: 3rem;
+    }
+
+    .arch-subsection-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .arch-subsection-desc {
+      font-size: 0.9375rem;
+      color: #64748b;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .arch-narrative-bridge {
+      font-size: 1rem;
+      color: #475569;
+      line-height: 1.7;
+      max-width: 760px;
+      margin: 1.25rem auto 2rem;
+      text-align: center;
+    }
+
+    .lifecycle-pipeline {
+      display: flex;
+      flex-direction: row;
+      gap: 0;
+      align-items: stretch;
+      justify-content: center;
+      max-width: 880px;
+      margin: 0 auto;
+      overflow-x: auto;
+    }
+
+    .lifecycle-stage {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 1rem 0.75rem;
+      flex: 1;
+      min-width: 140px;
+      position: relative;
+    }
+
+    .lifecycle-stage-num {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.875rem;
+      color: white;
+      background: #22c55e;
+      margin-bottom: 0.5rem;
+    }
+
+    .lifecycle-stage h4 {
+      font-size: 0.9375rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 0.25rem;
+    }
+
+    .lifecycle-stage p {
+      font-size: 0.8125rem;
+      color: #64748b;
+      line-height: 1.4;
+    }
+
+    .lifecycle-arrow {
+      position: absolute;
+      right: -12px;
+      top: 18px;
+      width: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #cbd5e1;
+      font-size: 1.25rem;
+      z-index: 1;
+    }
+
+    .lifecycle-stage:last-child .lifecycle-arrow {
+      display: none;
+    }
+
+    .routing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    .routing-card {
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      border: 1px solid #e2e8f0;
+      background: white;
+      text-align: center;
+    }
+
+    .routing-card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 0.75rem;
+    }
+
+    .routing-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 0.25rem;
+    }
+
+    .routing-card .routing-model {
+      font-size: 0.8125rem;
+      color: #64748b;
+      font-family: monospace;
+      margin-bottom: 0.5rem;
+    }
+
+    .routing-card p {
+      font-size: 0.875rem;
+      color: #64748b;
+      line-height: 1.5;
+    }
+
+    .routing-card .routing-badge {
+      display: inline-block;
+      padding: 0.125rem 0.5rem;
+      border-radius: 9999px;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      margin-top: 0.75rem;
+    }
+
+    /* ============================================
+       Security Guarantees Subsection
+       ============================================ */
+    .security-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      max-width: 880px;
+      margin: 0 auto 2rem;
+    }
+
+    .security-card {
+      padding: 1.25rem 1.5rem;
+      border-radius: 0.75rem;
+      border: 1px solid #e2e8f0;
+      background: white;
+    }
+
+    .security-card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .security-card-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .security-card h4 {
+      font-size: 0.9375rem;
+      font-weight: 700;
+      color: #1e293b;
+    }
+
+    .security-card p {
+      font-size: 0.8125rem;
+      color: #64748b;
+      line-height: 1.5;
+    }
+
+    .security-card code {
+      font-size: 0.75rem;
+      background: #f1f5f9;
+      padding: 0.125rem 0.375rem;
+      border-radius: 0.25rem;
+      color: #334155;
+    }
+
+    .security-constraints {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    .security-constraint-box {
+      padding: 1.25rem 1.5rem;
+      border-radius: 0.75rem;
+      border-left: 3px solid;
+      background: #f8fafc;
+    }
+
+    .security-constraint-box h5 {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 0.5rem;
+    }
+
+    .security-constraint-box p {
+      font-size: 0.8125rem;
+      color: #64748b;
+      line-height: 1.5;
+    }
+
+    .security-constraint-box ul {
+      list-style: none;
+      padding: 0;
+      margin: 0.5rem 0 0;
+    }
+
+    .security-constraint-box li {
+      font-size: 0.8125rem;
+      color: #64748b;
+      padding: 0.25rem 0;
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    .security-constraint-box li::before {
+      content: "\2192";
+      position: absolute;
+      left: 0;
+      color: #94a3b8;
+    }
+
+    /* ============================================
        Ecosystem Section
        ============================================ */
     .ecosystem-diagram {
@@ -755,6 +1057,28 @@
       .section-title {
         font-size: 1.5rem;
       }
+
+      .arch-legend {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .lifecycle-pipeline {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .routing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .security-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .security-constraints {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (min-width: 769px) and (max-width: 1024px) {
@@ -782,9 +1106,11 @@
         <li><a href="#how-it-works">仕組み</a></li>
         <li><a href="#blind-gates">Blind Gates</a></li>
         <li><a href="#ai-governance">AIガバナンス</a></li>
+        <li><a href="#nemoclaw-architecture">アーキテクチャ</a></li>
         <li><a href="#ecosystem">エコシステム</a></li>
         <li><a href="#pricing">料金</a></li>
         <li><a href="#quick-start">クイックスタート</a></li>
+        <li><a href="#nemoclaw-quick-start">NemoClawクイックスタート</a></li>
         <li><a href="https://github.com/marketplace/actions/evidence-gate-action" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">無料で始める</a></li>
         <li class="lang-switch"><a href="/">EN</a> / <a href="/ja/" class="lang-active">JA</a></li>
       </ul>
@@ -795,9 +1121,9 @@
   <section class="hero">
     <div class="container">
       <div class="hero-content">
-        <p style="font-size: 0.875rem; font-weight: 600; color: #22c55e; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">GitHub Actions &middot; 29種のゲートタイプ &middot; デフォルトFail-Closed</p>
-        <h1><span>AIが不正できない</span>品質ゲート</h1>
-        <p>AIエージェントがコードとテストの両方を書く時代 &mdash; LLMは見える指標に最適化します。「カバレッジ80%を達成せよ」と指示されたAIは、品質を証明しない空のテストで80.1%をぴったり達成します。Evidence GateのBlind Gatesは判定基準そのものを隠すことで、AIによる指標の不正を構造的に不可能にします。</p>
+        <p style="font-size: 0.875rem; font-weight: 600; color: #22c55e; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">GitHub Actions &middot; 29種のゲートタイプ &middot; NemoClawガバナンス &middot; デフォルトFail-Closed</p>
+        <h1><span>フルスタックAIガバナンス</span>のための品質ゲート</h1>
+        <p>AIエージェントがコード、テスト、そしてNemoClawサンドボックスを通じたインフラ運用までを担う時代。Evidence Gateはあらゆるレイヤーで品質を強制します &mdash; AIによる不正を防ぐBlind Gatesと、NemoClawサンドボックスが正しい分離、予算、推論ルーティングでデプロイされることを保証するブループリント・ポリシー検証。フルスタックガバナンス、デフォルトでフェイルクローズド。</p>
         <div class="hero-buttons">
           <a href="https://github.com/marketplace/actions/evidence-gate-action" class="btn btn-primary">無料で始める</a>
           <a href="#quick-start" class="btn btn-secondary">クイックスタートを見る</a>
@@ -810,12 +1136,12 @@
           <span class="hero-code-dot hero-code-dot--green"></span>
           <span class="hero-code-label">.github/workflows/ci.yml</span>
         </div>
-<pre><span class="code-comment"># Add quality gates in 3 lines</span>
+<pre><span class="code-comment"># NemoClawブループリントをデプロイ前に検証</span>
 <span class="code-key">- uses:</span> <span class="code-string">evidence-gate/evidence-gate-action@v1</span>
   <span class="code-key">with:</span>
-    <span class="code-key">gate_type:</span> <span class="code-string">"test_coverage"</span>
-    <span class="code-key">phase_id:</span> <span class="code-string">"testing"</span>
-    <span class="code-key">evidence_files:</span> <span class="code-string">"coverage.json"</span></pre>
+    <span class="code-key">gate_type:</span> <span class="code-string">"nemoclaw_blueprint"</span>
+    <span class="code-key">phase_id:</span> <span class="code-string">"deploy"</span>
+    <span class="code-key">evidence_files:</span> <span class="code-string">"blueprint.yaml"</span></pre>
       </div>
     </div>
   </section>
