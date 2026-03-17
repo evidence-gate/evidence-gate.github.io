@@ -1,22 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Evidence Gate — Quality Gates for CI/CD Pipelines</title>
+  <title>Evidence Gate — CI/CDパイプラインの品質ゲート</title>
 
   <!-- OGP Meta Tags -->
-  <meta property="og:title" content="Evidence Gate — Quality Gates for CI/CD Pipelines">
-  <meta property="og:description" content="Fail-closed quality gates for GitHub Actions. 29 gate types covering test coverage, security, architecture, compliance, and NVIDIA NemoClaw agent sandbox validation. Blind Gates prevent gaming. Free for open-source.">
-  <meta property="og:url" content="https://evidence-gate.dev">
+  <meta property="og:title" content="Evidence Gate — CI/CDパイプラインの品質ゲート">
+  <meta property="og:description" content="GitHub Actions向けのフェイルクローズド品質ゲート。テストカバレッジ、セキュリティ、アーキテクチャ、コンプライアンス、NVIDIA NemoClawエージェントサンドボックス検証を含む29種のゲートタイプ。Blind Gatesで不正を防止。オープンソースは無料。">
+  <meta property="og:url" content="https://evidence-gate.dev/ja/">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Evidence Gate — Quality Gates for CI/CD Pipelines">
-  <meta name="twitter:description" content="Fail-closed quality gates for GitHub Actions. 29 gate types covering test coverage, security, architecture, compliance, and NVIDIA NemoClaw agent sandbox validation. Blind Gates prevent gaming. Free for open-source.">
+  <meta name="twitter:title" content="Evidence Gate — CI/CDパイプラインの品質ゲート">
+  <meta name="twitter:description" content="GitHub Actions向けのフェイルクローズド品質ゲート。テストカバレッジ、セキュリティ、アーキテクチャ、コンプライアンス、NVIDIA NemoClawエージェントサンドボックス検証を含む29種のゲートタイプ。Blind Gatesで不正を防止。オープンソースは無料。">
 
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Fail-closed quality gates for GitHub Actions. 29 gate types covering test coverage, security, architecture, compliance, and NVIDIA NemoClaw agent sandbox validation. Blind Gates prevent gaming. Free for open-source.">
-  <link rel="canonical" href="https://evidence-gate.dev/">
+  <meta name="description" content="GitHub Actions向けのフェイルクローズド品質ゲート。テストカバレッジ、セキュリティ、アーキテクチャ、コンプライアンス、NVIDIA NemoClawエージェントサンドボックス検証を含む29種のゲートタイプ。Blind Gatesで不正を防止。オープンソースは無料。">
+  <link rel="canonical" href="https://evidence-gate.dev/ja/">
   <link rel="alternate" hreflang="en" href="https://evidence-gate.dev/">
   <link rel="alternate" hreflang="ja" href="https://evidence-gate.dev/ja/">
   <link rel="alternate" hreflang="x-default" href="https://evidence-gate.dev/">
@@ -27,7 +27,7 @@
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "Evidence Gate",
-    "description": "Fail-closed quality gates for CI/CD pipelines with tamper-proof evidence chains",
+    "description": "CI/CDパイプライン向けの改ざん防止エビデンスチェーンを備えたフェイルクローズド品質ゲート",
     "url": "https://evidence-gate.dev",
     "applicationCategory": "DeveloperApplication",
     "operatingSystem": "GitHub Actions",
@@ -35,7 +35,7 @@
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "USD",
-      "description": "Free tier with 100 evaluations/month"
+      "description": "月100回の評価まで無料"
     }
   }
   </script>
@@ -774,19 +774,19 @@
   <!-- Navigation -->
   <nav class="nav">
     <div class="container">
-      <a href="/" class="nav-logo">
+      <a href="/ja/" class="nav-logo">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         Evidence Gate
       </a>
       <ul class="nav-links">
-        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#how-it-works">仕組み</a></li>
         <li><a href="#blind-gates">Blind Gates</a></li>
-        <li><a href="#ai-governance">AI Governance</a></li>
-        <li><a href="#ecosystem">Ecosystem</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#quick-start">Quick Start</a></li>
-        <li><a href="https://github.com/marketplace/actions/evidence-gate-action" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Get Started Free</a></li>
-        <li class="lang-switch"><a href="/" class="lang-active">EN</a> / <a href="/ja/">JA</a></li>
+        <li><a href="#ai-governance">AIガバナンス</a></li>
+        <li><a href="#ecosystem">エコシステム</a></li>
+        <li><a href="#pricing">料金</a></li>
+        <li><a href="#quick-start">クイックスタート</a></li>
+        <li><a href="https://github.com/marketplace/actions/evidence-gate-action" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">無料で始める</a></li>
+        <li class="lang-switch"><a href="/">EN</a> / <a href="/ja/" class="lang-active">JA</a></li>
       </ul>
     </div>
   </nav>
@@ -795,12 +795,12 @@
   <section class="hero">
     <div class="container">
       <div class="hero-content">
-        <p style="font-size: 0.875rem; font-weight: 600; color: #22c55e; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">GitHub Actions &middot; 29 Gate Types &middot; Fail-Closed by Default</p>
-        <h1>Quality Gates That <span>Can't Be Cheated</span></h1>
-        <p>CI quality checks are easily gamed &mdash; developers delete tests to hit coverage thresholds. Evidence Gate enforces fail-closed gates with tamper-proof evidence chains. Blind Gates hide the exact threshold so gaming is structurally impossible.</p>
+        <p style="font-size: 0.875rem; font-weight: 600; color: #22c55e; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">GitHub Actions &middot; 29種のゲートタイプ &middot; デフォルトFail-Closed</p>
+        <h1>不正のできない<span>品質ゲート</span></h1>
+        <p>CIの品質チェックは簡単に不正できます &mdash; 開発者はカバレッジ閾値を達成するためにテストを削除することさえあります。Evidence Gateは、改ざん防止のエビデンスチェーンを備えたフェイルクローズドゲートを強制します。Blind Gatesは正確な閾値を隠すことで、不正を構造的に不可能にします。</p>
         <div class="hero-buttons">
-          <a href="https://github.com/marketplace/actions/evidence-gate-action" class="btn btn-primary">Get Started Free</a>
-          <a href="#quick-start" class="btn btn-secondary">View Quick Start</a>
+          <a href="https://github.com/marketplace/actions/evidence-gate-action" class="btn btn-primary">無料で始める</a>
+          <a href="#quick-start" class="btn btn-secondary">クイックスタートを見る</a>
         </div>
       </div>
       <div class="hero-code">
@@ -823,32 +823,32 @@
   <!-- How It Works Section -->
   <section id="how-it-works" class="section section-alt">
     <div class="container">
-      <h2 class="section-title">How It Works</h2>
-      <p class="section-subtitle">Three steps to enforced quality in every pull request</p>
+      <h2 class="section-title">仕組み</h2>
+      <p class="section-subtitle">3ステップでプルリクエストに品質を強制</p>
       <div class="steps-grid">
         <div class="step-card">
           <div class="step-number">1</div>
           <div class="step-icon">
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
           </div>
-          <h3>Define</h3>
-          <p>Add Evidence Gate to your workflow YAML. Specify gate types, evidence files, and thresholds.</p>
+          <h3>定義</h3>
+          <p>ワークフローYAMLにEvidence Gateを追加します。ゲートタイプ、エビデンスファイル、閾値を指定します。</p>
         </div>
         <div class="step-card">
           <div class="step-number">2</div>
           <div class="step-icon">
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           </div>
-          <h3>Evaluate</h3>
-          <p>Gates automatically verify your evidence files &mdash; existence, schema, thresholds, and integrity.</p>
+          <h3>評価</h3>
+          <p>ゲートがエビデンスファイルを自動検証します &mdash; ファイルの存在、スキーマ、閾値、整合性をチェックします。</p>
         </div>
         <div class="step-card">
           <div class="step-number">3</div>
           <div class="step-icon">
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
-          <h3>Enforce</h3>
-          <p>Fail-closed: pipelines stop on quality violations. Results appear in PR summary and workflow annotations.</p>
+          <h3>強制</h3>
+          <p>フェイルクローズド: 品質違反があるとパイプラインが停止します。結果はPRサマリーとワークフローアノテーションに表示されます。</p>
         </div>
       </div>
     </div>
@@ -857,8 +857,8 @@
   <!-- Blind Gate Explainer Section -->
   <section id="blind-gates" class="section">
     <div class="container">
-      <h2 class="section-title">Blind Gates: Quality That Can't Be Gamed</h2>
-      <p class="section-subtitle">When AI writes your code AND your tests, visible thresholds become targets to optimize against</p>
+      <h2 class="section-title">Blind Gates: 不正のできない品質管理</h2>
+      <p class="section-subtitle">AIがコードとテストの両方を書く時代、可視化された閾値は最適化の標的になります</p>
       <div class="blind-gate-explainer">
         <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram comparing Traditional Gates with visible thresholds versus Blind Gates with hidden criteria">
           <!-- Left side: Traditional Gate -->
@@ -946,9 +946,9 @@
           </defs>
         </svg>
         <div class="blind-gate-text">
-          <p><strong>The problem:</strong> Traditional CI gates publish their thresholds. An AI agent told to "achieve 80% coverage" will generate tests that hit exactly 80.1% -- satisfying the metric while proving nothing about quality.</p>
-          <p><strong>The solution:</strong> Blind Gates evaluate evidence against criteria that are never exposed to the pipeline. The AI that generated the code cannot see, reverse-engineer, or optimize against the pass/fail threshold. Quality must be genuine.</p>
-          <p><strong>How it works:</strong> Your pipeline submits evidence files. The Evidence Gate API evaluates them server-side against private criteria configured by your team. The pipeline only receives pass or fail -- never the criteria themselves.</p>
+          <p><strong>問題:</strong> 従来のCIゲートは閾値を公開しています。「カバレッジ80%を達成せよ」と指示されたAIエージェントは、ちょうど80.1%に到達するテストを生成します &mdash; メトリクスを満たしつつ、品質については何も証明しません。</p>
+          <p><strong>解決策:</strong> Blind Gatesは、パイプラインに公開されない基準に基づいてエビデンスを評価します。コードを生成したAIは、合否の閾値を見ることも、リバースエンジニアリングすることも、最適化の対象にすることもできません。品質は本物でなければなりません。</p>
+          <p><strong>仕組み:</strong> パイプラインがエビデンスファイルを提出します。Evidence Gate APIがサーバーサイドで、チームが設定したプライベートな基準に基づいて評価します。パイプラインが受け取るのは合格か不合格のみ &mdash; 基準そのものは決して公開されません。</p>
         </div>
       </div>
     </div>
@@ -957,70 +957,70 @@
   <!-- AI Governance Section -->
   <section id="ai-governance" class="section">
     <div class="container">
-      <h2 class="section-title">Designed for AI Governance</h2>
-      <p class="section-subtitle">Evidence Gate's design aligns with Japan's AI Business Operator Guidelines</p>
+      <h2 class="section-title">AIガバナンスのための設計</h2>
+      <p class="section-subtitle">Evidence Gateの設計は、日本のAI事業者ガイドラインの原則に沿っています</p>
       <div class="steps-grid">
         <div class="step-card">
           <div class="step-icon">
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
-          <h3>Fail-Closed Safety</h3>
-          <p>All gates default to FAIL. Only explicitly verified evidence earns a PASS. Supports the guideline's emphasis on safety and risk prevention.</p>
+          <h3>フェイルクローズド安全性</h3>
+          <p>すべてのゲートはデフォルトでFAILです。明示的に検証されたエビデンスのみがPASSを獲得します。ガイドラインが重視する安全性とリスク防止をサポートします。</p>
         </div>
         <div class="step-card">
           <div class="step-icon">
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
           </div>
-          <h3>Transparency & Trust Levels</h3>
-          <p>Genchi Genbutsu Trust Levels (L1&ndash;L4) make evidence reliability explicit. SHA-256 Evidence Chain enables integrity verification of all judgment data.</p>
+          <h3>透明性と信頼レベル</h3>
+          <p>現地現物信頼レベル（L1&ndash;L4）により、エビデンスの信頼性を明確にします。SHA-256エビデンスチェーンにより、すべての判断データの整合性を検証できます。</p>
         </div>
         <div class="step-card">
           <div class="step-icon">
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
           </div>
-          <h3>Security & Accountability</h3>
-          <p>AWS KMS encryption (FIPS 140-2 validated), HMAC-signed cursors, and a maturity-level-based Quality State Model provide auditable governance at every step.</p>
+          <h3>セキュリティと説明責任</h3>
+          <p>AWS KMS暗号化（FIPS 140-2準拠）、HMAC署名カーソル、成熟度レベルベースの品質状態モデルにより、すべてのステップで監査可能なガバナンスを提供します。</p>
         </div>
       </div>
-      <p style="text-align: center; margin-top: 2rem; color: #64748b; font-size: 0.875rem;">Evidence Gate supports practices aligned with key principles including transparency, safety, and accountability. <a href="https://www.allnew.work/ai-governance.html">Learn more about our approach &rarr;</a></p>
-      <p style="text-align: center; margin-top: 0.75rem; color: #94a3b8; font-size: 0.8125rem;">This product is not endorsed by or affiliated with any government body. Feature descriptions are for informational purposes only and do not constitute compliance certification.</p>
+      <p style="text-align: center; margin-top: 2rem; color: #64748b; font-size: 0.875rem;">Evidence Gateは、透明性、安全性、説明責任を含む主要原則に沿った実践をサポートします。<a href="https://www.allnew.work/ai-governance.html">私たちのアプローチについて詳しく &rarr;</a></p>
+      <p style="text-align: center; margin-top: 0.75rem; color: #94a3b8; font-size: 0.8125rem;">本製品はいかなる政府機関の推奨や提携を受けたものではありません。機能説明は情報提供のみを目的としており、コンプライアンス認証を構成するものではありません。</p>
     </div>
   </section>
 
   <!-- Ecosystem Section -->
   <section id="ecosystem" class="section section-alt">
     <div class="container">
-      <h2 class="section-title">Agent Governance Ecosystem</h2>
-      <p class="section-subtitle">Three layers of protection &mdash; from CI validation to runtime controls</p>
+      <h2 class="section-title">エージェントガバナンスエコシステム</h2>
+      <p class="section-subtitle">CI検証からランタイム制御まで &mdash; 3層の防御</p>
 
       <!-- 3-Layer Architecture Diagram -->
       <div class="ecosystem-diagram">
         <div class="eco-layer" style="border-left: 3px solid #22c55e;">
-          <span class="eco-layer-label">CI Layer</span>
+          <span class="eco-layer-label">CIレイヤー</span>
           <div class="eco-layer-content">
             <div>
               <h4>evidence-gate-action <span class="eco-badge eco-badge-green">GitHub Actions</span></h4>
-              <p>Build-time quality gates &mdash; validates blueprints, policies, SBOM, and provenance before deploy</p>
+              <p>ビルド時の品質ゲート &mdash; デプロイ前にブループリント、ポリシー、SBOM、来歴を検証</p>
             </div>
           </div>
         </div>
         <div class="eco-arrow">&darr;</div>
         <div class="eco-layer" style="border-left: 3px solid #2563eb;">
-          <span class="eco-layer-label">Infra Layer</span>
+          <span class="eco-layer-label">インフラレイヤー</span>
           <div class="eco-layer-content">
             <div>
               <h4>nemoclaw-governance <span class="eco-badge eco-badge-blue">Python CLI &amp; Library</span></h4>
-              <p>Validates NVIDIA NemoClaw blueprint.yaml and OpenShell sandbox policies before deployment</p>
+              <p>NVIDIA NemoClawのblueprint.yamlとOpenShellサンドボックスポリシーをデプロイ前に検証</p>
             </div>
           </div>
         </div>
         <div class="eco-arrow">&darr;</div>
         <div class="eco-layer" style="border-left: 3px solid #7c3aed;">
-          <span class="eco-layer-label">Runtime Layer</span>
+          <span class="eco-layer-label">ランタイムレイヤー</span>
           <div class="eco-layer-content">
             <div>
               <h4>agentgov <span class="eco-badge eco-badge-purple">Proxy + SDK</span></h4>
-              <p>Runtime cost controls, budget enforcement, and network governance for AI agent operations</p>
+              <p>AIエージェント運用のためのランタイムコスト制御、予算管理、ネットワークガバナンス</p>
             </div>
           </div>
         </div>
@@ -1031,63 +1031,63 @@
         <div class="eco-tool-card">
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
           <h4>evidence-gate-action</h4>
-          <p>29 gate types including NemoClaw blueprint and policy validation. Fail-closed, tamper-proof CI gates.</p>
-          <a href="https://github.com/evidence-gate/evidence-gate-action" class="eco-tool-link">View on GitHub &rarr;</a>
+          <p>NemoClawブループリントとポリシー検証を含む29種のゲートタイプ。フェイルクローズド、改ざん防止CIゲート。</p>
+          <a href="https://github.com/evidence-gate/evidence-gate-action" class="eco-tool-link">GitHubで見る &rarr;</a>
         </div>
         <div class="eco-tool-card">
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
           <h4>nemoclaw-governance</h4>
-          <p>CLI and Python library for NVIDIA NemoClaw configuration validation. <code>pip install nemoclaw-governance</code></p>
-          <a href="https://github.com/evidence-gate/nemoclaw-governance" class="eco-tool-link">View on GitHub &rarr;</a>
+          <p>NVIDIA NemoClaw設定検証用のCLIおよびPythonライブラリ。<code>pip install nemoclaw-governance</code></p>
+          <a href="https://github.com/evidence-gate/nemoclaw-governance" class="eco-tool-link">GitHubで見る &rarr;</a>
         </div>
         <div class="eco-tool-card">
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
           <h4>agentgov</h4>
-          <p>Cost-aware governance proxy for AI agents. Budget enforcement, hold/settle billing, streaming controls.</p>
-          <a href="https://github.com/evidence-gate/agentgov" class="eco-tool-link">View on GitHub &rarr;</a>
+          <p>AIエージェント向けコスト対応ガバナンスプロキシ。予算管理、hold/settle課金、ストリーミング制御。</p>
+          <a href="https://github.com/evidence-gate/agentgov" class="eco-tool-link">GitHubで見る &rarr;</a>
         </div>
       </div>
 
-      <p style="text-align: center; margin-top: 2rem; color: #64748b; font-size: 0.9375rem;"><strong>Why three layers?</strong> NemoClaw provides sandbox isolation but has zero cost controls. agentgov adds runtime budget enforcement. Evidence Gate validates everything at CI time &mdash; before code reaches production.</p>
+      <p style="text-align: center; margin-top: 2rem; color: #64748b; font-size: 0.9375rem;"><strong>なぜ3層なのか?</strong> NemoClawはサンドボックス分離を提供しますが、コスト制御はありません。agentgovがランタイム予算管理を追加します。Evidence GateはCI時にすべてを検証します &mdash; コードが本番に到達する前に。</p>
     </div>
   </section>
 
   <!-- Pricing Section -->
   <section id="pricing" class="section">
     <div class="container">
-      <h2 class="section-title">Simple, Transparent Pricing</h2>
-      <p class="section-subtitle">Start free, upgrade when your team needs advanced features</p>
+      <h2 class="section-title">シンプルで透明な料金体系</h2>
+      <p class="section-subtitle">無料で始めて、チームの成長に合わせてアップグレード</p>
       <div class="pricing-table-wrapper">
         <table class="pricing-table">
           <thead>
             <tr>
-              <th>Feature</th>
-              <th>Free ($0/mo)</th>
-              <th class="featured">Pro (Contact)</th>
-              <th>Enterprise (Contact us)</th>
+              <th>機能</th>
+              <th>Free（$0/月）</th>
+              <th class="featured">Pro（お問い合わせ）</th>
+              <th>Enterprise（お問い合わせ）</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Evaluations/month</td>
+              <td>月間評価回数</td>
               <td>100</td>
               <td class="featured">5,000</td>
-              <td>Unlimited</td>
+              <td>無制限</td>
             </tr>
             <tr>
-              <td>API calls/month</td>
+              <td>月間APIコール数</td>
               <td>1,000</td>
               <td class="featured">50,000</td>
-              <td>Unlimited</td>
+              <td>無制限</td>
             </tr>
             <tr>
-              <td>All 29 gate types</td>
+              <td>全29種のゲートタイプ</td>
               <td class="check">&#10003;</td>
               <td class="featured check">&#10003;</td>
               <td class="check">&#10003;</td>
             </tr>
             <tr>
-              <td>SARIF output</td>
+              <td>SARIF出力</td>
               <td class="check">&#10003;</td>
               <td class="featured check">&#10003;</td>
               <td class="check">&#10003;</td>
@@ -1099,115 +1099,115 @@
               <td class="check">&#10003;</td>
             </tr>
             <tr>
-              <td>SHA-256 integrity hashing</td>
+              <td>SHA-256整合性ハッシュ</td>
               <td class="check">&#10003;</td>
               <td class="featured check">&#10003;</td>
               <td class="check">&#10003;</td>
             </tr>
             <tr>
-              <td>Fail-closed error handling</td>
+              <td>フェイルクローズドエラー処理</td>
               <td class="check">&#10003;</td>
               <td class="featured check">&#10003;</td>
               <td class="check">&#10003;</td>
             </tr>
             <tr>
-              <td>Three enforcement modes (warn / observe / enforce)</td>
+              <td>3つの適用モード（warn / observe / enforce）</td>
               <td class="check">&#10003;</td>
               <td class="featured check">&#10003;</td>
               <td class="check">&#10003;</td>
             </tr>
             <tr>
-              <td>Config file (.evidencegate.yml) &mdash; zero required inputs</td>
+              <td>設定ファイル（.evidencegate.yml） &mdash; 必須入力なし</td>
               <td class="check">&#10003;</td>
               <td class="featured check">&#10003;</td>
               <td class="check">&#10003;</td>
             </tr>
             <tr>
-              <td>SBOM gate (CycloneDX/SPDX structural validation)</td>
+              <td>SBOMゲート（CycloneDX/SPDX構造検証）</td>
               <td class="check">&#10003;</td>
               <td class="featured check">&#10003;</td>
               <td class="check">&#10003;</td>
             </tr>
             <tr>
-              <td>Provenance gate (SLSA build attestation)</td>
+              <td>来歴ゲート（SLSAビルド証明）</td>
               <td class="check">&#10003;</td>
               <td class="featured check">&#10003;</td>
               <td class="check">&#10003;</td>
             </tr>
             <tr>
-              <td>NemoClaw gates (blueprint + policy validation)</td>
+              <td>NemoClawゲート（ブループリント + ポリシー検証）</td>
               <td class="check">&#10003;</td>
               <td class="featured check">&#10003;</td>
               <td class="check">&#10003;</td>
             </tr>
             <tr>
-              <td>Signal-sorted Job Summary (Critical &gt; Warning &gt; Info)</td>
+              <td>シグナルソートJob Summary（Critical &gt; Warning &gt; Info）</td>
               <td class="check">&#10003;</td>
               <td class="featured check">&#10003;</td>
               <td class="check">&#10003;</td>
             </tr>
             <tr>
-              <td>AI agent repair contract (retry_prompt output)</td>
+              <td>AIエージェント修復コントラクト（retry_prompt出力）</td>
               <td class="check">&#10003;</td>
               <td class="featured check">&#10003;</td>
               <td class="check">&#10003;</td>
             </tr>
             <tr>
-              <td>Gate presets</td>
+              <td>ゲートプリセット</td>
               <td class="check">&#10003;</td>
               <td class="featured check">&#10003;</td>
               <td class="check">&#10003;</td>
             </tr>
             <tr>
-              <td>Sticky PR comments</td>
+              <td>スティッキーPRコメント</td>
               <td class="check">&#10003;</td>
               <td class="featured check">&#10003;</td>
               <td class="check">&#10003;</td>
             </tr>
             <tr>
-              <td>Blind Gate evaluation</td>
+              <td>Blind Gate評価</td>
               <td class="dash">&mdash;</td>
               <td class="featured check">&#10003;</td>
               <td class="check">&#10003;</td>
             </tr>
             <tr>
-              <td>Evidence chain verification (L4)</td>
+              <td>エビデンスチェーン検証（L4）</td>
               <td class="dash">&mdash;</td>
               <td class="featured check">&#10003;</td>
               <td class="check">&#10003;</td>
             </tr>
             <tr>
-              <td>Quality State tracking</td>
+              <td>品質状態トラッキング</td>
               <td class="dash">&mdash;</td>
               <td class="featured check">&#10003;</td>
               <td class="check">&#10003;</td>
             </tr>
             <tr>
-              <td>Remediation workflows</td>
+              <td>改善ワークフロー</td>
               <td class="dash">&mdash;</td>
               <td class="featured check">&#10003;</td>
               <td class="check">&#10003;</td>
             </tr>
             <tr>
-              <td>Missing evidence + suggested actions</td>
+              <td>エビデンス不足検出 + 推奨アクション</td>
               <td class="dash">&mdash;</td>
               <td class="featured check">&#10003;</td>
               <td class="check">&#10003;</td>
             </tr>
             <tr>
-              <td>Self-hosted deployment</td>
-              <td class="dash">&mdash;</td>
-              <td class="featured dash">&mdash;</td>
-              <td class="check">&#10003;</td>
-            </tr>
-            <tr>
-              <td>Custom API base URL</td>
+              <td>セルフホストデプロイ</td>
               <td class="dash">&mdash;</td>
               <td class="featured dash">&mdash;</td>
               <td class="check">&#10003;</td>
             </tr>
             <tr>
-              <td>Dedicated support</td>
+              <td>カスタムAPIベースURL</td>
+              <td class="dash">&mdash;</td>
+              <td class="featured dash">&mdash;</td>
+              <td class="check">&#10003;</td>
+            </tr>
+            <tr>
+              <td>専用サポート</td>
               <td class="dash">&mdash;</td>
               <td class="featured dash">&mdash;</td>
               <td class="check">&#10003;</td>
@@ -1216,9 +1216,9 @@
           <tfoot>
             <tr class="cta-row">
               <td></td>
-              <td><a href="https://github.com/marketplace/actions/evidence-gate-action" class="btn btn-outline-green">Get Started Free</a></td>
-              <td class="featured"><a href="#pricing" class="btn btn-primary">Start Pro Trial</a></td>
-              <td><a href="mailto:support@allnew.co.jp" class="btn btn-secondary">Contact Sales</a></td>
+              <td><a href="https://github.com/marketplace/actions/evidence-gate-action" class="btn btn-outline-green">無料で始める</a></td>
+              <td class="featured"><a href="#pricing" class="btn btn-primary">Proトライアル開始</a></td>
+              <td><a href="mailto:support@allnew.co.jp" class="btn btn-secondary">営業に問い合わせ</a></td>
             </tr>
           </tfoot>
         </table>
@@ -1229,24 +1229,24 @@
   <!-- Quick Start Section -->
   <section id="quick-start" class="section section-alt">
     <div class="container">
-      <h2 class="section-title">Up and Running in 5 Minutes</h2>
-      <p class="section-subtitle">Add quality gates to your GitHub Actions workflow in three simple steps</p>
+      <h2 class="section-title">5分で導入完了</h2>
+      <p class="section-subtitle">3つの簡単なステップでGitHub Actionsに品質ゲートを追加</p>
       <div class="quickstart-steps">
 
         <div class="qs-step">
           <h3>
             <span class="step-number">1</span>
-            Install from Marketplace
+            Marketplaceからインストール
           </h3>
-          <p>Visit the <a href="https://github.com/marketplace/actions/evidence-gate-action">Evidence Gate Marketplace page</a> and click "Use latest version" to add the action to your repository.</p>
+          <p><a href="https://github.com/marketplace/actions/evidence-gate-action">Evidence Gate Marketplaceページ</a>にアクセスし、「Use latest version」をクリックしてリポジトリにアクションを追加します。</p>
         </div>
 
         <div class="qs-step">
           <h3>
             <span class="step-number">2</span>
-            Add to your workflow
+            ワークフローに追加
           </h3>
-          <p>Add the Evidence Gate step to your GitHub Actions workflow file:</p>
+          <p>GitHub ActionsワークフローファイルにEvidence Gateステップを追加します:</p>
           <div class="code-block">
 <pre><span class="code-key">name:</span> <span class="code-string">Quality Gate</span>
 <span class="code-key">on:</span> <span class="code-string">[pull_request]</span>
@@ -1276,9 +1276,9 @@
         <div class="qs-step">
           <h3>
             <span class="step-number">3</span>
-            See results in your PR
+            PRで結果を確認
           </h3>
-          <p>Evidence Gate writes a detailed summary to <code>GITHUB_STEP_SUMMARY</code>, visible directly in your pull request's workflow run. Gate pass/fail results, evidence hashes, and threshold evaluations appear automatically &mdash; no configuration needed.</p>
+          <p>Evidence Gateは詳細なサマリーを<code>GITHUB_STEP_SUMMARY</code>に書き込み、プルリクエストのワークフロー実行から直接確認できます。ゲートの合否結果、エビデンスハッシュ、閾値評価が自動的に表示されます &mdash; 設定は不要です。</p>
         </div>
 
       </div>
@@ -1290,21 +1290,21 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-brand">
-          <p>Powered by GitHub Actions. Evidence Gate helps teams enforce quality standards in every deployment pipeline.</p>
+          <p>GitHub Actionsで動作。Evidence Gateはすべてのデプロイパイプラインで品質基準を強制します。</p>
         </div>
         <div class="footer-links">
           <a href="https://github.com/evidence-gate">GitHub</a>
           <a href="https://github.com/marketplace/actions/evidence-gate-action">Marketplace</a>
-          <a href="https://github.com/evidence-gate/evidence-gate-action#readme">Documentation</a>
+          <a href="https://github.com/evidence-gate/evidence-gate-action#readme">ドキュメント</a>
           <a href="https://github.com/evidence-gate/nemoclaw-governance">NemoClaw Governance</a>
           <a href="https://github.com/evidence-gate/agentgov">agentgov</a>
-          <a href="https://evidence-gate.dev/privacy">Privacy Policy</a>
-          <a href="https://evidence-gate.dev/terms">Terms of Service</a>
+          <a href="https://evidence-gate.dev/privacy">プライバシーポリシー</a>
+          <a href="https://evidence-gate.dev/terms">利用規約</a>
         </div>
       </div>
       <div class="footer-bottom">
         <span>&copy; 2026 AllNew LLC. All rights reserved.</span>
-        <span>Built with GitHub Actions</span>
+        <span>GitHub Actionsで構築</span>
       </div>
     </div>
   </footer>
