@@ -700,6 +700,110 @@
     }
 
     /* ============================================
+       Security Guarantees Subsection
+       ============================================ */
+    .security-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      max-width: 880px;
+      margin: 0 auto 2rem;
+    }
+
+    .security-card {
+      padding: 1.25rem 1.5rem;
+      border-radius: 0.75rem;
+      border: 1px solid #e2e8f0;
+      background: white;
+    }
+
+    .security-card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .security-card-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .security-card h4 {
+      font-size: 0.9375rem;
+      font-weight: 700;
+      color: #1e293b;
+    }
+
+    .security-card p {
+      font-size: 0.8125rem;
+      color: #64748b;
+      line-height: 1.5;
+    }
+
+    .security-card code {
+      font-size: 0.75rem;
+      background: #f1f5f9;
+      padding: 0.125rem 0.375rem;
+      border-radius: 0.25rem;
+      color: #334155;
+    }
+
+    .security-constraints {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    .security-constraint-box {
+      padding: 1.25rem 1.5rem;
+      border-radius: 0.75rem;
+      border-left: 3px solid;
+      background: #f8fafc;
+    }
+
+    .security-constraint-box h5 {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 0.5rem;
+    }
+
+    .security-constraint-box p {
+      font-size: 0.8125rem;
+      color: #64748b;
+      line-height: 1.5;
+    }
+
+    .security-constraint-box ul {
+      list-style: none;
+      padding: 0;
+      margin: 0.5rem 0 0;
+    }
+
+    .security-constraint-box li {
+      font-size: 0.8125rem;
+      color: #64748b;
+      padding: 0.25rem 0;
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    .security-constraint-box li::before {
+      content: "\2192";
+      position: absolute;
+      left: 0;
+      color: #94a3b8;
+    }
+
+    /* ============================================
        Ecosystem Section
        ============================================ */
     .ecosystem-diagram {
@@ -965,6 +1069,14 @@
       }
 
       .routing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .security-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .security-constraints {
         grid-template-columns: 1fr;
       }
     }
@@ -1366,6 +1478,105 @@
           </div>
         </div>
         <p style="text-align: center; margin-top: 2rem; color: #64748b; font-size: 0.875rem;">Providers can be switched at runtime without restarting the sandbox. Configuration is managed through the Blueprint's inference settings.</p>
+      </div>
+
+      <!-- Security Guarantees Subsection -->
+      <div class="arch-subsection">
+        <h3 class="arch-subsection-title">Security Guarantees</h3>
+        <p class="arch-subsection-desc">Evidence Gate validates that every sandbox deploys with four mandatory isolation layers &mdash; if any layer is misconfigured, the gate fails the pipeline</p>
+
+        <div class="security-grid">
+          <!-- Landlock LSM -->
+          <div class="security-card">
+            <div class="security-card-header">
+              <div class="security-card-icon" style="background:#f0fdf4;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+              </div>
+              <h4>Landlock LSM</h4>
+            </div>
+            <p>Linux Security Module restricting filesystem access at the kernel level. The sandbox process cannot access paths outside its granted set &mdash; even if the agent finds a code execution vulnerability. Evidence Gate validates that Landlock rules are correctly configured before deployment.</p>
+          </div>
+
+          <!-- seccomp Filtering -->
+          <div class="security-card">
+            <div class="security-card-header">
+              <div class="security-card-icon" style="background:#eff6ff;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
+                </svg>
+              </div>
+              <h4>seccomp Filtering</h4>
+            </div>
+            <p>System call filter that limits which kernel operations the sandbox process can invoke. Blocks dangerous syscalls like <code>ptrace</code>, <code>mount</code>, and <code>reboot</code> before they reach the kernel.</p>
+          </div>
+
+          <!-- Network Namespace Isolation -->
+          <div class="security-card">
+            <div class="security-card-header">
+              <div class="security-card-icon" style="background:#faf5ff;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"/>
+                  <line x1="2" y1="12" x2="22" y2="12"/>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                </svg>
+              </div>
+              <h4>Network Namespace Isolation</h4>
+            </div>
+            <p>Each sandbox runs in its own network namespace with deny-by-default egress policy. Only endpoints explicitly approved in the blueprint can be reached. Unapproved requests are blocked and surfaced for operator approval.</p>
+          </div>
+
+          <!-- Inference Control -->
+          <div class="security-card">
+            <div class="security-card-header">
+              <div class="security-card-icon" style="background:#f8fafc;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="4" y="4" width="16" height="16" rx="2"/>
+                  <rect x="9" y="9" width="6" height="6"/>
+                  <line x1="9" y1="2" x2="9" y2="4"/>
+                  <line x1="15" y1="2" x2="15" y2="4"/>
+                  <line x1="9" y1="20" x2="9" y2="22"/>
+                  <line x1="15" y1="20" x2="15" y2="22"/>
+                  <line x1="20" y1="9" x2="22" y2="9"/>
+                  <line x1="20" y1="15" x2="22" y2="15"/>
+                  <line x1="2" y1="9" x2="4" y2="9"/>
+                  <line x1="2" y1="15" x2="4" y2="15"/>
+                </svg>
+              </div>
+              <h4>Inference Control</h4>
+            </div>
+            <p>LLM inference requests route through the OpenShell gateway &mdash; never directly from the agent process. The gateway enforces model allowlists, rate limits, and cost caps before forwarding to the provider.</p>
+          </div>
+        </div>
+
+        <div class="security-constraints">
+          <!-- Filesystem Constraints -->
+          <div class="security-constraint-box" style="border-left-color: #22c55e;">
+            <h5>Filesystem</h5>
+            <ul>
+              <li><code>/sandbox</code> &mdash; agent working directory (read + write)</li>
+              <li><code>/tmp</code> &mdash; temporary files (read + write)</li>
+              <li>All other paths &mdash; read-only or inaccessible</li>
+              <li>System binaries, configs, and host mounts are never writable</li>
+            </ul>
+          </div>
+
+          <!-- Network Constraints -->
+          <div class="security-constraint-box" style="border-left-color: #7c3aed;">
+            <h5>Network</h5>
+            <ul>
+              <li>Deny-by-default &mdash; no egress until explicitly allowed</li>
+              <li>Approved endpoints listed in <code>blueprint.yaml</code></li>
+              <li>Unapproved requests blocked and queued for operator review</li>
+              <li>Inference traffic routed through gateway, not direct from agent</li>
+            </ul>
+          </div>
+        </div>
+
+        <p style="text-align: center; margin-top: 2rem; color: #64748b; font-size: 0.875rem;">
+          Evidence Gate&rsquo;s <strong>blueprint</strong> and <strong>policy</strong> gates validate that all four isolation layers are correctly configured before any sandbox is deployed to production.
+        </p>
       </div>
     </div>
   </section>
