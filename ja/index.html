@@ -1595,7 +1595,7 @@
           <div class="eco-layer-content">
             <div>
               <h4>evidence-gate-action <span class="eco-badge eco-badge-green">GitHub Actions</span></h4>
-              <p>ビルド時の品質ゲート &mdash; デプロイ前にブループリント、ポリシー、SBOM、来歴を検証</p>
+              <p>ビルド時の品質ゲート &mdash; マージ前にNemoClawのblueprint.yaml設定、サンドボックスポリシー、SBOM、来歴を検証</p>
             </div>
           </div>
         </div>
@@ -1604,8 +1604,8 @@
           <span class="eco-layer-label">インフラレイヤー</span>
           <div class="eco-layer-content">
             <div>
-              <h4>nemoclaw-governance <span class="eco-badge eco-badge-blue">Python CLI &amp; Library</span></h4>
-              <p>NVIDIA NemoClawのblueprint.yamlとOpenShellサンドボックスポリシーをデプロイ前に検証</p>
+              <h4>nemoclaw-governance <span class="eco-badge eco-badge-blue">Python CLI + Library</span></h4>
+              <p>NemoClaw Plugin+Blueprint設定を検証 &mdash; blueprint.yamlスキーマ、サンドボックスポリシー制約、推論プロファイル設定をオペレータールールに対してチェック</p>
             </div>
           </div>
         </div>
@@ -1615,7 +1615,7 @@
           <div class="eco-layer-content">
             <div>
               <h4>agentgov <span class="eco-badge eco-badge-purple">Proxy + SDK</span></h4>
-              <p>AIエージェント運用のためのランタイムコスト制御、予算管理、ネットワークガバナンス</p>
+              <p>NemoClawサンドボックスのランタイム予算強制 &mdash; hold/settle課金、リクエスト単位コスト上限、ストリーミングトークン制御、オペレーター管理ネットワーク承認</p>
             </div>
           </div>
         </div>
@@ -1626,24 +1626,24 @@
         <div class="eco-tool-card">
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
           <h4>evidence-gate-action</h4>
-          <p>NemoClawブループリントとポリシー検証を含む29種のゲートタイプ。フェイルクローズド、改ざん防止CIゲート。</p>
+          <p>NemoClawブループリント、ポリシー、サンドボックスライフサイクル検証を含む32種のゲートタイプ。SARIF出力とAIエージェント修復コントラクト付きフェイルクローズドCIゲート。</p>
           <a href="https://github.com/evidence-gate/evidence-gate-action" class="eco-tool-link">GitHubで見る &rarr;</a>
         </div>
         <div class="eco-tool-card">
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
           <h4>nemoclaw-governance</h4>
-          <p>NVIDIA NemoClaw設定検証用のCLIおよびPythonライブラリ。<code>pip install nemoclaw-governance</code></p>
+          <p>NVIDIA OpenShellサンドボックス向けPlugin+Blueprint設定を検証。blueprint.yaml、policy.yaml、推論プロファイルをチェック。<code>pip install nemoclaw-governance</code></p>
           <a href="https://github.com/evidence-gate/nemoclaw-governance" class="eco-tool-link">GitHubで見る &rarr;</a>
         </div>
         <div class="eco-tool-card">
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
           <h4>agentgov</h4>
-          <p>AIエージェント向けコスト対応ガバナンスプロキシ。予算管理、hold/settle課金、ストリーミング制御。</p>
+          <p>NemoClawサンドボックス向けランタイムガバナンスプロキシ。hold/settle課金による予算強制、3つの推論プロファイルサポート（NVIDIA Cloud、Local NIM、Local vLLM）、オペレーター管理ネットワーク承認。</p>
           <a href="https://github.com/evidence-gate/agentgov" class="eco-tool-link">GitHubで見る &rarr;</a>
         </div>
       </div>
 
-      <p style="text-align: center; margin-top: 2rem; color: #64748b; font-size: 0.9375rem;"><strong>なぜ3層なのか?</strong> NemoClawはサンドボックス分離を提供しますが、コスト制御はありません。agentgovがランタイム予算管理を追加します。Evidence GateはCI時にすべてを検証します &mdash; コードが本番に到達する前に。</p>
+      <p style="text-align: center; margin-top: 2rem; color: #64748b; font-size: 0.9375rem;"><strong>なぜ3層なのか?</strong> NemoClawはLandlock+seccomp+netnsによるサンドボックス分離を提供しますが、コスト制御はありません。agentgovがランタイム予算強制と推論ルーティングガバナンスを追加します。Evidence GateはCI時にすべての設定を検証します &mdash; ブループリントが本番サンドボックスに到達する前に。</p>
     </div>
   </section>
 
@@ -1676,7 +1676,7 @@
               <td>無制限</td>
             </tr>
             <tr>
-              <td>全29種のゲートタイプ</td>
+              <td>全32種のゲートタイプ</td>
               <td class="check">&#10003;</td>
               <td class="featured check">&#10003;</td>
               <td class="check">&#10003;</td>
@@ -1730,8 +1730,20 @@
               <td class="check">&#10003;</td>
             </tr>
             <tr>
-              <td>NemoClawゲート（ブループリント + ポリシー検証）</td>
+              <td>NemoClawゲート（ブループリント + ポリシー + サンドボックスライフサイクル）</td>
               <td class="check">&#10003;</td>
+              <td class="featured check">&#10003;</td>
+              <td class="check">&#10003;</td>
+            </tr>
+            <tr>
+              <td>推論ルーティング検証（NVIDIA Cloud、NIM、vLLM）</td>
+              <td class="check">&#10003;</td>
+              <td class="featured check">&#10003;</td>
+              <td class="check">&#10003;</td>
+            </tr>
+            <tr>
+              <td>サンドボックスセキュリティ態勢チェック（Landlock、seccomp、netns）</td>
+              <td class="dash">&mdash;</td>
               <td class="featured check">&#10003;</td>
               <td class="check">&#10003;</td>
             </tr>
