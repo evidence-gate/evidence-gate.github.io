@@ -830,6 +830,7 @@
         <li><a href="#how-it-works">How It Works</a></li>
         <li><a href="#blind-gates">Blind Gates</a></li>
         <li><a href="#ai-governance">AI Governance</a></li>
+        <li><a href="#nemoclaw-architecture">Architecture</a></li>
         <li><a href="#ecosystem">Ecosystem</a></li>
         <li><a href="#pricing">Pricing</a></li>
         <li><a href="#quick-start">Quick Start</a></li>
@@ -1032,6 +1033,92 @@
       </div>
       <p style="text-align: center; margin-top: 2rem; color: #64748b; font-size: 0.875rem;">Evidence Gate supports practices aligned with key principles including transparency, safety, and accountability. <a href="https://www.allnew.work/ai-governance.html">Learn more about our approach &rarr;</a></p>
       <p style="text-align: center; margin-top: 0.75rem; color: #94a3b8; font-size: 0.8125rem;">This product is not endorsed by or affiliated with any government body. Feature descriptions are for informational purposes only and do not constitute compliance certification.</p>
+    </div>
+  </section>
+
+  <!-- NemoClaw Architecture Section -->
+  <section id="nemoclaw-architecture" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">NemoClaw Architecture</h2>
+      <p class="section-subtitle">Plugin + Blueprint composition &mdash; minimal CLI extension, independently versioned sandbox orchestration</p>
+
+      <div class="arch-diagram-container">
+        <svg viewBox="0 0 880 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="NemoClaw Plugin+Blueprint architecture diagram showing the Plugin resolving and executing the Blueprint as a subprocess to create OpenShell sandboxes">
+          <defs>
+            <marker id="arrowArch" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+              <polygon points="0 0, 10 3.5, 0 7" fill="#94a3b8"/>
+            </marker>
+            <marker id="arrowArchGreen" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+              <polygon points="0 0, 10 3.5, 0 7" fill="#22c55e"/>
+            </marker>
+            <marker id="arrowArchBlue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+              <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
+            </marker>
+            <marker id="arrowArchPurple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+              <polygon points="0 0, 10 3.5, 0 7" fill="#7c3aed"/>
+            </marker>
+          </defs>
+
+          <!-- OpenClaw CLI box (leftmost, gray) -->
+          <rect x="20" y="70" width="150" height="140" rx="12" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2"/>
+          <text x="95" y="106" font-size="13" font-weight="700" fill="#475569" text-anchor="middle">OpenClaw CLI</text>
+          <line x1="60" y1="116" x2="130" y2="116" stroke="#e2e8f0" stroke-width="1"/>
+          <text x="95" y="135" font-size="11" fill="#94a3b8" text-anchor="middle">extends CLI</text>
+          <text x="95" y="152" font-size="11" fill="#94a3b8" text-anchor="middle">command</text>
+          <text x="95" y="175" font-size="10" fill="#cbd5e1" text-anchor="middle">nemo run</text>
+
+          <!-- Arrow: OpenClaw CLI -> Plugin -->
+          <line x1="170" y1="140" x2="213" y2="140" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowArch)"/>
+
+          <!-- Plugin box (green) -->
+          <rect x="215" y="50" width="185" height="180" rx="12" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
+          <text x="307" y="84" font-size="13" font-weight="700" fill="#15803d" text-anchor="middle">NemoClaw Plugin</text>
+          <text x="307" y="101" font-size="10" fill="#4ade80" text-anchor="middle">TypeScript package</text>
+          <text x="307" y="112" font-size="10" fill="#4ade80" text-anchor="middle">extending OpenClaw CLI</text>
+          <line x1="240" y1="122" x2="374" y2="122" stroke="#bbf7d0" stroke-width="1"/>
+          <text x="307" y="143" font-size="11" fill="#16a34a" text-anchor="middle" font-weight="600">resolve</text>
+          <text x="307" y="162" font-size="11" fill="#16a34a" text-anchor="middle" font-weight="600">verify</text>
+          <text x="307" y="181" font-size="11" fill="#16a34a" text-anchor="middle" font-weight="600">execute</text>
+          <text x="307" y="217" font-size="9" fill="#86efac" text-anchor="middle">@evidence-gate/nemoclaw</text>
+
+          <!-- Arrow: Plugin -> Blueprint (labeled "subprocess") -->
+          <line x1="400" y1="140" x2="443" y2="140" stroke="#22c55e" stroke-width="2" marker-end="url(#arrowArchGreen)"/>
+          <text x="421" y="131" font-size="9" fill="#22c55e" text-anchor="middle" font-weight="600">subprocess</text>
+
+          <!-- Blueprint box (blue) -->
+          <rect x="445" y="50" width="185" height="180" rx="12" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+          <text x="537" y="84" font-size="13" font-weight="700" fill="#1d4ed8" text-anchor="middle">NemoClaw Blueprint</text>
+          <text x="537" y="101" font-size="10" fill="#60a5fa" text-anchor="middle">Versioned Python artifact</text>
+          <text x="537" y="112" font-size="10" fill="#60a5fa" text-anchor="middle">(blueprint.yaml)</text>
+          <line x1="470" y1="122" x2="604" y2="122" stroke="#bfdbfe" stroke-width="1"/>
+          <text x="537" y="143" font-size="11" fill="#2563eb" text-anchor="middle" font-weight="600">plan sandbox</text>
+          <text x="537" y="162" font-size="11" fill="#2563eb" text-anchor="middle" font-weight="600">apply policy</text>
+          <text x="537" y="181" font-size="11" fill="#2563eb" text-anchor="middle" font-weight="600">configure inference</text>
+          <text x="537" y="217" font-size="9" fill="#93c5fd" text-anchor="middle">nemoclaw-governance validate</text>
+
+          <!-- Arrow: Blueprint -> OpenShell -->
+          <line x1="630" y1="140" x2="673" y2="140" stroke="#2563eb" stroke-width="2" marker-end="url(#arrowArchBlue)"/>
+
+          <!-- OpenShell Sandbox box (purple) -->
+          <rect x="675" y="50" width="185" height="180" rx="12" fill="#faf5ff" stroke="#7c3aed" stroke-width="2"/>
+          <text x="767" y="84" font-size="13" font-weight="700" fill="#6d28d9" text-anchor="middle">OpenShell Sandbox</text>
+          <text x="767" y="101" font-size="10" fill="#c084fc" text-anchor="middle">ghcr.io/nvidia/</text>
+          <text x="767" y="114" font-size="10" fill="#c084fc" text-anchor="middle">openshell-community</text>
+          <line x1="700" y1="124" x2="834" y2="124" stroke="#ddd6fe" stroke-width="1"/>
+          <!-- Container icon -->
+          <rect x="745" y="135" width="44" height="30" rx="4" fill="none" stroke="#a78bfa" stroke-width="1.5"/>
+          <rect x="750" y="130" width="34" height="8" rx="2" fill="none" stroke="#a78bfa" stroke-width="1.5"/>
+          <text x="767" y="155" font-size="9" fill="#7c3aed" text-anchor="middle">container</text>
+          <text x="767" y="195" font-size="11" fill="#7c3aed" text-anchor="middle" font-weight="600">isolated runtime</text>
+          <text x="767" y="212" font-size="9" fill="#c084fc" text-anchor="middle">network + resource policy</text>
+        </svg>
+      </div>
+
+      <div class="arch-legend">
+        <div class="arch-legend-item"><span class="arch-legend-dot" style="background:#22c55e;"></span> Plugin (TypeScript)</div>
+        <div class="arch-legend-item"><span class="arch-legend-dot" style="background:#2563eb;"></span> Blueprint (Python)</div>
+        <div class="arch-legend-item"><span class="arch-legend-dot" style="background:#7c3aed;"></span> OpenShell Sandbox</div>
+      </div>
     </div>
   </section>
 
