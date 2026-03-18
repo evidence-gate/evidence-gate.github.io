@@ -1,0 +1,49 @@
+# Evidence Gate
+
+> Fail-closed quality gates for AI-driven CI/CD pipelines
+
+Evidence Gate is a GitHub Actions-based quality gate that validates evidence before code merges. It supports 32 gate types including tests, SBOM, provenance, and NemoClaw sandbox configurations.
+
+## Core Concepts
+
+- **Fail-Closed**: If the gate cannot verify evidence, the merge is blocked by default
+- **Blind Gates**: Evaluation criteria are hidden from AI agents — agents submit evidence without knowing thresholds, structurally preventing fabrication
+- **Evidence Chains**: SHA-256 integrity hashes link each evaluation to its source artifacts
+
+## Gate Types (32 total)
+
+Test coverage, mutation testing, SBOM (CycloneDX/SPDX), SLSA provenance, license compliance, dependency audit, NemoClaw blueprint validation, NemoClaw policy validation, sandbox lifecycle verification, inference routing validation, sandbox security posture checks, and more.
+
+## NemoClaw Integration
+
+Evidence Gate validates NVIDIA NemoClaw sandbox configurations at CI stage:
+- **Blueprint validation**: Checks blueprint.yaml structure and required fields
+- **Policy validation**: Verifies policy.yaml sandbox constraints (Landlock, seccomp, netns)
+- **Inference routing**: Validates routing profiles (NVIDIA Cloud, Local NIM, Local vLLM)
+
+NemoClaw uses a Plugin (TypeScript) + Blueprint (Python) two-layer architecture to provide four isolation layers: Landlock LSM, seccomp, network namespaces, and inference control.
+
+## 3-Layer Governance Architecture
+
+1. **CI Layer**: evidence-gate-action — validates blueprints, policies, SBOM, provenance before merge
+2. **Infrastructure Layer**: nemoclaw-governance — Python CLI for blueprint.yaml and policy.yaml structural validation
+3. **Runtime Layer**: agentgov — budget control, cost management, network governance for running agents
+
+## Pricing
+
+- **Free**: 100 evaluations/month, 1,000 API calls, all 32 gate types
+- **Pro**: 5,000 evaluations/month, Blind Gates, evidence chain verification
+- **Enterprise**: Unlimited, self-hosted deployment, custom API base URL
+
+## Links
+
+- Website: https://evidence-gate.dev
+- GitHub: https://github.com/evidence-gate
+- Action: https://github.com/marketplace/actions/evidence-gate-action
+- NemoClaw Governance: https://github.com/evidence-gate/nemoclaw-governance
+- agentgov: https://github.com/evidence-gate/agentgov
+- Documentation: https://github.com/evidence-gate/evidence-gate-action#readme
+
+## Publisher
+
+AllNew LLC — https://allnew.co.jp

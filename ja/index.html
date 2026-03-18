@@ -3,25 +3,31 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Evidence Gate — AIが閾値を読めない品質ゲート</title>
-
-  <!-- OGP Meta Tags -->
-  <meta property="og:title" content="Evidence Gate — AIが閾値を読めない品質ゲート">
-  <meta property="og:description" content="AI駆動CI/CD向けフェイルクローズド品質ゲート。Blind GatesでAIエージェントから判定基準を隠したまま評価し、テスト、SBOM、来歴、NemoClaw設定をマージ前に検証。32種のゲートタイプに対応。">
-  <meta property="og:url" content="https://evidence-gate.dev/ja/">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Evidence Gate — AIが閾値を読めない品質ゲート">
-  <meta name="twitter:description" content="AI駆動CI/CD向けフェイルクローズド品質ゲート。Blind GatesでAIエージェントから判定基準を隠したまま評価し、テスト、SBOM、来歴、NemoClaw設定をマージ前に検証。32種のゲートタイプに対応。">
+  <title>Evidence Gate — AIが閾値を読めない品質ゲート | CI/CD品質ゲート</title>
 
   <!-- SEO Meta Tags -->
   <meta name="description" content="AI駆動CI/CD向けフェイルクローズド品質ゲート。Blind GatesでAIエージェントから判定基準を隠したまま評価し、テスト、SBOM、来歴、NemoClaw設定をマージ前に検証。32種のゲートタイプに対応。">
+  <meta name="keywords" content="Evidence Gate, CI/CD, 品質ゲート, AI エージェント, Blind Gates, NemoClaw, GitHub Actions, SBOM, SLSA, セキュリティ, サンドボックス, フェイルクローズド">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="author" content="AllNew LLC">
   <link rel="canonical" href="https://evidence-gate.dev/ja/">
   <link rel="alternate" hreflang="en" href="https://evidence-gate.dev/">
   <link rel="alternate" hreflang="ja" href="https://evidence-gate.dev/ja/">
   <link rel="alternate" hreflang="x-default" href="https://evidence-gate.dev/">
 
-  <!-- Structured Data -->
+  <!-- OGP Meta Tags -->
+  <meta property="og:title" content="Evidence Gate — AIが閾値を読めない品質ゲート">
+  <meta property="og:description" content="AI駆動CI/CD向けフェイルクローズド品質ゲート。Blind GatesでAIエージェントから判定基準を隠したまま評価。32種のゲートタイプ、NemoClaw統合対応。">
+  <meta property="og:url" content="https://evidence-gate.dev/ja/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Evidence Gate">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Evidence Gate — AIが閾値を読めない品質ゲート">
+  <meta name="twitter:description" content="AI駆動CI/CD向けフェイルクローズド品質ゲート。Blind GatesでAIエージェントから判定基準を隠したまま評価。32種のゲートタイプ対応。">
+
+  <!-- Structured Data: SoftwareApplication -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -31,12 +37,128 @@
     "url": "https://evidence-gate.dev",
     "applicationCategory": "DeveloperApplication",
     "operatingSystem": "GitHub Actions",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD",
-      "description": "月100回の評価まで無料"
-    }
+    "inLanguage": "ja",
+    "softwareVersion": "2.0",
+    "downloadUrl": "https://github.com/marketplace/actions/evidence-gate-action",
+    "screenshot": "https://evidence-gate.dev/ja/",
+    "publisher": {
+      "@type": "Organization",
+      "name": "AllNew LLC",
+      "url": "https://allnew.co.jp"
+    },
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Free",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "月100回の評価まで無料、全32種のゲートタイプ利用可能"
+      },
+      {
+        "@type": "Offer",
+        "name": "Pro",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "月5,000回の評価、Blind Gate・エビデンスチェーン検証対応",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "priceCurrency": "USD",
+          "eligibleTransactionVolume": {
+            "@type": "QuantitativeValue",
+            "value": 5000,
+            "unitText": "evaluations/month"
+          }
+        }
+      }
+    ],
+    "featureList": [
+      "32種のCI品質ゲートタイプ",
+      "Blind Gates — AIエージェントから判定基準を秘匿",
+      "フェイルクローズドエラー処理",
+      "SARIF出力・GitHub Check Runs統合",
+      "SBOM構造検証 (CycloneDX/SPDX)",
+      "SLSA来歴ゲート",
+      "NemoClawブループリント・ポリシー検証",
+      "SHA-256整合性ハッシュ",
+      "AIエージェント修復コントラクト"
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Evidence Gateとは何ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Evidence Gateは、AI駆動のCI/CDパイプライン向けフェイルクローズド品質ゲートです。GitHub Actionsに組み込み、テストカバレッジ、SBOM、来歴、NemoClawサンドボックス設定など32種のゲートタイプでマージ前の品質検証を自動化します。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Blind Gatesとは何ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Blind Gatesは、AIエージェントから判定基準（閾値やルール）を秘匿したまま品質評価を行う仕組みです。エージェントはエビデンスのみを提出し、評価基準を知ることができないため、基準に合わせた結果の捏造を構造的に防止します。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "NemoClaw統合で何ができますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "NemoClawはNVIDIAが提供するAIエージェント実行用サンドボックス基盤です。Evidence Gateは、NemoClawのブループリント（blueprint.yaml）、ポリシー（policy.yaml）、推論ルーティング設定をCI段階で検証し、安全なサンドボックスデプロイを保証します。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "無料で使えますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい。Freeプランでは月100回の評価と1,000回のAPIコールが利用可能で、全32種のゲートタイプ、SARIF出力、GitHub Check Runs統合が含まれます。オープンソースプロジェクトは無料でご利用いただけます。"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "AllNew LLC",
+    "url": "https://allnew.co.jp",
+    "sameAs": [
+      "https://github.com/evidence-gate"
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Evidence Gate",
+        "item": "https://evidence-gate.dev/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "日本語",
+        "item": "https://evidence-gate.dev/ja/"
+      }
+    ]
   }
   </script>
 
@@ -329,10 +451,11 @@
     }
 
     .step-number {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       width: 2rem;
       height: 2rem;
-      line-height: 2rem;
       border-radius: 50%;
       background: #22c55e;
       color: #ffffff;
@@ -839,6 +962,8 @@
     </div>
   </nav>
 
+  <main>
+
   <!-- Hero Section -->
   <section class="hero">
     <div class="container">
@@ -1279,12 +1404,19 @@
     </div>
   </section>
 
-  <!-- NemoClaw Integration Transition -->
-  <section id="nemoclaw-integration" class="section" style="background: linear-gradient(135deg, #f0f9ff 0%, #f0fdf4 100%); padding: 3rem 0;">
-    <div class="container" style="text-align: center;">
-      <p style="font-size: 0.875rem; font-weight: 600; color: #2563eb; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">NVIDIA NemoClaw + Evidence Gate</p>
-      <h2 class="section-title">NemoClawガバナンス</h2>
-      <p style="font-size: 1.125rem; color: #475569; max-width: 700px; margin: 0 auto; line-height: 1.7;">NemoClawは、NVIDIAが提供するAIエージェント実行用のサンドボックス基盤です。Evidence Gateは、NemoClawのブループリント、ポリシー、推論設定をCI段階で検証し、安全なサンドボックスデプロイを保証します。</p>
+  <!-- NemoClaw Integration Transition — NVIDIA brand aesthetic -->
+  <section id="nemoclaw-integration" style="background: #1a1a1a; padding: 4rem 0; position: relative; overflow: hidden;">
+    <!-- NVIDIA-style subtle grid pattern -->
+    <div style="position: absolute; inset: 0; background-image: linear-gradient(rgba(118,185,0,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(118,185,0,0.03) 1px, transparent 1px); background-size: 40px 40px;"></div>
+    <div class="container" style="text-align: center; position: relative; z-index: 1;">
+      <span style="display: inline-block; background: #76b900; color: #1a1a1a; font-size: 0.6875rem; font-weight: 800; padding: 0.25rem 0.625rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem;">New</span>
+      <p style="font-size: 0.875rem; font-weight: 600; color: #76b900; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">NVIDIA NemoClaw + Evidence Gate</p>
+      <h2 style="font-size: 2rem; font-weight: 700; color: #ffffff; margin-bottom: 1rem;">NemoClawガバナンス</h2>
+      <p style="font-size: 1.125rem; color: #a0a0a0; max-width: 700px; margin: 0 auto 2rem; line-height: 1.7;">NemoClawは、NVIDIAが提供するAIエージェント実行用のサンドボックス基盤です。<br>Evidence Gateは、NemoClawのブループリント、ポリシー、推論設定をCI段階で検証し、<br>安全なサンドボックスデプロイを保証します。</p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="#nemoclaw-architecture" style="display: inline-block; background: #76b900; color: #1a1a1a; font-weight: 700; padding: 0.625rem 1.25rem; border-radius: 0.375rem; font-size: 0.9375rem; text-decoration: none;">詳しく見る ↓</a>
+        <a href="https://github.com/NVIDIA/NemoClaw" style="display: inline-block; background: transparent; color: #ffffff; font-weight: 600; padding: 0.625rem 1.25rem; border-radius: 0.375rem; font-size: 0.9375rem; border: 1px solid #404040; text-decoration: none;">GitHub ↗</a>
+      </div>
     </div>
   </section>
 
@@ -1292,88 +1424,89 @@
   <section id="nemoclaw-architecture" class="section">
     <div class="container">
       <h2 class="section-title">Evidence Gateが守るもの</h2>
-      <p class="section-subtitle">CI上のチェックだけでは不十分です。AIエージェントは、実行時にもリスクを持ち込みます。Evidence Gateは、AIエージェントが動作するNemoClawインフラまで含めて検証します。</p>
+      <p class="section-subtitle">Evidence Gateは、NemoClawサンドボックスそのものを実行する製品ではなく、その設定が安全かどうかをデプロイ前に検証するゲートです。具体的には、ブループリント、ポリシー、推論設定をチェックし、分離設定の漏れ、危険なネットワーク許可、誤った推論ルーティングをマージ前に止めます。</p>
+
+      <p style="text-align: center; color: #475569; font-size: 1rem; max-width: 740px; margin: 2rem auto 0; line-height: 1.7;">NemoClawでは、設定ファイルにもとづいてサンドボックスが組み立てられます。Evidence Gateが見ているのは、アプリのコードそのものではなく、そのサンドボックス設定が本番投入してよい状態かどうかです。下の図は、NemoClawの設定がどのように実行環境に反映されるかと、Evidence Gateがどこを検証するかを示しています。</p>
 
       <div class="arch-diagram-container">
-        <svg viewBox="0 0 880 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="NemoClaw Plugin+Blueprint architecture diagram showing the Plugin resolving and executing the Blueprint as a subprocess to create OpenShell sandboxes">
+        <svg viewBox="0 0 880 310" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="NemoClaw Plugin+Blueprint architecture diagram — Evidence Gate validates Plugin and Blueprint configurations at CI stage">
           <defs>
             <marker id="arrowArch" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
               <polygon points="0 0, 10 3.5, 0 7" fill="#94a3b8"/>
             </marker>
-            <marker id="arrowArchGreen" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-              <polygon points="0 0, 10 3.5, 0 7" fill="#22c55e"/>
-            </marker>
-            <marker id="arrowArchBlue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-              <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
-            </marker>
-            <marker id="arrowArchPurple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-              <polygon points="0 0, 10 3.5, 0 7" fill="#7c3aed"/>
-            </marker>
           </defs>
 
-          <!-- OpenClaw CLI box (leftmost, gray) -->
-          <rect x="20" y="70" width="150" height="140" rx="12" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2"/>
-          <text x="95" y="106" font-size="13" font-weight="700" fill="#475569" text-anchor="middle">OpenClaw CLI</text>
-          <line x1="60" y1="116" x2="130" y2="116" stroke="#e2e8f0" stroke-width="1"/>
-          <text x="95" y="135" font-size="11" fill="#94a3b8" text-anchor="middle">extends CLI</text>
-          <text x="95" y="152" font-size="11" fill="#94a3b8" text-anchor="middle">command</text>
-          <text x="95" y="175" font-size="10" fill="#cbd5e1" text-anchor="middle">nemo run</text>
+          <!-- NemoClaw label -->
+          <text x="440" y="22" font-size="11" fill="#94a3b8" text-anchor="middle" font-weight="600" letter-spacing="0.05em">NEMOCLAW</text>
+          <line x1="20" y1="32" x2="860" y2="32" stroke="#e2e8f0" stroke-width="1"/>
 
-          <!-- Arrow: OpenClaw CLI -> Plugin -->
-          <line x1="170" y1="140" x2="213" y2="140" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowArch)"/>
+          <!-- OpenClaw CLI -->
+          <rect x="20" y="50" width="150" height="150" rx="12" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+          <text x="95" y="88" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">OpenClaw CLI</text>
+          <line x1="55" y1="98" x2="135" y2="98" stroke="#e2e8f0" stroke-width="1"/>
+          <text x="95" y="118" font-size="11" fill="#64748b" text-anchor="middle">extends CLI</text>
+          <text x="95" y="135" font-size="11" fill="#64748b" text-anchor="middle">command</text>
+          <text x="95" y="165" font-size="10" fill="#94a3b8" text-anchor="middle" font-style="italic">nemo run</text>
 
-          <!-- Plugin box (green) -->
-          <rect x="215" y="50" width="185" height="180" rx="12" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
-          <text x="307" y="84" font-size="13" font-weight="700" fill="#15803d" text-anchor="middle">NemoClaw Plugin</text>
-          <text x="307" y="101" font-size="10" fill="#4ade80" text-anchor="middle">TypeScript package</text>
-          <text x="307" y="112" font-size="10" fill="#4ade80" text-anchor="middle">extending OpenClaw CLI</text>
-          <line x1="240" y1="122" x2="374" y2="122" stroke="#bbf7d0" stroke-width="1"/>
-          <text x="307" y="143" font-size="11" fill="#16a34a" text-anchor="middle" font-weight="600">resolve</text>
-          <text x="307" y="162" font-size="11" fill="#16a34a" text-anchor="middle" font-weight="600">verify</text>
-          <text x="307" y="181" font-size="11" fill="#16a34a" text-anchor="middle" font-weight="600">execute</text>
-          <text x="307" y="217" font-size="9" fill="#86efac" text-anchor="middle">@evidence-gate/nemoclaw</text>
+          <!-- Arrow: CLI -> Plugin -->
+          <line x1="170" y1="125" x2="213" y2="125" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowArch)"/>
 
-          <!-- Arrow: Plugin -> Blueprint (labeled "subprocess") -->
-          <line x1="400" y1="140" x2="443" y2="140" stroke="#22c55e" stroke-width="2" marker-end="url(#arrowArchGreen)"/>
-          <text x="421" y="131" font-size="9" fill="#22c55e" text-anchor="middle" font-weight="600">subprocess</text>
+          <!-- Plugin -->
+          <rect x="215" y="50" width="185" height="150" rx="12" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+          <text x="307" y="82" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">NemoClaw Plugin</text>
+          <text x="307" y="97" font-size="10" fill="#64748b" text-anchor="middle">TypeScript package</text>
+          <line x1="240" y1="106" x2="374" y2="106" stroke="#e2e8f0" stroke-width="1"/>
+          <text x="307" y="126" font-size="11" fill="#334155" text-anchor="middle" font-weight="600">resolve</text>
+          <text x="307" y="143" font-size="11" fill="#334155" text-anchor="middle" font-weight="600">verify</text>
+          <text x="307" y="160" font-size="11" fill="#334155" text-anchor="middle" font-weight="600">execute</text>
+          <text x="307" y="190" font-size="9" fill="#94a3b8" text-anchor="middle">@evidence-gate/nemoclaw</text>
 
-          <!-- Blueprint box (blue) -->
-          <rect x="445" y="50" width="185" height="180" rx="12" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
-          <text x="537" y="84" font-size="13" font-weight="700" fill="#1d4ed8" text-anchor="middle">NemoClaw Blueprint</text>
-          <text x="537" y="101" font-size="10" fill="#60a5fa" text-anchor="middle">Versioned Python artifact</text>
-          <text x="537" y="112" font-size="10" fill="#60a5fa" text-anchor="middle">(blueprint.yaml)</text>
-          <line x1="470" y1="122" x2="604" y2="122" stroke="#bfdbfe" stroke-width="1"/>
-          <text x="537" y="143" font-size="11" fill="#2563eb" text-anchor="middle" font-weight="600">plan sandbox</text>
-          <text x="537" y="162" font-size="11" fill="#2563eb" text-anchor="middle" font-weight="600">apply policy</text>
-          <text x="537" y="181" font-size="11" fill="#2563eb" text-anchor="middle" font-weight="600">configure inference</text>
-          <text x="537" y="217" font-size="9" fill="#93c5fd" text-anchor="middle">nemoclaw-governance validate</text>
+          <!-- Arrow: Plugin -> Blueprint -->
+          <line x1="400" y1="125" x2="443" y2="125" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowArch)"/>
+          <text x="421" y="116" font-size="9" fill="#94a3b8" text-anchor="middle">subprocess</text>
+
+          <!-- Blueprint -->
+          <rect x="445" y="50" width="185" height="150" rx="12" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+          <text x="537" y="82" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">NemoClaw Blueprint</text>
+          <text x="537" y="97" font-size="10" fill="#64748b" text-anchor="middle">Python artifact (blueprint.yaml)</text>
+          <line x1="470" y1="106" x2="604" y2="106" stroke="#e2e8f0" stroke-width="1"/>
+          <text x="537" y="126" font-size="11" fill="#334155" text-anchor="middle" font-weight="600">plan sandbox</text>
+          <text x="537" y="143" font-size="11" fill="#334155" text-anchor="middle" font-weight="600">apply policy</text>
+          <text x="537" y="160" font-size="11" fill="#334155" text-anchor="middle" font-weight="600">configure inference</text>
+          <text x="537" y="190" font-size="9" fill="#94a3b8" text-anchor="middle">nemoclaw-governance validate</text>
 
           <!-- Arrow: Blueprint -> OpenShell -->
-          <line x1="630" y1="140" x2="673" y2="140" stroke="#2563eb" stroke-width="2" marker-end="url(#arrowArchBlue)"/>
+          <line x1="630" y1="125" x2="673" y2="125" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowArch)"/>
 
-          <!-- OpenShell Sandbox box (purple) -->
-          <rect x="675" y="50" width="185" height="180" rx="12" fill="#faf5ff" stroke="#7c3aed" stroke-width="2"/>
-          <text x="767" y="84" font-size="13" font-weight="700" fill="#6d28d9" text-anchor="middle">OpenShell Sandbox</text>
-          <text x="767" y="101" font-size="10" fill="#c084fc" text-anchor="middle">ghcr.io/nvidia/</text>
-          <text x="767" y="114" font-size="10" fill="#c084fc" text-anchor="middle">openshell-community</text>
-          <line x1="700" y1="124" x2="834" y2="124" stroke="#ddd6fe" stroke-width="1"/>
+          <!-- OpenShell Sandbox -->
+          <rect x="675" y="50" width="185" height="150" rx="12" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+          <text x="767" y="82" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">OpenShell Sandbox</text>
+          <text x="767" y="97" font-size="10" fill="#64748b" text-anchor="middle">ghcr.io/nvidia/openshell</text>
+          <line x1="700" y1="106" x2="834" y2="106" stroke="#e2e8f0" stroke-width="1"/>
           <!-- Container icon -->
-          <rect x="745" y="135" width="44" height="30" rx="4" fill="none" stroke="#a78bfa" stroke-width="1.5"/>
-          <rect x="750" y="130" width="34" height="8" rx="2" fill="none" stroke="#a78bfa" stroke-width="1.5"/>
-          <text x="767" y="155" font-size="9" fill="#7c3aed" text-anchor="middle">container</text>
-          <text x="767" y="195" font-size="11" fill="#7c3aed" text-anchor="middle" font-weight="600">isolated runtime</text>
-          <text x="767" y="212" font-size="9" fill="#c084fc" text-anchor="middle">network + resource policy</text>
+          <rect x="745" y="118" width="44" height="30" rx="4" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+          <rect x="750" y="113" width="34" height="8" rx="2" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+          <text x="767" y="138" font-size="9" fill="#334155" text-anchor="middle">container</text>
+          <text x="767" y="168" font-size="11" fill="#334155" text-anchor="middle" font-weight="600">isolated runtime</text>
+          <text x="767" y="185" font-size="9" fill="#64748b" text-anchor="middle">network + resource policy</text>
+
+          <!-- Evidence Gate validation bracket (green) -->
+          <rect x="210" y="215" width="425" height="36" rx="8" fill="#f0fdf4" stroke="#22c55e" stroke-width="2" stroke-dasharray="6 3"/>
+          <!-- Upward connector lines from bracket to Plugin and Blueprint -->
+          <line x1="307" y1="215" x2="307" y2="202" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <line x1="537" y1="215" x2="537" y2="202" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <text x="422" y="238" font-size="12" fill="#16a34a" text-anchor="middle" font-weight="700">Evidence Gate ― CIで検証</text>
+
+          <!-- Legend -->
+          <rect x="265" y="270" width="10" height="10" rx="2" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+          <text x="282" y="280" font-size="11" fill="#475569" text-anchor="start">NemoClaw</text>
+          <rect x="395" y="270" width="10" height="10" rx="2" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="3 2"/>
+          <text x="412" y="280" font-size="11" fill="#16a34a" text-anchor="start">Evidence Gate</text>
         </svg>
       </div>
 
-      <div class="arch-legend">
-        <div class="arch-legend-item"><span class="arch-legend-dot" style="background:#22c55e;"></span> Plugin (TypeScript)</div>
-        <div class="arch-legend-item"><span class="arch-legend-dot" style="background:#2563eb;"></span> Blueprint (Python)</div>
-        <div class="arch-legend-item"><span class="arch-legend-dot" style="background:#7c3aed;"></span> OpenShell Sandbox</div>
-      </div>
-
       <p style="text-align: center; margin-top: 2rem; color: #475569; font-size: 1rem; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.7;">
-        NemoClawはPlugin（TypeScript）とBlueprint（Python）の2層構成で、Landlock LSM、seccomp、ネットワーク名前空間、推論制御の4層分離を提供します。Evidence Gateは、これらの設定がデプロイ前に正しく構成されていることを検証します。
+        NemoClawでは、ブループリントとポリシーの設定によって、サンドボックスの分離、ネットワーク制御、推論接続先が決まります。Evidence Gateは、その設定に危険な抜けや矛盾がないかをCIで検証し、問題があればデプロイ前に止めます。
       </p>
       <p style="text-align: center; margin-top: 1rem;">
         <a href="https://github.com/evidence-gate/nemoclaw-governance" style="color: #2563eb; font-weight: 600;">アーキテクチャの詳細はGitHubで →</a>
@@ -1385,7 +1518,7 @@
   <section id="ecosystem" class="section section-alt">
     <div class="container">
       <h2 class="section-title">エージェントガバナンスの全体像</h2>
-      <p class="section-subtitle">CIからランタイムまで、3層で守る</p>
+      <p class="section-subtitle">Evidence GateはCIで設定を止め、nemoclaw-governanceは構成を検証し、agentgovは実行時の予算と通信を制御します。この3層で、設定ミスから予算超過まで一貫してカバーします。</p>
 
       <!-- 3-Layer Architecture Diagram -->
       <div class="ecosystem-diagram">
@@ -1450,62 +1583,37 @@
   <section id="nemoclaw-quick-start" class="section">
     <div class="container">
       <h2 class="section-title">NemoClaw統合クイックスタート</h2>
-      <p class="section-subtitle">NemoClaw設定の検証をCIに追加 &mdash; 詳細は<a href="https://github.com/evidence-gate/nemoclaw-governance" style="color: #2563eb;">GitHubドキュメント</a>へ</p>
+      <p class="section-subtitle">NemoClaw設定の検証をCIに追加する最小構成</p>
       <div class="quickstart-steps">
         <div class="qs-step">
           <div class="code-block">
-<pre><span class="code-key">name:</span> <span class="code-string">NemoClaw Governance</span>
+<pre><span class="code-comment"># .github/workflows/nemoclaw-gate.yml</span>
+<span class="code-key">name:</span> <span class="code-string">NemoClaw Gate</span>
 <span class="code-key">on:</span> <span class="code-string">[pull_request]</span>
 
-<span class="code-key">permissions:</span>
-  <span class="code-key">contents:</span> <span class="code-string">read</span>
-  <span class="code-key">checks:</span> <span class="code-string">write</span>
-
 <span class="code-key">jobs:</span>
-  <span class="code-key">validate-blueprint:</span>
+  <span class="code-key">validate:</span>
     <span class="code-key">runs-on:</span> <span class="code-string">ubuntu-latest</span>
+    <span class="code-key">permissions:</span>
+      <span class="code-key">contents:</span> <span class="code-string">read</span>
+      <span class="code-key">checks:</span> <span class="code-string">write</span>
     <span class="code-key">steps:</span>
       <span class="code-key">- uses:</span> <span class="code-string">actions/checkout@v4</span>
-
-      <span class="code-comment"># Validate NemoClaw blueprint.yaml</span>
       <span class="code-key">- name:</span> <span class="code-string">Blueprint Gate</span>
         <span class="code-key">uses:</span> <span class="code-string">evidence-gate/evidence-gate-action@v1</span>
         <span class="code-key">with:</span>
           <span class="code-key">gate_type:</span> <span class="code-string">"nemoclaw_blueprint"</span>
-          <span class="code-key">evidence_files:</span> <span class="code-string">"blueprint.yaml"</span>
-
-  <span class="code-key">validate-policy:</span>
-    <span class="code-key">runs-on:</span> <span class="code-string">ubuntu-latest</span>
-    <span class="code-key">steps:</span>
-      <span class="code-key">- uses:</span> <span class="code-string">actions/checkout@v4</span>
-
-      <span class="code-comment"># Validate sandbox policy constraints</span>
-      <span class="code-key">- name:</span> <span class="code-string">Policy Gate</span>
-        <span class="code-key">uses:</span> <span class="code-string">evidence-gate/evidence-gate-action@v1</span>
-        <span class="code-key">with:</span>
-          <span class="code-key">gate_type:</span> <span class="code-string">"nemoclaw_policy"</span>
-          <span class="code-key">evidence_files:</span> <span class="code-string">"policy.yaml"</span>
-
-  <span class="code-key">enforce-budget:</span>
-    <span class="code-key">runs-on:</span> <span class="code-string">ubuntu-latest</span>
-    <span class="code-key">steps:</span>
-      <span class="code-key">- uses:</span> <span class="code-string">actions/checkout@v4</span>
-
-      <span class="code-comment"># Validate agentgov budget configuration</span>
-      <span class="code-key">- name:</span> <span class="code-string">Budget Gate</span>
-        <span class="code-key">uses:</span> <span class="code-string">evidence-gate/evidence-gate-action@v1</span>
-        <span class="code-key">with:</span>
-          <span class="code-key">gate_type:</span> <span class="code-string">"custom"</span>
-          <span class="code-key">phase_id:</span> <span class="code-string">"budget"</span>
-          <span class="code-key">evidence_files:</span> <span class="code-string">"agentgov.config.json"</span></pre>
+          <span class="code-key">evidence_files:</span> <span class="code-string">"blueprint.yaml"</span></pre>
           </div>
           <p style="color: #64748b; font-size: 0.9375rem; margin-top: 1.25rem; text-align: center;">
-            ブループリント構造、サンドボックスポリシー、ランタイム予算を並列で検証します。
+            ポリシー検証・予算検証の追加や、3ジョブ並列構成の詳細は<a href="https://github.com/evidence-gate/nemoclaw-governance" style="color: #2563eb;">GitHubドキュメント</a>をご覧ください。
           </p>
         </div>
       </div>
     </div>
   </section>
+
+  </main>
 
   <!-- Footer -->
   <footer class="footer">

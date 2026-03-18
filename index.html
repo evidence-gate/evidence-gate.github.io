@@ -5,38 +5,144 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Evidence Gate — AI Agent Quality Gates + NemoClaw Governance</title>
 
-  <!-- OGP Meta Tags -->
-  <meta property="og:title" content="Evidence Gate — AI Agent Quality Gates + NemoClaw Governance">
-  <meta property="og:description" content="Fail-closed quality gates for AI-driven CI/CD with full-stack NemoClaw governance. 29 gate types including Blind Gates that hide criteria from AI agents, plus blueprint and policy validation for NemoClaw sandboxes. Free for open-source.">
-  <meta property="og:url" content="https://evidence-gate.dev">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Evidence Gate — AI Agent Quality Gates + NemoClaw Governance">
-  <meta name="twitter:description" content="Fail-closed quality gates for AI-driven CI/CD with full-stack NemoClaw governance. 29 gate types including Blind Gates that hide criteria from AI agents, plus blueprint and policy validation for NemoClaw sandboxes. Free for open-source.">
-
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Fail-closed quality gates for AI-driven CI/CD with full-stack NemoClaw governance. 29 gate types including Blind Gates that hide criteria from AI agents, plus blueprint and policy validation for NemoClaw sandboxes. Free for open-source.">
+  <meta name="description" content="Fail-closed quality gates for AI-driven CI/CD. Blind Gates hide criteria from AI agents. 32 gate types covering tests, SBOM, provenance, and NemoClaw sandbox validation. Free for open-source.">
+  <meta name="keywords" content="Evidence Gate, CI/CD, quality gates, AI agents, Blind Gates, NemoClaw, GitHub Actions, SBOM, SLSA, security, sandbox, fail-closed">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="author" content="AllNew LLC">
   <link rel="canonical" href="https://evidence-gate.dev/">
   <link rel="alternate" hreflang="en" href="https://evidence-gate.dev/">
   <link rel="alternate" hreflang="ja" href="https://evidence-gate.dev/ja/">
   <link rel="alternate" hreflang="x-default" href="https://evidence-gate.dev/">
 
-  <!-- Structured Data -->
+  <!-- OGP Meta Tags -->
+  <meta property="og:title" content="Evidence Gate — AI Agent Quality Gates + NemoClaw Governance">
+  <meta property="og:description" content="Fail-closed quality gates for AI-driven CI/CD. Blind Gates hide criteria from AI agents. 32 gate types with NemoClaw sandbox validation.">
+  <meta property="og:url" content="https://evidence-gate.dev">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Evidence Gate">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Evidence Gate — AI Agent Quality Gates + NemoClaw Governance">
+  <meta name="twitter:description" content="Fail-closed quality gates for AI-driven CI/CD. Blind Gates hide criteria from AI agents. 32 gate types with NemoClaw sandbox validation.">
+
+  <!-- Structured Data: SoftwareApplication -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "Evidence Gate",
-    "description": "Fail-closed quality gates for CI/CD pipelines with NemoClaw sandbox governance — blueprint validation, policy enforcement, and tamper-proof evidence chains",
+    "description": "Fail-closed quality gates for AI-driven CI/CD. Blind Gates hide criteria from AI agents. 32 gate types covering tests, SBOM, provenance, and NemoClaw sandbox validation.",
     "url": "https://evidence-gate.dev",
     "applicationCategory": "DeveloperApplication",
     "operatingSystem": "GitHub Actions",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD",
-      "description": "Free tier with 100 evaluations/month"
-    }
+    "inLanguage": "en",
+    "softwareVersion": "2.0",
+    "downloadUrl": "https://github.com/marketplace/actions/evidence-gate-action",
+    "publisher": {
+      "@type": "Organization",
+      "name": "AllNew LLC",
+      "url": "https://allnew.co.jp"
+    },
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Free",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "100 evaluations/month, all 32 gate types included"
+      },
+      {
+        "@type": "Offer",
+        "name": "Pro",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "5,000 evaluations/month with Blind Gates and evidence chain verification"
+      }
+    ],
+    "featureList": [
+      "32 CI quality gate types",
+      "Blind Gates — hide evaluation criteria from AI agents",
+      "Fail-closed error handling",
+      "SARIF output and GitHub Check Runs",
+      "SBOM validation (CycloneDX/SPDX)",
+      "SLSA provenance gates",
+      "NemoClaw blueprint and policy validation",
+      "SHA-256 integrity hashes",
+      "AI agent repair contracts"
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Evidence Gate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Evidence Gate is a fail-closed quality gate for AI-driven CI/CD pipelines. It integrates with GitHub Actions to validate test coverage, SBOM, provenance, and NemoClaw sandbox configurations before merge. It supports 32 gate types."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are Blind Gates?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Blind Gates hide evaluation criteria (thresholds and rules) from AI agents. The agent submits evidence without knowing the criteria, structurally preventing fabrication of results to match expected values."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does NemoClaw integration work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "NemoClaw is NVIDIA's sandbox platform for AI agent execution. Evidence Gate validates NemoClaw blueprints (blueprint.yaml), policies (policy.yaml), and inference routing configurations at CI stage, ensuring safe sandbox deployment."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Evidence Gate free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The Free plan includes 100 evaluations/month, 1,000 API calls, all 32 gate types, SARIF output, and GitHub Check Runs integration. Open-source projects can use it at no cost."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "AllNew LLC",
+    "url": "https://allnew.co.jp",
+    "sameAs": [
+      "https://github.com/evidence-gate"
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Evidence Gate",
+        "item": "https://evidence-gate.dev/"
+      }
+    ]
   }
   </script>
 
@@ -1117,6 +1223,8 @@
     </div>
   </nav>
 
+  <main>
+
   <!-- Hero Section -->
   <section class="hero">
     <div class="container">
@@ -1952,6 +2060,8 @@
       </div>
     </div>
   </section>
+
+  </main>
 
   <!-- Footer -->
   <footer class="footer">
