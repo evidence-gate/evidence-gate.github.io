@@ -2,7 +2,7 @@
 
 > Fail-closed quality gates for AI-driven CI/CD pipelines
 
-Evidence Gate is a GitHub Actions-based quality gate that validates evidence before code merges. It supports 32 gate types including tests, SBOM, provenance, and NemoClaw sandbox configurations.
+Evidence Gate is a GitHub Actions-based quality gate that validates evidence before code merges. It supports 25 gate types including tests, SBOM, provenance, and NemoClaw sandbox configurations.
 
 ## Core Concepts
 
@@ -31,7 +31,7 @@ NemoClaw uses a Plugin (TypeScript) + Blueprint (Python) two-layer architecture 
 
 ## Pricing
 
-- **Free**: 100 evaluations/month, 1,000 API calls, all 32 gate types
+- **Free**: 100 evaluations/month, 1,000 API calls, all 25 gate types
 - **Pro**: 5,000 evaluations/month, Blind Gates, evidence chain verification
 - **Enterprise**: Unlimited, self-hosted deployment, custom API base URL
 

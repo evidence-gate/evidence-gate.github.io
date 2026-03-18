@@ -6,7 +6,7 @@
   <title>Evidence Gate — AIが閾値を読めない品質ゲート | CI/CD品質ゲート</title>
 
   <!-- SEO Meta Tags -->
-  <meta name="description" content="AI駆動CI/CD向けフェイルクローズド品質ゲート。Blind GatesでAIエージェントから判定基準を隠したまま評価し、テスト、SBOM、来歴、NemoClaw設定をマージ前に検証。32種のゲートタイプに対応。">
+  <meta name="description" content="AI駆動CI/CD向けフェイルクローズド品質ゲート。Blind GatesでAIエージェントから判定基準を隠したまま評価し、テスト、SBOM、来歴、NemoClaw設定をマージ前に検証。25種のゲートタイプに対応。">
   <meta name="keywords" content="Evidence Gate, CI/CD, 品質ゲート, AI エージェント, Blind Gates, NemoClaw, GitHub Actions, SBOM, SLSA, セキュリティ, サンドボックス, フェイルクローズド">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta name="author" content="AllNew LLC">
@@ -17,7 +17,7 @@
 
   <!-- OGP Meta Tags -->
   <meta property="og:title" content="Evidence Gate — AIが閾値を読めない品質ゲート">
-  <meta property="og:description" content="AI駆動CI/CD向けフェイルクローズド品質ゲート。Blind GatesでAIエージェントから判定基準を隠したまま評価。32種のゲートタイプ、NemoClaw統合対応。">
+  <meta property="og:description" content="AI駆動CI/CD向けフェイルクローズド品質ゲート。Blind GatesでAIエージェントから判定基準を隠したまま評価。25種のゲートタイプ、NemoClaw統合対応。">
   <meta property="og:url" content="https://evidence-gate.dev/ja/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Evidence Gate">
@@ -25,7 +25,7 @@
   <meta property="og:locale:alternate" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Evidence Gate — AIが閾値を読めない品質ゲート">
-  <meta name="twitter:description" content="AI駆動CI/CD向けフェイルクローズド品質ゲート。Blind GatesでAIエージェントから判定基準を隠したまま評価。32種のゲートタイプ対応。">
+  <meta name="twitter:description" content="AI駆動CI/CD向けフェイルクローズド品質ゲート。Blind GatesでAIエージェントから判定基準を隠したまま評価。25種のゲートタイプ対応。">
 
   <!-- Structured Data: SoftwareApplication -->
   <script type="application/ld+json">
@@ -33,7 +33,7 @@
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "Evidence Gate",
-    "description": "AI駆動CI/CD向けフェイルクローズド品質ゲート。Blind GatesでAIエージェントから判定基準を隠したまま評価し、テスト、SBOM、来歴、NemoClaw設定をマージ前に検証。32種のゲートタイプに対応。",
+    "description": "AI駆動CI/CD向けフェイルクローズド品質ゲート。Blind GatesでAIエージェントから判定基準を隠したまま評価し、テスト、SBOM、来歴、NemoClaw設定をマージ前に検証。25種のゲートタイプに対応。",
     "url": "https://evidence-gate.dev",
     "applicationCategory": "DeveloperApplication",
     "operatingSystem": "GitHub Actions",
@@ -52,7 +52,7 @@
         "name": "Free",
         "price": "0",
         "priceCurrency": "USD",
-        "description": "月100回の評価まで無料、全32種のゲートタイプ利用可能"
+        "description": "月100回の評価まで無料、全25種のゲートタイプ利用可能"
       },
       {
         "@type": "Offer",
@@ -72,7 +72,7 @@
       }
     ],
     "featureList": [
-      "32種のCI品質ゲートタイプ",
+      "25種のCI品質ゲートタイプ",
       "Blind Gates — AIエージェントから判定基準を秘匿",
       "フェイルクローズドエラー処理",
       "SARIF出力・GitHub Check Runs統合",
@@ -96,7 +96,7 @@
         "name": "Evidence Gateとは何ですか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Evidence Gateは、AI駆動のCI/CDパイプライン向けフェイルクローズド品質ゲートです。GitHub Actionsに組み込み、テストカバレッジ、SBOM、来歴、NemoClawサンドボックス設定など32種のゲートタイプでマージ前の品質検証を自動化します。"
+          "text": "Evidence Gateは、AI駆動のCI/CDパイプライン向けフェイルクローズド品質ゲートです。GitHub Actionsに組み込み、テストカバレッジ、SBOM、来歴、NemoClawサンドボックス設定など25種のゲートタイプでマージ前の品質検証を自動化します。"
         }
       },
       {
@@ -112,7 +112,7 @@
         "name": "NemoClaw統合で何ができますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "NemoClawはNVIDIAが提供するAIエージェント実行用サンドボックス基盤です。Evidence Gateは、NemoClawのブループリント（blueprint.yaml）、ポリシー（policy.yaml）、推論ルーティング設定をCI段階で検証し、安全なサンドボックスデプロイを保証します。"
+          "text": "NemoClawはNVIDIAが提供するAIエージェント実行用サンドボックス基盤です。Evidence Gateは、NemoClawのブループリント（blueprint.yaml）、ポリシー（policy.yaml）、推論ルーティング設定をCI段階で検証し、危険な設定や矛盾をデプロイ前に検出・ブロックします。"
         }
       },
       {
@@ -120,7 +120,7 @@
         "name": "無料で使えますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "はい。Freeプランでは月100回の評価と1,000回のAPIコールが利用可能で、全32種のゲートタイプ、SARIF出力、GitHub Check Runs統合が含まれます。オープンソースプロジェクトは無料でご利用いただけます。"
+          "text": "はい。Freeプランでは月100回の評価と1,000回のAPIコールが利用可能で、全25種のゲートタイプ、SARIF出力、GitHub Check Runs統合が含まれます。オープンソースプロジェクトは無料でご利用いただけます。"
         }
       }
     ]
@@ -968,7 +968,7 @@
   <section class="hero">
     <div class="container">
       <div class="hero-content">
-        <p style="font-size: 0.875rem; font-weight: 600; color: #22c55e; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">GitHub Actions &middot; 32種のゲートタイプ &middot; Blind Gates &middot; デフォルトFail-Closed</p>
+        <p style="font-size: 0.875rem; font-weight: 600; color: #22c55e; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">GitHub Actions &middot; 25種のゲートタイプ &middot; Blind Gates &middot; デフォルトFail-Closed</p>
         <h1>AIが閾値を<span>読めない</span>品質ゲート</h1>
         <p>AIコーディングをCI/CDに組み込む開発チーム向けの、フェイルクローズド品質ゲートです。Evidence GateはBlind Gatesで判定基準をAIから隠したまま評価し、テストカバレッジ、SBOM、来歴、NemoClaw設定まで、マージ前に検証します。</p>
         <div class="hero-buttons">
@@ -1121,7 +1121,7 @@
         <div class="blind-gate-text">
           <p>LLMがコードだけでなくテストまで生成する状況では、見えている閾値は「品質基準」ではなく「最適化の目標」になりがちです。</p>
           <p><strong>問題:</strong> 従来のCIゲートでは、たとえばテストカバレッジの閾値がワークフローYAMLに書かれています。AIコーディングエージェントはその数値を読み取り、ぎりぎり通過するためだけの空疎なテストを作ることができます。数値は満たしていても、品質を保証しているとは言えません。</p>
-          <p><strong>解決策:</strong> Blind Gatesでは、評価基準をパイプラインやリポジトリ、AIエージェントに公開しません。パイプラインはエビデンスファイルを提出し、Evidence Gate APIがチームごとの非公開基準で評価します。返される結果はPASSかFAILだけです。基準そのものは公開されないため、AIが閾値に合わせて振る舞うことはできません。</p>
+          <p><strong>解決策:</strong> Blind Gatesでは、評価基準をパイプラインやリポジトリ、AIエージェントに公開しません。パイプラインはエビデンスファイルを提出し、Evidence Gate APIがチームごとの非公開基準で評価します。判定基準そのものは秘匿され、結果と補助情報（不足エビデンス、推奨アクションなど）のみ返されます。基準が見えないため、AIが閾値に合わせて過剰最適化することを困難にします。</p>
         </div>
       </div>
     </div>
@@ -1188,7 +1188,7 @@
               <td>無制限</td>
             </tr>
             <tr>
-              <td>全32種のゲートタイプ</td>
+              <td>全25種のゲートタイプ</td>
               <td class="check">&#10003;</td>
               <td class="featured check">&#10003;</td>
               <td class="check">&#10003;</td>
@@ -1412,7 +1412,7 @@
       <span style="display: inline-block; background: #76b900; color: #1a1a1a; font-size: 0.6875rem; font-weight: 800; padding: 0.25rem 0.625rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem;">New</span>
       <p style="font-size: 0.875rem; font-weight: 600; color: #76b900; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">NVIDIA NemoClaw + Evidence Gate</p>
       <h2 style="font-size: 2rem; font-weight: 700; color: #ffffff; margin-bottom: 1rem;">NemoClawガバナンス</h2>
-      <p style="font-size: 1.125rem; color: #a0a0a0; max-width: 700px; margin: 0 auto 2rem; line-height: 1.7;">NemoClawは、NVIDIAが提供するAIエージェント実行用のサンドボックス基盤です。<br>Evidence Gateは、NemoClawのブループリント、ポリシー、推論設定をCI段階で検証し、<br>安全なサンドボックスデプロイを保証します。</p>
+      <p style="font-size: 1.125rem; color: #a0a0a0; max-width: 700px; margin: 0 auto 2rem; line-height: 1.7;">NemoClawは、NVIDIAが提供するAIエージェント実行用のサンドボックス基盤です。<br>Evidence Gateは、NemoClawのブループリント、ポリシー、推論設定をCI段階で検証し、<br>危険な設定や矛盾をデプロイ前に検出・ブロックします。</p>
       <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
         <a href="#nemoclaw-architecture" style="display: inline-block; background: #76b900; color: #1a1a1a; font-weight: 700; padding: 0.625rem 1.25rem; border-radius: 0.375rem; font-size: 0.9375rem; text-decoration: none;">詳しく見る ↓</a>
         <a href="https://github.com/NVIDIA/NemoClaw" style="display: inline-block; background: transparent; color: #ffffff; font-weight: 600; padding: 0.625rem 1.25rem; border-radius: 0.375rem; font-size: 0.9375rem; border: 1px solid #404040; text-decoration: none;">GitHub ↗</a>
@@ -1558,7 +1558,7 @@
         <div class="eco-tool-card">
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
           <h4>evidence-gate-action</h4>
-          <p>NemoClawブループリント、ポリシー、サンドボックスライフサイクル検証を含む32種のゲートタイプ。SARIF出力とAIエージェント修復コントラクト付きフェイルクローズドCIゲート。</p>
+          <p>NemoClawブループリント、ポリシー、サンドボックスライフサイクル検証を含む25種のゲートタイプ。SARIF出力とAIエージェント修復コントラクト付きフェイルクローズドCIゲート。</p>
           <a href="https://github.com/evidence-gate/evidence-gate-action" class="eco-tool-link">GitHubで見る &rarr;</a>
         </div>
         <div class="eco-tool-card">
