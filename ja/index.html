@@ -1192,7 +1192,7 @@
               <td>無制限</td>
             </tr>
             <tr>
-              <td>全25種のゲートタイプ</td>
+              <td>全32種のゲートタイプ</td>
               <td class="check">&#10003;</td>
               <td class="featured check">&#10003;</td>
               <td class="check">&#10003;</td>
@@ -1522,7 +1522,7 @@
   <section id="ecosystem" class="section section-alt">
     <div class="container">
       <h2 class="section-title">エージェントガバナンスの全体像</h2>
-      <p class="section-subtitle">Evidence GateはCIで設定を止め、nemoclaw-governanceは構成を検証し、agentgovは実行時の予算と通信を制御します。この3層で、設定ミスから予算超過まで一貫してカバーします。</p>
+      <p class="section-subtitle">CI検証からランタイム制御まで &mdash; 3層のプロテクション</p>
 
       <!-- 3-Layer Architecture Diagram (Agentforce-style) -->
       <div style="background: linear-gradient(180deg, #0c1220 0%, #1a2332 100%); border-radius: 1rem; padding: 2rem 1.5rem 1.5rem; max-width: 860px; margin: 0 auto 2.5rem;">
@@ -1532,7 +1532,7 @@
         <div style="background: rgba(34,197,94,0.12); border: 1px solid rgba(34,197,94,0.35); border-radius: 0.75rem; padding: 1rem 1.25rem; display: grid; grid-template-columns: 110px 1fr; gap: 1rem; align-items: center;">
           <div>
             <div style="font-size: 0.875rem; font-weight: 700; color: #22c55e;">CIレイヤー</div>
-            <div style="font-size: 0.6875rem; color: rgba(34,197,94,0.6); margin-top: 0.125rem;">マージ前検証</div>
+            <div style="font-size: 0.6875rem; color: rgba(34,197,94,0.6); margin-top: 0.125rem;">デプロイ前</div>
           </div>
           <div style="display: flex; gap: 0.625rem; flex-wrap: wrap;">
             <div style="flex: 1; min-width: 140px; background: white; border-radius: 0.5rem; padding: 0.625rem 0.75rem;">
@@ -1615,7 +1615,7 @@
         <div class="eco-tool-card">
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
           <h4>evidence-gate-action</h4>
-          <p>NemoClawブループリント、ポリシー、サンドボックスライフサイクル検証を含む25種のゲートタイプ。SARIF出力とAIエージェント修復コントラクト付きフェイルクローズドCIゲート。</p>
+          <p>NemoClawブループリント、ポリシー、サンドボックスライフサイクル検証を含む32種のゲートタイプ。SARIF出力とAIエージェント修復コントラクト付きフェイルクローズドCIゲート。</p>
           <a href="https://github.com/evidence-gate/evidence-gate-action" class="eco-tool-link">GitHubで見る &rarr;</a>
         </div>
         <div class="eco-tool-card">
@@ -1632,7 +1632,7 @@
         </div>
       </div>
 
-      <p style="text-align: center; margin-top: 2rem; color: #64748b; font-size: 0.9375rem;">NemoClawはサンドボックス分離を提供しますが、コスト制御までは担いません。agentgovがそこを補い、Evidence GateがCI段階で全体を検証します。つまり、本番に届く前に、構成・安全性・運用制御をまとめて確認できます。</p>
+      <p style="text-align: center; margin-top: 2rem; color: #64748b; font-size: 0.9375rem;"><strong>なぜ3層なのか?</strong> NemoClawはLandlock+seccomp+netnsによるサンドボックス分離を提供しますが、コスト制御はありません。agentgovがランタイム予算強制と推論ルーティングガバナンスを追加します。Evidence GateはCI時にすべての設定を検証します &mdash; ブループリントが本番サンドボックスに到達する前に。</p>
     </div>
   </section>
 
