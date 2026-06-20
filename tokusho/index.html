@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>特定商取引法に基づく表記 | Evidence Gate</title>
+
+  <meta property="og:title" content="特定商取引法に基づく表記 | Evidence Gate">
+  <meta property="og:description" content="Evidence Gate 特定商取引法に基づく表記 / Specified Commercial Transactions Act Notice">
+  <meta property="og:url" content="https://evidence-gate.dev/tokusho">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      color: #1e293b;
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #16a34a;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Navigation */
+    .nav {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #e2e8f0;
+      z-index: 100;
+      padding: 0.75rem 0;
+    }
+
+    .nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: #1e293b;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .nav-logo:hover {
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #475569;
+      font-size: 0.9375rem;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: #16a34a;
+      text-decoration: none;
+    }
+
+    /* Legal Content */
+    .legal-header {
+      padding: 3rem 0 2rem;
+      background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 50%, #f0f9ff 100%);
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .legal-header h1 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 0.5rem;
+    }
+
+    .legal-header .legal-meta {
+      color: #64748b;
+      font-size: 0.9375rem;
+    }
+
+    .legal-body {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    .legal-notice {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 0.5rem;
+      padding: 1rem 1.25rem;
+      margin-bottom: 2rem;
+      font-size: 0.875rem;
+      color: #166534;
+    }
+
+    .legal-disclaimer {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-radius: 0.5rem;
+      padding: 1rem 1.25rem;
+      margin-bottom: 2rem;
+      font-size: 0.875rem;
+      color: #92400e;
+    }
+
+    .lang-divider {
+      border: none;
+      border-top: 3px solid #22c55e;
+      margin: 3rem 0;
+    }
+
+    .lang-label {
+      display: inline-block;
+      background: #22c55e;
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.25rem 0.75rem;
+      border-radius: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.5rem;
+    }
+
+    .legal-body h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-top: 2.5rem;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .legal-body p {
+      margin-bottom: 1rem;
+      color: #334155;
+      font-size: 0.9375rem;
+      line-height: 1.8;
+    }
+
+    /* Tokusho table */
+    .tokusho-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.5rem;
+      font-size: 0.9375rem;
+    }
+
+    .tokusho-table th,
+    .tokusho-table td {
+      border: 1px solid #e2e8f0;
+      padding: 0.75rem 1rem;
+      text-align: left;
+      vertical-align: top;
+      line-height: 1.7;
+      color: #334155;
+    }
+
+    .tokusho-table th {
+      width: 34%;
+      background: #f8fafc;
+      font-weight: 600;
+      color: #0f172a;
+    }
+
+    /* Footer */
+    .footer {
+      background: #0f172a;
+      color: #94a3b8;
+      padding: 3rem 0 2rem;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 2rem;
+      gap: 2rem;
+    }
+
+    .footer-brand p {
+      font-size: 0.875rem;
+      max-width: 320px;
+      line-height: 1.6;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #94a3b8;
+      font-size: 0.875rem;
+    }
+
+    .footer-links a:hover {
+      color: #22c55e;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #1e293b;
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8125rem;
+    }
+
+    .footer-bottom a {
+      color: #94a3b8;
+    }
+
+    .footer-bottom a:hover {
+      color: #22c55e;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .legal-header h1 {
+        font-size: 1.75rem;
+      }
+
+      .tokusho-table th {
+        width: 40%;
+      }
+
+      .footer-content {
+        flex-direction: column;
+      }
+
+      .footer-links {
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container">
+      <a href="/" class="nav-logo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Evidence Gate
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/privacy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms</a></li>
+        <li><a href="https://github.com/evidence-gate">GitHub</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <section class="legal-header">
+    <div class="container">
+      <h1>特定商取引法に基づく表記</h1>
+      <p class="legal-meta">制定日: 2026年6月20日 / Enacted: June 20, 2026</p>
+    </div>
+  </section>
+
+  <!-- Legal Body -->
+  <div class="legal-body">
+
+    <div class="legal-notice">
+      本表記は、特定商取引法に基づき、有料サービス「Evidence Gate」の提供に関する事項を表示するものです。<br>
+      This page provides disclosures required under Japan's Act on Specified Commercial Transactions for the paid service "Evidence Gate."
+    </div>
+
+    <span class="lang-label">日本語</span>
+
+    <table class="tokusho-table">
+      <tbody>
+        <tr><th>販売事業者</th><td>合同会社AllNew（AllNew LLC）</td></tr>
+        <tr><th>運営統括責任者</th><td>植野 正徳</td></tr>
+        <tr><th>所在地</th><td>〒107-0052 東京都港区赤坂8-4-14 青山タワープレイス8F</td></tr>
+        <tr><th>連絡先</th><td>お問い合わせ: <a href="https://allnew.work/#contact">https://allnew.work/#contact</a>（メール: support@evidence-gate.dev）</td></tr>
+        <tr><th>電話番号</th><td>請求があった場合、遅滞なく開示します。上記お問い合わせ窓口よりご連絡ください。</td></tr>
+        <tr><th>販売価格</th><td>各プランの料金は、本サイトの料金（Pricing）に表示します。Free プランは $0/月。Pro・Enterprise プランは別途お見積り・お問い合わせとなります。価格は米ドル建てで表示し、消費税の取扱いは料金表示に明記します。</td></tr>
+        <tr><th>商品代金以外の必要料金</th><td>消費税、インターネット接続等の通信費。従量課金がある場合は上限超過分の従量料金。</td></tr>
+        <tr><th>支払方法</th><td>クレジットカード（Stripe, Inc. が提供する決済サービス）。</td></tr>
+        <tr><th>支払時期</th><td>お申込時、および各課金期間（月次または年次）の開始時に課金されます。</td></tr>
+        <tr><th>役務の提供時期</th><td>お申込手続および決済の完了後、直ちにご利用いただけます。</td></tr>
+        <tr><th>キャンセル・解約・返金</th><td>サブスクリプションは、次回更新日の前までに所定の方法で解約手続を行うことで、次期以降の課金を停止します。デジタル役務の性質上、提供済み期間に係る料金の返金は原則として行いません（個別契約またはプランに別段の定めがある場合を除きます）。</td></tr>
+        <tr><th>動作環境</th><td>GitHub Actions 等の CI/CD 環境、および API 連携が可能な環境。</td></tr>
+        <tr><th>その他</th><td>本サービスの利用には、別途<a href="/terms">利用規約</a>および<a href="/privacy">プライバシーポリシー</a>が適用されます。</td></tr>
+      </tbody>
+    </table>
+
+    <p style="font-size: 0.875rem; color: #64748b;">
+      ※ 価格・返金等の条件は、実際のプラン設計に応じて料金ページに最新の内容を表示します。本表記と料金ページの間に齟齬がある場合は、料金ページの表示および利用規約が優先します。
+    </p>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <p>Powered by GitHub Actions. Evidence Gate helps teams enforce quality standards in every deployment pipeline.</p>
+        </div>
+        <div class="footer-links">
+          <a href="https://github.com/evidence-gate">GitHub</a>
+          <a href="https://github.com/marketplace/actions/evidence-gate">Marketplace</a>
+          <a href="https://docs.evidence-gate.dev">Documentation</a>
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms of Service</a>
+          <a href="/tokusho">特定商取引法に基づく表記</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 AllNew LLC. All rights reserved.</span>
+        <span>Built with GitHub Actions</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
