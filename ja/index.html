@@ -52,23 +52,7 @@
         "name": "Free",
         "price": "0",
         "priceCurrency": "USD",
-        "description": "月100回の評価まで無料、全25種のゲートタイプ利用可能"
-      },
-      {
-        "@type": "Offer",
-        "name": "Pro",
-        "price": "0",
-        "priceCurrency": "USD",
-        "description": "月5,000回の評価、Blind Gate・エビデンスチェーン検証対応",
-        "priceSpecification": {
-          "@type": "PriceSpecification",
-          "priceCurrency": "USD",
-          "eligibleTransactionVolume": {
-            "@type": "QuantitativeValue",
-            "value": 5000,
-            "unitText": "evaluations/month"
-          }
-        }
+        "description": "Freeモード: GitHub Actions上でのローカル評価（APIキー不要）"
       }
     ],
     "featureList": [
@@ -120,7 +104,7 @@
         "name": "無料で使えますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "はい。Freeプランでは月100回の評価と1,000回のAPIコールが利用可能で、全25種のゲートタイプ、SARIF出力、GitHub Check Runs統合が含まれます。オープンソースプロジェクトは無料でご利用いただけます。"
+          "text": "はい。FreeモードはAPIキー不要でGitHub Actions上でローカルに評価を行い、SARIF出力、GitHub Check Runs統合が含まれます。オープンソースプロジェクトは無料でご利用いただけます。ホスティング版API（Pro）は現在準備中です。"
         }
       }
     ]
@@ -957,7 +941,7 @@
         <li><a href="#how-it-works">仕組み</a></li>
         <li><a href="#blind-gates">Blind Gates</a></li>
         <li><a href="#ai-governance">AIガバナンス</a></li>
-        <li><a href="#pricing">料金</a></li>
+        <li><a href="#pricing">プラン</a></li>
         <li><a href="#quick-start">クイックスタート</a></li>
         <li><a href="#nemoclaw-integration">NemoClawガバナンス</a></li>
         <li><a href="https://github.com/marketplace/actions/evidence-gate-action" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">無料で始める</a></li>
@@ -1126,6 +1110,7 @@
           <p>LLMがコードだけでなくテストまで生成する状況では、見えている閾値は「品質基準」ではなく「最適化の目標」になりがちです。</p>
           <p><strong>問題:</strong> 従来のCIゲートでは、たとえばテストカバレッジの閾値がワークフローYAMLに書かれています。AIコーディングエージェントはその数値を読み取り、ぎりぎり通過するためだけの空疎なテストを作ることができます。数値は満たしていても、品質を保証しているとは言えません。</p>
           <p><strong>解決策:</strong> Blind Gatesでは、評価基準をパイプラインやリポジトリ、AIエージェントに公開しません。パイプラインはエビデンスファイルを提出し、Evidence Gate APIがチームごとの非公開基準で評価します。判定基準そのものは秘匿され、結果と補助情報（不足エビデンス、推奨アクションなど）のみ返されます。基準が見えないため、AIが閾値に合わせて過剰最適化することを困難にします。</p>
+          <p><strong>提供状況:</strong> Blind Gatesはホスティング版API（Pro）で提供予定です。ホスティング版API（Pro）は現在準備中です。公開時期は追ってお知らせします。Freeモード（ローカル評価・APIキー不要）は現在ご利用いただけます。</p>
         </div>
       </div>
     </div>
@@ -1166,16 +1151,16 @@
   <!-- Pricing Section -->
   <section id="pricing" class="section">
     <div class="container">
-      <h2 class="section-title">シンプルで透明な料金体系</h2>
-      <p class="section-subtitle">無料で始めて、必要に応じて拡張</p>
+      <h2 class="section-title">プラン</h2>
+      <p class="section-subtitle">Freeモードは現在ご利用いただけます。ホスティング版API（Pro）は現在準備中です。</p>
       <div class="pricing-table-wrapper">
         <table class="pricing-table">
           <thead>
             <tr>
               <th>機能</th>
               <th>Free<br>（$0/月）</th>
-              <th class="featured">Pro<br>（お問い合わせ）</th>
-              <th>Enterprise<br>（お問い合わせ）</th>
+              <th class="featured">Pro<br>（準備中）</th>
+              <th>Enterprise<br>（準備中）</th>
             </tr>
           </thead>
           <tbody>
@@ -1187,7 +1172,7 @@
             </tr>
             <tr>
               <td>月間APIコール数</td>
-              <td>1,000</td>
+              <td>不要（ローカル評価）</td>
               <td class="featured">50,000</td>
               <td>無制限</td>
             </tr>
@@ -1340,12 +1325,12 @@
             <tr class="cta-row">
               <td></td>
               <td><a href="https://github.com/marketplace/actions/evidence-gate-action" class="btn btn-outline-green">無料で始める</a></td>
-              <td class="featured"><a href="https://allnew.work/#contact" class="btn btn-primary">お問い合わせ</a></td>
-              <td><a href="mailto:info@allnew.work" class="btn btn-secondary">営業に問い合わせ</a></td>
+              <td class="featured"><strong>準備中</strong></td>
+              <td><strong>準備中</strong></td>
             </tr>
           </tfoot>
         </table>
-        <p class="pricing-note" style="text-align:center;margin-top:1rem;color:#64748b;font-size:0.875rem;">Pro・Enterpriseプランは現在お問い合わせによる個別提供のみで、オンラインでのお申込み・決済は受け付けておりません。料金は米ドル建てで、消費税の取扱いは個別のお見積りに明記します。</p>
+        <p class="pricing-note" style="text-align:center;margin-top:1rem;color:#64748b;font-size:0.875rem;">ホスティング版API（Pro）は現在準備中です。公開時期は追ってお知らせします。Pro・Enterpriseプランは現在販売しておりません。お問い合わせ: <a href="mailto:info@allnew.work">info@allnew.work</a></p>
       </div>
     </div>
   </section>
