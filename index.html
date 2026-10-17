@@ -43,7 +43,7 @@
     "publisher": {
       "@type": "Organization",
       "name": "AllNew LLC",
-      "url": "https://allnew.co.jp"
+      "url": "https://allnew.work"
     },
     "offers": [
       {
@@ -123,7 +123,7 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "AllNew LLC",
-    "url": "https://allnew.co.jp",
+    "url": "https://allnew.work",
     "sameAs": [
       "https://github.com/evidence-gate"
     ]
@@ -1245,7 +1245,7 @@
           <span class="hero-code-label">.github/workflows/ci.yml</span>
         </div>
 <pre><span class="code-comment"># Validate NemoClaw blueprint before deploy</span>
-<span class="code-key">- uses:</span> <span class="code-string">evidence-gate/evidence-gate-action@v1</span>
+<span class="code-key">- uses:</span> <span class="code-string">evidence-gate/evidence-gate-action@3f478e1f3d3c5050725f15ecf9cdb4ff5eb9ea75</span> <span class="code-comment"># pinned: switch to next release tag</span>
   <span class="code-key">with:</span>
     <span class="code-key">gate_type:</span> <span class="code-string">"nemoclaw_blueprint"</span>
     <span class="code-key">phase_id:</span> <span class="code-string">"deploy"</span>
@@ -1416,7 +1416,7 @@
           <p>AWS KMS encryption (FIPS 140-2 validated), HMAC-signed cursors, and a maturity-level-based Quality State Model provide auditable governance at every step.</p>
         </div>
       </div>
-      <p style="text-align: center; margin-top: 2rem; color: #64748b; font-size: 0.875rem;">Evidence Gate supports practices aligned with key principles including transparency, safety, and accountability. <a href="https://www.allnew.work/ai-governance.html">Learn more about our approach &rarr;</a></p>
+      <p style="text-align: center; margin-top: 2rem; color: #64748b; font-size: 0.875rem;">Evidence Gate supports practices aligned with key principles including transparency, safety, and accountability.</p>
       <p style="text-align: center; margin-top: 0.75rem; color: #94a3b8; font-size: 0.8125rem;">This product is not endorsed by or affiliated with any government body. Feature descriptions are for informational purposes only and do not constitute compliance certification.</p>
     </div>
   </section>
@@ -1819,7 +1819,7 @@
             <tr>
               <th>Feature</th>
               <th>Free ($0/mo)</th>
-              <th class="featured">Pro (Contact)</th>
+              <th class="featured">Pro (Contact us)</th>
               <th>Enterprise (Contact us)</th>
             </tr>
           </thead>
@@ -1985,11 +1985,12 @@
             <tr class="cta-row">
               <td></td>
               <td><a href="https://github.com/marketplace/actions/evidence-gate-action" class="btn btn-outline-green">Get Started Free</a></td>
-              <td class="featured"><a href="#pricing" class="btn btn-primary">Start Pro Trial</a></td>
-              <td><a href="mailto:support@allnew.co.jp" class="btn btn-secondary">Contact Sales</a></td>
+              <td class="featured"><a href="https://allnew.work/#contact" class="btn btn-primary">Contact Us</a></td>
+              <td><a href="mailto:info@allnew.work" class="btn btn-secondary">Contact Sales</a></td>
             </tr>
           </tfoot>
         </table>
+        <p class="pricing-note" style="text-align:center;margin-top:1rem;color:#64748b;font-size:0.875rem;">Pro and Enterprise are currently offered by inquiry only; online self-service purchase is not yet available. Prices shown in USD; consumption tax (Japan) handling is stated in each quote.</p>
       </div>
     </div>
   </section>
@@ -2032,7 +2033,7 @@
       <span class="code-comment"># Your build &amp; test steps here...</span>
 
       <span class="code-key">- name:</span> <span class="code-string">Evidence Gate</span>
-        <span class="code-key">uses:</span> <span class="code-string">evidence-gate/evidence-gate-action@v1</span>
+        <span class="code-key">uses:</span> <span class="code-string">evidence-gate/evidence-gate-action@3f478e1f3d3c5050725f15ecf9cdb4ff5eb9ea75</span> <span class="code-comment"># pinned: switch to next release tag</span>
         <span class="code-key">with:</span>
           <span class="code-comment"># Or use .evidencegate.yml config file for zero required inputs</span>
           <span class="code-key">gate_type:</span> <span class="code-string">"test_coverage"</span>
@@ -2076,7 +2077,7 @@
 
       <span class="code-comment"># Validate NemoClaw blueprint.yaml</span>
       <span class="code-key">- name:</span> <span class="code-string">Blueprint Gate</span>
-        <span class="code-key">uses:</span> <span class="code-string">evidence-gate/evidence-gate-action@v1</span>
+        <span class="code-key">uses:</span> <span class="code-string">evidence-gate/evidence-gate-action@3f478e1f3d3c5050725f15ecf9cdb4ff5eb9ea75</span> <span class="code-comment"># pinned: switch to next release tag</span>
         <span class="code-key">with:</span>
           <span class="code-key">gate_type:</span> <span class="code-string">"nemoclaw_blueprint"</span>
           <span class="code-key">evidence_files:</span> <span class="code-string">"blueprint.yaml"</span>
@@ -2088,7 +2089,7 @@
 
       <span class="code-comment"># Validate sandbox policy constraints</span>
       <span class="code-key">- name:</span> <span class="code-string">Policy Gate</span>
-        <span class="code-key">uses:</span> <span class="code-string">evidence-gate/evidence-gate-action@v1</span>
+        <span class="code-key">uses:</span> <span class="code-string">evidence-gate/evidence-gate-action@3f478e1f3d3c5050725f15ecf9cdb4ff5eb9ea75</span> <span class="code-comment"># pinned: switch to next release tag</span>
         <span class="code-key">with:</span>
           <span class="code-key">gate_type:</span> <span class="code-string">"nemoclaw_policy"</span>
           <span class="code-key">evidence_files:</span> <span class="code-string">"policy.yaml"</span>
@@ -2100,7 +2101,7 @@
 
       <span class="code-comment"># Validate agentgov budget configuration</span>
       <span class="code-key">- name:</span> <span class="code-string">Budget Gate</span>
-        <span class="code-key">uses:</span> <span class="code-string">evidence-gate/evidence-gate-action@v1</span>
+        <span class="code-key">uses:</span> <span class="code-string">evidence-gate/evidence-gate-action@3f478e1f3d3c5050725f15ecf9cdb4ff5eb9ea75</span> <span class="code-comment"># pinned: switch to next release tag</span>
         <span class="code-key">with:</span>
           <span class="code-key">gate_type:</span> <span class="code-string">"custom"</span>
           <span class="code-key">phase_id:</span> <span class="code-string">"budget"</span>

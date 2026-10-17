@@ -46,4 +46,4 @@ NemoClaw uses a Plugin (TypeScript) + Blueprint (Python) two-layer architecture 
 
 ## Publisher
 
-AllNew LLC — https://allnew.co.jp
+AllNew LLC — https://allnew.work
