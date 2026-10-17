@@ -6,7 +6,7 @@
   <title>Evidence Gate — AI Agent Quality Gates + NemoClaw Governance</title>
 
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Fail-closed quality gates for AI-driven CI/CD. Blind Gates hide criteria from AI agents. 25 gate types covering tests, SBOM, provenance, and NemoClaw sandbox validation. Free for open-source.">
+  <meta name="description" content="Fail-closed quality gates for AI-driven CI/CD. Blind Gates hide criteria from AI agents. 35 gate types (30 in Free mode) covering tests, SBOM, provenance, and NemoClaw sandbox validation. Free for open-source.">
   <meta name="keywords" content="Evidence Gate, CI/CD, quality gates, AI agents, Blind Gates, NemoClaw, GitHub Actions, SBOM, SLSA, security, sandbox, fail-closed">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta name="author" content="AllNew LLC">
@@ -17,7 +17,7 @@
 
   <!-- OGP Meta Tags -->
   <meta property="og:title" content="Evidence Gate — AI Agent Quality Gates + NemoClaw Governance">
-  <meta property="og:description" content="Fail-closed quality gates for AI-driven CI/CD. Blind Gates hide criteria from AI agents. 25 gate types with NemoClaw sandbox validation.">
+  <meta property="og:description" content="Fail-closed quality gates for AI-driven CI/CD. Blind Gates hide criteria from AI agents. 35 gate types (30 in Free mode) with NemoClaw sandbox validation.">
   <meta property="og:url" content="https://evidence-gate.dev">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Evidence Gate">
@@ -25,7 +25,7 @@
   <meta property="og:locale:alternate" content="ja_JP">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Evidence Gate — AI Agent Quality Gates + NemoClaw Governance">
-  <meta name="twitter:description" content="Fail-closed quality gates for AI-driven CI/CD. Blind Gates hide criteria from AI agents. 25 gate types with NemoClaw sandbox validation.">
+  <meta name="twitter:description" content="Fail-closed quality gates for AI-driven CI/CD. Blind Gates hide criteria from AI agents. 35 gate types (30 in Free mode) with NemoClaw sandbox validation.">
 
   <!-- Structured Data: SoftwareApplication -->
   <script type="application/ld+json">
@@ -33,7 +33,7 @@
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "Evidence Gate",
-    "description": "Fail-closed quality gates for AI-driven CI/CD. Blind Gates hide criteria from AI agents. 25 gate types covering tests, SBOM, provenance, and NemoClaw sandbox validation.",
+    "description": "Fail-closed quality gates for AI-driven CI/CD. Blind Gates hide criteria from AI agents. 35 gate types (30 in Free mode) covering tests, SBOM, provenance, and NemoClaw sandbox validation.",
     "url": "https://evidence-gate.dev",
     "applicationCategory": "DeveloperApplication",
     "operatingSystem": "GitHub Actions",
@@ -55,7 +55,7 @@
       }
     ],
     "featureList": [
-      "25 CI quality gate types",
+      "35 CI quality gate types (30 in Free mode, 5 Pro-only)",
       "Blind Gates — hide evaluation criteria from AI agents",
       "Fail-closed error handling",
       "SARIF output and GitHub Check Runs",
@@ -79,7 +79,7 @@
         "name": "What is Evidence Gate?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Evidence Gate is a fail-closed quality gate for AI-driven CI/CD pipelines. It integrates with GitHub Actions to validate test coverage, SBOM, provenance, and NemoClaw sandbox configurations before merge. It supports 25 gate types."
+          "text": "Evidence Gate is a fail-closed quality gate for AI-driven CI/CD pipelines. It integrates with GitHub Actions to validate test coverage, SBOM, provenance, and NemoClaw sandbox configurations before merge. It supports 35 gate types: 30 run in Free mode today, and 5 (blind_gate, quality_state, remediation, composite, wave) require the hosted API (Pro), which is coming soon."
         }
       },
       {
@@ -1222,7 +1222,7 @@
   <section class="hero">
     <div class="container">
       <div class="hero-content">
-        <p style="font-size: 0.875rem; font-weight: 600; color: #22c55e; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">GitHub Actions &middot; 29 Gate Types &middot; NemoClaw Governance &middot; Fail-Closed</p>
+        <p style="font-size: 0.875rem; font-weight: 600; color: #22c55e; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">GitHub Actions &middot; 35 Gate Types &middot; NemoClaw Governance &middot; Fail-Closed</p>
         <h1>Quality Gates for <span>Full-Stack AI Governance</span></h1>
         <p>AI agents write your code, your tests, and now operate your infrastructure through NemoClaw sandboxes. Evidence Gate enforces quality at every layer &mdash; Blind Gates that hide CI criteria from gaming, plus blueprint and policy validation that ensures NemoClaw sandboxes deploy with correct isolation, budgets, and inference routing. Full-stack governance, fail-closed by default.</p>
         <div class="hero-buttons">
@@ -1781,7 +1781,7 @@
         <div class="eco-tool-card">
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
           <h4>evidence-gate-action</h4>
-          <p>25 gate types including NemoClaw blueprint, policy, and sandbox lifecycle validation. Fail-closed CI gates with SARIF output and AI agent repair contracts.</p>
+          <p>35 gate types (30 in Free mode) including NemoClaw blueprint and policy validation. Fail-closed CI gates with SARIF output and AI agent repair contracts.</p>
           <a href="https://github.com/evidence-gate/evidence-gate-action" class="eco-tool-link">View on GitHub &rarr;</a>
         </div>
         <div class="eco-tool-card">
@@ -1820,7 +1820,7 @@
           <tbody>
             <tr>
               <td>Evaluations/month</td>
-              <td>100</td>
+              <td>No limit (local mode)</td>
               <td class="featured">5,000</td>
               <td>Unlimited</td>
             </tr>
@@ -1831,8 +1831,14 @@
               <td>Unlimited</td>
             </tr>
             <tr>
-              <td>All 25 gate types</td>
+              <td>Free-mode gate types (30): 26 generic, SBOM, provenance, NemoClaw blueprint &amp; policy</td>
               <td class="check">&#10003;</td>
+              <td class="featured check">&#10003;</td>
+              <td class="check">&#10003;</td>
+            </tr>
+            <tr>
+              <td>Pro-only gate types (5): <code>blind_gate</code>, <code>quality_state</code>, <code>remediation</code>, <code>composite</code>, <code>wave</code></td>
+              <td class="dash">&mdash;</td>
               <td class="featured check">&#10003;</td>
               <td class="check">&#10003;</td>
             </tr>
@@ -1885,7 +1891,7 @@
               <td class="check">&#10003;</td>
             </tr>
             <tr>
-              <td>NemoClaw gates (blueprint + policy + sandbox lifecycle)</td>
+              <td>NemoClaw gates (blueprint + policy)</td>
               <td class="check">&#10003;</td>
               <td class="featured check">&#10003;</td>
               <td class="check">&#10003;</td>
@@ -1952,7 +1958,7 @@
             </tr>
             <tr>
               <td>Missing evidence + suggested actions</td>
-              <td class="dash">&mdash;</td>
+              <td class="check">&#10003;</td>
               <td class="featured check">&#10003;</td>
               <td class="check">&#10003;</td>
             </tr>

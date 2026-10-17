@@ -6,7 +6,7 @@
   <title>Evidence Gate — AIが閾値を読めない品質ゲート | CI/CD品質ゲート</title>
 
   <!-- SEO Meta Tags -->
-  <meta name="description" content="AI駆動CI/CD向けフェイルクローズド品質ゲート。Blind GatesでAIエージェントから判定基準を隠したまま評価し、テスト、SBOM、来歴、NemoClaw設定をマージ前に検証。25種のゲートタイプに対応。">
+  <meta name="description" content="AI駆動CI/CD向けフェイルクローズド品質ゲート。Blind GatesでAIエージェントから判定基準を隠したまま評価し、テスト、SBOM、来歴、NemoClaw設定をマージ前に検証。35種のゲートタイプ（Freeモードで30種）に対応。">
   <meta name="keywords" content="Evidence Gate, CI/CD, 品質ゲート, AI エージェント, Blind Gates, NemoClaw, GitHub Actions, SBOM, SLSA, セキュリティ, サンドボックス, フェイルクローズド">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta name="author" content="AllNew LLC">
@@ -17,7 +17,7 @@
 
   <!-- OGP Meta Tags -->
   <meta property="og:title" content="Evidence Gate — AIが閾値を読めない品質ゲート">
-  <meta property="og:description" content="AI駆動CI/CD向けフェイルクローズド品質ゲート。Blind GatesでAIエージェントから判定基準を隠したまま評価。25種のゲートタイプ、NemoClaw統合対応。">
+  <meta property="og:description" content="AI駆動CI/CD向けフェイルクローズド品質ゲート。Blind GatesでAIエージェントから判定基準を隠したまま評価。35種のゲートタイプ（Freeモードで30種）、NemoClaw統合対応。">
   <meta property="og:url" content="https://evidence-gate.dev/ja/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Evidence Gate">
@@ -25,7 +25,7 @@
   <meta property="og:locale:alternate" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Evidence Gate — AIが閾値を読めない品質ゲート">
-  <meta name="twitter:description" content="AI駆動CI/CD向けフェイルクローズド品質ゲート。Blind GatesでAIエージェントから判定基準を隠したまま評価。25種のゲートタイプ対応。">
+  <meta name="twitter:description" content="AI駆動CI/CD向けフェイルクローズド品質ゲート。Blind GatesでAIエージェントから判定基準を隠したまま評価。35種のゲートタイプ（Freeモードで30種）対応。">
 
   <!-- Structured Data: SoftwareApplication -->
   <script type="application/ld+json">
@@ -33,7 +33,7 @@
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "Evidence Gate",
-    "description": "AI駆動CI/CD向けフェイルクローズド品質ゲート。Blind GatesでAIエージェントから判定基準を隠したまま評価し、テスト、SBOM、来歴、NemoClaw設定をマージ前に検証。25種のゲートタイプに対応。",
+    "description": "AI駆動CI/CD向けフェイルクローズド品質ゲート。Blind GatesでAIエージェントから判定基準を隠したまま評価し、テスト、SBOM、来歴、NemoClaw設定をマージ前に検証。35種のゲートタイプ（Freeモードで30種）に対応。",
     "url": "https://evidence-gate.dev",
     "applicationCategory": "DeveloperApplication",
     "operatingSystem": "GitHub Actions",
@@ -56,7 +56,7 @@
       }
     ],
     "featureList": [
-      "25種のCI品質ゲートタイプ",
+      "35種のCI品質ゲートタイプ（Freeモードで30種、Pro専用5種）",
       "Blind Gates — AIエージェントから判定基準を秘匿",
       "フェイルクローズドエラー処理",
       "SARIF出力・GitHub Check Runs統合",
@@ -80,7 +80,7 @@
         "name": "Evidence Gateとは何ですか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Evidence Gateは、AI駆動のCI/CDパイプライン向けフェイルクローズド品質ゲートです。GitHub Actionsに組み込み、テストカバレッジ、SBOM、来歴、NemoClawサンドボックス設定など25種のゲートタイプでマージ前の品質検証を自動化します。"
+          "text": "Evidence Gateは、AI駆動のCI/CDパイプライン向けフェイルクローズド品質ゲートです。GitHub Actionsに組み込み、テストカバレッジ、SBOM、来歴、NemoClawサンドボックス設定など35種のゲートタイプでマージ前の品質検証を自動化します。うち30種はFreeモードで現在利用でき、5種（blind_gate、quality_state、remediation、composite、wave）はホスティング版API（Pro、準備中）が必要です。"
         }
       },
       {
@@ -956,7 +956,7 @@
   <section class="hero">
     <div class="container">
       <div class="hero-content">
-        <p style="font-size: 0.875rem; font-weight: 600; color: #22c55e; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">GitHub Actions &middot; 25種のゲートタイプ &middot; Blind Gates &middot; デフォルトFail-Closed</p>
+        <p style="font-size: 0.875rem; font-weight: 600; color: #22c55e; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">GitHub Actions &middot; 35種のゲートタイプ &middot; Blind Gates &middot; デフォルトFail-Closed</p>
         <h1>AIが閾値を<span>読めない</span><br>品質ゲート</h1>
         <p>AIコーディングをCI/CDに組み込む開発チーム向けの、フェイルクローズド品質ゲートです。Evidence GateはBlind Gatesで判定基準をAIから隠したまま評価し、テストカバレッジ、SBOM、来歴、NemoClaw設定まで、マージ前に検証します。</p>
         <div class="hero-buttons">
@@ -1166,7 +1166,7 @@
           <tbody>
             <tr>
               <td>月間評価回数</td>
-              <td>100</td>
+              <td>上限なし（ローカル評価）</td>
               <td class="featured">5,000</td>
               <td>無制限</td>
             </tr>
@@ -1177,8 +1177,14 @@
               <td>無制限</td>
             </tr>
             <tr>
-              <td>全25種のゲートタイプ</td>
+              <td>Freeモードのゲートタイプ（30種）: 汎用26種、SBOM、来歴、NemoClawブループリント・ポリシー</td>
               <td class="check">&#10003;</td>
+              <td class="featured check">&#10003;</td>
+              <td class="check">&#10003;</td>
+            </tr>
+            <tr>
+              <td>Pro専用ゲートタイプ（5種）: <code>blind_gate</code>、<code>quality_state</code>、<code>remediation</code>、<code>composite</code>、<code>wave</code></td>
+              <td class="dash">&mdash;</td>
               <td class="featured check">&#10003;</td>
               <td class="check">&#10003;</td>
             </tr>
@@ -1231,7 +1237,7 @@
               <td class="check">&#10003;</td>
             </tr>
             <tr>
-              <td>NemoClawゲート（ブループリント + ポリシー + サンドボックスライフサイクル）</td>
+              <td>NemoClawゲート（ブループリント + ポリシー）</td>
               <td class="check">&#10003;</td>
               <td class="featured check">&#10003;</td>
               <td class="check">&#10003;</td>
@@ -1298,7 +1304,7 @@
             </tr>
             <tr>
               <td>エビデンス不足検出 + 推奨アクション</td>
-              <td class="dash">&mdash;</td>
+              <td class="check">&#10003;</td>
               <td class="featured check">&#10003;</td>
               <td class="check">&#10003;</td>
             </tr>
@@ -1601,7 +1607,7 @@
         <div class="eco-tool-card">
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
           <h4>evidence-gate-action</h4>
-          <p>NemoClawブループリント、ポリシー、サンドボックスライフサイクル検証を含む25種のゲートタイプ。SARIF出力とAIエージェント修復コントラクト付きフェイルクローズドCIゲート。</p>
+          <p>NemoClawブループリント・ポリシー検証を含む35種のゲートタイプ（Freeモードで30種）。SARIF出力とAIエージェント修復コントラクト付きフェイルクローズドCIゲート。</p>
           <a href="https://github.com/evidence-gate/evidence-gate-action" class="eco-tool-link">GitHubで見る &rarr;</a>
         </div>
         <div class="eco-tool-card">
