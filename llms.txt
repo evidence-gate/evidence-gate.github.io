@@ -24,11 +24,10 @@ Any other gate_type fails (fail-closed). Source: evidence-gate-action v2.0.1, sr
 ## NemoClaw Integration
 
 Evidence Gate validates NVIDIA NemoClaw sandbox configurations at CI stage:
-- **Blueprint validation**: Checks blueprint.yaml structure and required fields
-- **Policy validation**: Verifies policy.yaml sandbox constraints (Landlock, seccomp, netns)
-- **Inference routing**: Validates routing profiles (NVIDIA Cloud, Local NIM, Local vLLM)
+- **Blueprint validation** (nemoclaw_blueprint): checks blueprint.yaml structure and required fields (version, profiles, sandbox image)
+- **Policy validation** (nemoclaw_policy): checks policy.yaml network policies (endpoint enforcement, TLS, wildcard rules) and flags writable system paths in the filesystem policy
 
-NemoClaw uses a Plugin (TypeScript) + Blueprint (Python) two-layer architecture to provide four isolation layers: Landlock LSM, seccomp, network namespaces, and inference control.
+NemoClaw uses a Plugin (TypeScript) + Blueprint (Python) two-layer architecture.
 
 ## 3-Layer Governance Architecture
 

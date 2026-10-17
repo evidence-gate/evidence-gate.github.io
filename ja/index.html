@@ -59,7 +59,7 @@
       "35種のCI品質ゲートタイプ（Freeモードで30種、Pro専用5種）",
       "Blind Gates — AIエージェントから判定基準を秘匿",
       "フェイルクローズドエラー処理",
-      "SARIF出力・GitHub Check Runs統合",
+      "Check Runアノテーション",
       "SBOM構造検証 (CycloneDX/SPDX)",
       "SLSA来歴ゲート",
       "NemoClawブループリント・ポリシー検証",
@@ -96,7 +96,7 @@
         "name": "NemoClaw統合で何ができますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "NemoClawはNVIDIAが提供するAIエージェント実行用サンドボックス基盤です。Evidence Gateは、NemoClawのブループリント（blueprint.yaml）、ポリシー（policy.yaml）、推論ルーティング設定をCI段階で検証し、危険な設定や矛盾をデプロイ前に検出・ブロックします。"
+          "text": "NemoClawはNVIDIAが提供するAIエージェント実行用サンドボックス基盤です。Evidence Gateは、NemoClawのブループリント（blueprint.yaml）、ポリシー（policy.yaml）をCI段階で検証し、危険な設定や矛盾をデプロイ前に検出・ブロックします。"
         }
       },
       {
@@ -104,7 +104,7 @@
         "name": "無料で使えますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "はい。FreeモードはAPIキー不要でGitHub Actions上でローカルに評価を行い、SARIF出力、GitHub Check Runs統合が含まれます。オープンソースプロジェクトは無料でご利用いただけます。ホスティング版API（Pro）は現在準備中です。"
+          "text": "はい。FreeモードはAPIキー不要でGitHub Actions上でローカルに評価を行い、Check Runアノテーションとジョブサマリーが含まれます。オープンソースプロジェクトは無料でご利用いただけます。ホスティング版API（Pro）は現在準備中です。"
         }
       }
     ]
@@ -1134,14 +1134,14 @@
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
           </div>
           <h3>透明性と信頼レベル</h3>
-          <p>エビデンスの信頼性をL1〜L4のレベルで整理できます。SHA-256によるエビデンスチェーンで、判断に使ったデータの整合性も確認できます。</p>
+          <p>エビデンスの信頼性をL1〜L4のレベルで整理できます。SHA-256によるエビデンスチェーン検証（L4）はホスティング版API（Pro）が必要で、現在準備中です。</p>
         </div>
         <div class="step-card">
           <div class="step-icon">
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
           </div>
           <h3>セキュリティと説明責任</h3>
-          <p>AWS KMSによる暗号化、HMAC署名カーソル、成熟度ベースの品質状態モデルにより、各ステップを監査可能な形で管理できます。</p>
+          <p>エビデンスファイルのSHA-256整合性ハッシュ、アノテーション、ジョブサマリーにより、実行ごとに監査可能な記録を残せます。品質状態トラッキングはホスティング版API（Pro）が必要で、現在準備中です。</p>
         </div>
       </div>
       <p style="text-align: center; margin-top: 0.75rem; color: #94a3b8; font-size: 0.8125rem;">※本製品は、いかなる政府機関の認証・推奨・提携を示すものではありません。記載内容は情報提供を目的としたものであり、コンプライアンス認証を意味するものではありません。</p>
@@ -1167,14 +1167,14 @@
             <tr>
               <td>月間評価回数</td>
               <td>上限なし（ローカル評価）</td>
-              <td class="featured">5,000</td>
-              <td>無制限</td>
+              <td class="featured">未定</td>
+              <td>未定</td>
             </tr>
             <tr>
               <td>月間APIコール数</td>
               <td>不要（ローカル評価）</td>
-              <td class="featured">50,000</td>
-              <td>無制限</td>
+              <td class="featured">未定</td>
+              <td>未定</td>
             </tr>
             <tr>
               <td>Freeモードのゲートタイプ（30種）: 汎用26種、SBOM、来歴、NemoClawブループリント・ポリシー</td>
@@ -1189,13 +1189,7 @@
               <td class="check">&#10003;</td>
             </tr>
             <tr>
-              <td>SARIF出力</td>
-              <td class="check">&#10003;</td>
-              <td class="featured check">&#10003;</td>
-              <td class="check">&#10003;</td>
-            </tr>
-            <tr>
-              <td>GitHub Check Runs</td>
+              <td>Check Runアノテーション</td>
               <td class="check">&#10003;</td>
               <td class="featured check">&#10003;</td>
               <td class="check">&#10003;</td>
@@ -1239,18 +1233,6 @@
             <tr>
               <td>NemoClawゲート（ブループリント + ポリシー）</td>
               <td class="check">&#10003;</td>
-              <td class="featured check">&#10003;</td>
-              <td class="check">&#10003;</td>
-            </tr>
-            <tr>
-              <td>推論ルーティング検証（NVIDIA Cloud、NIM、vLLM）</td>
-              <td class="check">&#10003;</td>
-              <td class="featured check">&#10003;</td>
-              <td class="check">&#10003;</td>
-            </tr>
-            <tr>
-              <td>サンドボックスセキュリティ態勢チェック（Landlock、seccomp、netns）</td>
-              <td class="dash">&mdash;</td>
               <td class="featured check">&#10003;</td>
               <td class="check">&#10003;</td>
             </tr>
@@ -1408,7 +1390,7 @@
       <span style="display: inline-block; background: #76b900; color: #1a1a1a; font-size: 0.6875rem; font-weight: 800; padding: 0.25rem 0.625rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem;">New</span>
       <p style="font-size: 0.875rem; font-weight: 600; color: #76b900; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">NVIDIA NemoClaw + Evidence Gate</p>
       <h2 style="font-size: 2rem; font-weight: 700; color: #ffffff; margin-bottom: 1rem;">NemoClawガバナンス</h2>
-      <p style="font-size: 1.125rem; color: #a0a0a0; max-width: 700px; margin: 0 auto 2rem; line-height: 1.7;">NemoClawは、NVIDIAが提供するAIエージェント実行用のサンドボックス基盤です。<br>Evidence Gateは、NemoClawのブループリント、ポリシー、推論設定をCI段階で検証し、<br>危険な設定や矛盾をデプロイ前に検出・ブロックします。</p>
+      <p style="font-size: 1.125rem; color: #a0a0a0; max-width: 700px; margin: 0 auto 2rem; line-height: 1.7;">NemoClawは、NVIDIAが提供するAIエージェント実行用のサンドボックス基盤です。<br>Evidence Gateは、NemoClawのブループリントとポリシーをCI段階で検証し、<br>危険な設定や矛盾をデプロイ前に検出・ブロックします。</p>
       <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
         <a href="#nemoclaw-architecture" style="display: inline-block; background: #76b900; color: #1a1a1a; font-weight: 700; padding: 0.625rem 1.25rem; border-radius: 0.375rem; font-size: 0.9375rem; text-decoration: none;">詳しく見る ↓</a>
         <a href="https://github.com/evidence-gate/nemoclaw-governance" style="display: inline-block; background: transparent; color: #ffffff; font-weight: 600; padding: 0.625rem 1.25rem; border-radius: 0.375rem; font-size: 0.9375rem; border: 1px solid #404040; text-decoration: none;">GitHub ↗</a>
@@ -1420,7 +1402,7 @@
   <section id="nemoclaw-architecture" class="section">
     <div class="container">
       <h2 class="section-title">Evidence Gateが守るもの</h2>
-      <p class="section-subtitle">Evidence Gateは、NemoClawサンドボックスそのものを実行する製品ではなく、その設定が安全かどうかをデプロイ前に検証するゲートです。具体的には、ブループリント、ポリシー、推論設定をチェックし、分離設定の漏れ、危険なネットワーク許可、誤った推論ルーティングをマージ前に止めます。</p>
+      <p class="section-subtitle">Evidence Gateは、NemoClawサンドボックスそのものを実行する製品ではなく、その設定が安全かどうかをデプロイ前に検証するゲートです。具体的には、ブループリントとポリシーをチェックし、必須項目の欠落、危険なネットワーク許可、システムパスへの書き込み許可をマージ前に止めます。</p>
 
       <p style="text-align: center; color: #475569; font-size: 1rem; max-width: 740px; margin: 2rem auto 0; line-height: 1.7;">NemoClawでは、設定ファイルにもとづいてサンドボックスが組み立てられます。Evidence Gateが見ているのは、アプリのコードそのものではなく、そのサンドボックス設定が本番投入してよい状態かどうかです。下の図は、NemoClawの設定がどのように実行環境に反映されるかと、Evidence Gateがどこを検証するかを示しています。</p>
 
@@ -1468,7 +1450,6 @@
           <line x1="470" y1="106" x2="604" y2="106" stroke="#e2e8f0" stroke-width="1"/>
           <text x="537" y="126" font-size="11" fill="#334155" text-anchor="middle" font-weight="600">plan sandbox</text>
           <text x="537" y="143" font-size="11" fill="#334155" text-anchor="middle" font-weight="600">apply policy</text>
-          <text x="537" y="160" font-size="11" fill="#334155" text-anchor="middle" font-weight="600">configure inference</text>
           <text x="537" y="190" font-size="9" fill="#94a3b8" text-anchor="middle">nemoclaw-governance validate</text>
 
           <!-- Arrow: Blueprint -> OpenShell -->
@@ -1502,7 +1483,7 @@
       </div>
 
       <p style="text-align: center; margin-top: 2rem; color: #475569; font-size: 1rem; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.7;">
-        NemoClawでは、ブループリントとポリシーの設定によって、サンドボックスの分離、ネットワーク制御、推論接続先が決まります。Evidence Gateは、その設定に危険な抜けや矛盾がないかをCIで検証し、問題があればデプロイ前に止めます。
+        NemoClawでは、ブループリントとポリシーの設定によって、サンドボックスの構成やネットワーク制御が決まります。Evidence Gateは、その設定に危険な抜けや矛盾がないかをCIで検証し、問題があればデプロイ前に止めます。
       </p>
       <p style="text-align: center; margin-top: 1rem;">
         <a href="https://github.com/evidence-gate/nemoclaw-governance" style="color: #2563eb; font-weight: 600;">アーキテクチャの詳細はGitHubで →</a>
@@ -1553,7 +1534,7 @@
           <div style="display: flex; gap: 0.625rem; flex-wrap: wrap;">
             <div style="flex: 1; min-width: 140px; background: white; border-radius: 0.5rem; padding: 0.625rem 0.75rem;">
               <div style="font-size: 0.8125rem; font-weight: 700; color: #1e293b;">ファイルシステム分離</div>
-              <div style="font-size: 0.6875rem; color: #64748b; margin-top: 0.125rem;">Landlock LSM</div>
+              <div style="font-size: 0.6875rem; color: #64748b; margin-top: 0.125rem;">サンドボックスのファイルシステムポリシー</div>
             </div>
             <div style="flex: 1; min-width: 140px; background: white; border-radius: 0.5rem; padding: 0.625rem 0.75rem;">
               <div style="font-size: 0.8125rem; font-weight: 700; color: #1e293b;">ネットワーク制御</div>
@@ -1561,12 +1542,12 @@
             </div>
             <div style="flex: 1; min-width: 140px; background: white; border-radius: 0.5rem; padding: 0.625rem 0.75rem;">
               <div style="font-size: 0.8125rem; font-weight: 700; color: #1e293b;">プロセスサンドボックス</div>
-              <div style="font-size: 0.6875rem; color: #64748b; margin-top: 0.125rem;">seccomp・権限昇格なし</div>
+              <div style="font-size: 0.6875rem; color: #64748b; margin-top: 0.125rem;">サンドボックス実行環境</div>
             </div>
           </div>
         </div>
 
-        <div style="text-align: center; padding: 0.375rem 0; color: rgba(255,255,255,0.4); font-size: 0.75rem;">▼ inference requests ▼</div>
+        <div style="text-align: center; padding: 0.375rem 0; color: rgba(255,255,255,0.4); font-size: 0.75rem;">▼ agent requests ▼</div>
 
         <!-- Runtime Layer -->
         <div style="background: rgba(124,58,237,0.12); border: 1px solid rgba(124,58,237,0.35); border-radius: 0.75rem; padding: 1rem 1.25rem; display: grid; grid-template-columns: 110px 1fr; gap: 1rem; align-items: center;">
@@ -1607,24 +1588,24 @@
         <div class="eco-tool-card">
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
           <h4>evidence-gate-action</h4>
-          <p>NemoClawブループリント・ポリシー検証を含む35種のゲートタイプ（Freeモードで30種）。SARIF出力とAIエージェント修復コントラクト付きフェイルクローズドCIゲート。</p>
+          <p>NemoClawブループリント・ポリシー検証を含む35種のゲートタイプ（Freeモードで30種）。AIエージェント修復コントラクト付きフェイルクローズドCIゲート。</p>
           <a href="https://github.com/evidence-gate/evidence-gate-action" class="eco-tool-link">GitHubで見る &rarr;</a>
         </div>
         <div class="eco-tool-card">
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
           <h4>nemoclaw-governance</h4>
-          <p>NVIDIA OpenShellサンドボックス向けPlugin+Blueprint設定を検証。blueprint.yaml、policy.yaml、推論プロファイルをチェック。<code>pip install nemoclaw-governance</code></p>
+          <p>NVIDIA OpenShellサンドボックス向けPlugin+Blueprint設定を検証。blueprint.yaml、policy.yamlをチェック。<code>pip install nemoclaw-governance</code></p>
           <a href="https://github.com/evidence-gate/nemoclaw-governance" class="eco-tool-link">GitHubで見る &rarr;</a>
         </div>
         <div class="eco-tool-card">
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
           <h4>agentgov</h4>
-          <p>NemoClawサンドボックス向けランタイムガバナンスプロキシ。hold/settle課金による予算強制、3つの推論プロファイルサポート（NVIDIA Cloud、Local NIM、Local vLLM）、オペレーター管理ネットワーク承認。</p>
+          <p>NemoClawサンドボックス向けランタイムガバナンスプロキシ。hold/settle課金による予算強制、オペレーター管理ネットワーク承認。</p>
           <a href="https://github.com/evidence-gate/agentgov" class="eco-tool-link">GitHubで見る &rarr;</a>
         </div>
       </div>
 
-      <p style="text-align: center; margin-top: 2rem; color: #64748b; font-size: 0.9375rem;"><strong>なぜ3層なのか?</strong> NemoClawはLandlock+seccomp+netnsによるサンドボックス分離を提供しますが、コスト制御はありません。agentgovがランタイム予算強制と推論ルーティングガバナンスを追加します。Evidence GateはCI時にすべての設定を検証します &mdash; ブループリントが本番サンドボックスに到達する前に。</p>
+      <p style="text-align: center; margin-top: 2rem; color: #64748b; font-size: 0.9375rem;"><strong>なぜ3層なのか?</strong> NemoClawはサンドボックス分離を提供しますが、コスト制御はありません。agentgovがランタイム予算強制を追加します。Evidence GateはCI時にすべての設定を検証します &mdash; ブループリントが本番サンドボックスに到達する前に。</p>
     </div>
   </section>
 
