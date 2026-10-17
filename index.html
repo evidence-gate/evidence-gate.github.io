@@ -58,7 +58,7 @@
       "35 CI quality gate types (30 in Free mode, 5 Pro-only)",
       "Blind Gates — hide evaluation criteria from AI agents",
       "Fail-closed error handling",
-      "SARIF output and GitHub Check Runs",
+      "Check Run annotations",
       "SBOM validation (CycloneDX/SPDX)",
       "SLSA provenance gates",
       "NemoClaw blueprint and policy validation",
@@ -95,7 +95,7 @@
         "name": "How does NemoClaw integration work?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "NemoClaw is NVIDIA's sandbox platform for AI agent execution. Evidence Gate validates NemoClaw blueprints (blueprint.yaml), policies (policy.yaml), and inference routing configurations at CI stage, detecting dangerous configurations and blocking them before deployment."
+          "text": "NemoClaw is NVIDIA's sandbox platform for AI agent execution. Evidence Gate validates NemoClaw blueprints (blueprint.yaml) and policies (policy.yaml) at CI stage, detecting dangerous configurations and blocking them before deployment."
         }
       },
       {
@@ -103,7 +103,7 @@
         "name": "Is Evidence Gate free?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Free mode runs locally in GitHub Actions with no API key and includes SARIF output and GitHub Check Runs integration. Open-source projects can use it at no cost. The hosted API (Pro) is coming soon."
+          "text": "Yes. Free mode runs locally in GitHub Actions with no API key and includes Check Run annotations and a job summary. Open-source projects can use it at no cost. The hosted API (Pro) is coming soon."
         }
       }
     ]
@@ -1224,7 +1224,7 @@
       <div class="hero-content">
         <p style="font-size: 0.875rem; font-weight: 600; color: #22c55e; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">GitHub Actions &middot; 35 Gate Types &middot; NemoClaw Governance &middot; Fail-Closed</p>
         <h1>Quality Gates for <span>Full-Stack AI Governance</span></h1>
-        <p>AI agents write your code, your tests, and now operate your infrastructure through NemoClaw sandboxes. Evidence Gate enforces quality at every layer &mdash; Blind Gates that hide CI criteria from gaming, plus blueprint and policy validation that ensures NemoClaw sandboxes deploy with correct isolation, budgets, and inference routing. Full-stack governance, fail-closed by default.</p>
+        <p>AI agents write your code, your tests, and now operate your infrastructure through NemoClaw sandboxes. Evidence Gate enforces quality at every layer &mdash; Blind Gates that hide CI criteria from gaming, plus blueprint and policy validation that catches missing required fields, unsafe network rules, and writable system paths before NemoClaw sandboxes deploy. Full-stack governance, fail-closed by default.</p>
         <div class="hero-buttons">
           <a href="https://github.com/marketplace/actions/evidence-gate-action" class="btn btn-primary">Get Started Free</a>
           <a href="#quick-start" class="btn btn-secondary">View Quick Start</a>
@@ -1400,14 +1400,14 @@
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
           </div>
           <h3>Transparency & Trust Levels</h3>
-          <p>Genchi Genbutsu Trust Levels (L1&ndash;L4) make evidence reliability explicit. SHA-256 Evidence Chain enables integrity verification of all judgment data.</p>
+          <p>Genchi Genbutsu Trust Levels (L1&ndash;L4) make evidence reliability explicit. SHA-256 Evidence Chain verification (L4) requires the hosted API (Pro), which is coming soon.</p>
         </div>
         <div class="step-card">
           <div class="step-icon">
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
           </div>
           <h3>Security & Accountability</h3>
-          <p>AWS KMS encryption (FIPS 140-2 validated), HMAC-signed cursors, and a maturity-level-based Quality State Model provide auditable governance at every step.</p>
+          <p>SHA-256 integrity hashing of evidence files, annotations, and a job summary on every run leave an auditable record. Quality State tracking requires the hosted API (Pro), which is coming soon.</p>
         </div>
       </div>
       <p style="text-align: center; margin-top: 2rem; color: #64748b; font-size: 0.875rem;">Evidence Gate supports practices aligned with key principles including transparency, safety, and accountability.</p>
@@ -1420,7 +1420,7 @@
     <div class="container">
       <h2 class="section-title">What Evidence Gate Protects</h2>
       <p class="section-subtitle">CI gates alone aren&rsquo;t enough &mdash; AI agents also operate at runtime. Evidence Gate validates the NemoClaw infrastructure that runs those agents.</p>
-      <p class="arch-narrative-bridge">When your pipeline clears the Evidence Gate, it deploys <strong>NemoClaw sandboxes</strong> &mdash; isolated environments where AI agents execute. Understanding this runtime layer explains <em>why</em> Evidence Gate validates blueprints, policies, and inference configuration: a misconfigured sandbox can escape isolation or consume unbounded resources. The architecture below shows what Evidence Gate is guarding.</p>
+      <p class="arch-narrative-bridge">When your pipeline clears the Evidence Gate, it deploys <strong>NemoClaw sandboxes</strong> &mdash; isolated environments where AI agents execute. Understanding this runtime layer explains <em>why</em> Evidence Gate validates blueprints and policies: a misconfigured sandbox can escape isolation or consume unbounded resources. The architecture below shows what Evidence Gate is guarding.</p>
 
       <div class="arch-diagram-container">
         <svg viewBox="0 0 880 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="NemoClaw Plugin+Blueprint architecture diagram showing the Plugin resolving and executing the Blueprint as a subprocess to create OpenShell sandboxes">
@@ -1473,7 +1473,6 @@
           <line x1="470" y1="122" x2="604" y2="122" stroke="#bfdbfe" stroke-width="1"/>
           <text x="537" y="143" font-size="11" fill="#2563eb" text-anchor="middle" font-weight="600">plan sandbox</text>
           <text x="537" y="162" font-size="11" fill="#2563eb" text-anchor="middle" font-weight="600">apply policy</text>
-          <text x="537" y="181" font-size="11" fill="#2563eb" text-anchor="middle" font-weight="600">configure inference</text>
           <text x="537" y="217" font-size="9" fill="#93c5fd" text-anchor="middle">nemoclaw-governance validate</text>
 
           <!-- Arrow: Blueprint -> OpenShell -->
@@ -1538,149 +1537,6 @@
         </div>
       </div>
 
-      <!-- Inference Routing Subsection -->
-      <div class="arch-subsection">
-        <h3 class="arch-subsection-title">Inference Routing</h3>
-        <p class="arch-subsection-desc">Three provider profiles switchable at runtime &mdash; no sandbox restart required</p>
-        <div class="routing-grid">
-          <div class="routing-card">
-            <div class="routing-card-icon" style="background:#f0fdf4;">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-              </svg>
-            </div>
-            <h4>NVIDIA Cloud</h4>
-            <p class="routing-model">Nemotron 3 Super 120B</p>
-            <p>Production inference via build.nvidia.com. Highest capability for demanding workloads.</p>
-            <span class="routing-badge" style="background:#f0fdf4; color:#16a34a; border:1px solid #bbf7d0;">Production</span>
-          </div>
-          <div class="routing-card">
-            <div class="routing-card-icon" style="background:#eff6ff;">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <rect x="2" y="3" width="20" height="14" rx="2"></rect>
-                <line x1="8" y1="21" x2="16" y2="21"></line>
-                <line x1="12" y1="17" x2="12" y2="21"></line>
-              </svg>
-            </div>
-            <h4>Local NIM</h4>
-            <p class="routing-model">NIM container on local network</p>
-            <p>On-premises inference for testing and air-gapped environments where cloud access is restricted.</p>
-            <span class="routing-badge" style="background:#eff6ff; color:#2563eb; border:1px solid #bfdbfe;">Testing / Air-gapped</span>
-          </div>
-          <div class="routing-card">
-            <div class="routing-card-icon" style="background:#faf5ff;">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <polyline points="16 18 22 12 16 6"></polyline>
-                <polyline points="8 6 2 12 8 18"></polyline>
-              </svg>
-            </div>
-            <h4>Local vLLM</h4>
-            <p class="routing-model">vLLM server on localhost</p>
-            <p>Offline development with fast iteration cycles. No network dependency required.</p>
-            <span class="routing-badge" style="background:#faf5ff; color:#7c3aed; border:1px solid #ddd6fe;">Offline Dev</span>
-          </div>
-        </div>
-        <p style="text-align: center; margin-top: 2rem; color: #64748b; font-size: 0.875rem;">Providers can be switched at runtime without restarting the sandbox. Configuration is managed through the Blueprint's inference settings.</p>
-      </div>
-
-      <!-- Security Guarantees Subsection -->
-      <div class="arch-subsection">
-        <h3 class="arch-subsection-title">Security Guarantees</h3>
-        <p class="arch-subsection-desc">Evidence Gate validates that every sandbox deploys with four mandatory isolation layers &mdash; if any layer is misconfigured, the gate fails the pipeline</p>
-
-        <div class="security-grid">
-          <!-- Landlock LSM -->
-          <div class="security-card">
-            <div class="security-card-header">
-              <div class="security-card-icon" style="background:#f0fdf4;">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                </svg>
-              </div>
-              <h4>Landlock LSM</h4>
-            </div>
-            <p>Linux Security Module restricting filesystem access at the kernel level. The sandbox process cannot access paths outside its granted set &mdash; even if the agent finds a code execution vulnerability. Evidence Gate validates that Landlock rules are correctly configured before deployment.</p>
-          </div>
-
-          <!-- seccomp Filtering -->
-          <div class="security-card">
-            <div class="security-card-header">
-              <div class="security-card-icon" style="background:#eff6ff;">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
-                </svg>
-              </div>
-              <h4>seccomp Filtering</h4>
-            </div>
-            <p>System call filter that limits which kernel operations the sandbox process can invoke. Blocks dangerous syscalls like <code>ptrace</code>, <code>mount</code>, and <code>reboot</code> before they reach the kernel.</p>
-          </div>
-
-          <!-- Network Namespace Isolation -->
-          <div class="security-card">
-            <div class="security-card-header">
-              <div class="security-card-icon" style="background:#faf5ff;">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <circle cx="12" cy="12" r="10"/>
-                  <line x1="2" y1="12" x2="22" y2="12"/>
-                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                </svg>
-              </div>
-              <h4>Network Namespace Isolation</h4>
-            </div>
-            <p>Each sandbox runs in its own network namespace with deny-by-default egress policy. Only endpoints explicitly approved in the blueprint can be reached. Unapproved requests are blocked and surfaced for operator approval.</p>
-          </div>
-
-          <!-- Inference Control -->
-          <div class="security-card">
-            <div class="security-card-header">
-              <div class="security-card-icon" style="background:#f8fafc;">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <rect x="4" y="4" width="16" height="16" rx="2"/>
-                  <rect x="9" y="9" width="6" height="6"/>
-                  <line x1="9" y1="2" x2="9" y2="4"/>
-                  <line x1="15" y1="2" x2="15" y2="4"/>
-                  <line x1="9" y1="20" x2="9" y2="22"/>
-                  <line x1="15" y1="20" x2="15" y2="22"/>
-                  <line x1="20" y1="9" x2="22" y2="9"/>
-                  <line x1="20" y1="15" x2="22" y2="15"/>
-                  <line x1="2" y1="9" x2="4" y2="9"/>
-                  <line x1="2" y1="15" x2="4" y2="15"/>
-                </svg>
-              </div>
-              <h4>Inference Control</h4>
-            </div>
-            <p>LLM inference requests route through the OpenShell gateway &mdash; never directly from the agent process. The gateway enforces model allowlists, rate limits, and cost caps before forwarding to the provider.</p>
-          </div>
-        </div>
-
-        <div class="security-constraints">
-          <!-- Filesystem Constraints -->
-          <div class="security-constraint-box" style="border-left-color: #22c55e;">
-            <h5>Filesystem</h5>
-            <ul>
-              <li><code>/sandbox</code> &mdash; agent working directory (read + write)</li>
-              <li><code>/tmp</code> &mdash; temporary files (read + write)</li>
-              <li>All other paths &mdash; read-only or inaccessible</li>
-              <li>System binaries, configs, and host mounts are never writable</li>
-            </ul>
-          </div>
-
-          <!-- Network Constraints -->
-          <div class="security-constraint-box" style="border-left-color: #7c3aed;">
-            <h5>Network</h5>
-            <ul>
-              <li>Deny-by-default &mdash; no egress until explicitly allowed</li>
-              <li>Approved endpoints listed in <code>blueprint.yaml</code></li>
-              <li>Unapproved requests blocked and queued for operator review</li>
-              <li>Inference traffic routed through gateway, not direct from agent</li>
-            </ul>
-          </div>
-        </div>
-
-        <p style="text-align: center; margin-top: 2rem; color: #64748b; font-size: 0.875rem;">
-          Evidence Gate&rsquo;s <strong>blueprint</strong> and <strong>policy</strong> gates validate that all four isolation layers are correctly configured before any sandbox is deployed to production.
-        </p>
-      </div>
     </div>
   </section>
 
@@ -1727,7 +1583,7 @@
           <div style="display: flex; gap: 0.625rem; flex-wrap: wrap;">
             <div style="flex: 1; min-width: 140px; background: white; border-radius: 0.5rem; padding: 0.625rem 0.75rem;">
               <div style="font-size: 0.8125rem; font-weight: 700; color: #1e293b;">Filesystem Isolation</div>
-              <div style="font-size: 0.6875rem; color: #64748b; margin-top: 0.125rem;">Landlock LSM</div>
+              <div style="font-size: 0.6875rem; color: #64748b; margin-top: 0.125rem;">Sandbox filesystem policy</div>
             </div>
             <div style="flex: 1; min-width: 140px; background: white; border-radius: 0.5rem; padding: 0.625rem 0.75rem;">
               <div style="font-size: 0.8125rem; font-weight: 700; color: #1e293b;">Network Control</div>
@@ -1735,12 +1591,12 @@
             </div>
             <div style="flex: 1; min-width: 140px; background: white; border-radius: 0.5rem; padding: 0.625rem 0.75rem;">
               <div style="font-size: 0.8125rem; font-weight: 700; color: #1e293b;">Process Sandboxing</div>
-              <div style="font-size: 0.6875rem; color: #64748b; margin-top: 0.125rem;">seccomp, no privilege escalation</div>
+              <div style="font-size: 0.6875rem; color: #64748b; margin-top: 0.125rem;">Sandbox runtime</div>
             </div>
           </div>
         </div>
 
-        <div style="text-align: center; padding: 0.375rem 0; color: rgba(255,255,255,0.4); font-size: 0.75rem;">▼ inference requests ▼</div>
+        <div style="text-align: center; padding: 0.375rem 0; color: rgba(255,255,255,0.4); font-size: 0.75rem;">▼ agent requests ▼</div>
 
         <!-- Runtime Layer -->
         <div style="background: rgba(124,58,237,0.12); border: 1px solid rgba(124,58,237,0.35); border-radius: 0.75rem; padding: 1rem 1.25rem; display: grid; grid-template-columns: 110px 1fr; gap: 1rem; align-items: center;">
@@ -1781,24 +1637,24 @@
         <div class="eco-tool-card">
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
           <h4>evidence-gate-action</h4>
-          <p>35 gate types (30 in Free mode) including NemoClaw blueprint and policy validation. Fail-closed CI gates with SARIF output and AI agent repair contracts.</p>
+          <p>35 gate types (30 in Free mode) including NemoClaw blueprint and policy validation. Fail-closed CI gates with AI agent repair contracts.</p>
           <a href="https://github.com/evidence-gate/evidence-gate-action" class="eco-tool-link">View on GitHub &rarr;</a>
         </div>
         <div class="eco-tool-card">
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
           <h4>nemoclaw-governance</h4>
-          <p>Validates Plugin+Blueprint configurations for NVIDIA OpenShell sandboxes. Checks blueprint.yaml, policy.yaml, and inference profiles. <code>pip install nemoclaw-governance</code></p>
+          <p>Validates Plugin+Blueprint configurations for NVIDIA OpenShell sandboxes. Checks blueprint.yaml and policy.yaml. <code>pip install nemoclaw-governance</code></p>
           <a href="https://github.com/evidence-gate/nemoclaw-governance" class="eco-tool-link">View on GitHub &rarr;</a>
         </div>
         <div class="eco-tool-card">
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
           <h4>agentgov</h4>
-          <p>Runtime governance proxy for NemoClaw sandboxes. Budget enforcement with hold/settle billing, 3 inference profile support (NVIDIA Cloud, Local NIM, Local vLLM), and operator-controlled network approval.</p>
+          <p>Runtime governance proxy for NemoClaw sandboxes. Budget enforcement with hold/settle billing and operator-controlled network approval.</p>
           <a href="https://github.com/evidence-gate/agentgov" class="eco-tool-link">View on GitHub &rarr;</a>
         </div>
       </div>
 
-      <p style="text-align: center; margin-top: 2rem; color: #64748b; font-size: 0.9375rem;"><strong>Why three layers?</strong> NemoClaw provides sandbox isolation with Landlock+seccomp+netns but has no cost controls. agentgov adds runtime budget enforcement and inference routing governance. Evidence Gate validates all configurations at CI time &mdash; before blueprints reach production sandboxes.</p>
+      <p style="text-align: center; margin-top: 2rem; color: #64748b; font-size: 0.9375rem;"><strong>Why three layers?</strong> NemoClaw provides sandbox isolation but has no cost controls. agentgov adds runtime budget enforcement. Evidence Gate validates all configurations at CI time &mdash; before blueprints reach production sandboxes.</p>
     </div>
   </section>
 
@@ -1821,14 +1677,14 @@
             <tr>
               <td>Evaluations/month</td>
               <td>No limit (local mode)</td>
-              <td class="featured">5,000</td>
-              <td>Unlimited</td>
+              <td class="featured">TBA</td>
+              <td>TBA</td>
             </tr>
             <tr>
               <td>API calls/month</td>
               <td>Not needed (local)</td>
-              <td class="featured">50,000</td>
-              <td>Unlimited</td>
+              <td class="featured">TBA</td>
+              <td>TBA</td>
             </tr>
             <tr>
               <td>Free-mode gate types (30): 26 generic, SBOM, provenance, NemoClaw blueprint &amp; policy</td>
@@ -1843,13 +1699,7 @@
               <td class="check">&#10003;</td>
             </tr>
             <tr>
-              <td>SARIF output</td>
-              <td class="check">&#10003;</td>
-              <td class="featured check">&#10003;</td>
-              <td class="check">&#10003;</td>
-            </tr>
-            <tr>
-              <td>GitHub Check Runs</td>
+              <td>Check Run annotations</td>
               <td class="check">&#10003;</td>
               <td class="featured check">&#10003;</td>
               <td class="check">&#10003;</td>
@@ -1893,18 +1743,6 @@
             <tr>
               <td>NemoClaw gates (blueprint + policy)</td>
               <td class="check">&#10003;</td>
-              <td class="featured check">&#10003;</td>
-              <td class="check">&#10003;</td>
-            </tr>
-            <tr>
-              <td>Inference routing validation (NVIDIA Cloud, NIM, vLLM)</td>
-              <td class="check">&#10003;</td>
-              <td class="featured check">&#10003;</td>
-              <td class="check">&#10003;</td>
-            </tr>
-            <tr>
-              <td>Sandbox security posture checks (Landlock, seccomp, netns)</td>
-              <td class="dash">&mdash;</td>
               <td class="featured check">&#10003;</td>
               <td class="check">&#10003;</td>
             </tr>
