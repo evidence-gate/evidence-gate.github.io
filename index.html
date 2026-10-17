@@ -1245,7 +1245,7 @@
           <span class="hero-code-label">.github/workflows/ci.yml</span>
         </div>
 <pre><span class="code-comment"># Validate NemoClaw blueprint before deploy</span>
-<span class="code-key">- uses:</span> <span class="code-string">evidence-gate/evidence-gate-action@3f478e1f3d3c5050725f15ecf9cdb4ff5eb9ea75</span> <span class="code-comment"># pinned: switch to next release tag</span>
+<span class="code-key">- uses:</span> <span class="code-string">evidence-gate/evidence-gate-action@v2</span>
   <span class="code-key">with:</span>
     <span class="code-key">gate_type:</span> <span class="code-string">"nemoclaw_blueprint"</span>
     <span class="code-key">phase_id:</span> <span class="code-string">"deploy"</span>
@@ -2033,7 +2033,7 @@
       <span class="code-comment"># Your build &amp; test steps here...</span>
 
       <span class="code-key">- name:</span> <span class="code-string">Evidence Gate</span>
-        <span class="code-key">uses:</span> <span class="code-string">evidence-gate/evidence-gate-action@3f478e1f3d3c5050725f15ecf9cdb4ff5eb9ea75</span> <span class="code-comment"># pinned: switch to next release tag</span>
+        <span class="code-key">uses:</span> <span class="code-string">evidence-gate/evidence-gate-action@v2</span>
         <span class="code-key">with:</span>
           <span class="code-comment"># Or use .evidencegate.yml config file for zero required inputs</span>
           <span class="code-key">gate_type:</span> <span class="code-string">"test_coverage"</span>
@@ -2077,7 +2077,7 @@
 
       <span class="code-comment"># Validate NemoClaw blueprint.yaml</span>
       <span class="code-key">- name:</span> <span class="code-string">Blueprint Gate</span>
-        <span class="code-key">uses:</span> <span class="code-string">evidence-gate/evidence-gate-action@3f478e1f3d3c5050725f15ecf9cdb4ff5eb9ea75</span> <span class="code-comment"># pinned: switch to next release tag</span>
+        <span class="code-key">uses:</span> <span class="code-string">evidence-gate/evidence-gate-action@v2</span>
         <span class="code-key">with:</span>
           <span class="code-key">gate_type:</span> <span class="code-string">"nemoclaw_blueprint"</span>
           <span class="code-key">evidence_files:</span> <span class="code-string">"blueprint.yaml"</span>
@@ -2089,7 +2089,7 @@
 
       <span class="code-comment"># Validate sandbox policy constraints</span>
       <span class="code-key">- name:</span> <span class="code-string">Policy Gate</span>
-        <span class="code-key">uses:</span> <span class="code-string">evidence-gate/evidence-gate-action@3f478e1f3d3c5050725f15ecf9cdb4ff5eb9ea75</span> <span class="code-comment"># pinned: switch to next release tag</span>
+        <span class="code-key">uses:</span> <span class="code-string">evidence-gate/evidence-gate-action@v2</span>
         <span class="code-key">with:</span>
           <span class="code-key">gate_type:</span> <span class="code-string">"nemoclaw_policy"</span>
           <span class="code-key">evidence_files:</span> <span class="code-string">"policy.yaml"</span>
@@ -2101,7 +2101,7 @@
 
       <span class="code-comment"># Validate agentgov budget configuration</span>
       <span class="code-key">- name:</span> <span class="code-string">Budget Gate</span>
-        <span class="code-key">uses:</span> <span class="code-string">evidence-gate/evidence-gate-action@3f478e1f3d3c5050725f15ecf9cdb4ff5eb9ea75</span> <span class="code-comment"># pinned: switch to next release tag</span>
+        <span class="code-key">uses:</span> <span class="code-string">evidence-gate/evidence-gate-action@v2</span>
         <span class="code-key">with:</span>
           <span class="code-key">gate_type:</span> <span class="code-string">"custom"</span>
           <span class="code-key">phase_id:</span> <span class="code-string">"budget"</span>
