@@ -29,11 +29,11 @@ NemoClaw uses a Plugin (TypeScript) + Blueprint (Python) two-layer architecture 
 2. **Infrastructure Layer**: nemoclaw-governance — Python CLI for blueprint.yaml and policy.yaml structural validation
 3. **Runtime Layer**: agentgov — budget control, cost management, network governance for running agents
 
-## Pricing
+## Plans
 
-- **Free**: 100 evaluations/month, 1,000 API calls, all 25 gate types
-- **Pro**: 5,000 evaluations/month, Blind Gates, evidence chain verification
-- **Enterprise**: Unlimited, self-hosted deployment, custom API base URL
+- **Free** (available now): local evaluation in GitHub Actions, no API key required
+- **Pro** (coming soon): hosted API with Blind Gates and evidence chain verification. Not yet available.
+- **Enterprise** (coming soon): self-hosted deployment, custom API base URL. Not yet on sale.
 
 ## Links
 
