@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Evidence Gate — AI Agent Quality Gates + NemoClaw Governance</title>
+  <title>Evidence Gate — Evidence-based quality gate for AI-generated changes</title>
 
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Fail-closed quality gates for AI-driven CI/CD. Blind Gates hide criteria from AI agents. 35 gate types (30 in Free mode) covering tests, SBOM, provenance, and NemoClaw sandbox validation. Free for open-source.">
-  <meta name="keywords" content="Evidence Gate, CI/CD, quality gates, AI agents, Blind Gates, NemoClaw, GitHub Actions, SBOM, SLSA, security, sandbox, fail-closed">
+  <meta name="description" content="Evidence-based quality gate for AI-generated changes. The free GitHub Action checks file existence, JSON validity, and numeric thresholds. Blind Gates, the L4 tamper-evident chain, and the hosted API (api.evidence-gate.dev, Pro) are coming soon.">
+  <meta name="keywords" content="Evidence Gate, CI/CD, quality gates, AI-generated changes, GitHub Actions, JSON, thresholds, tamper-evident, coming soon">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta name="author" content="AllNew LLC">
   <link rel="canonical" href="https://evidence-gate.dev/">
@@ -16,16 +16,16 @@
   <link rel="alternate" hreflang="x-default" href="https://evidence-gate.dev/">
 
   <!-- OGP Meta Tags -->
-  <meta property="og:title" content="Evidence Gate — AI Agent Quality Gates + NemoClaw Governance">
-  <meta property="og:description" content="Fail-closed quality gates for AI-driven CI/CD. Blind Gates hide criteria from AI agents. 35 gate types (30 in Free mode) with NemoClaw sandbox validation.">
+  <meta property="og:title" content="Evidence Gate — Evidence-based quality gate for AI-generated changes">
+  <meta property="og:description" content="Evidence-based quality gate for AI-generated changes. Free mode checks file existence, JSON validity, and thresholds. Blind Gates, L4, and api.evidence-gate.dev (Pro) are coming soon.">
   <meta property="og:url" content="https://evidence-gate.dev">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Evidence Gate">
   <meta property="og:locale" content="en_US">
   <meta property="og:locale:alternate" content="ja_JP">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Evidence Gate — AI Agent Quality Gates + NemoClaw Governance">
-  <meta name="twitter:description" content="Fail-closed quality gates for AI-driven CI/CD. Blind Gates hide criteria from AI agents. 35 gate types (30 in Free mode) with NemoClaw sandbox validation.">
+  <meta name="twitter:title" content="Evidence Gate — Evidence-based quality gate for AI-generated changes">
+  <meta name="twitter:description" content="Evidence-based quality gate for AI-generated changes. Free mode checks file existence, JSON validity, and thresholds. Blind Gates, L4, and api.evidence-gate.dev (Pro) are coming soon.">
 
   <!-- Structured Data: SoftwareApplication -->
   <script type="application/ld+json">
@@ -33,7 +33,7 @@
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "Evidence Gate",
-    "description": "Fail-closed quality gates for AI-driven CI/CD. Blind Gates hide criteria from AI agents. 35 gate types (30 in Free mode) covering tests, SBOM, provenance, and NemoClaw sandbox validation.",
+    "description": "Evidence-based quality gate for AI-generated changes. The free GitHub Action checks file existence, JSON validity, and numeric thresholds. Blind Gates, the L4 tamper-evident evidence chain, and the hosted API (api.evidence-gate.dev, Pro) are coming soon.",
     "url": "https://evidence-gate.dev",
     "applicationCategory": "DeveloperApplication",
     "operatingSystem": "GitHub Actions",
@@ -51,18 +51,20 @@
         "name": "Free",
         "price": "0",
         "priceCurrency": "USD",
-        "description": "Free mode: local evaluation in GitHub Actions, no API key required"
+        "description": "Free mode, available now: local checks of file existence, JSON validity, and numeric thresholds in GitHub Actions. No API key."
       }
     ],
     "featureList": [
-      "35 CI quality gate types (30 in Free mode, 5 Pro-only)",
-      "Blind Gates — hide evaluation criteria from AI agents",
+      "35 CI quality gate types (30 in Free mode, 5 Pro-only and coming soon)",
+      "Free mode: file existence, JSON validity, and numeric thresholds",
+      "Blind Gates (coming soon) — hosted criteria hidden from AI agents; not launched",
       "Fail-closed error handling",
       "Check Run annotations",
       "SBOM validation (CycloneDX/SPDX)",
       "SLSA provenance gates",
       "NemoClaw blueprint and policy validation",
-      "SHA-256 integrity hashes",
+      "L4 tamper-evident evidence chain (coming soon): unkeyed SHA-256 hash chain. A single-record edit is detectable; a full rewrite by a writer is not prevented.",
+      "Hosted API at api.evidence-gate.dev (Pro, coming soon)",
       "AI agent repair contracts"
     ]
   }
@@ -79,7 +81,7 @@
         "name": "What is Evidence Gate?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Evidence Gate is a fail-closed quality gate for AI-driven CI/CD pipelines. It integrates with GitHub Actions to validate test coverage, SBOM, provenance, and NemoClaw sandbox configurations before merge. It supports 35 gate types: 30 run in Free mode today, and 5 (blind_gate, quality_state, remediation, composite, wave) require the hosted API (Pro), which is coming soon."
+          "text": "Evidence Gate is an evidence-based quality gate for AI-generated changes. The free GitHub Action checks that evidence files exist, are valid JSON, and meet numeric thresholds. It supports 35 gate types: 30 run in Free mode today, and 5 (blind_gate, quality_state, remediation, composite, wave) require the hosted API at api.evidence-gate.dev (Pro), which is coming soon. Blind Gates and L4 chain verification are not launched."
         }
       },
       {
@@ -87,7 +89,7 @@
         "name": "What are Blind Gates?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Blind Gates hide evaluation criteria (thresholds and rules) from AI agents. The agent submits evidence without knowing the criteria, structurally preventing fabrication of results to match expected values."
+          "text": "Blind Gates are coming soon and are not launched. They are planned to hide evaluation criteria (thresholds and rules) from AI agents on the hosted API at api.evidence-gate.dev (Pro). The agent would submit evidence without knowing the criteria. Free mode does not hide criteria; it checks file existence, JSON validity, and numeric thresholds locally."
         }
       },
       {
@@ -103,7 +105,7 @@
         "name": "Is Evidence Gate free?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Free mode runs locally in GitHub Actions with no API key and includes Check Run annotations and a job summary. Open-source projects can use it at no cost. The hosted API (Pro) is coming soon."
+          "text": "Yes. Free mode runs locally in GitHub Actions with no API key. It checks file existence, JSON validity, and numeric thresholds, and includes Check Run annotations and a job summary. Open-source projects can use it at no cost. Blind Gates, L4 tamper-evident chain verification, and the hosted API at api.evidence-gate.dev (Pro) are coming soon."
         }
       }
     ]
@@ -1204,7 +1206,7 @@
       <ul class="nav-links">
         <li><a href="#how-it-works">How It Works</a></li>
         <li><a href="#blind-gates">Blind Gates</a></li>
-        <li><a href="#ai-governance">AI Governance</a></li>
+        <li><a href="#ai-governance">Availability</a></li>
         <li><a href="#nemoclaw-architecture">Architecture</a></li>
         <li><a href="#ecosystem">Ecosystem</a></li>
         <li><a href="#pricing">Plans</a></li>
@@ -1222,9 +1224,9 @@
   <section class="hero">
     <div class="container">
       <div class="hero-content">
-        <p style="font-size: 0.875rem; font-weight: 600; color: #22c55e; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">GitHub Actions &middot; 35 Gate Types &middot; NemoClaw Governance &middot; Fail-Closed</p>
-        <h1>Quality Gates for <span>Full-Stack AI Governance</span></h1>
-        <p>AI agents write your code, your tests, and now operate your infrastructure through NemoClaw sandboxes. Evidence Gate enforces quality at every layer &mdash; Blind Gates that hide CI criteria from gaming, plus blueprint and policy validation that catches missing required fields, unsafe network rules, and writable system paths before NemoClaw sandboxes deploy. Full-stack governance, fail-closed by default.</p>
+        <p style="font-size: 0.875rem; font-weight: 600; color: #22c55e; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">GitHub Actions &middot; Free: files, JSON, thresholds &middot; Fail-closed</p>
+        <h1>Evidence-based quality gates<br>for <span>AI-generated changes</span></h1>
+        <p>The free GitHub Action checks that evidence files exist, are valid JSON, and meet numeric thresholds before merge. Blind Gates, L4 tamper-evident evidence chains, and the hosted API (<code>api.evidence-gate.dev</code>, Pro) are coming soon. The planned chain is an unkeyed hash: a single-record edit is detectable, and a full rewrite by a writer is not prevented.</p>
         <div class="hero-buttons">
           <a href="https://github.com/marketplace/actions/evidence-gate-action" class="btn btn-primary">Get Started Free</a>
           <a href="#quick-start" class="btn btn-secondary">View Quick Start</a>
@@ -1267,7 +1269,7 @@
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           </div>
           <h3>Evaluate</h3>
-          <p>Gates automatically verify your evidence files &mdash; existence, schema, thresholds, and integrity.</p>
+          <p>The free action checks that evidence files exist, are valid JSON, and meet numeric thresholds.</p>
         </div>
         <div class="step-card">
           <div class="step-number">3</div>
@@ -1284,8 +1286,8 @@
   <!-- Blind Gate Explainer Section -->
   <section id="blind-gates" class="section">
     <div class="container">
-      <h2 class="section-title">Blind Gates: Why AI Agents Need Hidden Criteria</h2>
-      <p class="section-subtitle">When an LLM writes your code AND your tests, every visible threshold becomes a target to optimize against &mdash; not a quality standard to meet</p>
+      <h2 class="section-title">Blind Gates (Coming soon)</h2>
+      <p class="section-subtitle">Not launched. Planned for the hosted API (api.evidence-gate.dev, Pro). When an LLM writes your code and your tests, a visible threshold can become a target to optimize against.</p>
       <div class="blind-gate-explainer">
         <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram comparing Traditional Gates with visible thresholds versus Blind Gates with hidden criteria">
           <!-- Left side: Traditional Gate -->
@@ -1374,9 +1376,9 @@
         </svg>
         <div class="blind-gate-text">
           <p><strong>The problem:</strong> Traditional CI gates publish their thresholds in workflow YAML. An AI coding agent (Copilot, Cursor, Devin, etc.) instructed to "pass CI" can read these thresholds and generate minimal tests that hit exactly 80.1% coverage &mdash; satisfying the metric while proving nothing about quality.</p>
-          <p><strong>The solution:</strong> Blind Gates evaluate evidence server-side against criteria that are never exposed to the pipeline, the repository, or the AI agent. The LLM that generated the code cannot see, reverse-engineer, or optimize against the pass/fail threshold. Quality must be genuine.</p>
-          <p><strong>How it works:</strong> Your pipeline submits evidence files. The Evidence Gate API evaluates them against private criteria configured by your team. The pipeline &mdash; and the AI agent driving it &mdash; only receives pass or fail. Never the criteria themselves.</p>
-          <p><strong>Availability:</strong> Blind Gates run on the hosted API (Pro), which is coming soon. Free mode (local evaluation, no API key) is available now.</p>
+          <p><strong>The planned approach (Coming soon):</strong> Blind Gates would evaluate evidence on the hosted API against criteria that are not exposed to the pipeline, the repository, or the AI agent. That API is not launched.</p>
+          <p><strong>How it is planned to work:</strong> A pipeline would submit evidence files. The hosted API would evaluate them against private criteria. The pipeline would receive pass or fail, not the criteria. This behavior is not available today.</p>
+          <p><strong>Availability:</strong> Blind Gates are coming soon. They require the hosted API at api.evidence-gate.dev (Pro), which is not launched. Free mode is available now: local checks of file existence, JSON validity, and numeric thresholds, with no API key.</p>
         </div>
       </div>
     </div>
@@ -1385,8 +1387,8 @@
   <!-- AI Governance Section -->
   <section id="ai-governance" class="section">
     <div class="container">
-      <h2 class="section-title">Designed for AI Governance</h2>
-      <p class="section-subtitle">Evidence Gate's design aligns with Japan's AI Business Operator Guidelines</p>
+      <h2 class="section-title">What is available, and what is coming soon</h2>
+      <p class="section-subtitle">Free mode fails closed on file, JSON, and threshold checks. Blind Gates and L4 are coming soon.</p>
       <div class="steps-grid">
         <div class="step-card">
           <div class="step-icon">
@@ -1400,14 +1402,14 @@
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
           </div>
           <h3>Transparency & Trust Levels</h3>
-          <p>Genchi Genbutsu Trust Levels (L1&ndash;L4) make evidence reliability explicit. SHA-256 Evidence Chain verification (L4) requires the hosted API (Pro), which is coming soon.</p>
+          <p>Trust levels L1&ndash;L4 are a way to describe evidence reliability. L4 is a tamper-evident evidence chain: an unkeyed SHA-256 hash of the previous record and the evidence hash. A single-record edit is detectable. A full rewrite by a writer is not prevented. L4 requires the hosted API at api.evidence-gate.dev (Pro), which is coming soon.</p>
         </div>
         <div class="step-card">
           <div class="step-icon">
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
           </div>
           <h3>Security & Accountability</h3>
-          <p>SHA-256 integrity hashing of evidence files, annotations, and a job summary on every run leave an auditable record. Quality State tracking requires the hosted API (Pro), which is coming soon.</p>
+          <p>The free GitHub Action checks file existence, JSON validity, and numeric thresholds, then writes annotations and a job summary. It does not record a tamper-evident chain. Quality State tracking requires the hosted API at api.evidence-gate.dev (Pro), which is coming soon.</p>
         </div>
       </div>
       <p style="text-align: center; margin-top: 2rem; color: #64748b; font-size: 0.875rem;">Evidence Gate supports practices aligned with key principles including transparency, safety, and accountability.</p>
@@ -1419,8 +1421,8 @@
   <section id="nemoclaw-architecture" class="section section-alt">
     <div class="container">
       <h2 class="section-title">What Evidence Gate Protects</h2>
-      <p class="section-subtitle">CI gates alone aren&rsquo;t enough &mdash; AI agents also operate at runtime. Evidence Gate validates the NemoClaw infrastructure that runs those agents.</p>
-      <p class="arch-narrative-bridge">When your pipeline clears the Evidence Gate, it deploys <strong>NemoClaw sandboxes</strong> &mdash; isolated environments where AI agents execute. Understanding this runtime layer explains <em>why</em> Evidence Gate validates blueprints and policies: a misconfigured sandbox can escape isolation or consume unbounded resources. The architecture below shows what Evidence Gate is guarding.</p>
+      <p class="section-subtitle">The free action can check NemoClaw blueprint and policy files before merge. It does not deploy or run the sandbox. Blind Gates, L4, and api.evidence-gate.dev are coming soon.</p>
+      <p class="arch-narrative-bridge">NemoClaw sandboxes are a separate runtime. The free check looks at blueprint and policy files so a bad config can be caught before someone deploys. The diagram shows that runtime. It is not a claim that Evidence Gate operates it.</p>
 
       <div class="arch-diagram-container">
         <svg viewBox="0 0 880 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="NemoClaw Plugin+Blueprint architecture diagram showing the Plugin resolving and executing the Blueprint as a subprocess to create OpenShell sandboxes">
@@ -1543,8 +1545,8 @@
   <!-- Ecosystem Section -->
   <section id="ecosystem" class="section section-alt">
     <div class="container">
-      <h2 class="section-title">Agent Governance Ecosystem</h2>
-      <p class="section-subtitle">Three layers of protection &mdash; from CI validation to runtime controls</p>
+      <h2 class="section-title">Related tools</h2>
+      <p class="section-subtitle">Separate projects. Evidence Gate&rsquo;s launched product is the free CI check. Blind Gates, L4, and api.evidence-gate.dev are coming soon.</p>
 
       <!-- 3-Layer Architecture Diagram (Agentforce-style) -->
       <div style="background: linear-gradient(180deg, #0c1220 0%, #1a2332 100%); border-radius: 1rem; padding: 2rem 1.5rem 1.5rem; max-width: 860px; margin: 0 auto 2.5rem;">
@@ -1637,7 +1639,7 @@
         <div class="eco-tool-card">
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
           <h4>evidence-gate-action</h4>
-          <p>35 gate types (30 in Free mode) including NemoClaw blueprint and policy validation. Fail-closed CI gates with AI agent repair contracts.</p>
+          <p>Free mode: 30 of 35 gate types, including NemoClaw blueprint and policy files. Checks file existence, JSON validity, and thresholds. Fail-closed. Blind Gates and the hosted API are coming soon.</p>
           <a href="https://github.com/evidence-gate/evidence-gate-action" class="eco-tool-link">View on GitHub &rarr;</a>
         </div>
         <div class="eco-tool-card">
@@ -1654,7 +1656,7 @@
         </div>
       </div>
 
-      <p style="text-align: center; margin-top: 2rem; color: #64748b; font-size: 0.9375rem;"><strong>Why three layers?</strong> NemoClaw provides sandbox isolation but has no cost controls. agentgov adds runtime budget enforcement. Evidence Gate validates all configurations at CI time &mdash; before blueprints reach production sandboxes.</p>
+      <p style="text-align: center; margin-top: 2rem; color: #64748b; font-size: 0.9375rem;">These are separate tools. The launched Evidence Gate check is the free GitHub Action (file existence, JSON validity, and thresholds). Blind Gates, L4, and the hosted API at api.evidence-gate.dev are coming soon.</p>
     </div>
   </section>
 
@@ -1662,7 +1664,7 @@
   <section id="pricing" class="section">
     <div class="container">
       <h2 class="section-title">Plans</h2>
-      <p class="section-subtitle">Free mode is available now. The hosted API (Pro) is coming soon.</p>
+      <p class="section-subtitle">Free mode is available now. Blind Gates, L4, and the hosted API (api.evidence-gate.dev, Pro) are coming soon.</p>
       <div class="pricing-table-wrapper">
         <table class="pricing-table">
           <thead>
@@ -1693,7 +1695,7 @@
               <td class="check">&#10003;</td>
             </tr>
             <tr>
-              <td>Pro-only gate types (5): <code>blind_gate</code>, <code>quality_state</code>, <code>remediation</code>, <code>composite</code>, <code>wave</code></td>
+              <td>Pro-only gate types (5, Coming soon): <code>blind_gate</code>, <code>quality_state</code>, <code>remediation</code>, <code>composite</code>, <code>wave</code></td>
               <td class="dash">&mdash;</td>
               <td class="featured check">&#10003;</td>
               <td class="check">&#10003;</td>
@@ -1705,7 +1707,7 @@
               <td class="check">&#10003;</td>
             </tr>
             <tr>
-              <td>SHA-256 integrity hashing</td>
+              <td>File existence, JSON validity, and threshold checks</td>
               <td class="check">&#10003;</td>
               <td class="featured check">&#10003;</td>
               <td class="check">&#10003;</td>
@@ -1771,25 +1773,25 @@
               <td class="check">&#10003;</td>
             </tr>
             <tr>
-              <td>Blind Gate evaluation</td>
+              <td>Blind Gate evaluation (Coming soon)</td>
               <td class="dash">&mdash;</td>
               <td class="featured check">&#10003;</td>
               <td class="check">&#10003;</td>
             </tr>
             <tr>
-              <td>Evidence chain verification (L4)</td>
+              <td>Tamper-evident evidence chain (L4, Coming soon)</td>
               <td class="dash">&mdash;</td>
               <td class="featured check">&#10003;</td>
               <td class="check">&#10003;</td>
             </tr>
             <tr>
-              <td>Quality State tracking</td>
+              <td>Quality State tracking (Coming soon)</td>
               <td class="dash">&mdash;</td>
               <td class="featured check">&#10003;</td>
               <td class="check">&#10003;</td>
             </tr>
             <tr>
-              <td>Remediation workflows</td>
+              <td>Remediation workflows (Coming soon)</td>
               <td class="dash">&mdash;</td>
               <td class="featured check">&#10003;</td>
               <td class="check">&#10003;</td>
@@ -1801,13 +1803,13 @@
               <td class="check">&#10003;</td>
             </tr>
             <tr>
-              <td>Self-hosted deployment</td>
+              <td>Self-hosted deployment (Coming soon)</td>
               <td class="dash">&mdash;</td>
               <td class="featured dash">&mdash;</td>
               <td class="check">&#10003;</td>
             </tr>
             <tr>
-              <td>Custom API base URL</td>
+              <td>Custom API base URL (Coming soon)</td>
               <td class="dash">&mdash;</td>
               <td class="featured dash">&mdash;</td>
               <td class="check">&#10003;</td>
@@ -1828,7 +1830,7 @@
             </tr>
           </tfoot>
         </table>
-        <p class="pricing-note" style="text-align:center;margin-top:1rem;color:#64748b;font-size:0.875rem;">The hosted API (Pro) is coming soon. Pro and Enterprise are not yet on sale; availability will be announced later. Questions: <a href="mailto:info@allnew.work">info@allnew.work</a></p>
+        <p class="pricing-note" style="text-align:center;margin-top:1rem;color:#64748b;font-size:0.875rem;">The hosted API at api.evidence-gate.dev (Pro) is coming soon and is not a working endpoint. Blind Gates and L4 (a tamper-evident, unkeyed hash chain) are not launched. Pro and Enterprise are not yet on sale. Questions: <a href="mailto:info@allnew.work">info@allnew.work</a></p>
       </div>
     </div>
   </section>
@@ -1885,7 +1887,7 @@
             <span class="step-number">3</span>
             See results in your PR
           </h3>
-          <p>Evidence Gate writes a detailed summary to <code>GITHUB_STEP_SUMMARY</code>, visible directly in your pull request's workflow run. Gate pass/fail results, evidence hashes, and threshold evaluations appear automatically &mdash; no configuration needed.</p>
+          <p>Evidence Gate writes a summary to <code>GITHUB_STEP_SUMMARY</code> in the workflow run. In Free mode that summary reflects file existence, JSON validity, and threshold checks. It does not include a tamper-evident evidence chain.</p>
         </div>
 
       </div>

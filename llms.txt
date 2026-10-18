@@ -1,14 +1,15 @@
 # Evidence Gate
 
-> Fail-closed quality gates for AI-driven CI/CD pipelines
+> Evidence-based quality gate for AI-generated changes
 
-Evidence Gate is a GitHub Actions-based quality gate that validates evidence before code merges. It supports 35 gate types (30 in Free mode, 5 Pro-only) including tests, SBOM, provenance, and NemoClaw sandbox configurations.
+Evidence Gate is a GitHub Actions quality gate for AI-generated changes. The free action checks that evidence files exist, are valid JSON, and meet numeric thresholds before merge. It supports 35 gate types (30 in Free mode, 5 Pro-only).
 
 ## Core Concepts
 
 - **Fail-Closed**: If the gate cannot verify evidence, the merge is blocked by default
-- **Blind Gates**: Evaluation criteria are hidden from AI agents — agents submit evidence without knowing thresholds, structurally preventing fabrication
-- **Evidence Chains**: SHA-256 integrity hashes link each evaluation to its source artifacts
+- **Free checks (available now)**: file existence, JSON validity, and numeric thresholds. No API key
+- **Blind Gates (coming soon)**: Planned to hide evaluation criteria from AI agents on the hosted API. Not launched. Free mode does not hide criteria
+- **Evidence chain (L4, coming soon)**: An unkeyed SHA-256 hash chain. Tamper-evident at most: a single-record edit is detectable; a full rewrite by a writer is not prevented. Not launched
 
 ## Gate Types (35 total)
 
@@ -17,7 +18,7 @@ Free mode (30, available now, no API key):
 - Supply chain (2): sbom (CycloneDX/SPDX), provenance (SLSA / in-toto build attestation)
 - NemoClaw (2): nemoclaw_blueprint, nemoclaw_policy
 
-Pro-only (5, need the hosted API, which is coming soon): blind_gate, quality_state, remediation, composite, wave. In Free mode these emit a warning and do not fail the step.
+Pro-only (5, need the hosted API at api.evidence-gate.dev, which is coming soon and is not a working endpoint): blind_gate, quality_state, remediation, composite, wave. In Free mode these emit a warning and do not fail the step. Blind Gates are the blind_gate type and are not launched. L4 chain verification is also coming soon on that API; it is not a free check.
 
 Any other gate_type fails (fail-closed). Source: evidence-gate-action v2.0.1, src/local_evaluator.py.
 
@@ -29,16 +30,18 @@ Evidence Gate validates NVIDIA NemoClaw sandbox configurations at CI stage:
 
 NemoClaw uses a Plugin (TypeScript) + Blueprint (Python) two-layer architecture.
 
-## 3-Layer Governance Architecture
+## Related tools
 
-1. **CI Layer**: evidence-gate-action — validates blueprints, policies, SBOM, provenance before merge
+These are separate projects. Evidence Gate's launched product is the free CI check. Blind Gates, L4, and api.evidence-gate.dev are coming soon.
+
+1. **CI Layer**: evidence-gate-action — free checks of file existence, JSON validity, and thresholds, including blueprint, policy, SBOM, and provenance files before merge
 2. **Infrastructure Layer**: nemoclaw-governance — Python CLI for blueprint.yaml and policy.yaml structural validation
 3. **Runtime Layer**: agentgov — budget control, cost management, network governance for running agents
 
 ## Plans
 
-- **Free** (available now): local evaluation in GitHub Actions, no API key required, no evaluation limit in local mode; includes missing_evidence / suggested_actions outputs
-- **Pro** (coming soon): hosted API with Blind Gates and evidence chain verification. Not yet available.
+- **Free** (available now): local evaluation in GitHub Actions, no API key required, no evaluation limit in local mode. Checks file existence, JSON validity, and numeric thresholds. Includes missing_evidence / suggested_actions outputs. Does not include Blind Gates or an evidence chain
+- **Pro** (coming soon): hosted API at api.evidence-gate.dev with Blind Gates and L4 tamper-evident evidence-chain verification (unkeyed hash chain). Not yet available. Not a working endpoint
 - **Enterprise** (coming soon): self-hosted deployment, custom API base URL. Not yet on sale.
 
 ## Links

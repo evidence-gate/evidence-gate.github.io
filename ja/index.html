@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Evidence Gate — AIが閾値を読めない品質ゲート | CI/CD品質ゲート</title>
+  <title>Evidence Gate — AIが生成した変更のためのエビデンス型品質ゲート</title>
 
   <!-- SEO Meta Tags -->
-  <meta name="description" content="AI駆動CI/CD向けフェイルクローズド品質ゲート。Blind GatesでAIエージェントから判定基準を隠したまま評価し、テスト、SBOM、来歴、NemoClaw設定をマージ前に検証。35種のゲートタイプ（Freeモードで30種）に対応。">
-  <meta name="keywords" content="Evidence Gate, CI/CD, 品質ゲート, AI エージェント, Blind Gates, NemoClaw, GitHub Actions, SBOM, SLSA, セキュリティ, サンドボックス, フェイルクローズド">
+  <meta name="description" content="AIが生成した変更のためのエビデンス型品質ゲート。無料のGitHub Actionは、ファイルの存在、JSONの妥当性、数値の閾値を確認します。Blind Gates、L4の改ざん検知型チェーン、ホスティング版API（api.evidence-gate.dev、Pro）は準備中です。">
+  <meta name="keywords" content="Evidence Gate, CI/CD, 品質ゲート, AIが生成した変更, GitHub Actions, JSON, 閾値, 改ざん検知, 準備中">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta name="author" content="AllNew LLC">
   <link rel="canonical" href="https://evidence-gate.dev/ja/">
@@ -16,16 +16,16 @@
   <link rel="alternate" hreflang="x-default" href="https://evidence-gate.dev/">
 
   <!-- OGP Meta Tags -->
-  <meta property="og:title" content="Evidence Gate — AIが閾値を読めない品質ゲート">
-  <meta property="og:description" content="AI駆動CI/CD向けフェイルクローズド品質ゲート。Blind GatesでAIエージェントから判定基準を隠したまま評価。35種のゲートタイプ（Freeモードで30種）、NemoClaw統合対応。">
+  <meta property="og:title" content="Evidence Gate — AIが生成した変更のためのエビデンス型品質ゲート">
+  <meta property="og:description" content="AIが生成した変更のためのエビデンス型品質ゲート。無料版はファイルの存在、JSONの妥当性、閾値を確認します。Blind Gates、L4、api.evidence-gate.dev（Pro）は準備中です。">
   <meta property="og:url" content="https://evidence-gate.dev/ja/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Evidence Gate">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:locale:alternate" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Evidence Gate — AIが閾値を読めない品質ゲート">
-  <meta name="twitter:description" content="AI駆動CI/CD向けフェイルクローズド品質ゲート。Blind GatesでAIエージェントから判定基準を隠したまま評価。35種のゲートタイプ（Freeモードで30種）対応。">
+  <meta name="twitter:title" content="Evidence Gate — AIが生成した変更のためのエビデンス型品質ゲート">
+  <meta name="twitter:description" content="AIが生成した変更のためのエビデンス型品質ゲート。無料版はファイルの存在、JSONの妥当性、閾値を確認します。Blind Gates、L4、api.evidence-gate.dev（Pro）は準備中です。">
 
   <!-- Structured Data: SoftwareApplication -->
   <script type="application/ld+json">
@@ -33,7 +33,7 @@
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "Evidence Gate",
-    "description": "AI駆動CI/CD向けフェイルクローズド品質ゲート。Blind GatesでAIエージェントから判定基準を隠したまま評価し、テスト、SBOM、来歴、NemoClaw設定をマージ前に検証。35種のゲートタイプ（Freeモードで30種）に対応。",
+    "description": "AIが生成した変更のためのエビデンス型品質ゲート。無料のGitHub Actionは、ファイルの存在、JSONの妥当性、数値の閾値を確認します。Blind Gates、L4の改ざん検知型エビデンスチェーン、ホスティング版API（api.evidence-gate.dev、Pro）は準備中です。",
     "url": "https://evidence-gate.dev",
     "applicationCategory": "DeveloperApplication",
     "operatingSystem": "GitHub Actions",
@@ -52,18 +52,20 @@
         "name": "Free",
         "price": "0",
         "priceCurrency": "USD",
-        "description": "Freeモード: GitHub Actions上でのローカル評価（APIキー不要）"
+        "description": "Freeモード（提供中）: GitHub Actions上でファイルの存在、JSONの妥当性、数値の閾値を確認（APIキー不要）"
       }
     ],
     "featureList": [
-      "35種のCI品質ゲートタイプ（Freeモードで30種、Pro専用5種）",
-      "Blind Gates — AIエージェントから判定基準を秘匿",
+      "35種のCI品質ゲートタイプ（Freeモードで30種、Pro専用5種は準備中）",
+      "Freeモード: ファイルの存在、JSONの妥当性、数値の閾値",
+      "Blind Gates（準備中）— ホスティング版APIで判定基準を秘匿する予定。未公開",
       "フェイルクローズドエラー処理",
       "Check Runアノテーション",
       "SBOM構造検証 (CycloneDX/SPDX)",
       "SLSA来歴ゲート",
       "NemoClawブループリント・ポリシー検証",
-      "SHA-256整合性ハッシュ",
+      "L4 改ざん検知型エビデンスチェーン（準備中）: 鍵のないSHA-256ハッシュチェーン。記録1件の書き換えは検知できる。書き込み権限を持つ者による全体の作り直しは防げない",
+      "ホスティング版API api.evidence-gate.dev（Pro、準備中）",
       "AIエージェント修復コントラクト"
     ]
   }
@@ -80,7 +82,7 @@
         "name": "Evidence Gateとは何ですか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Evidence Gateは、AI駆動のCI/CDパイプライン向けフェイルクローズド品質ゲートです。GitHub Actionsに組み込み、テストカバレッジ、SBOM、来歴、NemoClawサンドボックス設定など35種のゲートタイプでマージ前の品質検証を自動化します。うち30種はFreeモードで現在利用でき、5種（blind_gate、quality_state、remediation、composite、wave）はホスティング版API（Pro、準備中）が必要です。"
+          "text": "Evidence Gateは、AIが生成した変更のためのエビデンス型品質ゲートです。無料のGitHub Actionは、エビデンスファイルの存在、JSONとしての妥当性、数値の閾値を確認します。35種のゲートタイプのうち30種はFreeモードで現在利用でき、5種（blind_gate、quality_state、remediation、composite、wave）はホスティング版API（api.evidence-gate.dev、Pro、準備中）が必要です。Blind GatesとL4のチェーン検証は未公開です。"
         }
       },
       {
@@ -88,7 +90,7 @@
         "name": "Blind Gatesとは何ですか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Blind Gatesは、AIエージェントから判定基準（閾値やルール）を秘匿したまま品質評価を行う仕組みです。エージェントはエビデンスのみを提出し、評価基準を知ることができないため、基準に合わせた結果の捏造を構造的に防止します。"
+          "text": "Blind Gatesは現在準備中で、未公開です。公開後はホスティング版API（api.evidence-gate.dev、Pro）上で、AIエージェントから判定基準（閾値やルール）を隠して評価する予定です。Freeモードは基準を隠しません。ローカルでファイルの存在、JSONの妥当性、数値の閾値を確認します。"
         }
       },
       {
@@ -104,7 +106,7 @@
         "name": "無料で使えますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "はい。FreeモードはAPIキー不要でGitHub Actions上でローカルに評価を行い、Check Runアノテーションとジョブサマリーが含まれます。オープンソースプロジェクトは無料でご利用いただけます。ホスティング版API（Pro）は現在準備中です。"
+          "text": "はい。FreeモードはAPIキー不要で、GitHub Actions上でファイルの存在、JSONの妥当性、数値の閾値を確認し、Check Runアノテーションとジョブサマリーを出します。オープンソースプロジェクトは無料でご利用いただけます。Blind Gates、L4の改ざん検知型チェーン、ホスティング版API（api.evidence-gate.dev、Pro）は現在準備中です。"
         }
       }
     ]
@@ -940,10 +942,10 @@
       <ul class="nav-links">
         <li><a href="#how-it-works">仕組み</a></li>
         <li><a href="#blind-gates">Blind Gates</a></li>
-        <li><a href="#ai-governance">AIガバナンス</a></li>
+        <li><a href="#ai-governance">提供状況</a></li>
         <li><a href="#pricing">プラン</a></li>
         <li><a href="#quick-start">クイックスタート</a></li>
-        <li><a href="#nemoclaw-integration">NemoClawガバナンス</a></li>
+        <li><a href="#nemoclaw-integration">NemoClaw</a></li>
         <li><a href="https://github.com/marketplace/actions/evidence-gate-action" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">無料で始める</a></li>
         <li class="lang-switch"><a href="/">EN</a> / <a href="/ja/" class="lang-active">JA</a></li>
       </ul>
@@ -956,9 +958,9 @@
   <section class="hero">
     <div class="container">
       <div class="hero-content">
-        <p style="font-size: 0.875rem; font-weight: 600; color: #22c55e; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">GitHub Actions &middot; 35種のゲートタイプ &middot; Blind Gates &middot; デフォルトFail-Closed</p>
-        <h1>AIが閾値を<span>読めない</span><br>品質ゲート</h1>
-        <p>AIコーディングをCI/CDに組み込む開発チーム向けの、フェイルクローズド品質ゲートです。Evidence GateはBlind Gatesで判定基準をAIから隠したまま評価し、テストカバレッジ、SBOM、来歴、NemoClaw設定まで、マージ前に検証します。</p>
+        <p style="font-size: 0.875rem; font-weight: 600; color: #22c55e; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">GitHub Actions &middot; 無料はファイル・JSON・閾値 &middot; Fail-Closed</p>
+        <h1>AIが生成した変更の<br><span>エビデンス型</span>品質ゲート</h1>
+        <p>無料のGitHub Actionは、エビデンスファイルの存在、JSONとしての妥当性、数値の閾値をマージ前に確認します。Blind Gates、L4の改ざん検知型エビデンスチェーン、ホスティング版API（<code>api.evidence-gate.dev</code>、Pro）は現在準備中です。予定しているチェーンは鍵のないハッシュです。記録1件の書き換えは検知できますが、書き込み権限を持つ者による全体の作り直しは防げません。</p>
         <div class="hero-buttons">
           <a href="https://github.com/marketplace/actions/evidence-gate-action" class="btn btn-primary">無料で始める</a>
           <a href="#quick-start" class="btn btn-secondary">クイックスタートを見る</a>
@@ -1001,7 +1003,7 @@
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           </div>
           <h3>評価</h3>
-          <p>Evidence Gateがエビデンスファイルを自動検証します。ファイルの有無、スキーマ適合性、閾値、整合性などを確認します。</p>
+          <p>無料のGitHub Actionは、エビデンスファイルの存在、JSONとしての妥当性、数値の閾値を確認します。</p>
         </div>
         <div class="step-card">
           <div class="step-number">3</div>
@@ -1018,8 +1020,8 @@
   <!-- Blind Gate Explainer Section -->
   <section id="blind-gates" class="section">
     <div class="container">
-      <h2 class="section-title">Blind Gates</h2>
-      <p class="section-subtitle">判定基準を隠すことで、閾値への過剰最適化を防ぐ</p>
+      <h2 class="section-title">Blind Gates（準備中）</h2>
+      <p class="section-subtitle">未公開です。ホスティング版API（api.evidence-gate.dev、Pro）での提供を予定しています。公開後は、見えている閾値が最適化の目標になる問題への対策として、判定基準を隠す想定です。</p>
       <div class="blind-gate-explainer">
         <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram comparing Traditional Gates with visible thresholds versus Blind Gates with hidden criteria">
           <!-- Left side: Traditional Gate -->
@@ -1109,8 +1111,8 @@
         <div class="blind-gate-text">
           <p>LLMがコードだけでなくテストまで生成する状況では、見えている閾値は「品質基準」ではなく「最適化の目標」になりがちです。</p>
           <p><strong>問題:</strong> 従来のCIゲートでは、たとえばテストカバレッジの閾値がワークフローYAMLに書かれています。AIコーディングエージェントはその数値を読み取り、ぎりぎり通過するためだけの空疎なテストを作ることができます。数値は満たしていても、品質を保証しているとは言えません。</p>
-          <p><strong>解決策:</strong> Blind Gatesでは、評価基準をパイプラインやリポジトリ、AIエージェントに公開しません。パイプラインはエビデンスファイルを提出し、Evidence Gate APIがチームごとの非公開基準で評価します。判定基準そのものは秘匿され、結果と補助情報（不足エビデンス、推奨アクションなど）のみ返されます。基準が見えないため、AIが閾値に合わせて過剰最適化することを困難にします。</p>
-          <p><strong>提供状況:</strong> Blind Gatesはホスティング版API（Pro）で提供予定です。ホスティング版API（Pro）は現在準備中です。公開時期は追ってお知らせします。Freeモード（ローカル評価・APIキー不要）は現在ご利用いただけます。</p>
+          <p><strong>予定している仕組み（準備中）:</strong> 公開後のBlind Gatesでは、評価基準をパイプラインやリポジトリ、AIエージェントに出さない想定です。パイプラインはエビデンスファイルを提出し、ホスティング版APIが非公開の基準で評価します。このAPIは未公開です。</p>
+          <p><strong>提供状況:</strong> Blind Gatesは準備中です。ホスティング版API（api.evidence-gate.dev、Pro）が必要で、現在は動作するエンドポイントではありません。公開時期は追ってお知らせします。Freeモード（ローカルでファイルの存在、JSONの妥当性、数値の閾値を確認。APIキー不要）は現在ご利用いただけます。</p>
         </div>
       </div>
     </div>
@@ -1119,8 +1121,8 @@
   <!-- AI Governance Section -->
   <section id="ai-governance" class="section section-alt">
     <div class="container">
-      <h2 class="section-title">AIガバナンスを前提にした設計</h2>
-      <p class="section-subtitle">フェイルクローズド、証跡整合性、監査可能性を中心に設計</p>
+      <h2 class="section-title">今使えることと、準備中のこと</h2>
+      <p class="section-subtitle">無料版はフェイルクローズドで、ファイル・JSON・閾値を確認します。L4の改ざん検知型チェーンは準備中です。</p>
       <div class="steps-grid">
         <div class="step-card">
           <div class="step-icon">
@@ -1134,14 +1136,14 @@
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
           </div>
           <h3>透明性と信頼レベル</h3>
-          <p>エビデンスの信頼性をL1〜L4のレベルで整理できます。SHA-256によるエビデンスチェーン検証（L4）はホスティング版API（Pro）が必要で、現在準備中です。</p>
+          <p>信頼レベルL1〜L4は、エビデンスの信頼性の整理の仕方です。L4は改ざん検知型のエビデンスチェーンで、前の記録とエビデンスハッシュを鍵なしのSHA-256で結びます。記録1件の書き換えは検知できます。書き込み権限を持つ者による全体の作り直しは防げません。L4はホスティング版API（api.evidence-gate.dev、Pro）が必要で、現在準備中です。</p>
         </div>
         <div class="step-card">
           <div class="step-icon">
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
           </div>
           <h3>セキュリティと説明責任</h3>
-          <p>エビデンスファイルのSHA-256整合性ハッシュ、アノテーション、ジョブサマリーにより、実行ごとに監査可能な記録を残せます。品質状態トラッキングはホスティング版API（Pro）が必要で、現在準備中です。</p>
+          <p>無料のGitHub Actionは、ファイルの存在、JSONの妥当性、数値の閾値を確認し、アノテーションとジョブサマリーを出します。改ざん検知型のチェーンは記録しません。品質状態トラッキングはホスティング版API（api.evidence-gate.dev、Pro）が必要で、現在準備中です。</p>
         </div>
       </div>
       <p style="text-align: center; margin-top: 0.75rem; color: #94a3b8; font-size: 0.8125rem;">※本製品は、いかなる政府機関の認証・推奨・提携を示すものではありません。記載内容は情報提供を目的としたものであり、コンプライアンス認証を意味するものではありません。</p>
@@ -1152,7 +1154,7 @@
   <section id="pricing" class="section">
     <div class="container">
       <h2 class="section-title">プラン</h2>
-      <p class="section-subtitle">Freeモードは現在ご利用いただけます。ホスティング版API（Pro）は現在準備中です。</p>
+      <p class="section-subtitle">Freeモードは現在ご利用いただけます。Blind Gates、L4、ホスティング版API（api.evidence-gate.dev、Pro）は現在準備中です。</p>
       <div class="pricing-table-wrapper">
         <table class="pricing-table">
           <thead>
@@ -1183,7 +1185,7 @@
               <td class="check">&#10003;</td>
             </tr>
             <tr>
-              <td>Pro専用ゲートタイプ（5種）: <code>blind_gate</code>、<code>quality_state</code>、<code>remediation</code>、<code>composite</code>、<code>wave</code></td>
+              <td>Pro専用ゲートタイプ（5種、準備中）: <code>blind_gate</code>、<code>quality_state</code>、<code>remediation</code>、<code>composite</code>、<code>wave</code></td>
               <td class="dash">&mdash;</td>
               <td class="featured check">&#10003;</td>
               <td class="check">&#10003;</td>
@@ -1195,7 +1197,7 @@
               <td class="check">&#10003;</td>
             </tr>
             <tr>
-              <td>SHA-256整合性ハッシュ</td>
+              <td>ファイルの存在、JSONの妥当性、閾値の確認</td>
               <td class="check">&#10003;</td>
               <td class="featured check">&#10003;</td>
               <td class="check">&#10003;</td>
@@ -1261,25 +1263,25 @@
               <td class="check">&#10003;</td>
             </tr>
             <tr>
-              <td>Blind Gate評価</td>
+              <td>Blind Gate評価（準備中）</td>
               <td class="dash">&mdash;</td>
               <td class="featured check">&#10003;</td>
               <td class="check">&#10003;</td>
             </tr>
             <tr>
-              <td>エビデンスチェーン検証（L4）</td>
+              <td>改ざん検知型エビデンスチェーン（L4、準備中）</td>
               <td class="dash">&mdash;</td>
               <td class="featured check">&#10003;</td>
               <td class="check">&#10003;</td>
             </tr>
             <tr>
-              <td>品質状態トラッキング</td>
+              <td>品質状態トラッキング（準備中）</td>
               <td class="dash">&mdash;</td>
               <td class="featured check">&#10003;</td>
               <td class="check">&#10003;</td>
             </tr>
             <tr>
-              <td>改善ワークフロー</td>
+              <td>改善ワークフロー（準備中）</td>
               <td class="dash">&mdash;</td>
               <td class="featured check">&#10003;</td>
               <td class="check">&#10003;</td>
@@ -1291,13 +1293,13 @@
               <td class="check">&#10003;</td>
             </tr>
             <tr>
-              <td>セルフホストデプロイ</td>
+              <td>セルフホストデプロイ（準備中）</td>
               <td class="dash">&mdash;</td>
               <td class="featured dash">&mdash;</td>
               <td class="check">&#10003;</td>
             </tr>
             <tr>
-              <td>カスタムAPIベースURL</td>
+              <td>カスタムAPIベースURL（準備中）</td>
               <td class="dash">&mdash;</td>
               <td class="featured dash">&mdash;</td>
               <td class="check">&#10003;</td>
@@ -1318,7 +1320,7 @@
             </tr>
           </tfoot>
         </table>
-        <p class="pricing-note" style="text-align:center;margin-top:1rem;color:#64748b;font-size:0.875rem;">ホスティング版API（Pro）は現在準備中です。公開時期は追ってお知らせします。Pro・Enterpriseプランは現在販売しておりません。お問い合わせ: <a href="mailto:info@allnew.work">info@allnew.work</a></p>
+        <p class="pricing-note" style="text-align:center;margin-top:1rem;color:#64748b;font-size:0.875rem;">ホスティング版API（api.evidence-gate.dev、Pro）は現在準備中で、動作するエンドポイントではありません。Blind GatesとL4（鍵のないハッシュによる改ざん検知型チェーン）は未公開です。Pro・Enterpriseプランは現在販売しておりません。お問い合わせ: <a href="mailto:info@allnew.work">info@allnew.work</a></p>
       </div>
     </div>
   </section>
@@ -1375,7 +1377,7 @@
             <span class="step-number">3</span>
             PRで結果を確認
           </h3>
-          <p>評価結果は<code>GITHUB_STEP_SUMMARY</code>やPR上の実行結果から確認できます。合否、エビデンスハッシュ、評価内容が自動で表示されます。</p>
+          <p>評価結果は<code>GITHUB_STEP_SUMMARY</code>やPR上の実行結果から確認できます。Freeモードで表示されるのは、ファイルの存在、JSONの妥当性、閾値の確認結果です。改ざん検知型のエビデンスチェーンは含まれません。</p>
         </div>
 
       </div>
@@ -1389,7 +1391,7 @@
     <div class="container" style="text-align: center; position: relative; z-index: 1;">
       <span style="display: inline-block; background: #76b900; color: #1a1a1a; font-size: 0.6875rem; font-weight: 800; padding: 0.25rem 0.625rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem;">New</span>
       <p style="font-size: 0.875rem; font-weight: 600; color: #76b900; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">NVIDIA NemoClaw + Evidence Gate</p>
-      <h2 style="font-size: 2rem; font-weight: 700; color: #ffffff; margin-bottom: 1rem;">NemoClawガバナンス</h2>
+      <h2 style="font-size: 2rem; font-weight: 700; color: #ffffff; margin-bottom: 1rem;">NemoClawの設定チェック</h2>
       <p style="font-size: 1.125rem; color: #a0a0a0; max-width: 700px; margin: 0 auto 2rem; line-height: 1.7;">NemoClawは、NVIDIAが提供するAIエージェント実行用のサンドボックス基盤です。<br>Evidence Gateは、NemoClawのブループリントとポリシーをCI段階で検証し、<br>危険な設定や矛盾をデプロイ前に検出・ブロックします。</p>
       <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
         <a href="#nemoclaw-architecture" style="display: inline-block; background: #76b900; color: #1a1a1a; font-weight: 700; padding: 0.625rem 1.25rem; border-radius: 0.375rem; font-size: 0.9375rem; text-decoration: none;">詳しく見る ↓</a>
@@ -1494,8 +1496,8 @@
   <!-- Ecosystem Section -->
   <section id="ecosystem" class="section section-alt">
     <div class="container">
-      <h2 class="section-title">エージェントガバナンスの全体像</h2>
-      <p class="section-subtitle">CI検証からランタイム制御まで &mdash; 3層のプロテクション</p>
+      <h2 class="section-title">関連ツール</h2>
+      <p class="section-subtitle">別プロジェクトです。公開しているEvidence Gateは無料のCIチェックです。Blind Gates、L4、api.evidence-gate.devは準備中です。</p>
 
       <!-- 3-Layer Architecture Diagram (Agentforce-style) -->
       <div style="background: linear-gradient(180deg, #0c1220 0%, #1a2332 100%); border-radius: 1rem; padding: 2rem 1.5rem 1.5rem; max-width: 860px; margin: 0 auto 2.5rem;">
@@ -1588,7 +1590,7 @@
         <div class="eco-tool-card">
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
           <h4>evidence-gate-action</h4>
-          <p>NemoClawブループリント・ポリシー検証を含む35種のゲートタイプ（Freeモードで30種）。AIエージェント修復コントラクト付きフェイルクローズドCIゲート。</p>
+          <p>Freeモードは35種のうち30種（NemoClawのブループリントとポリシーのファイルを含む）。ファイルの存在、JSONの妥当性、閾値を確認します。フェイルクローズドです。Blind Gatesとホスティング版APIは準備中です。</p>
           <a href="https://github.com/evidence-gate/evidence-gate-action" class="eco-tool-link">GitHubで見る &rarr;</a>
         </div>
         <div class="eco-tool-card">
@@ -1605,7 +1607,7 @@
         </div>
       </div>
 
-      <p style="text-align: center; margin-top: 2rem; color: #64748b; font-size: 0.9375rem;"><strong>なぜ3層なのか?</strong> NemoClawはサンドボックス分離を提供しますが、コスト制御はありません。agentgovがランタイム予算強制を追加します。Evidence GateはCI時にすべての設定を検証します &mdash; ブループリントが本番サンドボックスに到達する前に。</p>
+      <p style="text-align: center; margin-top: 2rem; color: #64748b; font-size: 0.9375rem;">これらは別のツールです。公開しているEvidence Gateは、無料のGitHub Action（ファイルの存在、JSONの妥当性、閾値の確認）です。Blind Gates、L4、ホスティング版API（api.evidence-gate.dev）は準備中です。</p>
     </div>
   </section>
 
